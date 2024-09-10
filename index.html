@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <title>vbdb</title>
+    </head>
+
+    <body>
+        <header class="header"></header>
+        <div class="container">
+            <div class="card">
+                <div class="nav-bar">
+                    <ul class="nav-ul">
+                        <li class="nav-item">
+                            <a href="#"><img class="nav-img"
+                                    src="path/to/logo.png" alt="vbdb" /></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about-tab-panel" class="tab-link"
+                                data-tab="about-tab-panel">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#data-tab-panel" class="tab-link"
+                                data-tab="data-tab-panel">Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#live-tab-panel" class="tab-link"
+                                data-tab="live-tab-panel">Live</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-panel active" id="about-tab-panel">
+                        Hello! I started this page with the idea that volleyball
+                        data - public data - should be avaiable to all
+                        those who desire to gather, hoard and use for
+                        themselves. Work in progress. Enjoy!
+                    </div>
+                    <div class="tab-panel" id="data-tab-panel">
+                        Data stuff
+                    </div>
+                    <div class="tab-panel" id="live-tab-panel">
+                        <div class="div-cal">
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date" />
+
+                            <label for="end-date">End Date:</label>
+                            <input type="date" id="end-date" />
+                        </div>
+
+                        <div id="scores-output"></div>
+                        <script type="module">
+                    import { fetch_live_score } from './js/fetch_live_score.js';
+                   
+                    const outputDiv = document.getElementById('scores-output');
+                    const startDatePicker = document.getElementById('start-date');
+                    const endDatePicker = document.getElementById('end-date');
+            
+                    // Set the default value to today for both start and end date
+                    const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+                    startDatePicker.value = today;
+                    endDatePicker.value = today;
+            
+                    // Fetch live scores for the selected date range
+                    async function loadScores() {
+                        const startDate = startDatePicker.value.replace(/-/g, '/');
+                        const endDate = endDatePicker.value.replace(/-/g, '/');
+            
+                        // Clear the output
+                        outputDiv.innerHTML = 'Fetching scores...';
+            
+                        try {
+                            const scoresTable = await fetch_live_score(startDate, endDate);
+                            outputDiv.innerHTML = scoresTable;
+                        } catch (error) {
+                            console.error('Error fetching scores:', error);
+                            outputDiv.innerHTML = 'Error fetching scores. Please try again later.';
+                        }
+                    }
+            
+                    // Load scores when the date range changes
+                    startDatePicker.addEventListener('change', loadScores);
+                    endDatePicker.addEventListener('change', loadScores);
+            
+                    // Load scores when the page loads
+                    loadScores();
+                </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/nav.js"></script>
+    </body>
+</html>
