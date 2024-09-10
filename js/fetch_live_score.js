@@ -22,44 +22,38 @@ export async function fetch_live_score(startDate, endDate) {
     function createTable(gamesData) {
         console.log("Creating table with data:", gamesData);
         let tableHTML = `
-            <div class="table-container" style="max-height: 600px; overflow-y: auto; margin: 0 auto;">
-                <table border="1" style="border-collapse: collapse; width: 100%; margin: 0 auto;">
-                    <thead>
-                        <tr>
-                            <th style="padding: 8px 10px;">Date</th>
-                            <th style="padding: 8px 10px;">Away Conf</th>
-                            <th style="padding: 8px 10px;">Away Team</th>
-                            <th style="padding: 8px 10px;">Away Score</th>
-                            <th style="padding: 8px 10px;">Home Conf</th>
-                            <th style="padding: 8px 10px;">Home Team</th>
-                            <th style="padding: 8px 10px;">Home Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <div class="table-container" style="overflow-y: auto; overflow-x: auto; margin: 0 auto; width: 900px; height: 600px; overflow: scroll; font-size: 13px;">
+            <table border="1" style="border-collapse: collapse; width: 100%;">
+                <thead>
+                    <tr style="background: #eee;">
+                        <th style="background: #333; color: white; padding: 6px; border: 1px solid #ccc; text-align: center; position: sticky; top: 0; z-index: 1;">Date</th>
+                        <th style="background: #333; color: white; padding: 6px; border: 1px solid #ccc; text-align: center; position: sticky; top: 0; z-index: 1;">Home Team</th>
+                        <th style="background: #333; color: white; padding: 6px; border: 1px solid #ccc; text-align: center; position: sticky; top: 0; z-index: 1;">Away Team</th>
+                        <th style="background: #333; color: white; padding: 6px; border: 1px solid #ccc; text-align: center; position: sticky; top: 0; z-index: 1;">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
         `;
 
         gamesData.forEach(game => {
             tableHTML += `
                 <tr>
-                    <td style="padding: 8px;">${game.game.startDate}</td>
-                    <td style="padding: 8px;">${game.game.away.conferences[0]?.conferenceName || 'N/A'}</td>
-                    <td style="padding: 8px;">${game.game.away.names.full}</td>
-                    <td style="padding: 8px;">${game.game.away.score}</td>
-                    <td style="padding: 8px;">${game.game.home.conferences[0]?.conferenceName || 'N/A'}</td>
-                    <td style="padding: 8px;">${game.game.home.names.full}</td>
-                    <td style="padding: 8px;">${game.game.home.score}</td>
+                    <td style="padding: 8px; text-align: left; white-space: nowrap;">${game.game.startDate}</td>
+                    <td style="padding: 8px; text-align: left; white-space: nowrap;">${game.game.home.names.short} (${game.game.home.conferences[0]?.conferenceName || 'N/A'})</td>
+                    <td style="padding: 8px; text-align: left; white-space: nowrap;">${game.game.away.names.short} (${game.game.away.conferences[0]?.conferenceName || 'N/A'})</td>
+                    <td style="padding: 8px; text-align: left; white-space: nowrap;">(${game.game.home.score} - ${game.game.away.score})</td> 
                 </tr>
             `;
         });
 
         tableHTML += `
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
         `;
 
         return tableHTML;
     }
+
 
     function getDatesInRange(start, end) {
         const dates = [];
