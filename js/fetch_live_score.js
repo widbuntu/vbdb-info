@@ -22,8 +22,8 @@ export async function fetch_live_score(startDate, endDate) {
     function createTable(gamesData) {
         console.log("Creating table with data:", gamesData);
         let tableHTML = `
-        <div class="table-container" style="overflow-y: auto; overflow-x: auto; margin: 0 auto; width: 900px; height: 600px; overflow: scroll; font-size: 13px;">
-            <table border="1" style="border-collapse: collapse; width: 100%;">
+        <div class="table-container" style="overflow-y: auto; overflow-x: auto; margin: 0 auto; width: auto; height: 600px; overflow: scroll; font-size: 13px;">
+            <table border="1" style="border-collapse: collapse; width: auto;">
                 <thead>
                     <tr style="background: #eee;">
                         <th style="background: #333; color: white; padding: 6px; border: 1px solid #ccc; text-align: center; position: sticky; top: 0; z-index: 1;">Date</th>
@@ -38,10 +38,10 @@ export async function fetch_live_score(startDate, endDate) {
         gamesData.forEach(game => {
             tableHTML += `
                 <tr>
-                    <td style="padding: 8px; text-align: left; white-space: nowrap;">${game.game.startDate}</td>
-                    <td style="padding: 8px; text-align: left; white-space: nowrap;">${game.game.home.names.short} (${game.game.home.conferences[0]?.conferenceName || 'N/A'})</td>
-                    <td style="padding: 8px; text-align: left; white-space: nowrap;">${game.game.away.names.short} (${game.game.away.conferences[0]?.conferenceName || 'N/A'})</td>
-                    <td style="padding: 8px; text-align: left; white-space: nowrap;">(${game.game.home.score} - ${game.game.away.score})</td> 
+                    <td style="padding: 4px; text-align: left; white-space: nowrap;">${game.game.startDate}</td>
+                    <td style="padding: 4px; text-align: left; white-space: nowrap;">${game.game.home.names.short} (${game.game.home.conferences[0]?.conferenceName || 'N/A'})</td>
+                    <td style="padding: 4px; text-align: left; white-space: nowrap;">${game.game.away.names.short} (${game.game.away.conferences[0]?.conferenceName || 'N/A'})</td>
+                    <td style="padding: 4px; text-align: left; white-space: nowrap;">(${game.game.home.score} - ${game.game.away.score})</td> 
                 </tr>
             `;
         });
