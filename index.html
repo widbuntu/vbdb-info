@@ -19,16 +19,16 @@
                 <div class="nav-bar">
                     <ul class="nav-ul">
                         <li class="nav-item">
-                            <a href="#"><img class="nav-img"
-                                    src="path/to/logo.png" alt="vbdb" /></a>
+                        <a href="#vbdb-tab-panel" class="tab-link"
+                            data-tab="vbdb-tab-panel">VBDB</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#about-tab-panel" class="tab-link"
-                                data-tab="about-tab-panel">About</a>
+                            <a href="#schedule-tab-panel" class="tab-link"
+                                data-tab="schedule-tab-panel">Schedule</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#data-tab-panel" class="tab-link"
-                                data-tab="data-tab-panel">Data</a>
+                            <a href="#boxscores-tab-panel" class="tab-link"
+                                data-tab="boxscores-tab-panel">Box Scores</a>
                         </li>
                         <li class="nav-item">
                             <a href="#live-tab-panel" class="tab-link"
@@ -37,14 +37,25 @@
                     </ul>
                 </div>
                 <div class="tab-content" style="overflow: scroll;">
-                    <div class="tab-panel active" id="about-tab-panel">
+                    <div class="tab-panel" id="vbdb-tab-panel">
                         Hello! I started this page with the idea that volleyball
                         data - public data - should be avaiable to all
                         those who desire to gather, hoard and use for
                         themselves. Work in progress. Enjoy!
                     </div>
-                    <div class="tab-panel" id="data-tab-panel">
-                        Data stuff
+                    <div class="tab-panel" id="schedule-tab-panel">
+                        Fetch a schedule
+                    </div>
+                    <div class="tab-panel active" id="boxscores-tab-panel">
+                        <h1>Box Scores</h1>
+                        <div id="box-score-output">Loading...</div>
+                    
+                        <script type="module">
+                            import { fetchBoxScore } from './js/boxscores.js';
+                            
+                            // Call the function to fetch and display the data
+                            fetchBoxScore();
+                        </script>
                     </div>
                     <div class="tab-panel" id="live-tab-panel">
                         <div class="div-cal">

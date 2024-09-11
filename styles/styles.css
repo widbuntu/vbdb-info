@@ -1,99 +1,105 @@
 /* CSS for entire body */
 body {
-    font-family: 'Hack Nerd Font', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* CSS for the navigation bar */
-  .nav-ul {
-    display: flex;
-    background-color: #333;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-item {
-    flex: 1;
-  }
-  
-  .nav-item a {
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    text-align: center;
-  }
-  
-  .nav-item a:hover {
-    background-color: grey;
-  }
-  
-  /* Tab panel styling */
-  .tab-content {
-    padding: 20px;
-    border: 1px solid #ddd;
-  }
-  
-  .tab-panel {
-    display: none;
-  }
-  
-  /* Show the active tab */
-  .tab-panel.active {
-    display: block;
-  }
-  
-  /* Styling for the card (optional) */
-  .card {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-top: 20px;
-  }
-  
-.div-text {
-    padding: 20px;
-    width: 10%;
+  font-family: 'Hack Nerd Font', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  #calendar {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-#calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-}
-#calendar-body {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-    background-color: #333;
-}
-#calendar-body div {
-    padding: 20px;
-    background-color: #fff;
-    text-align: center;
-}
-.change-month {
-    cursor: pointer;
+/* CSS for the navigation bar */
+.nav-ul {
+  display: flex;
+  background-color: #333;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.div-cal {
-    padding-bottom: 4px;
-    margin-bottom: 4px;
+.nav-item {
+  flex: 1;
+}
+
+.nav-item a {
+  background-repeat: repeat-y;
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-item a:hover {
+  background-color: grey;
+}
+
+/* Tab panel styling */
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ddd;
 }
 
 .tab-panel {
-    text-align: center;
-    margin: 0 auto;
-    width: fit-content; 
+  display: none;
 }
+
+/* Show the active tab */
+.tab-panel.active {
+  display: block;
+}
+
+/* Styling for the card (optional) */
+.card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.div-text {
+  padding: 20px;
+  width: 10%;
+}
+
+#calendar {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+#calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #333;
+}
+
+#calendar-body div {
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.change-month {
+  cursor: pointer;
+}
+
+.div-cal {
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+.tab-panel {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+

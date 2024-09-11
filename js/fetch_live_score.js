@@ -4,7 +4,7 @@ export async function fetch_live_score(startDate, endDate) {
     console.log("fetch_live_score called with date range:", startDate, "to", endDate);
 
     async function fetchGamesData(date) {
-        const url = `https://corsproxy.io/?https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
+        const url = `https://proxy.cors.sh/https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
         console.log("Fetching from URL:", url);
         
         try {
