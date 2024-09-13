@@ -252,7 +252,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Kennesaw State University","Conference USA",www.kennesaw.edu/,www.ksuowls.com,GA,2024-25,D-I
 "Presbyterian College","Big South Conference",presby.edu,gobluehose.com,SC,2024-25,D-I
 "Seattle University","Western Athletic Conference",seattleu.edu,goseattleu.com,WA,2024-25,D-I
-"University of Arkansas, Pine Bluff","Southwestern Athletic Conf.",www.uapb.edu,uapblionsroar.com/,AR,2024-25,D-I
+"University of Arkansas Pine Bluff","Southwestern Athletic Conf.",www.uapb.edu,uapblionsroar.com/,AR,2024-25,D-I
 "Indiana University Indianapolis","Horizon League",indianapolis.iu.edu/,iuindyjags.com/,IN,2024-25,D-I
 "University of Missouri-Kansas City","The Summit League",www.umkc.edu,www.kcroos.com,MO,2024-25,D-I
 "University of North Florida","Atlantic Sun Conference",www.unf.edu,www.unfospreys.com,FL,2024-25,D-I
@@ -320,7 +320,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Siena College","Metro Atlantic Athletic Conference",www.siena.edu,www.sienasaints.com,NY,2024-25,D-I
 "University of South Alabama","Sun Belt Conference",www.southalabama.edu,www.usajaguars.com,AL,2024-25,D-I
 "South Carolina State University","Mid-Eastern Athletic Conf.",www.scsu.edu/,www.scsuathletics.com/index.aspx,SC,2024-25,D-I
-"University of South Carolina, Columbia","Southeastern Conference",www.sc.edu,gamecocksonline.com,SC,2024-25,D-I
+"University of South Carolina Columbia","Southeastern Conference",www.sc.edu,gamecocksonline.com,SC,2024-25,D-I
 "South Dakota State University","The Summit League",www.sdstate.edu,www.gojacks.com,SD,2024-25,D-I
 "University of South Dakota","The Summit League",www.usd.edu,www.goyotes.com,SD,2024-25,D-I
 "University of South Florida","American Athletic Conference",www.usf.edu/,www.gousfbulls.com/,FL,2024-25,D-I
@@ -396,7 +396,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Pace University","Northeast-10 Conference",www.pace.edu,www.paceuathletics.com,NY,2024-25,D-II
 "University of North Carolina at Pembroke","Conference Carolinas",www.uncp.edu,www.uncpbraves.com,NC,2024-25,D-II
 "Thomas Jefferson University","Central Atlantic Collegiate Conference",www.jefferson.edu,www.jeffersonrams.com,PA,2024-25,D-II
-"University of Pittsburgh, Johnstown","Pennsylvania State Athletic Conference",www.upj.pitt.edu,pittjohnstownathletics.com/,PA,2024-25,D-II
+"University of Pittsburgh Johnstown","Pennsylvania State Athletic Conference",www.upj.pitt.edu,pittjohnstownathletics.com/,PA,2024-25,D-II
 "Queens College (New York)","East Coast Conference",www.qc.cuny.edu,www.queensknights.com,NY,2024-25,D-II
 "Quincy University","Great Lakes Valley Conference",quincy.edu,quhawks.com,IL,2024-25,D-II
 "Regis University (Colorado)","Rocky Mountain Athletic Conference",www.regis.edu,www.regisrangers.com,CO,2024-25,D-II
@@ -497,7 +497,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Western Colorado University","Rocky Mountain Athletic Conference",www.western.edu,www.gomountaineers.com,CO,2024-25,D-II
 "Washburn University","Mid-America Intercollegiate Athletics Association",www.washburn.edu,www.wusports.com,KS,2024-25,D-II
 "Goldey-Beacom College","Central Atlantic Collegiate Conference",www.gbc.edu,www.gbcathletics.com,DE,2024-25,D-II
-"University of Arkansas, Monticello","Great American Conference",www.uamont.edu,www.uamsports.com,AR,2024-25,D-II
+"University of Arkansas Monticello","Great American Conference",www.uamont.edu,www.uamsports.com,AR,2024-25,D-II
 "New Mexico Highlands University","Rocky Mountain Athletic Conference",www.nmhu.edu,www.nmhuathletics.com,NM,2024-25,D-II
 "Southwest Minnesota State University","Northern Sun Intercollegiate Conference",www.smsu.edu,www.smsumustangs.com,MN,2024-25,D-II
 "Southwestern Oklahoma State University","Great American Conference",www.swosu.edu/,www.swosuathletics.com,OK,2024-25,D-II
@@ -513,7 +513,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "North Greenville University","Conference Carolinas",www.ngu.edu/,www.nguathletics.com,SC,2024-25,D-II
 "West Virginia Wesleyan College","Mountain East Conference",wvwc.edu,wesleyanbobcats.com,WV,2024-25,D-II
 "Embry-Riddle Aeronautical University (Florida)","Sunshine State Conference",www.erau.edu,www.erauathletics.com,FL,2024-25,D-II
-"University of Colorado, Colorado Springs","Rocky Mountain Athletic Conference",www.uccs.edu,www.gomountainlions.com,CO,2024-25,D-II
+"University of Colorado Colorado Springs","Rocky Mountain Athletic Conference",www.uccs.edu,www.gomountainlions.com,CO,2024-25,D-II
 "Shepherd University","Pennsylvania State Athletic Conference",shepherd.edu,shepherdrams.com,WV,2024-25,D-II
 "University of South Carolina Aiken","Peach Belt Conference",www.usca.edu,www.pacersports.com,SC,2024-25,D-II
 "Colorado Christian University","Rocky Mountain Athletic Conference",www.ccu.edu,www.ccucougars.com,CO,2024-25,D-II
@@ -543,7 +543,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Assumption University","Northeast-10 Conference",www.assumption.edu,www.assumptiongreyhounds.com,MA,2024-25,D-II
 "Felician University","Central Atlantic Collegiate Conference",www.felician.edu,www.felicianathletics.com,NJ,2024-25,D-II
 "Nova Southeastern University","Sunshine State Conference",www.nova.edu,nsusharks.com,FL,2024-25,D-II
-"University of Minnesota, Crookston","Northern Sun Intercollegiate Conference",www.umcrookston.edu,www.goldeneaglesports.com/,MN,2024-25,D-II
+"University of Minnesota Crookston","Northern Sun Intercollegiate Conference",www.umcrookston.edu,www.goldeneaglesports.com/,MN,2024-25,D-II
 "Trevecca Nazarene University","Gulf South Conference",www.trevecca.edu,www.tnutrojans.com,TN,2024-25,D-II
 "Lee University","Gulf South Conference",www.leeuniversity.edu/,www.leeuflames.com,TN,2024-25,D-II
 "Palm Beach Atlantic University","Sunshine State Conference",www.pba.edu,www.pbasailfish.com,FL,2024-25,D-II
@@ -692,7 +692,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Skidmore College","Liberty League",www.skidmore.edu/,skidmoreathletics.com/,NY,2024-25,D-III
 "Smith College","New England Women's and Men's Athletic Conference",www.smith.edu/,www.smithpioneers.com,MA,2024-25,D-III
 "University of the South","Southern Athletic Association",www.sewanee.edu/,sewaneetigers.com/,TN,2024-25,D-III
-"University of Massachusetts, Dartmouth","Little East Conference",www.umassd.edu,www.corsairathletics.com,MA,2024-25,D-III
+"University of Massachusetts Dartmouth","Little East Conference",www.umassd.edu,www.corsairathletics.com,MA,2024-25,D-III
 "University of Southern Maine","Little East Conference",www.usm.maine.edu,www.southernmainehuskies.com,ME,2024-25,D-III
 "Springfield College","New England Women's and Men's Athletic Conference",www.springfieldcollege.edu/,springfield.edu/directory/athletics,MA,2024-25,D-III
 "Stevens Institute of Technology","Middle Atlantic Conferences",www.stevens.edu,www.stevensducks.com,NJ,2024-25,D-III
@@ -706,13 +706,13 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Maranatha Baptist University",Independent,www.mbu.edu/,mbusabercats.com,WI,2024-25,D-III
 "Marian University (Wisconsin)","Northern Athletics Collegiate Conference",www.marianuniversity.edu,www.sabreathletics.com,WI,2024-25,D-III
 "University of Mary Hardin-Baylor","American Southwest Conference",www.umhb.edu,www.umhb.edu/athletics,TX,2024-25,D-III
-"University of Minnesota, Morris","Upper Midwest Athletic Conference",www.morris.umn.edu,www.morriscougars.com,MN,2024-25,D-III
+"University of Minnesota Morris","Upper Midwest Athletic Conference",www.morris.umn.edu,www.morriscougars.com,MN,2024-25,D-III
 "Neumann University","Atlantic East Conference",www.neumann.edu,www.neumannathletics.com,PA,2024-25,D-III
 "University of New England","Conference of New England",www.une.edu,athletics.une.edu,ME,2024-25,D-III
 "Northland College","Upper Midwest Athletic Conference",www.northland.edu/,www.northlandcollegesports.com,WI,2024-25,D-III
 "Pacific Lutheran University","Northwest Conference",www.plu.edu/,www.golutes.com,WA,2024-25,D-III
 "Cairn University","United East Conference",www.cairn.edu,www.cairnhighlanders.com,PA,2024-25,D-III
-"University of Pittsburgh, Bradford","Allegheny Mountain Collegiate Conference",www.upb.pitt.edu/,athletics.pittbradford.org/landing/index,PA,2024-25,D-III
+"University of Pittsburgh Bradford","Allegheny Mountain Collegiate Conference",www.upb.pitt.edu/,athletics.pittbradford.org/landing/index,PA,2024-25,D-III
 "Dominican University (Illinois)","Northern Athletics Collegiate Conference",www.dom.edu,www.dustars.com,IL,2024-25,D-III
 "St. Joseph's University New York L.I.","Skyline Conference",www.sjny.edu,www.sjliathletics.com,NY,2024-25,D-III
 "Schreiner University","Southern Collegiate Athletic Conference",www.schreiner.edu/,www.schreinermountaineers.com,TX,2024-25,D-III
@@ -775,7 +775,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Farmingdale State College","Skyline Conference",www.farmingdale.edu,www.farmingdalesports.com,NY,2024-25,D-III
 "Alverno College","Northern Athletics Collegiate Conference",www.alverno.edu,athletics.alverno.edu/,WI,2024-25,D-III
 "Transylvania University","Heartland Collegiate Athletic Conference",www.transy.edu/,www.transysports.com,KY,2024-25,D-III
-"Purchase College, State University of New York","Skyline Conference",www.purchase.edu,www.purchasecollegeathletics.com,NY,2024-25,D-III
+"Purchase College State University of New York","Skyline Conference",www.purchase.edu,www.purchasecollegeathletics.com,NY,2024-25,D-III
 "University of Northwestern-St. Paul","Upper Midwest Athletic Conference",www.unwsp.edu,unweagles.com,MN,2024-25,D-III
 "Mount Mary University","Coast-To-Coast Athletic Conference",www.mtmary.edu/,mtmaryathletics.com,WI,2024-25,D-III
 "Crown College (Minnesota)","Upper Midwest Athletic Conference",www.crown.edu,www.athletics.crown.edu,MN,2024-25,D-III
@@ -880,7 +880,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Colby-Sawyer College","Great Northeast Athletic Conference",www.colby-sawyer.edu,www.colby-sawyerathletics.com/,NH,2024-25,D-III
 "Colorado College","Southern Collegiate Athletic Conference",www.coloradocollege.edu/,www.cctigers.com,CO,2024-25,D-III
 "Concordia University Chicago","Northern Athletics Collegiate Conference",www.cuchicago.edu,www.CUCougars.com,IL,2024-25,D-III
-"Concordia College, Moorhead","Minnesota Intercollegiate Athletic Conference",www.concordiacollege.edu,www.gocobbers.com,MN,2024-25,D-III
+"Concordia College Moorhead","Minnesota Intercollegiate Athletic Conference",www.concordiacollege.edu,www.gocobbers.com,MN,2024-25,D-III
 "Connecticut College","New England Small College Athletic Conference",www.conncoll.edu,camelathletics.com/,CT,2024-25,D-III
 "Cornell College","Midwest Conference",www.cornellcollege.edu,www.cornellrams.com,IA,2024-25,D-III
 "State University of New York at Cortland","State University of New York Athletic Conference",www.cortland.edu,www.cortland.edu/athletics,NY,2024-25,D-III
