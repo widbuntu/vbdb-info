@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +18,12 @@
                 <div class="nav-bar">
                     <ul class="nav-ul">
                         <li class="nav-item">
-                        <a href="#vbdb-tab-panel" class="tab-link"
-                            data-tab="vbdb-tab-panel">VBDB</a>
+                            <a href="#vbdb-tab-panel" class="tab-link"
+                                data-tab="vbdb-tab-panel">VBDB</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#schedule-tab-panel" class="tab-link"
-                                data-tab="schedule-tab-panel">Schedule</a>
+                            <a href="#teams-tab-panel" class="tab-link"
+                                data-tab="teams-tab-panel">Teams</a>
                         </li>
                         <li class="nav-item">
                             <a href="#boxscores-tab-panel" class="tab-link"
@@ -39,11 +38,17 @@
                 <div class="tab-content" style="overflow: scroll;">
                     <div class="tab-panel active" id="vbdb-tab-panel">
                         Hello! I started this page with the idea that volleyball
-                        data - public data - should be avaiable to all
+                        data - public data - should be available to all
                         those who desire to gather, hoard and use for
                         themselves. Work in progress. Enjoy!
                     </div>
-                    <div class="tab-panel" id="schedule-tab-panel">
+                    <div class="tab-panel" id="teams-tab-panel">
+                        <script type="module">
+                            import { fetchAndDisplayCSV } from './js/teams.js';
+                            
+                            // Call the function to fetch and display the data
+                            fetchAndDisplayCSV();
+                        </script>
                     </div>
                     <div class="tab-panel" id="boxscores-tab-panel">
                         <h1>Box Scores</h1>
@@ -67,41 +72,41 @@
 
                         <div id="scores-output"></div>
                         <script type="module">
-                    import { fetch_live_score } from './js/fetch_live_score.js';
-                   
-                    const outputDiv = document.getElementById('scores-output');
-                    const startDatePicker = document.getElementById('start-date');
-                    const endDatePicker = document.getElementById('end-date');
-            
-                    // Set the default value to today for both start and end date
-                    const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
-                    startDatePicker.value = today;
-                    endDatePicker.value = today;
-            
-                    // Fetch live scores for the selected date range
-                    async function loadScores() {
-                        const startDate = startDatePicker.value.replace(/-/g, '/');
-                        const endDate = endDatePicker.value.replace(/-/g, '/');
-            
-                        // Clear the output
-                        outputDiv.innerHTML = 'Fetching scores...';
-            
-                        try {
-                            const scoresTable = await fetch_live_score(startDate, endDate);
-                            outputDiv.innerHTML = scoresTable;
-                        } catch (error) {
-                            console.error('Error fetching scores:', error);
-                            outputDiv.innerHTML = 'Error fetching scores. Please try again later.';
-                        }
-                    }
-            
-                    // Load scores when the date range changes
-                    startDatePicker.addEventListener('change', loadScores);
-                    endDatePicker.addEventListener('change', loadScores);
-            
-                    // Load scores when the page loads
-                    loadScores();
-                </script>
+                            import { fetch_live_score } from './js/fetch_live_score.js';
+                           
+                            const outputDiv = document.getElementById('scores-output');
+                            const startDatePicker = document.getElementById('start-date');
+                            const endDatePicker = document.getElementById('end-date');
+                    
+                            // Set the default value to today for both start and end date
+                            const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+                            startDatePicker.value = today;
+                            endDatePicker.value = today;
+                    
+                            // Fetch live scores for the selected date range
+                            async function loadScores() {
+                                const startDate = startDatePicker.value.replace(/-/g, '/');
+                                const endDate = endDatePicker.value.replace(/-/g, '/');
+                    
+                                // Clear the output
+                                outputDiv.innerHTML = 'Fetching scores...';
+                    
+                                try {
+                                    const scoresTable = await fetch_live_score(startDate, endDate);
+                                    outputDiv.innerHTML = scoresTable;
+                                } catch (error) {
+                                    console.error('Error fetching scores:', error);
+                                    outputDiv.innerHTML = 'Error fetching scores. Please try again later.';
+                                }
+                            }
+                    
+                            // Load scores when the date range changes
+                            startDatePicker.addEventListener('change', loadScores);
+                            endDatePicker.addEventListener('change', loadScores);
+                    
+                            // Load scores when the page loads
+                            loadScores();
+                        </script>
                     </div>
                 </div>
             </div>
