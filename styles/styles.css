@@ -27,6 +27,16 @@ body {
   text-align: center;
 }
 
+.dropdown {
+  border: 1px solid;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  background-color: inherit;
+}
+
 .nav-item a:hover {
   background-color: grey;
 }

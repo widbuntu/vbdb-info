@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/styles.css">
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-            crossorigin="anonymous"></script>
+        <!-- <script -->
+            <!-- src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" -->
+            <!-- integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" -->
+            <!-- crossorigin="anonymous"></script> -->
         <title>vbdb</title>
     </head>
 
@@ -42,8 +42,117 @@
                         those who desire to gather, hoard and use for
                         themselves. Work in progress. Enjoy!
                     </div>
+                    <select class="dropdown" name="division-dropdown" id="division-dropdown">
+                        <option value="">Select Division</option>
+                        <option value="D-I">D-I</option>
+                        <option value="D-II">D-II</option>
+                        <option value="D-III">D-III</option>
+                    </select>
+                    <select class="dropdown" name="conference-dropdown" id="conference-dropdown">
+                        <option value="">Select Conference</option>
+                        <option value ="Allegheny Mountain Collegiate Conference">Allegheny Mountain Collegiate Conference</option>
+                        <option value ="America East Conference">America East Conference</option>
+                        <option value ="American Athletic Conference">American Athletic Conference</option>
+                        <option value ="American Rivers Conference">American Rivers Conference</option>
+                        <option value ="American Southwest Conference">American Southwest Conference</option>
+                        <option value ="Atlantic 10 Conference">Atlantic 10 Conference</option>
+                        <option value ="Atlantic Coast Conference">Atlantic Coast Conference</option>
+                        <option value ="Atlantic East Conference">Atlantic East Conference</option>
+                        <option value ="Atlantic Sun Conference">Atlantic Sun Conference</option>
+                        <option value ="Big 12 Conference">Big 12 Conference</option>
+                        <option value ="Big East Conference">Big East Conference</option>
+                        <option value ="Big Sky Conference">Big Sky Conference</option>
+                        <option value ="Big South Conference">Big South Conference</option>
+                        <option value ="Big Ten Conference">Big Ten Conference</option>
+                        <option value ="Big West Conference">Big West Conference</option>
+                        <option value ="California Collegiate Athletic Association">California Collegiate Athletic Association</option>
+                        <option value ="Centennial Conference">Centennial Conference</option>
+                        <option value ="Central Atlantic Collegiate Conference">Central Atlantic Collegiate Conference</option>
+                        <option value ="Central Intercollegiate Athletic Association">Central Intercollegiate Athletic Association</option>
+                        <option value ="City University of New York Athletic Conference">City University of New York Athletic Conference</option>
+                        <option value ="Coast-To-Coast Athletic Conference">Coast-To-Coast Athletic Conference</option>
+                        <option value ="Coastal Athletic Association">Coastal Athletic Association</option>
+                        <option value ="College Conference of Illinois & Wisconsin">College Conference of Illinois & Wisconsin</option>
+                        <option value ="Collegiate Conference of the South">Collegiate Conference of the South</option>
+                        <option value ="Conference Carolinas">Conference Carolinas</option>
+                        <option value ="Conference USA">Conference USA</option>
+                        <option value ="Conference of New England">Conference of New England</option>
+                        <option value ="East Coast Conference">East Coast Conference</option>
+                        <option value ="Empire 8">Empire 8</option>
+                        <option value ="Great American Conference">Great American Conference</option>
+                        <option value ="Great Lakes Intercollegiate Athletic Conference">Great Lakes Intercollegiate Athletic Conference</option>
+                        <option value ="Great Lakes Valley Conference">Great Lakes Valley Conference</option>
+                        <option value ="Great Midwest Athletic Conference">Great Midwest Athletic Conference</option>
+                        <option value ="Great Northeast Athletic Conference">Great Northeast Athletic Conference</option>
+                        <option value ="Great Northwest Athletic Conference">Great Northwest Athletic Conference</option>
+                        <option value ="Gulf South Conference">Gulf South Conference</option>
+                        <option value ="Heartland Collegiate Athletic Conference">Heartland Collegiate Athletic Conference</option>
+                        <option value ="Horizon League">Horizon League</option>
+                        <option value ="Independent">Independent</option>
+                        <option value ="Landmark Conference">Landmark Conference</option>
+                        <option value ="Liberty League">Liberty League</option>
+                        <option value ="Little East Conference">Little East Conference</option>
+                        <option value ="Lone Star Conference">Lone Star Conference</option>
+                        <option value ="Massachusetts State Collegiate Athletic Conference">Massachusetts State Collegiate Athletic Conference</option>
+                        <option value ="Metro Atlantic Athletic Conference">Metro Atlantic Athletic Conference</option>
+                        <option value ="Michigan Intercol. Ath. Assn.">Michigan Intercol. Ath. Assn.</option>
+                        <option value ="Mid-America Intercollegiate Athletics Association">Mid-America Intercollegiate Athletics Association</option>
+                        <option value ="Mid-American Conference">Mid-American Conference</option>
+                        <option value ="Mid-Eastern Athletic Conf.">Mid-Eastern Athletic Conf.</option>
+                        <option value ="Middle Atlantic Conferences">Middle Atlantic Conferences</option>
+                        <option value ="Midwest Conference">Midwest Conference</option>
+                        <option value ="Minnesota Intercollegiate Athletic Conference">Minnesota Intercollegiate Athletic Conference</option>
+                        <option value ="Missouri Valley Conference">Missouri Valley Conference</option>
+                        <option value ="Mountain East Conference">Mountain East Conference</option>
+                        <option value ="Mountain West Conference">Mountain West Conference</option>
+                        <option value ="New England Small College Athletic Conference">New England Small College Athletic Conference</option>
+                        <option value ="New England Women's and Men's Athletic Conference">New England Women's and Men's Athletic Conference</option>
+                        <option value ="New Jersey Athletic Conference">New Jersey Athletic Conference</option>
+                        <option value ="North Atlantic Conference">North Atlantic Conference</option>
+                        <option value ="North Coast Athletic Conference">North Coast Athletic Conference</option>
+                        <option value ="Northeast Conference">Northeast Conference</option>
+                        <option value ="Northeast-10 Conference">Northeast-10 Conference</option>
+                        <option value ="Northern Athletics Collegiate Conference">Northern Athletics Collegiate Conference</option>
+                        <option value ="Northern Sun Intercollegiate Conference">Northern Sun Intercollegiate Conference</option>
+                        <option value ="Northwest Conference">Northwest Conference</option>
+                        <option value ="Ohio Athletic Conference">Ohio Athletic Conference</option>
+                        <option value ="Ohio Valley Conference">Ohio Valley Conference</option>
+                        <option value ="Old Dominion Athletic Conf.">Old Dominion Athletic Conf.</option>
+                        <option value ="Pac-12 Conference">Pac-12 Conference</option>
+                        <option value ="Pacific West Conference">Pacific West Conference</option>
+                        <option value ="Patriot League">Patriot League</option>
+                        <option value ="Peach Belt Conference">Peach Belt Conference</option>
+                        <option value ="Pennsylvania State Athletic Conference">Pennsylvania State Athletic Conference</option>
+                        <option value ="Presidents' Athletic Conference">Presidents' Athletic Conference</option>
+                        <option value ="Rocky Mountain Athletic Conference">Rocky Mountain Athletic Conference</option>
+                        <option value ="Skyline Conference">Skyline Conference</option>
+                        <option value ="South Atlantic Conference">South Atlantic Conference</option>
+                        <option value ="Southeastern Conference">Southeastern Conference</option>
+                        <option value ="Southern Athletic Association">Southern Athletic Association</option>
+                        <option value ="Southern California Intercollegiate Athletic Conf.">Southern California Intercollegiate Athletic Conf.</option>
+                        <option value ="Southern Collegiate Athletic Conference">Southern Collegiate Athletic Conference</option>
+                        <option value ="Southern Conference">Southern Conference</option>
+                        <option value ="Southern Intercol. Ath. Conf.">Southern Intercol. Ath. Conf.</option>
+                        <option value ="Southland Conference">Southland Conference</option>
+                        <option value ="Southwestern Athletic Conf.">Southwestern Athletic Conf.</option>
+                        <option value ="St. Louis Intercollegiate Athletic Conference">St. Louis Intercollegiate Athletic Conference</option>
+                        <option value ="State University of New York Athletic Conference">State University of New York Athletic Conference</option>
+                        <option value ="Sun Belt Conference">Sun Belt Conference</option>
+                        <option value ="Sunshine State Conference">Sunshine State Conference</option>
+                        <option value ="The Ivy League">The Ivy League</option>
+                        <option value ="The Summit League">The Summit League</option>
+                        <option value ="USA South Athletic Conference">USA South Athletic Conference</option>
+                        <option value ="United East Conference">United East Conference</option>
+                        <option value ="University Athletic Association">University Athletic Association</option>
+                        <option value ="Upper Midwest Athletic Conference">Upper Midwest Athletic Conference</option>
+                        <option value ="West Coast Conference">West Coast Conference</option>
+                        <option value ="Western Athletic Conference">Western Athletic Conference</option>
+                        <option value ="Wisconsin Intercollegiate Athletic Conference">Wisconsin Intercollegiate Athletic Conference</option>
+
+                    </select>
                     <div class="tab-panel active" id="teams-tab-panel">
                         <h1>NCAA Teams</h1>
+
                         <script type="module">
                             import { fetchAndDisplayCSV } from './js/teams.js';
                             

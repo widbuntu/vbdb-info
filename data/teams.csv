@@ -302,7 +302,7 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Rice University","American Athletic Conference",rice.edu,riceowls.com,TX,2024-25,D-I
 "Rider University","Metro Atlantic Athletic Conference",rider.edu,gobroncs.com,NJ,2024-25,D-I
 "Robert Morris University","Horizon League",rmu.edu,rmucolonials.com,PA,2024-25,D-I
-"Rutgers The State University of New Jersey, New Brunswick","Big Ten Conference",rutgers.edu,scarletknights.com,NJ,2024-25,D-I
+"Rutgers The State University of New Jersey New Brunswick","Big Ten Conference",rutgers.edu,scarletknights.com,NJ,2024-25,D-I
 "Sacred Heart University","Metro Atlantic Athletic Conference",sacredheart.edu,sacredheartpioneers.com,CT,2024-25,D-I
 "Saint Francis University ","Northeast Conference",francis.edu,sfuathletics.com,PA,2024-25,D-I
 "St. John's University (New York)","Big East Conference",stjohns.edu,redstormsports.com,NY,2024-25,D-I
@@ -1047,14 +1047,14 @@ team_name,conference_name,school_url,school_athletic_url,state,year,division
 "Penn State Brandywine",Independent,brandywine.psu.edu,psubrandywineathletics.com/landing/index,PA,2024-25,D-III
 "Carlow University","Allegheny Mountain Collegiate Conference",carlow.edu,athletics.carlow.edu,PA,2024-25,D-III
 "Roosevelt University","Great Lakes Intercollegiate Athletic Conference",roosevelt.edu,rooseveltlakers.com,IL,2024-25,D-II
-"Mount St. Mary's University","Metro Atlantic Athletic Conference",msmary.edu,mountathletics.com,MD,2024-25,""
+"Mount St. Mary's University","Metro Atlantic Athletic Conference",msmary.edu,mountathletics.com,MD,2024-25,D-I
 "Menlo College","Pacific West Conference",menlo.edu,menloathletics.com/,CA,2024-25,D-II
-"Saint Joseph's University","Atlantic 10 Conference",sju.edu,sjuhawks.com,PA,2024-25,""
+"Saint Joseph's University","Atlantic 10 Conference",sju.edu,sjuhawks.com,PA,2024-25,D-I
 "Jessup University ","Pacific West Conference",jessup.edu,jessupathletics.com,CA,2024-25,D-II
 "Vanguard University ","Pacific West Conference",vanguard.edu,vanguardlions.com,CA,2024-25,D-II
 "University of California Merced","California Collegiate Athletic Association",ucmerced.edu,ucmercedbobcats.com,CA,2024-25,D-II
 "University of Jamestown","Northern Sun Intercollegiate Conference",uj.edu,jimmiepride.com,ND,2024-25,D-II
-"Hobart and William Smith Colleges","Liberty League",hws.edu,hwsathletics.com,NY,2024-25,""
+"Hobart and William Smith Colleges","Liberty League",hws.edu,hwsathletics.com,NY,2024-25,D-III
 "Point Park University","Mountain East Conference",pointpark.edu,pointparksports.com,PA,2024-25,D-II
-"University of Maine","America East Conference",umaine.edu,goblackbears.com,ME,2024-25,""
-"Eastern Nazarene College","North Atlantic Conference",enc.edu,enc.edu/athletics,MA,2024-25,""
+"University of Maine","America East Conference",umaine.edu,goblackbears.com,ME,2024-25,D-I
+"Eastern Nazarene College","North Atlantic Conference",enc.edu,enc.edu/athletics,MA,2024-25,D-III
