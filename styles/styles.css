@@ -1,114 +1,71 @@
-/* CSS for entire body */
 body {
+  background-color: #212529;
+  color: #f8f9fa;
   font-family: 'Hack Nerd Font', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
-
-/* CSS for the navigation bar */
-.nav-ul {
-  display: flex;
-  background-color: #333;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.nav-tabs .nav-link {
+  color: #f8f9fa;
 }
-
-.nav-item {
-  flex: 1;
+.nav-tabs .nav-link.active {
+  background-color: #343a40;
+  color: #ffffff;
+  border-color: #495057;
 }
-.nav-item a {
-  background-repeat: repeat-y;
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.dropdown {
-  border: 1px solid;
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  background-color: inherit;
-}
-
-.nav-item a:hover {
-  background-color: grey;
-}
-
-/* Tab panel styling */
 .tab-content {
+  background-color: #343a40;
+  border: 1px solid #495057;
+  border-top: none;
   padding: 20px;
-  border: 1px solid #ddd;
 }
-
-.tab-panel {
-  display: none;
+.table-responsive {
+  max-height: 500px;
+  overflow-y: auto;
 }
-
-/* Show the active tab */
-.tab-panel.active {
-  display: block;
+.table {
+  color: #f8f9fa;
 }
-
-/* Styling for the card (optional) */
-.card {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border: 1px solid #ddd;
-  margin-top: 20px;
-}
-
-.div-text {
-  padding: 20px;
-  width: 10%;
-}
-
-#calendar {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-}
-
-#calendar-body {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1px;
-  background-color: #333;
-}
-
-#calendar-body div {
-  padding: 20px;
-  background-color: #fff;
+.table th {
+  background: #333;
+  color: white;
+  padding: 6px;
+  border: 1px solid #ccc;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-
-.change-month {
-  cursor: pointer;
+.table td {
+  padding: 6px;
+  border: 1px solid #495057;
 }
-
-.div-cal {
-  padding-bottom: 4px;
-  margin-bottom: 4px;
+@media (max-width: 767px) {
+  .table-responsive {
+      max-height: none;
+  }
+  .table, .table thead, .table tbody, .table th, .table td, .table tr {
+      display: block;
+  }
+  .table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+  .table tr {
+      margin-bottom: 1rem;
+      border: 1px solid #495057;
+  }
+  .table td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+  }
+  .table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+  }
 }
-
-.tab-panel {
-  text-align: center;
-  margin: 0 auto;
-  width: fit-content;
-}
-
