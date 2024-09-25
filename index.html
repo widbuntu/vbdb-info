@@ -81,7 +81,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-12 mb-3">
-                            <select class="form-select" name="conference-schedule-dropdown" id="conference-schedule-dropdown" onchange="filterTable()">
+                            <select class="form-select" name="conference-schedule-dropdown"
+                                id="conference-schedule-dropdown" onchange="filterTable()">
                                 <option selected>Conference</option>
                                 <option value="AE">AE</option>
                                 <option value="AAC">AAC</option>
@@ -120,7 +121,7 @@
                             <select class="form-select form-select" name="teams-schedule-dropdown"
                                 id="teams-schedule-dropdown">
                                 <option selected>Shool</option>
-                                <option value="">{unique_list_from_team.csv}</option>
+                                <option value>{unique_list_from_team.csv}</option>
                             </select>
                         </div>
 
@@ -145,31 +146,13 @@
 
             <!-- Teams tab -->
             <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
-                <h2 class="text-center">NCAA D1-D3 Schools</h2>
-                <!-- Dropdown for Searchs -->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-12 mb-3">
-                            <select class="form-select form-select" name="teams-division-dropdown"
-                                id="teams-division-dropdown">
-                                <option selected>Division</option>
-                                <option value="">D-I</option>
-                                <option value="">D-II</option>
-                                <option value="">D-III</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-12 mb-3">
-                            <select class="form-select form-select" name="teams-conference-dropdown"
-                                id="teams-conference-dropdown">
-                                <option selected>Conference</option>
-                                <option value="Atlantic Sun Conference">Atlantic Sun Conference</option>
-                                <option value="Northeast Conference">Northeast Conference</option>
-                                <option value="Western Athletic Conference">Western Athletic Conference</option>
-                            </select>
-                        </div>
-                    </div>
+                <h2 class="text-center">NCAA D1 Schools</h2>
+                <div class="text-center">
+                    <a href="https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv"
+                        style="color: white; text-decoration: none;" target="_blank">
+                        <caption>https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv</caption>
+                    </a>
                 </div>
-
                 <div class="table-responsive">
                     <table id="teamsTable" class="table table-dark table-hover table-striped">
                         <thead>
@@ -216,39 +199,26 @@
         }
         // Fetch the CSV file from the GitHub raw URL
         fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv')
-            .then(response => response.text()) // Read it as plain text
+            .then(response => response.text())
             .then(csvData => {
-                const rows = csvData.split('\n'); // Split CSV into rows
-
+                const rows = csvData.split('\n');
                 const table = document.getElementById('teamsTable');
                 const tbody = table.querySelector('tbody');
 
                 // Process the rest of the rows as data
                 rows.slice(1).forEach(row => {
-                    const rowData = row.split(','); // Split each row by comma
+                    const rowData = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
                     const tr = document.createElement('tr');
 
-                    rowData.forEach((cell, index) => {
+                    rowData.forEach(cell => {
                         const cellElement = document.createElement('td');
-                        // Remove surrounding quotes from the cell data
                         cell = cell.trim().replace(/^"|"$/g, '');
-
-                        // Check if the column is School URL (index 2) or Athletics URL (index 3)
-                        if (index === 2 || index === 3) {
-                            const link = document.createElement('a');
-                            link.href = ensureProtocol(cell); // Ensure the URL has a protocol
-                            link.textContent = cell; // Set the link text
-                            link.target = '_blank'; // Open the link in a new tab
-                            link.rel = 'noopener noreferrer'; // Security best practice
-                            cellElement.appendChild(link); // Add the link to the cell
-                        } else {
-                            cellElement.textContent = cell; // Otherwise, just set the text content
-                        }
-
-                        tr.appendChild(cellElement); // Append cell to the row
+                        cellElement.textContent = cell;
+                        tr.appendChild(cellElement);
                     });
 
-                    tbody.appendChild(tr); // Add row to tbody
+                    tbody.appendChild(tr);
+                    allRows.push(tr);
                 });
             })
             .catch(error => console.error('Error loading CSV:', error))
@@ -257,8 +227,25 @@
     <!-- Script to run schedule tab -->
     <script>
 let allRows = []; // Array to hold all table rows
+let teamsData = []; // Array to hold teams data
 
-// Fetch the CSV file from the GitHub raw URL
+// Fetch the CSV file for the teams
+fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv')
+    .then(response => response.text())
+    .then(csvData => {
+        const rows = csvData.trim().split('\n');
+        // Process the CSV data to get team information
+        rows.slice(1).forEach(row => {
+            const rowData = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+            teamsData.push({
+                team_name: rowData[0].replace(/^"|"$/g, ''),
+                conference: rowData[1].replace(/^"|"$/g, '')
+            });
+        });
+    })
+    .catch(error => console.error('Error loading teams CSV:', error));
+
+// Fetch the CSV file for the schedule
 fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/test_sch.csv')
     .then(response => response.text())
     .then(csvData => {
@@ -266,7 +253,7 @@ fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data
         const table = document.getElementById('schTable');
         const tbody = table.querySelector('tbody');
 
-        // Process the rest of the rows as data
+        // Process the schedule data
         rows.slice(1).forEach(row => {
             const rowData = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
             const tr = document.createElement('tr');
@@ -282,7 +269,7 @@ fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data
             allRows.push(tr);
         });
     })
-    .catch(error => console.error('Error loading CSV:', error));
+    .catch(error => console.error('Error loading schedule CSV:', error));
 
 function filterTable() {
     const dropdown = document.getElementById('conference-schedule-dropdown');
@@ -293,22 +280,62 @@ function filterTable() {
     // Clear current rows in the tbody
     tbody.innerHTML = '';
 
-    if (selectedConference === 'Conference') {
+    if (selectedConference === 'CONFERENCE') {
         // If "Conference" is selected, display all rows
-        allRows.forEach(row => tbody.appendChild(row));
+        allRows.forEach(row => tbody.appendChild(row.cloneNode(true)));
     } else {
         // Filter and display rows based on selected conference
         allRows.forEach(row => {
             const matchCell = row.children[1].textContent; // Assuming 'match' is in the second column
             if (matchCell.includes(selectedConference)) {
-                tbody.appendChild(row); // Append row if it matches
+                tbody.appendChild(row.cloneNode(true)); // Append row if it matches
             }
         });
     }
+
+    // Update the teams dropdown based on the selected conference
+    updateTeamsDropdown(selectedConference);
 }
 
-    </script>
+function updateTeamsDropdown(selectedConference) {
+    const teamsDropdown = document.getElementById('teams-schedule-dropdown');
     
+    // Clear current options
+    teamsDropdown.innerHTML = '<option selected>School</option>';
+
+    // Filter teams based on selected conference
+    const filteredTeams = teamsData.filter(team => team.conference === selectedConference);
+    
+    // Populate teams dropdown
+    filteredTeams.forEach(team => {
+        const option = document.createElement('option');
+        option.value = team.team_name; // You can set this to whatever value you want
+        option.textContent = team.team_name; // Display the team name
+        teamsDropdown.appendChild(option);
+    });
+
+    // Add event listener to the teams dropdown to filter the schedule table by school
+    teamsDropdown.addEventListener('change', filterTableByTeam);
+}
+
+function filterTableByTeam() {
+    const dropdown = document.getElementById('teams-schedule-dropdown');
+    const selectedTeam = dropdown.value; // Get selected team name
+    const table = document.getElementById('schTable');
+    const tbody = table.querySelector('tbody');
+
+    // Clear current rows in the tbody
+    tbody.innerHTML = '';
+
+    // Filter and display rows based on selected team
+    allRows.forEach(row => {
+        const matchCell = row.children[1].textContent; // Assuming 'match' is in the second column
+        if (matchCell.includes(selectedTeam)) {
+            tbody.appendChild(row.cloneNode(true)); // Append row if it matches
+        }
+    });
+}
+        </script>
 
     <!-- Script to run live tab -->
     <script>
@@ -319,14 +346,15 @@ function filterTable() {
         async function fetchGamesData(date) {
             //const url = `https://proxy.cors.sh/https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
             //const url = `https://corsproxy.io/?https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
-            const url = `https://corsproxy.io/?https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/2024/09/21/scoreboard.json`;
+            const url =
+                `https://corsproxy.io/?https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/2024/09/21/scoreboard.json`;
             console.log("Fetching from URL:", url);
             try {
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
                 console.log("Data fetched successfully for date:", date);
-                return data.games || [];  // Return games or an empty array if none exist
+                return data.games || []; // Return games or an empty array if none exist
             } catch (error) {
                 console.error("Error fetching data for date:", date, error);
                 return [];
@@ -347,19 +375,19 @@ function filterTable() {
 
                 // Create and append date, home team, away team, and result cells
                 const dateCell = document.createElement('td');
-                dateCell.textContent = game.startDate;  // Use the appropriate date field from the data
+                dateCell.textContent = game.startDate; // Use the appropriate date field from the data
                 tr.appendChild(dateCell);
 
                 const homeTeamCell = document.createElement('td');
-                homeTeamCell.textContent = game.home.team;  // Use the appropriate home team field
+                homeTeamCell.textContent = game.home.team; // Use the appropriate home team field
                 tr.appendChild(homeTeamCell);
 
                 const awayTeamCell = document.createElement('td');
-                awayTeamCell.textContent = game.away.team;  // Use the appropriate away team field
+                awayTeamCell.textContent = game.away.team; // Use the appropriate away team field
                 tr.appendChild(awayTeamCell);
 
                 const resultCell = document.createElement('td');
-                resultCell.textContent = game.status;  // Use the appropriate result/status field
+                resultCell.textContent = game.status; // Use the appropriate result/status field
                 tr.appendChild(resultCell);
 
                 // Append the row to the tbody
