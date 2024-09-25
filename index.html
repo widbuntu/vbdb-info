@@ -74,6 +74,20 @@
             <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
                 <h2 class="text-center">Schedule Content</h2>
                 <div class="table-responsive">
+                    <table id="schTable" class="table table-dark table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Conferences</th>
+                                <th>Match</th>
+                                <th>Result</th>
+                                <th>Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- We'll fill this with rows of data from the CSV -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -165,6 +179,7 @@
                 })
                 .catch(error => console.error('Error loading CSV:', error));
         </script> -->
+
     <!-- Script to run teams tab -->
     <script>
         // Function to add http to urls
@@ -214,6 +229,37 @@
             .catch(error => console.error('Error loading CSV:', error))
     </script>
 
+    <!-- Script to run schedule tab -->
+    <script>
+        // Fetch the CSV file from the GitHub raw URL
+        fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/test_sch.csv')
+            .then(response => response.text()) // Read it as plain text
+            .then(csvData => {
+                const rows = csvData.trim().split('\n'); // Split CSV into rows and trim whitespace
+    
+                const table = document.getElementById('schTable');
+                const tbody = table.querySelector('tbody');
+    
+                // Process the rest of the rows as data
+                rows.slice(1).forEach(row => {
+                    // Split the row by commas, while handling quoted commas correctly
+                    const rowData = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+                    const tr = document.createElement('tr');
+    
+                    rowData.forEach(cell => {
+                        const cellElement = document.createElement('td');
+                        // Remove surrounding quotes from the cell data
+                        cell = cell.trim().replace(/^"|"$/g, '');
+    
+                        cellElement.textContent = cell;
+                        tr.appendChild(cellElement); // Append cell to the row
+                    });
+    
+                    tbody.appendChild(tr); // Add row to tbody
+                });
+            })
+            .catch(error => console.error('Error loading CSV:', error));
+    </script>
     <!-- Script to run live tab -->
     <script>
         // Get today's date in the required format (YYYY/MM/DD)
