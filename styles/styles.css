@@ -38,3 +38,8 @@ body {
   padding: 6px;
   border: 1px solid #495057;
 }
+
+.form-select{
+  overflow-y: auto;
+  
+}
