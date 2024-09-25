@@ -1,158 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VBDB</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/styles.css">
-    </head>
-    <body>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        <div class="container mt-5">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="vbdb-tab"
-                        data-bs-toggle="tab" data-bs-target="#vbdb"
-                        type="button" role="tab" aria-controls="vbdb"
-                        aria-selected="true">VBDB</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="live-tab" data-bs-toggle="tab"
-                        data-bs-target="#live" type="button" role="tab"
-                        aria-controls="live" aria-selected="false">Live</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="schedule-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#schedule" type="button" role="tab"
-                        aria-controls="schedule"
-                        aria-selected="false">Schedule</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="teams-tab" data-bs-toggle="tab"
-                        data-bs-target="#teams" type="button" role="tab"
-                        aria-controls="teams"
-                        aria-selected="false">Teams</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="rankings-tab"
-                        data-bs-toggle="tab" data-bs-target="#rankings"
-                        type="button" role="tab" aria-controls="rankings"
-                        aria-selected="false">Rankings</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="histories-tab"
-                        data-bs-toggle="tab" data-bs-target="#histories"
-                        type="button" role="tab" aria-controls="histories"
-                        aria-selected="false">Histories</button>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <!-- Home tab -->
-                <div class="tab-pane fade show active" id="vbdb" role="tabpanel"
-                    aria-labelledby="vbdb-tab">
-                    <h2 class="text-center">VBDB Content</h2>
-                    <p class="text-center">Welcome to VBDB! This is a project to
-                        host NCAA volleyball data openly for anyone. Enjoy!</p>
-                    <p class="text-center">Work in progress</p>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBDB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <div class="container mt-5">
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="vbdb-tab" data-bs-toggle="tab" data-bs-target="#vbdb" type="button"
+                    role="tab" aria-controls="vbdb" aria-selected="true">VBDB</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="live-tab" data-bs-toggle="tab" data-bs-target="#live" type="button"
+                    role="tab" aria-controls="live" aria-selected="false">Live</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="schedule-tab" data-bs-toggle="tab" data-bs-target="#schedule" type="button"
+                    role="tab" aria-controls="schedule" aria-selected="false">Schedule</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="teams-tab" data-bs-toggle="tab" data-bs-target="#teams" type="button"
+                    role="tab" aria-controls="teams" aria-selected="false">Teams</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button"
+                    role="tab" aria-controls="rankings" aria-selected="false">Rankings</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="histories-tab" data-bs-toggle="tab" data-bs-target="#histories"
+                    type="button" role="tab" aria-controls="histories" aria-selected="false">Histories</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+
+            <!-- Home tab -->
+            <div class="tab-pane fade show active" id="vbdb" role="tabpanel" aria-labelledby="vbdb-tab">
+                <h2 class="text-center">VBDB Content</h2>
+                <p class="text-center">Welcome to VBDB!</p>
+            </div>
+
+            <!-- Live tab -->
+            <div class="tab-pane fade" id="live" role="tabpanel" aria-labelledby="live-tab">
+                <h2 class="text-center">Live Scores</h2>
+                <div class="table-responsive">
+                    <table id="liveTable" class="table table-dark table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Home Team</th>
+                                <th>Away Team</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- We'll fill this with rows of data from the CSV -->
+                        </tbody>
+                    </table>
                 </div>
-                <!-- Live tab -->
-                <div class="tab-pane fade" id="live" role="tabpanel"
-                    aria-labelledby="live-tab">
-                    <h2 class="text-center">Live Content</h2>
-                    <div class="table-responsive">
-                    </div>
+            </div>
+
+            <!-- Schedule tab -->
+            <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                <h2 class="text-center">Schedule Content</h2>
+                <div class="table-responsive">
                 </div>
-                <!-- Schedule tab -->
-                <div class="tab-pane fade" id="schedule" role="tabpanel"
-                    aria-labelledby="schedule-tab">
-                    <h2 class="text-center">Schedule Content</h2>
-                    <div class="table-responsive">
-                        <!-- <table id="scheduleTable" class="table table-dark table-hover" >
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Home Team</th>
-                                    <th>Away Team</th>
-                                    <th>Venue</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                We'll fill this with rows of data from the CSV
-                            </tbody>
-                        </table> -->
-                    </div>
-                </div>
-                <!-- Teams tab -->
-                <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
-                    <h2 class="text-center">NCAA D1-D3 Schools</h2>
-                    <!-- Dropdown for Searchs -->
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 col-12 mb-3">
-                                <select class="form-select form-select" name="teams-division-dropdown" id="teams-division-dropdown">
-                                    <option selected>Division</option>
-                                    <option value="">D-I</option>
-                                    <option value="">D-II</option>
-                                    <option value="">D-III</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 col-12 mb-3">
-                                <select class="form-select form-select" name="teams-conference-dropdown" id="teams-conference-dropdown">
-                                    <option selected>Conference</option>
-                                    <option value="Atlantic Sun Conference">Atlantic Sun Conference</option>
-                                    <option value="Northeast Conference">Northeast Conference</option>
-                                    <option value="Western Athletic Conference">Western Athletic Conference</option>
-                                </select>
-                            </div>
+            </div>
+
+            <!-- Teams tab -->
+            <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab">
+                <h2 class="text-center">NCAA D1-D3 Schools</h2>
+                <!-- Dropdown for Searchs -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <select class="form-select form-select" name="teams-division-dropdown"
+                                id="teams-division-dropdown">
+                                <option selected>Division</option>
+                                <option value="">D-I</option>
+                                <option value="">D-II</option>
+                                <option value="">D-III</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-12 mb-3">
+                            <select class="form-select form-select" name="teams-conference-dropdown"
+                                id="teams-conference-dropdown">
+                                <option selected>Conference</option>
+                                <option value="Atlantic Sun Conference">Atlantic Sun Conference</option>
+                                <option value="Northeast Conference">Northeast Conference</option>
+                                <option value="Western Athletic Conference">Western Athletic Conference</option>
+                            </select>
                         </div>
                     </div>
-                    
-                    <div class="table-responsive">
-                        <table id="teamsTable"
-                            class="table table-dark table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Team</th>
-                                    <th>Conference</th>
-                                    <th>School URL</th>
-                                    <th>Athletics URL</th>
-                                    <th>State</th>
-                                    <th>Year</th>
-                                    <th>Division</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- We'll fill this with rows of data from the CSV -->
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-                <!-- Rankings tab -->
-                <div class="tab-pane fade" id="rankings" role="tabpanel"
-                    aria-labelledby="rankings-tab">
-                    <h2>Rankings Content</h2>
-                    <p>This is the content for the Rankings tab.</p>
-                </div>
-                <!-- Histories tab -->
-                <div class="tab-pane fade" id="histories" role="tabpanel"
-                    aria-labelledby="histories-tab">
-                    <h2>Histories Content</h2>
-                    <p>This is the content for the Histories tab.</p>
-                </div>
-                <!-- End of content -->
-            </div>
-        </div>
 
-        <!-- <script>
+                <div class="table-responsive">
+                    <table id="teamsTable" class="table table-dark table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Conference</th>
+                                <th>School URL</th>
+                                <th>Athletics URL</th>
+                                <th>State</th>
+                                <th>Year</th>
+                                <th>Division</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- We'll fill this with rows of data from the CSV -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Rankings tab -->
+            <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab">
+                <h2 class="text-center">Rankings Content</h2>
+                <p>This is the content for the Rankings tab.</p>
+            </div>
+
+            <!-- Histories tab -->
+            <div class="tab-pane fade" id="histories" role="tabpanel" aria-labelledby="histories-tab">
+                <h2 class="text-center">Histories Content</h2>
+                <p>This is the content for the Histories tab.</p>
+            </div>
+
+            <!-- End of content -->
+        </div>
+    </div>
+    <!-- <script>
             // Fetch the CSV file from the GitHub raw URL
             fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/season_schedule.csv')
                 .then(response => response.text()) // Read it as plain text
@@ -178,53 +165,115 @@
                 })
                 .catch(error => console.error('Error loading CSV:', error));
         </script> -->
-        <script>
-            // Function to add http to urls
-            function ensureProtocol(url) {
-                if (!/^https?:\/\//i.test(url)) {
-                    return 'http://' + url;
-                }
-                return url;
+    <!-- Script to run teams tab -->
+    <script>
+        // Function to add http to urls
+        function ensureProtocol(url) {
+            if (!/^https?:\/\//i.test(url)) {
+                return 'http://' + url;
             }
+            return url;
+        }
+        // Fetch the CSV file from the GitHub raw URL
+        fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv')
+            .then(response => response.text()) // Read it as plain text
+            .then(csvData => {
+                const rows = csvData.split('\n'); // Split CSV into rows
 
-            // Fetch the CSV file from the GitHub raw URL
-            fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv')
-                .then(response => response.text()) // Read it as plain text
-                .then(csvData => {
-                    const rows = csvData.split('\n'); // Split CSV into rows
-                    
-                    const table = document.getElementById('teamsTable');
-                    const tbody = table.querySelector('tbody');
-                    
-                    // Process the rest of the rows as data
-                    rows.slice(1).forEach(row => {
-                        const rowData = row.split(','); // Split each row by comma
-                        const tr = document.createElement('tr');
+                const table = document.getElementById('teamsTable');
+                const tbody = table.querySelector('tbody');
 
-                        rowData.forEach((cell, index) => {
-                            const cellElement = document.createElement('td');
-                            // Remove surrounding quotes from the cell data
-                            cell = cell.trim().replace(/^"|"$/g, '');
+                // Process the rest of the rows as data
+                rows.slice(1).forEach(row => {
+                    const rowData = row.split(','); // Split each row by comma
+                    const tr = document.createElement('tr');
 
-                            // Check if the column is School URL (index 2) or Athletics URL (index 3)
-                            if (index === 2 || index === 3) {
-                                const link = document.createElement('a');
-                                link.href = ensureProtocol(cell); // Ensure the URL has a protocol
-                                link.textContent = cell; // Set the link text
-                                link.target = '_blank'; // Open the link in a new tab
-                                link.rel = 'noopener noreferrer'; // Security best practice
-                                cellElement.appendChild(link); // Add the link to the cell
-                            } else {
-                                cellElement.textContent = cell; // Otherwise, just set the text content
-                            }
+                    rowData.forEach((cell, index) => {
+                        const cellElement = document.createElement('td');
+                        // Remove surrounding quotes from the cell data
+                        cell = cell.trim().replace(/^"|"$/g, '');
 
-                            tr.appendChild(cellElement); // Append cell to the row
-                        });
+                        // Check if the column is School URL (index 2) or Athletics URL (index 3)
+                        if (index === 2 || index === 3) {
+                            const link = document.createElement('a');
+                            link.href = ensureProtocol(cell); // Ensure the URL has a protocol
+                            link.textContent = cell; // Set the link text
+                            link.target = '_blank'; // Open the link in a new tab
+                            link.rel = 'noopener noreferrer'; // Security best practice
+                            cellElement.appendChild(link); // Add the link to the cell
+                        } else {
+                            cellElement.textContent = cell; // Otherwise, just set the text content
+                        }
 
-                        tbody.appendChild(tr); // Add row to tbody
+                        tr.appendChild(cellElement); // Append cell to the row
                     });
-                })
-                .catch(error => console.error('Error loading CSV:', error))
-        </script>
-    </body>
+
+                    tbody.appendChild(tr); // Add row to tbody
+                });
+            })
+            .catch(error => console.error('Error loading CSV:', error))
+    </script>
+
+    <!-- Script to run live tab -->
+    <script>
+        // Get today's date in the required format (YYYY/MM/DD)
+        let date = new Date().toISOString().split('T')[0].replace(/-/g, '/');
+
+        // Fetch data for the given date
+        async function fetchGamesData(date) {
+            //const url = `https://proxy.cors.sh/https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
+            const url = `https://proxy.cors.sh/https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/2024/09/21/scoreboard.json`;
+            console.log("Fetching from URL:", url);
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                console.log("Data fetched successfully for date:", date);
+                return data.games || [];  // Return games or an empty array if none exist
+            } catch (error) {
+                console.error("Error fetching data for date:", date, error);
+                return [];
+            }
+        }
+
+        // Function to populate the table with data
+        function populateTable(games) {
+            const table = document.getElementById('liveTable');
+            const tbody = table.querySelector('tbody');
+
+            // Clear any existing rows in the table body
+            tbody.innerHTML = '';
+
+            // Loop through each game and create a new row
+            games.forEach(game => {
+                const tr = document.createElement('tr');
+
+                // Create and append date, home team, away team, and result cells
+                const dateCell = document.createElement('td');
+                dateCell.textContent = game.startDate;  // Use the appropriate date field from the data
+                tr.appendChild(dateCell);
+
+                const homeTeamCell = document.createElement('td');
+                homeTeamCell.textContent = game.home.team;  // Use the appropriate home team field
+                tr.appendChild(homeTeamCell);
+
+                const awayTeamCell = document.createElement('td');
+                awayTeamCell.textContent = game.away.team;  // Use the appropriate away team field
+                tr.appendChild(awayTeamCell);
+
+                const resultCell = document.createElement('td');
+                resultCell.textContent = game.status;  // Use the appropriate result/status field
+                tr.appendChild(resultCell);
+
+                // Append the row to the tbody
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Fetch the data and populate the table
+        fetchGamesData(date).then(games => populateTable(games));
+    </script>
+
+</body>
+
 </html>
