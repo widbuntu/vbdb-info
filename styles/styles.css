@@ -23,6 +23,7 @@ body {
 }
 .table {
   color: #f8f9fa;
+  table-layout: auto;
 }
 .table th {
   background: #333;
@@ -33,15 +34,14 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
+  white-space: nowrap;
 }
 .table td {
   padding: 6px;
+  white-space: nowrap;
   border: 1px solid #495057;
 }
 
 .form-select {
   overflow-y: auto;
-}
-#schTable th, #schTable td {
-  white-space: nowrap;
 }
