@@ -189,61 +189,89 @@
 // Global variables
 let allRows = [];
 let conferenceToTeams = new Map();
-
-function ensureProtocol(url) {
-    if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        return 'https://' + url;
-    }
-    return url;
-}
+let conferenceAbbreviations = new Map();
 
 // Fetch teams data
-fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams.csv')
+fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/main/data/teams2.csv')
     .then(response => response.text())
     .then(csvData => {
-        const rows = csvData.split('\n');
+        const rows = csvData.trim().split('\n');
         const table = document.getElementById('teamsTable');
         const tbody = table.querySelector('tbody');
         const conferenceDropdown = document.getElementById('conference-schedule-dropdown');
 
-        rows.slice(1).forEach(row => {
-            const rowData = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-            if (!rowData || rowData.length < 5) return;
+        // Clear existing options in conference dropdown
+        conferenceDropdown.innerHTML = '<option selected>Conference</option>';
 
-            const teamName = rowData[0].trim().replace(/^"|"$/g, '');
-            const conferenceShort = rowData[1].trim().replace(/^"|"$/g, '');
+        rows.slice(1).forEach(row => {
+            const [team, conference] = row.split(',').map(item => item.trim());
 
             // Populate conferenceToTeams map
-            if (!conferenceToTeams.has(conferenceShort)) {
-                conferenceToTeams.set(conferenceShort, []);
+            if (!conferenceToTeams.has(conference)) {
+                conferenceToTeams.set(conference, []);
+                
+                // Add conference to dropdown
+                const option = document.createElement('option');
+                option.value = conference;
+                option.textContent = conference;
+                conferenceDropdown.appendChild(option);
             }
-            conferenceToTeams.get(conferenceShort).push(teamName);
+            conferenceToTeams.get(conference).push(team);
 
+            // Create table row
             const tr = document.createElement('tr');
-            rowData.forEach((cell, index) => {
+            [team, conference].forEach(cell => {
                 const cellElement = document.createElement('td');
-                cell = cell.trim().replace(/^"|"$/g, '');
-                if (index === 2) {
-                    cellElement.innerHTML = `<a href="${ensureProtocol(cell)}" target="_blank">${cell}</a>`;
-                } else {
-                    cellElement.textContent = cell;
-                }
+                cellElement.textContent = cell;
                 tr.appendChild(cellElement);
             });
             tbody.appendChild(tr);
         });
 
-        // Populate conference dropdown
-        conferenceToTeams.forEach((teams, conference) => {
-            const option = document.createElement('option');
-            option.value = conference;
-            option.textContent = conference;
-            conferenceDropdown.appendChild(option);
-        });
+        // Sort conferences in the dropdown
+        Array.from(conferenceDropdown.options)
+            .slice(1) // Skip the "Conference" option
+            .sort((a, b) => a.text.localeCompare(b.text))
+            .forEach(option => conferenceDropdown.add(option));
+
+        // Create conference abbreviations map
+        conferenceAbbreviations = new Map([
+            ['America East Conference', 'AE'],
+            ['American Athletic Conference', 'AAC'],
+            ['Atlantic 10 Conference', 'A-10'],
+            ['Atlantic Coast Conference', 'ACC'],
+            ['ASUN Conference', 'ASUN'],
+            ['Big 12 Conference', 'Big 12'],
+            ['Big East Conference', 'BE'],
+            ['Big Sky Conference', 'BSC'],
+            ['Big Ten Conference', 'Big Ten'],
+            ['Big West Conference', 'BWC'],
+            ['Colonial Athletic Association', 'CAA'],
+            ['Conference USA', 'C-USA'],
+            ['Horizon League', 'HL'],
+            ['Ivy League', 'Ivy'],
+            ['Metro Atlantic Athletic Conference', 'MAAC'],
+            ['Mid-American Conference', 'MAC'],
+            ['Mid-Eastern Athletic Conference', 'MEAC'],
+            ['Missouri Valley Conference', 'MVC'],
+            ['Mountain West Conference', 'MW'],
+            ['Northeast Conference', 'NEC'],
+            ['Ohio Valley Conference', 'OVC'],
+            ['Pac-12 Conference', 'Pac-12'],
+            ['Patriot League', 'PL'],
+            ['Southeastern Conference', 'SEC'],
+            ['Southern Conference', 'SoCon'],
+            ['Southland Conference', 'SLC'],
+            ['Southwestern Athletic Conference', 'SWAC'],
+            ['Sun Belt Conference', 'SBC'],
+            ['The Summit League', 'Summit'],
+            ['West Coast Conference', 'WCC'],
+            ['Western Athletic Conference', 'WAC']
+        ]);
     })
     .catch(error => console.error('Error loading teams CSV:', error));
 
-// Fetch schedule data
+// Fetch schedule data (unchanged)
 fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/test_sch.csv')
     .then(response => response.text())
     .then(csvData => {
@@ -277,7 +305,7 @@ function filterTable() {
     teamDropdown.innerHTML = '<option selected>School</option>';
     if (selectedConference !== 'Conference') {
         const teams = conferenceToTeams.get(selectedConference) || [];
-        teams.forEach(team => {
+        teams.sort().forEach(team => {
             const option = document.createElement('option');
             option.value = team;
             option.textContent = team;
@@ -289,16 +317,17 @@ function filterTable() {
     if (selectedConference === 'Conference') {
         allRows.forEach(row => tbody.appendChild(row.cloneNode(true)));
     } else {
+        const conferenceAbbr = conferenceAbbreviations.get(selectedConference) || selectedConference;
         allRows.forEach(row => {
             const matchCell = row.children[1].textContent;
-            if (matchCell.includes(selectedConference)) {
+            if (matchCell.includes(conferenceAbbr)) {
                 tbody.appendChild(row.cloneNode(true));
             }
         });
     }
 }
 
-// Add event listener for team dropdown
+// Add event listener for team dropdown (unchanged)
 document.getElementById('teams-schedule-dropdown').addEventListener('change', function() {
     const selectedTeam = this.value.trim();
     const tbody = document.getElementById('schTable').querySelector('tbody');

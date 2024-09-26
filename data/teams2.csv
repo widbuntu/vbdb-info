@@ -1,20 +1,20 @@
-team,conference
-A&M-Corpus Christi,Southland
+team,conference_short
+A&M-Corpus Christi,SLC
 Abilene Christian,WAC
-Air Force,Mountain West
+Air Force,MW
 Akron,MAC
 Alabama,SEC
 Alabama A&M,SWAC
 Alabama St.,SWAC
 Alcorn,SWAC
-American,Patriot
-App State,Sun Belt
+American,PL
+App State,SBC
 Arizona,Big 12
 Arizona St.,Big 12
 Ark.-Pine Bluff,SWAC
 Arkansas,SEC
-Arkansas St.,Sun Belt
-Army West Point,Patriot
+Arkansas St.,SBC
+Army West Point,PL
 Auburn,SEC
 Austin Peay,ASUN
 BYU,Big 12
@@ -23,21 +23,21 @@ Baylor,Big 12
 Bellarmine,ASUN
 Belmont,MVC
 Bethune-Cookman,SWAC
-Binghamton,America East
-Boise St.,Mountain West
+Binghamton,AE
+Boise St.,MW
 Boston College,ACC
 Bowie St.,CIAA
 Bowling Green,MAC
 Bradley,MVC
-Brown,Ivy League
-Bryant,America East
-Bucknell,Patriot
+Brown,Ivy
+Bryant,AE
+Bucknell,PL
 Buffalo,MAC
-Butler,Big East
-CSU Bakersfield,Big West
-CSUN,Big West
-Cal Poly,Big West
-Cal St. Fullerton,Big West
+Butler,BE
+CSU Bakersfield,BWC
+CSUN,BWC
+Cal Poly,BWC
+Cal St. Fullerton,BWC
 California,ACC
 California Baptist,WAC
 Campbell,CAA
@@ -45,75 +45,75 @@ Canisius,MAAC
 Central Ark.,ASUN
 Central Conn. St.,NEC
 Central Mich.,MAC
-Charleston So.,Big South
+Charleston So.,BSC
 Charlotte,AAC
 Chattanooga,SoCon
 Chicago St.,NEC
 Cincinnati,Big 12
 Clemson,ACC
-Cleveland St.,Horizon
-Coastal Carolina,Sun Belt
+Cleveland St.,HL
+Coastal Carolina,SBC
 Col. of Charleston,CAA
-Colgate,Patriot
+Colgate,PL
 Colorado,Big 12
-Colorado St.,Mountain West
-Columbia,Ivy League
+Colorado St.,MW
+Columbia,Ivy
 Coppin St.,MEAC
-Cornell,Ivy League
-Creighton,Big East
-Dartmouth,Ivy League
-Davidson,Atlantic 10
-Dayton,Atlantic 10
-DePaul,Big East
+Cornell,Ivy
+Creighton,BE
+Dartmouth,Ivy
+Davidson,A-10
+Dayton,A-10
+DePaul,BE
 Delaware,CAA
 Delaware St.,MEAC
-Denver,Summit League
+Denver,Summit
 Drake,MVC
 Duke,ACC
-Duquesne,Atlantic 10
+Duquesne,A-10
 ETSU,SoCon
 East Carolina,AAC
 Eastern Ill.,OVC
 Eastern Ky.,ASUN
 Eastern Mich.,MAC
-Eastern Wash.,Big Sky
+Eastern Wash.,BSC
 Elon,CAA
 Evansville,MVC
 FDU,NEC
 FGCU,ASUN
-FIU,CUSA
+FIU,C-USA
 Fairfield,MAAC
 Fla. Atlantic,AAC
 Florida,SEC
 Florida A&M,SWAC
 Florida St.,ACC
-Fordham,Atlantic 10
-Fresno St.,Mountain West
+Fordham,A-10
+Fresno St.,MW
 Furman,SoCon
-Ga. Southern,Sun Belt
-Gardner-Webb,Big South
-George Mason,Atlantic 10
-George Washington,Atlantic 10
-Georgetown,Big East
+Ga. Southern,SBC
+Gardner-Webb,BSC
+George Mason,A-10
+George Washington,A-10
+Georgetown,BE
 Georgia,SEC
-Georgia St.,Sun Belt
+Georgia St.,SBC
 Georgia Tech,ACC
 Gonzaga,WCC
 Grambling,SWAC
 Grand Canyon,WAC
-Green Bay,Horizon
+Green Bay,HL
 Hampton,CAA
-Harvard,Ivy League
-Hawaii,Big West
-High Point,Big South
+Harvard,Ivy
+Hawaii,BWC
+High Point,BSC
 Hofstra,CAA
-Holy Cross,Patriot
+Holy Cross,PL
 Houston,Big 12
-Houston Christian,Southland
+Houston Christian,SLC
 Howard,MEAC
-IU Indy,Horizon
-Idaho,Big Sky
-Idaho St.,Big Sky
+IU Indy,HL
+Idaho,BSC
+Idaho St.,BSC
 Illinois,Big Ten
 Illinois St.,MVC
 Indiana,Big Ten
@@ -123,37 +123,37 @@ Iowa,Big Ten
 Iowa St.,Big 12
 Jackson St.,SWAC
 Jacksonville,ASUN
-Jacksonville St.,CUSA
-James Madison,Sun Belt
+Jacksonville St.,C-USA
+James Madison,SBC
 Kansas,Big 12
-Kansas City,Summit League
+Kansas City,Summit
 Kansas St.,Big 12
-Kennesaw St.,CUSA
+Kennesaw St.,C-USA
 Kent St.,MAC
 Kentucky,SEC
 LIU,NEC
 LMU (CA),WCC
 LSU,SEC
-Lafayette,Patriot
-Lamar University,Southland
+Lafayette,PL
+Lamar University,SLC
 Le Moyne,NEC
-Lehigh,Patriot
-Liberty,CUSA
+Lehigh,PL
+Liberty,C-USA
 Lindenwood,OVC
 Lipscomb,ASUN
 Little Rock,OVC
-Long Beach St.,Big West
-Louisiana,Sun Belt
-Louisiana Tech,CUSA
+Long Beach St.,BWC
+Louisiana,SBC
+Louisiana Tech,C-USA
 Louisville,ACC
-Loyola Chicago,Atlantic 10
-Loyola Maryland,Patriot
+Loyola Chicago,A-10
+Loyola Maryland,PL
 Manhattan,MAAC
 Marist,MAAC
-Marquette,Big East
-Marshall,Sun Belt
+Marquette,BE
+Marshall,SBC
 Maryland,Big Ten
-McNeese,Southland
+McNeese,SLC
 Memphis,AAC
 Mercer,SoCon
 Mercyhurst,NEC
@@ -162,15 +162,15 @@ Miami (FL),ACC
 Miami (OH),MAC
 Michigan,Big Ten
 Michigan St.,Big Ten
-Middle Tenn.,CUSA
-Milwaukee,Horizon
+Middle Tenn.,C-USA
+Milwaukee,HL
 Minnesota,Big Ten
 Mississippi St.,SEC
 Mississippi Val.,SWAC
 Missouri,SEC
 Missouri St.,MVC
-Montana,Big Sky
-Montana St.,Big Sky
+Montana,BSC
+Montana St.,BSC
 Morehead St.,OVC
 Morgan St.,MEAC
 Murray St.,MVC
@@ -178,96 +178,97 @@ N.C. A&T,CAA
 N.C. Central,MEAC
 NC State,ACC
 NIU,MAC
-NJIT,America East
-Navy,Patriot
+NJIT,AE
+Navy,PL
 Nebraska,Big Ten
-Nevada,Mountain West
-New Hampshire,America East
-New Mexico,Mountain West
-New Mexico St.,CUSA
-New Orleans,Southland
+Nevada,MW
+New Hampshire,AE
+New Mexico,MW
+New Mexico St.,C-USA
+New Orleans,SLC
 Niagara,MAAC
-Nicholls,Southland
+Nicholls,SLC
 Norfolk St.,MEAC
 North Ala.,ASUN
 North Carolina,ACC
-North Dakota,Summit League
-North Dakota St.,Summit League
+North Dakota,Summit
+North Dakota St.,Summit
 North Florida,ASUN
 North Texas,AAC
 Northeastern,CAA
-Northern Ariz.,Big Sky
-Northern Colo.,Big Sky
-Northern Ky.,Horizon
+Northern Ariz.,BSC
+Northern Colo.,BSC
+Northern Ky.,HL
 Northwestern,Big Ten
-Northwestern St.,Southland
+Northwestern St.,SLC
 Notre Dame,ACC
-Oakland,Horizon
+Oakland,HL
 Ohio,MAC
 Ohio St.,Big Ten
 Oklahoma,SEC
-Old Dominion,Sun Belt
+Old Dominion,SBC
 Ole Miss,SEC
-Omaha,Summit League
-Oral Roberts,Summit League
+Omaha,Summit
+Oral Roberts,Summit
 Oregon,Big Ten
-Oregon St.,WCC
+Oregon St.,Pac-12
+P.R.-Rio Piedras,IND
 Pacific,WCC
-Penn,Ivy League
+Penn,Ivy
 Penn St.,Big Ten
 Pepperdine,WCC
 Pittsburgh,ACC
 Portland,WCC
-Portland St.,Big Sky
+Portland St.,BSC
 Prairie View,SWAC
-Presbyterian,Big South
-Princeton,Ivy League
-Providence,Big East
+Presbyterian,BSC
+Princeton,Ivy
+Providence,BE
 Purdue,Big Ten
-Purdue Fort Wayne,Horizon
+Purdue Fort Wayne,HL
 Queens (NC),ASUN
 Quinnipiac,MAAC
-Radford,Big South
-Rhode Island,Atlantic 10
+Radford,BSC
+Rhode Island,A-10
 Rice,AAC
 Rider,MAAC
-Robert Morris,Horizon
+Robert Morris,HL
 Rutgers,Big Ten
-SFA,Southland
+SFA,SLC
 SIUE,OVC
 SMU,ACC
-Sacramento St.,Big Sky
+Sacramento St.,BSC
 Sacred Heart,MAAC
 Saint Francis,NEC
-Saint Louis,Atlantic 10
+Saint Louis,A-10
 Saint Mary's (CA),WCC
 Saint Peter's,MAAC
-Sam Houston,CUSA
+Sam Houston,C-USA
 Samford,SoCon
 San Diego,WCC
-San Diego St.,Mountain West
+San Diego St.,MW
 San Francisco,WCC
-San Jose St.,Mountain West
+San Jose St.,MW
 Santa Clara,WCC
 Seattle U,WAC
-Seton Hall,Big East
+Seton Hall,BE
 Siena,MAAC
-South Alabama,Sun Belt
+South Alabama,SBC
 South Carolina,SEC
 South Carolina St.,MEAC
-South Dakota,Summit League
-South Dakota St.,Summit League
+South Dakota,Summit
+South Dakota St.,Summit
 South Fla.,AAC
 Southeast Mo. St.,OVC
-Southeastern La.,Southland
+Southeastern La.,SLC
 Southern California,Big Ten
 Southern Ill.,MVC
 Southern Ind.,OVC
-Southern Miss.,Sun Belt
+Southern Miss.,SBC
 Southern U.,SWAC
 Southern Utah,WAC
-St. John's (NY),Big East
-St. Thomas (MN),Summit League
+St. John's (NY),BE
+St. Thomas (MN),Summit
 Stanford,ACC
 Stetson,ASUN
 Stonehill,NEC
@@ -279,70 +280,70 @@ Temple,AAC
 Tennessee,SEC
 Tennessee St.,OVC
 Tennessee Tech,OVC
-Tex. A&M-Commerce,Southland
+Tex. A&M-Commerce,SLC
 Texas,SEC
 Texas A&M,SEC
 Texas Southern,SWAC
-Texas St.,Sun Belt
+Texas St.,SBC
 Texas Tech,Big 12
 The Citadel,SoCon
 Toledo,MAC
 Towson,CAA
-Troy,Sun Belt
+Troy,SBC
 Tulane,AAC
 Tulsa,AAC
 UAB,AAC
-UAlbany,America East
-UC Davis,Big West
-UC Irvine,Big West
-UC Riverside,Big West
-UC San Diego,Big West
-UC Santa Barbara,Big West
+UAlbany,AE
+UC Davis,BWC
+UC Irvine,BWC
+UC Riverside,BWC
+UC San Diego,BWC
+UC Santa Barbara,BWC
 UCF,Big 12
 UCLA,Big Ten
-UConn,Big East
+UConn,BE
 UIC,MVC
-UIW,Southland
-ULM,Sun Belt
-UMBC,America East
+UIW,SLC
+ULM,SBC
+UMBC,AE
 UMES,MEAC
-UNC Asheville,Big South
+UNC Asheville,BSC
 UNC Greensboro,SoCon
 UNCW,CAA
 UNI,MVC
-UNLV,Mountain West
-USC Upstate,Big South
+UNLV,MW
+USC Upstate,BSC
 UT Arlington,WAC
 UT Martin,OVC
-UTEP,CUSA
-UTRGV,Southland
+UTEP,C-USA
+UTRGV,SLC
 UTSA,AAC
 Utah,Big 12
-Utah St.,Mountain West
+Utah St.,MW
 Utah Tech,WAC
 Utah Valley,WAC
-VCU,Atlantic 10
+VCU,A-10
 Valparaiso,MVC
-Villanova,Big East
+Villanova,BE
 Virginia,ACC
 Virginia Tech,ACC
 Wake Forest,ACC
 Washington,Big Ten
-Washington St.,WCC
-Weber St.,Big Sky
+Washington St.,Pac-12
+Weber St.,BSC
 West Ga.,ASUN
 West Virginia,Big 12
 Western Caro.,SoCon
 Western Ill.,OVC
-Western Ky.,CUSA
+Western Ky.,C-USA
 Western Mich.,MAC
 Wichita St.,AAC
 William & Mary,CAA
-Winthrop,Big South
+Winthrop,BSC
 Wisconsin,Big Ten
 Wofford,SoCon
-Wright St.,Horizon
-Wyoming,Mountain West
-Xavier,Big East
-Yale,Ivy League
-Youngstown St.,Horizon
+Wright St.,HL
+Wyoming,MW
+Xavier,BE
+Yale,Ivy
+Youngstown St.,HL
