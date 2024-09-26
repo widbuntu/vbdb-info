@@ -37,10 +37,6 @@
                 <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button"
                     role="tab" aria-controls="rankings" aria-selected="false">Rankings</button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="histories-tab" data-bs-toggle="tab" data-bs-target="#histories"
-                    type="button" role="tab" aria-controls="histories" aria-selected="false">Histories</button>
-            </li>
         </ul>
         <!-- Main Div for tabs content -->
         <div class="tab-content" id="myTabContent">
@@ -79,38 +75,6 @@
                         <div class="col-md-6 col-12 mb-3">
                             <select class="form-select" name="conference-schedule-dropdown"
                                 id="conference-schedule-dropdown" onchange="filterTable()">
-                                <option selected>Conference</option>
-                                <option value="AE">AE</option>
-                                <option value="AAC">AAC</option>
-                                <option value="A-10">A-10</option>
-                                <option value="ACC">ACC</option>
-                                <option value="ASUN">ASUN</option>
-                                <option value="Big 12">Big 12</option>
-                                <option value="BE">BE</option>
-                                <option value="BSC">BSC</option>
-                                <option value="Big Ten">Big Ten</option>
-                                <option value="BWC">BWC</option>
-                                <option value="CAA">CAA</option>
-                                <option value="C-USA">C-USA</option>
-                                <option value="HL">HL</option>
-                                <option value="MAAC">MAAC</option>
-                                <option value="MAC">MAC</option>
-                                <option value="MEAC">MEAC</option>
-                                <option value="MVC">MVC</option>
-                                <option value="MW">MW</option>
-                                <option value="NEC">NEC</option>
-                                <option value="OVC">OVC</option>
-                                <option value="Pac-12">Pac-12</option>
-                                <option value="PL">PL</option>
-                                <option value="SEC">SEC</option>
-                                <option value="SoCon">SoCon</option>
-                                <option value="SLC">SLC</option>
-                                <option value="SWAC">SWAC</option>
-                                <option value="SBC">SBC</option>
-                                <option value="Ivy">Ivy</option>
-                                <option value="Summit">Summit</option>
-                                <option value="WCC">WCC</option>
-                                <option value="WAC">WAC</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-12 mb-3">
@@ -120,7 +84,6 @@
                                 <option value></option>
                             </select>
                         </div>
-
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -134,7 +97,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- We'll fill this with rows of data from the CSV -->
+                            <!-- Fill this with rows of data from the CSV -->
                         </tbody>
                     </table>
                 </div>
@@ -161,7 +124,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- We'll fill this with rows of data from the CSV -->
+                            <!-- Fill this with rows of data from the CSV -->
                         </tbody>
                     </table>
                 </div>
@@ -173,17 +136,12 @@
                 <p>This is the content for the Rankings tab.</p>
             </div>
 
-            <!-- Histories tab -->
-            <div class="tab-pane fade" id="histories" role="tabpanel" aria-labelledby="histories-tab">
-                <h2 class="text-center">Histories Content</h2>
-                <p>This is the content for the Histories tab.</p>
-            </div>
-
             <!-- End of content -->
         </div>
     </div>
 
     <!-- Scripts -->
+    <!--  -->
     <!-- Script to run schedule tab -->
     <script>
         // Global variables
@@ -218,14 +176,6 @@
                     }
                     conferenceToTeams.get(conference).push(team);
 
-                    // Create table row
-                    //const tr = document.createElement('tr');
-                    //[team, conference].forEach(cell => {
-                    //    const cellElement = document.createElement('td');
-                    //    cellElement.textContent = cell;
-                    //    tr.appendChild(cellElement);
-                    //});
-                    //tbody.appendChild(tr);
                 });
 
                 // Sort conferences in the dropdown
@@ -233,41 +183,6 @@
                     .slice(1) // Skip the "Conference" option
                     .sort((a, b) => a.text.localeCompare(b.text))
                     .forEach(option => conferenceDropdown.add(option));
-
-                // Create conference abbreviations map
-                conferenceAbbreviations = new Map([
-                    ['America East Conference', 'AE'],
-                    ['American Athletic Conference', 'AAC'],
-                    ['Atlantic 10 Conference', 'A-10'],
-                    ['Atlantic Coast Conference', 'ACC'],
-                    ['ASUN Conference', 'ASUN'],
-                    ['Big 12 Conference', 'Big 12'],
-                    ['Big East Conference', 'BE'],
-                    ['Big Sky Conference', 'BSC'],
-                    ['Big Ten Conference', 'Big Ten'],
-                    ['Big West Conference', 'BWC'],
-                    ['Colonial Athletic Association', 'CAA'],
-                    ['Conference USA', 'C-USA'],
-                    ['Horizon League', 'HL'],
-                    ['Ivy League', 'Ivy'],
-                    ['Metro Atlantic Athletic Conference', 'MAAC'],
-                    ['Mid-American Conference', 'MAC'],
-                    ['Mid-Eastern Athletic Conference', 'MEAC'],
-                    ['Missouri Valley Conference', 'MVC'],
-                    ['Mountain West Conference', 'MW'],
-                    ['Northeast Conference', 'NEC'],
-                    ['Ohio Valley Conference', 'OVC'],
-                    ['Pac-12 Conference', 'Pac-12'],
-                    ['Patriot League', 'PL'],
-                    ['Southeastern Conference', 'SEC'],
-                    ['Southern Conference', 'SoCon'],
-                    ['Southland Conference', 'SLC'],
-                    ['Southwestern Athletic Conference', 'SWAC'],
-                    ['Sun Belt Conference', 'SBC'],
-                    ['The Summit League', 'Summit'],
-                    ['West Coast Conference', 'WCC'],
-                    ['Western Athletic Conference', 'WAC']
-                ]);
             })
             .catch(error => console.error('Error loading teams CSV:', error));
 
@@ -392,7 +307,6 @@
             })
             .catch(error => console.error('Error loading CSV:', error));
     </script>
-
 
     <!-- Script to run live tab -->
     <script>
