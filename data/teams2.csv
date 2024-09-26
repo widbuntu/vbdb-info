@@ -1,349 +1,349 @@
-,team_id,conference_short,conference_name,team_name,division,team_short
-0,2,WAC,Western Athletic Conference,Abilene Christian University,D-I,Abilene Christian
-1,5,MAC,Mid-American Conference,University of Akron,D-I,Akron
-2,6,SWAC,Southwestern Athletic Conf.,Alabama A&M University,D-I,Alabama A&M
-3,7,SWAC,Southwestern Athletic Conf.,Alabama State University,D-I,Alabama St.
-4,8,SEC,Southeastern Conference,University of Alabama,D-I,Alabama
-5,9,AAC,American Athletic Conference,University of Alabama at Birmingham,D-I,UAB
-6,14,AE,America East Conference,University at Albany,D-I,UAlbany
-7,17,SWAC,Southwestern Athletic Conf.,Alcorn State University,D-I,Alcorn
-8,23,PL,Patriot League,American University,D-I,American
-9,27,SBC,Sun Belt Conference,Appalachian State University,D-I,App State
-10,28,Big 12,Big 12 Conference,Arizona State University,D-I,Arizona St.
-11,29,Big 12,Big 12 Conference,University of Arizona,D-I,Arizona
-12,30,SBC,Sun Belt Conference,Arkansas State University,D-I,Arkansas St.
-13,31,SEC,Southeastern Conference,"University of Arkansas, Fayetteville",D-I,Arkansas
-14,32,OVC,Ohio Valley Conference,University of Arkansas at Little Rock,D-I,Little Rock
-15,37,SEC,Southeastern Conference,Auburn University,D-I,Auburn
-16,43,ASUN,Atlantic Sun Conference,Austin Peay State University,D-I,Austin Peay
-17,47,MAC,Mid-American Conference,Ball State University,D-I,Ball St.
-18,48,BSC,Big South Conference,Charleston Southern University,D-I,Charleston So.
-19,51,Big 12,Big 12 Conference,Baylor University,D-I,Baylor
-20,52,ASUN,Atlantic Sun Conference,Bellarmine University,D-I,Bellarmine
-21,61,SWAC,Southwestern Athletic Conf.,Bethune-Cookman University,D-I,Bethune-Cookman
-22,62,AE,America East Conference,Binghamton University,D-I,Binghamton
-23,66,MW,Mountain West Conference,Boise State University,D-I,Boise St.
-24,67,ACC,Atlantic Coast Conference,Boston College,D-I,Boston College
-25,70,,,,,Bowie St.
-26,71,MAC,Mid-American Conference,Bowling Green State University,D-I,Bowling Green
-27,72,MVC,Missouri Valley Conference,Bradley University,D-I,Bradley
-28,77,Big 12,Big 12 Conference,Brigham Young University,D-I,BYU
-29,80,Ivy,The Ivy League,Brown University,D-I,Brown
-30,81,AE,America East Conference,Bryant University,D-I,Bryant
-31,83,PL,Patriot League,Bucknell University,D-I,Bucknell
-32,86,MAC,Mid-American Conference,"University at Buffalo, the State University of New York",D-I,Buffalo
-33,87,BE,Big East Conference,Butler University,D-I,Butler
-34,90,BWC,Big West Conference,California Polytechnic State University,D-I,Cal Poly
-35,94,BWC,Big West Conference,"California State University, Bakersfield",D-I,CSU Bakersfield
-36,96,MW,Mountain West Conference,"California State University, Fresno",D-I,Fresno St.
-37,97,BWC,Big West Conference,"California State University, Fullerton",D-I,Cal St. Fullerton
-38,99,BWC,Big West Conference,Long Beach State University,D-I,Long Beach St.
-39,101,BWC,Big West Conference,"California State University, Northridge",D-I,CSUN
-40,102,BSC,Big Sky Conference,"California State University, Sacramento",D-I,Sacramento St.
-41,104,BWC,Big West Conference,"University of California, Santa Barbara",D-I,UC Santa Barbara
-42,107,ACC,Atlantic Coast Conference,"University of California, Berkeley",D-I,California
-43,108,BWC,Big West Conference,"University of California, Davis",D-I,UC Davis
-44,109,BWC,Big West Conference,"University of California, Irvine",D-I,UC Irvine
-45,110,Big Ten,Big Ten Conference,"University of California, Los Angeles",D-I,UCLA
-46,111,BWC,Big West Conference,"University of California, Riverside",D-I,UC Riverside
-47,112,BWC,Big West Conference,"University of California, San Diego",D-I,UC San Diego
-48,115,CAA,Coastal Athletic Association,Campbell University,D-I,Campbell
-49,116,MAAC,Metro Atlantic Athletic Conference,Canisius University,D-I,Canisius
-50,127,NEC,Northeast Conference,Central Connecticut State University,D-I,Central Conn. St.
-51,128,Big 12,Big 12 Conference,University of Central Florida,D-I,UCF
-52,129,MAC,Mid-American Conference,Central Michigan University,D-I,Central Mich.
-53,136,NEC,Northeast Conference,Chicago State University,D-I,Chicago St.
-54,140,Big 12,Big 12 Conference,University of Cincinnati,D-I,Cincinnati
-55,141,SoCon,Southern Conference,The Citadel,D-I,The Citadel
-56,147,ACC,Atlantic Coast Conference,Clemson University,D-I,Clemson
-57,148,HL,Horizon League,Cleveland State University,D-I,Cleveland St.
-58,149,SBC,Sun Belt Conference,Coastal Carolina University,D-I,Coastal Carolina
-59,153,PL,Patriot League,Colgate University,D-I,Colgate
-60,156,MW,Mountain West Conference,Colorado State University,D-I,Colorado St.
-61,157,Big 12,Big 12 Conference,"University of Colorado, Boulder",D-I,Colorado
-62,158,Ivy,The Ivy League,Columbia University-Barnard College,D-I,Columbia
-63,164,BE,Big East Conference,University of Connecticut,D-I,UConn
-64,165,MEAC,Mid-Eastern Athletic Conf.,Coppin State University,D-I,Coppin St.
-65,167,Ivy,The Ivy League,Cornell University,D-I,Cornell
-66,169,BE,Big East Conference,Creighton University,D-I,Creighton
-67,172,Ivy,The Ivy League,Dartmouth College,D-I,Dartmouth
-68,173,A-10,Atlantic 10 Conference,Davidson College,D-I,Davidson
-69,175,A-10,Atlantic 10 Conference,University of Dayton,D-I,Dayton
-70,176,BE,Big East Conference,DePaul University,D-I,DePaul
-71,178,MEAC,Mid-Eastern Athletic Conf.,Delaware State University,D-I,Delaware St.
-72,180,CAA,Coastal Athletic Association,University of Delaware,D-I,Delaware
-73,183,Summit,The Summit League,University of Denver,D-I,Denver
-74,189,MVC,Missouri Valley Conference,Drake University,D-I,Drake
-75,193,ACC,Atlantic Coast Conference,Duke University,D-I,Duke
-76,194,A-10,Atlantic 10 Conference,Duquesne University,D-I,Duquesne
-77,196,AAC,American Athletic Conference,East Carolina University,D-I,East Carolina
-78,198,SoCon,Southern Conference,East Tennessee State University,D-I,ETSU
-79,199,SLC,Southland Conference,Texas A&M University-Commerce,D-I,Tex. A&M-Commerce
-80,201,OVC,Ohio Valley Conference,Eastern Illinois University,D-I,Eastern Ill.
-81,202,ASUN,Atlantic Sun Conference,Eastern Kentucky University,D-I,Eastern Ky.
-82,204,MAC,Mid-American Conference,Eastern Michigan University,D-I,Eastern Mich.
-83,207,BSC,Big Sky Conference,Eastern Washington University,D-I,Eastern Wash.
-84,219,MVC,Missouri Valley Conference,University of Evansville,D-I,Evansville
-85,220,MAAC,Metro Atlantic Athletic Conference,Fairfield University,D-I,Fairfield
-86,222,NEC,Northeast Conference,"Fairleigh Dickinson University, Metropolitan Campus",D-I,FDU
-87,228,SWAC,Southwestern Athletic Conf.,Florida A&M University,D-I,Florida A&M
-88,229,AAC,American Athletic Conference,Florida Atlantic University,D-I,Fla. Atlantic
-89,231,C-USA,Conference USA,Florida International University,D-I,FIU
-90,234,ACC,Atlantic Coast Conference,Florida State University,D-I,Florida St.
-91,235,SEC,Southeastern Conference,University of Florida,D-I,Florida
-92,236,A-10,Atlantic 10 Conference,Fordham University,D-I,Fordham
-93,244,SoCon,Southern Conference,Furman University,D-I,Furman
-94,248,A-10,Atlantic 10 Conference,George Mason University,D-I,George Mason
-95,249,A-10,Atlantic 10 Conference,George Washington University,D-I,George Washington
-96,251,BE,Big East Conference,Georgetown University,D-I,Georgetown
-97,253,SBC,Sun Belt Conference,Georgia Southern University,D-I,Ga. Southern
-98,254,SBC,Sun Belt Conference,Georgia State University,D-I,Georgia St.
-99,255,ACC,Atlantic Coast Conference,Georgia Institute of Technology,D-I,Georgia Tech
-100,257,SEC,Southeastern Conference,University of Georgia,D-I,Georgia
-101,260,WCC,West Coast Conference,Gonzaga University,D-I,Gonzaga
-102,261,SWAC,Southwestern Athletic Conf.,Grambling State University,D-I,Grambling
-103,270,CAA,Coastal Athletic Association,Hampton University,D-I,Hampton
-104,275,Ivy,The Ivy League,Harvard University,D-I,Harvard
-105,277,BWC,Big West Conference,"University of Hawaii, Manoa",D-I,Hawaii
-106,283,CAA,Coastal Athletic Association,Hofstra University,D-I,Hofstra
-107,285,PL,Patriot League,College of the Holy Cross,D-I,Holy Cross
-108,287,SLC,Southland Conference,Houston Christian University,D-I,Houston Christian
-109,288,Big 12,Big 12 Conference,University of Houston,D-I,Houston
-110,290,MEAC,Mid-Eastern Athletic Conf.,Howard University,D-I,Howard
-111,294,BSC,Big Sky Conference,Idaho State University,D-I,Idaho St.
-112,295,BSC,Big Sky Conference,University of Idaho,D-I,Idaho
-113,299,MVC,Missouri Valley Conference,Illinois State University,D-I,Illinois St.
-114,301,Big Ten,Big Ten Conference,University of Illinois Urbana-Champaign,D-I,Illinois
-115,302,MVC,Missouri Valley Conference,University of Illinois Chicago,D-I,UIC
-116,305,MVC,Missouri Valley Conference,Indiana State University,D-I,Indiana St.
-117,306,Big Ten,Big Ten Conference,"Indiana University, Bloomington",D-I,Indiana
-118,308,HL,Horizon League,Purdue University Fort Wayne,D-I,Purdue Fort Wayne
-119,310,MAAC,Metro Atlantic Athletic Conference,Iona University,D-I,Iona
-120,311,Big 12,Big 12 Conference,Iowa State University,D-I,Iowa St.
-121,312,Big Ten,Big Ten Conference,University of Iowa,D-I,Iowa
-122,314,SWAC,Southwestern Athletic Conf.,Jackson State University,D-I,Jackson St.
-123,315,C-USA,Conference USA,Jacksonville State University,D-I,Jacksonville St.
-124,316,ASUN,Atlantic Sun Conference,Jacksonville University,D-I,Jacksonville
-125,317,SBC,Sun Belt Conference,James Madison University,D-I,James Madison
-126,327,Big 12,Big 12 Conference,Kansas State University,D-I,Kansas St.
-127,328,Big 12,Big 12 Conference,University of Kansas,D-I,Kansas
-128,331,MAC,Mid-American Conference,Kent State University,D-I,Kent St.
-129,334,SEC,Southeastern Conference,University of Kentucky,D-I,Kentucky
-130,342,PL,Patriot League,Lafayette College,D-I,Lafayette
-131,346,SLC,Southland Conference,Lamar University,D-I,Lamar University
-132,349,NEC,Northeast Conference,Le Moyne College,D-I,Le Moyne
-133,352,PL,Patriot League,Lehigh University,D-I,Lehigh
-134,355,C-USA,Conference USA,Liberty University,D-I,Liberty
-135,361,NEC,Northeast Conference,Long Island University,D-I,LIU
-136,365,SEC,Southeastern Conference,Louisiana State University,D-I,LSU
-137,366,C-USA,Conference USA,Louisiana Tech University,D-I,Louisiana Tech
-138,367,ACC,Atlantic Coast Conference,University of Louisville,D-I,Louisville
-139,369,PL,Patriot League,Loyola University Maryland,D-I,Loyola Maryland
-140,370,WCC,West Coast Conference,Loyola Marymount University,D-I,LMU (CA)
-141,371,A-10,Atlantic 10 Conference,Loyola University Chicago,D-I,Loyola Chicago
-142,381,MAAC,Metro Atlantic Athletic Conference,Manhattan University,D-I,Manhattan
-143,386,MAAC,Metro Atlantic Athletic Conference,Marist College,D-I,Marist
-144,387,BE,Big East Conference,Marquette University,D-I,Marquette
-145,388,SBC,Sun Belt Conference,Marshall University,D-I,Marshall
-146,391,AE,America East Conference,"University of Maryland, Baltimore County",D-I,UMBC
-147,392,Big Ten,Big Ten Conference,"University of Maryland, College Park",D-I,Maryland
-148,393,MEAC,Mid-Eastern Athletic Conf.,University of Maryland Eastern Shore,D-I,UMES
-149,402,SLC,Southland Conference,McNeese State University,D-I,McNeese
-150,404,AAC,American Athletic Conference,University of Memphis,D-I,Memphis
-151,406,SoCon,Southern Conference,Mercer University,D-I,Mercer
-152,408,NEC,Northeast Conference,Mercyhurst University,D-I,Mercyhurst
-153,410,MAAC,Metro Atlantic Athletic Conference,Merrimack College,D-I,Merrimack
-154,414,MAC,Mid-American Conference,Miami University (Ohio),D-I,Miami (OH)
-155,415,ACC,Atlantic Coast Conference,University of Miami (Florida),D-I,Miami (FL)
-156,416,Big Ten,Big Ten Conference,Michigan State University,D-I,Michigan St.
-157,418,Big Ten,Big Ten Conference,University of Michigan,D-I,Michigan
-158,419,C-USA,Conference USA,Middle Tennessee State University,D-I,Middle Tenn.
-159,428,Big Ten,Big Ten Conference,"University of Minnesota, Twin Cities",D-I,Minnesota
-160,430,SEC,Southeastern Conference,Mississippi State University,D-I,Mississippi St.
-161,432,SWAC,Southwestern Athletic Conf.,Mississippi Valley State University,D-I,Mississippi Val.
-162,433,SEC,Southeastern Conference,University of Mississippi,D-I,Ole Miss
-163,434,SEC,Southeastern Conference,"University of Missouri, Columbia",D-I,Missouri
-164,440,BSC,Big Sky Conference,Montana State University-Bozeman,D-I,Montana St.
-165,441,BSC,Big Sky Conference,University of Montana,D-I,Montana
-166,444,OVC,Ohio Valley Conference,Morehead State University,D-I,Morehead St.
-167,446,MEAC,Mid-Eastern Athletic Conf.,Morgan State University,D-I,Morgan St.
-168,454,MVC,Missouri Valley Conference,Murray State University,D-I,Murray St.
-169,456,BSC,Big South Conference,University of North Carolina Asheville,D-I,UNC Asheville
-170,457,ACC,Atlantic Coast Conference,"University of North Carolina, Chapel Hill",D-I,North Carolina
-171,458,AAC,American Athletic Conference,The University of North Carolina at Charlotte,D-I,Charlotte
-172,459,SoCon,Southern Conference,The University of North Carolina at Greensboro,D-I,UNC Greensboro
-173,460,CAA,Coastal Athletic Association,University of North Carolina Wilmington,D-I,UNCW
-174,463,Big Ten,Big Ten Conference,University of Nebraska-Lincoln,D-I,Nebraska
-175,464,Summit,The Summit League,University of Nebraska Omaha,D-I,Omaha
-176,465,MW,Mountain West Conference,"University of Nevada, Las Vegas",D-I,UNLV
-177,466,MW,Mountain West Conference,"University of Nevada, Reno",D-I,Nevada
-178,469,AE,America East Conference,University of New Hampshire,D-I,New Hampshire
-179,471,AE,America East Conference,New Jersey Institute of Technology,D-I,NJIT
-180,472,C-USA,Conference USA,New Mexico State University,D-I,New Mexico St.
-181,473,MW,Mountain West Conference,University of New Mexico,D-I,New Mexico
-182,474,SLC,Southland Conference,University of New Orleans,D-I,New Orleans
-183,482,MAAC,Metro Atlantic Athletic Conference,Niagara University,D-I,Niagara
-184,483,SLC,Southland Conference,Nicholls State University,D-I,Nicholls
-185,485,MEAC,Mid-Eastern Athletic Conf.,Norfolk State University,D-I,Norfolk St.
-186,487,ASUN,Atlantic Sun Conference,University of North Alabama,D-I,North Ala.
-187,488,CAA,Coastal Athletic Association,North Carolina A&T State University,D-I,N.C. A&T
-188,489,MEAC,Mid-Eastern Athletic Conf.,North Carolina Central University,D-I,N.C. Central
-189,490,ACC,Atlantic Coast Conference,North Carolina State University,D-I,NC State
-190,493,Summit,The Summit League,North Dakota State University,D-I,North Dakota St.
-191,494,Summit,The Summit League,University of North Dakota,D-I,North Dakota
-192,497,AAC,American Athletic Conference,University of North Texas,D-I,North Texas
-193,498,SBC,Sun Belt Conference,University of Louisiana Monroe,D-I,ULM
-194,500,CAA,Coastal Athletic Association,Northeastern University,D-I,Northeastern
-195,501,BSC,Big Sky Conference,Northern Arizona University,D-I,Northern Ariz.
-196,502,BSC,Big Sky Conference,University of Northern Colorado,D-I,Northern Colo.
-197,503,MAC,Mid-American Conference,Northern Illinois University,D-I,NIU
-198,504,MVC,Missouri Valley Conference,University of Northern Iowa,D-I,UNI
-199,505,HL,Horizon League,Northern Kentucky University,D-I,Northern Ky.
-200,508,SLC,Southland Conference,Northwestern State University,D-I,Northwestern St.
-201,509,Big Ten,Big Ten Conference,Northwestern University,D-I,Northwestern
-202,513,ACC,Atlantic Coast Conference,University of Notre Dame,D-I,Notre Dame
-203,514,HL,Horizon League,Oakland University,D-I,Oakland
-204,518,Big Ten,Big Ten Conference,The Ohio State University,D-I,Ohio St.
-205,519,MAC,Mid-American Conference,Ohio University,D-I,Ohio
-206,522,SEC,Southeastern Conference,University of Oklahoma,D-I,Oklahoma
-207,523,SBC,Sun Belt Conference,Old Dominion University,D-I,Old Dominion
-208,527,Summit,The Summit League,Oral Roberts University,D-I,Oral Roberts
-209,528,Pac-12,Pac-12 Conference,Oregon State University,D-I,Oregon St.
-210,529,Big Ten,Big Ten Conference,University of Oregon,D-I,Oregon
-211,534,WCC,West Coast Conference,University of the Pacific,D-I,Pacific
-212,536,SLC,Southland Conference,The University of Texas Rio Grande Valley,D-I,UTRGV
-213,539,Big Ten,Big Ten Conference,Pennsylvania State University,D-I,Penn St.
-214,540,Ivy,The Ivy League,University of Pennsylvania,D-I,Penn
-215,541,WCC,West Coast Conference,Pepperdine University,D-I,Pepperdine
-216,545,ACC,Atlantic Coast Conference,University of Pittsburgh,D-I,Pittsburgh
-217,550,BSC,Big Sky Conference,Portland State University,D-I,Portland St.
-218,551,WCC,West Coast Conference,University of Portland,D-I,Portland
-219,553,SWAC,Southwestern Athletic Conf.,Prairie View A&M University,D-I,Prairie View
-220,554,Ivy,The Ivy League,Princeton University,D-I,Princeton
-221,556,BE,Big East Conference,Providence College,D-I,Providence
-222,559,Big Ten,Big Ten Conference,Purdue University,D-I,Purdue
-223,562,MAAC,Metro Atlantic Athletic Conference,Quinnipiac University,D-I,Quinnipiac
-224,563,BSC,Big South Conference,Radford University,D-I,Radford
-225,572,A-10,Atlantic 10 Conference,University of Rhode Island,D-I,Rhode Island
-226,574,AAC,American Athletic Conference,Rice University,D-I,Rice
-227,576,MAAC,Metro Atlantic Athletic Conference,Rider University,D-I,Rider
-228,579,HL,Horizon League,Robert Morris University,D-I,Robert Morris
-229,587,Big Ten,Big Ten Conference,"Rutgers, The State University of New Jersey, New Brunswick",D-I,Rutgers
-230,590,MAAC,Metro Atlantic Athletic Conference,Sacred Heart University,D-I,Sacred Heart
-231,600,NEC,Northeast Conference,Saint Francis University ,D-I,Saint Francis
-232,603,BE,Big East Conference,St. John's University (New York),D-I,St. John's (NY)
-233,609,A-10,Atlantic 10 Conference,Saint Louis University,D-I,Saint Louis
-234,610,WCC,West Coast Conference,Saint Mary's College of California,D-I,Saint Mary's (CA)
-235,617,MAAC,Metro Atlantic Athletic Conference,Saint Peter's University,D-I,Saint Peter's
-236,620,Summit,The Summit League,University of St. Thomas (Minnesota),D-I,St. Thomas (MN)
-237,624,C-USA,Conference USA,Sam Houston State University,D-I,Sam Houston
-238,625,SoCon,Southern Conference,Samford University,D-I,Samford
-239,626,MW,Mountain West Conference,San Diego State University,D-I,San Diego St.
-240,627,WCC,West Coast Conference,University of San Diego,D-I,San Diego
-241,629,WCC,West Coast Conference,University of San Francisco,D-I,San Francisco
-242,630,MW,Mountain West Conference,San Jose State University,D-I,San Jose St.
-243,631,WCC,West Coast Conference,Santa Clara University,D-I,Santa Clara
-244,635,BE,Big East Conference,Seton Hall University,D-I,Seton Hall
-245,639,MAAC,Metro Atlantic Athletic Conference,Siena College,D-I,Siena
-246,646,SBC,Sun Belt Conference,University of South Alabama,D-I,South Alabama
-247,647,MEAC,Mid-Eastern Athletic Conf.,South Carolina State University,D-I,South Carolina St.
-248,648,SEC,Southeastern Conference,"University of South Carolina, Columbia",D-I,South Carolina
-249,649,Summit,The Summit League,South Dakota State University,D-I,South Dakota St.
-250,650,Summit,The Summit League,University of South Dakota,D-I,South Dakota
-251,651,AAC,American Athletic Conference,University of South Florida,D-I,South Fla.
-252,654,OVC,Ohio Valley Conference,Southeast Missouri State University,D-I,Southeast Mo. St.
-253,655,SLC,Southland Conference,Southeastern Louisiana University,D-I,Southeastern La.
-254,657,Big Ten,Big Ten Conference,University of Southern California,D-I,Southern California
-255,659,MVC,Missouri Valley Conference,Southern Illinois University at Carbondale,D-I,Southern Ill.
-256,660,OVC,Ohio Valley Conference,Southern Illinois University Edwardsville,D-I,SIUE
-257,661,OVC,Ohio Valley Conference,University of Southern Indiana,D-I,Southern Ind.
-258,663,ACC,Atlantic Coast Conference,Southern Methodist University,D-I,SMU
-259,664,SBC,Sun Belt Conference,The University of Southern Mississippi,D-I,Southern Miss.
-260,665,SWAC,Southwestern Athletic Conf.,"Southern University, Baton Rouge",D-I,Southern U.
-261,667,WAC,Western Athletic Conference,Southern Utah University,D-I,Southern Utah
-262,669,MVC,Missouri Valley Conference,Missouri State University,D-I,Missouri St.
-263,670,SBC,Sun Belt Conference,Texas State University,D-I,Texas St.
-264,671,SBC,Sun Belt Conference,University of Louisiana at Lafayette,D-I,Louisiana
-265,674,ACC,Atlantic Coast Conference,Stanford University,D-I,Stanford
-266,676,SLC,Southland Conference,Stephen F. Austin State University,D-I,SFA
-267,678,ASUN,Atlantic Sun Conference,Stetson University,D-I,Stetson
-268,682,NEC,Northeast Conference,Stonehill College,D-I,Stonehill
-269,683,CAA,Coastal Athletic Association,Stony Brook University,D-I,Stony Brook
-270,688,ACC,Atlantic Coast Conference,Syracuse University,D-I,Syracuse
-271,690,AAC,American Athletic Conference,Temple University,D-I,Temple
-272,691,OVC,Ohio Valley Conference,Tennessee State University,D-I,Tennessee St.
-273,692,OVC,Ohio Valley Conference,Tennessee Technological University,D-I,Tennessee Tech
-274,693,SoCon,Southern Conference,University of Tennessee at Chattanooga,D-I,Chattanooga
-275,694,SEC,Southeastern Conference,"University of Tennessee, Knoxville",D-I,Tennessee
-276,695,OVC,Ohio Valley Conference,University of Tennessee at Martin,D-I,UT Martin
-277,697,SEC,Southeastern Conference,"Texas A&M University, College Station",D-I,Texas A&M
-278,698,Big 12,Big 12 Conference,Texas Christian University,D-I,TCU
-279,699,SWAC,Southwestern Athletic Conf.,Texas Southern University,D-I,Texas Southern
-280,700,Big 12,Big 12 Conference,Texas Tech University,D-I,Texas Tech
-281,702,WAC,Western Athletic Conference,University of Texas at Arlington,D-I,UT Arlington
-282,703,SEC,Southeastern Conference,University of Texas at Austin,D-I,Texas
-283,704,C-USA,Conference USA,University of Texas at El Paso,D-I,UTEP
-284,706,AAC,American Athletic Conference,University of Texas at San Antonio,D-I,UTSA
-285,709,MAC,Mid-American Conference,University of Toledo,D-I,Toledo
-286,711,CAA,Coastal Athletic Association,Towson University,D-I,Towson
-287,716,SBC,Sun Belt Conference,Troy University,D-I,Troy
-288,718,AAC,American Athletic Conference,Tulane University,D-I,Tulane
-289,719,AAC,American Athletic Conference,The University of Tulsa,D-I,Tulsa
-290,721,MW,Mountain West Conference,U.S. Air Force Academy,D-I,Air Force
-291,725,PL,Patriot League,U.S. Military Academy,D-I,Army West Point
-292,726,PL,Patriot League,U.S. Naval Academy,D-I,Navy
-293,731,MW,Mountain West Conference,Utah State University,D-I,Utah St.
-294,732,Big 12,Big 12 Conference,University of Utah,D-I,Utah
-295,735,MVC,Missouri Valley Conference,Valparaiso University,D-I,Valparaiso
-296,739,BE,Big East Conference,Villanova University,D-I,Villanova
-297,740,A-10,Atlantic 10 Conference,Virginia Commonwealth University,D-I,VCU
-298,742,ACC,Atlantic Coast Conference,Virginia Polytechnic Institute and State University,D-I,Virginia Tech
-299,746,ACC,Atlantic Coast Conference,University of Virginia,D-I,Virginia
-300,749,ACC,Atlantic Coast Conference,Wake Forest University,D-I,Wake Forest
-301,754,Pac-12,Pac-12 Conference,Washington State University,D-I,Washington St.
-302,756,Big Ten,Big Ten Conference,University of Washington,D-I,Washington
-303,758,BSC,Big Sky Conference,Weber State University,D-I,Weber St.
-304,766,ASUN,Atlantic Sun Conference,University of West Georgia,D-I,West Ga.
-305,768,Big 12,Big 12 Conference,West Virginia University,D-I,West Virginia
-306,769,SoCon,Southern Conference,Western Carolina University,D-I,Western Caro.
-307,771,OVC,Ohio Valley Conference,Western Illinois University,D-I,Western Ill.
-308,772,C-USA,Conference USA,Western Kentucky University,D-I,Western Ky.
-309,774,MAC,Mid-American Conference,Western Michigan University,D-I,Western Mich.
-310,782,AAC,American Athletic Conference,Wichita State University,D-I,Wichita St.
-311,786,CAA,Coastal Athletic Association,William & Mary,D-I,William & Mary
-312,792,BSC,Big South Conference,Winthrop University,D-I,Winthrop
-313,794,HL,Horizon League,University of Wisconsin-Green Bay,D-I,Green Bay
-314,796,Big Ten,Big Ten Conference,University of Wisconsin-Madison,D-I,Wisconsin
-315,797,HL,Horizon League,University of Wisconsin-Milwaukee,D-I,Milwaukee
-316,810,HL,Horizon League,Wright State University,D-I,Wright St.
-317,811,MW,Mountain West Conference,University of Wyoming,D-I,Wyoming
-318,812,BE,Big East Conference,Xavier University,D-I,Xavier
-319,813,Ivy,The Ivy League,Yale University,D-I,Yale
-320,817,HL,Horizon League,Youngstown State University,D-I,Youngstown St.
-321,1004,ASUN,Atlantic Sun Conference,University of Central Arkansas,D-I,Central Ark.
-322,1014,CAA,Coastal Athletic Association,College of Charleston (South Carolina),D-I,Col. of Charleston
-323,1068,CAA,Coastal Athletic Association,Elon University,D-I,Elon
-324,1092,BSC,Big South Conference,Gardner-Webb University,D-I,Gardner-Webb
-325,1104,WAC,Western Athletic Conference,Grand Canyon University,D-I,Grand Canyon
-326,1157,C-USA,Conference USA,Kennesaw State University,D-I,Kennesaw St.
-327,1320,BSC,Big South Conference,Presbyterian College,D-I,Presbyterian
-328,1356,WAC,Western Athletic Conference,Seattle University,D-I,Seattle U
-329,1395,WAC,Western Athletic Conference,Tarleton State University,D-I,Tarleton St.
-330,2678,SWAC,Southwestern Athletic Conf.,"University of Arkansas, Pine Bluff",D-I,Ark.-Pine Bluff
-331,2699,HL,Horizon League,Indiana University Indianapolis,D-I,IU Indy
-332,2707,Summit,The Summit League,University of Missouri-Kansas City,D-I,Kansas City
-333,2711,ASUN,Atlantic Sun Conference,University of North Florida,D-I,North Florida
-334,2716,,,,,P.R.-Rio Piedras
-335,2743,SLC,Southland Conference,University of the Incarnate Word,D-I,UIW
-336,2915,SoCon,Southern Conference,Wofford College,D-I,Wofford
-337,10411,BSC,Big South Conference,University of South Carolina Upstate,D-I,USC Upstate
-338,11504,ASUN,Atlantic Sun Conference,Queens University of Charlotte,D-I,Queens (NC)
-339,14927,MVC,Missouri Valley Conference,Belmont University,D-I,Belmont
-340,19651,BSC,Big South Conference,High Point University,D-I,High Point
-341,26172,SLC,Southland Conference,Texas A&M University-Corpus Christi,D-I,A&M-Corpus Christi
-342,28600,ASUN,Atlantic Sun Conference,Lipscomb University,D-I,Lipscomb
-343,28755,ASUN,Atlantic Sun Conference,Florida Gulf Coast University,D-I,FGCU
-344,30024,WAC,Western Athletic Conference,Utah Valley University,D-I,Utah Valley
-345,30095,WAC,Western Athletic Conference,Utah Tech University,D-I,Utah Tech
-346,30135,WAC,Western Athletic Conference,California Baptist University,D-I,California Baptist
-347,30136,OVC,Ohio Valley Conference,Lindenwood University,D-I,Lindenwood
+team_id,conference_short,conference_name,team_name,division,team_short
+2,WAC,Western Athletic Conference,Abilene Christian University,D-I,Abilene Christian
+5,MAC,Mid-American Conference,University of Akron,D-I,Akron
+6,SWAC,Southwestern Athletic Conf.,Alabama A&M University,D-I,Alabama A&M
+7,SWAC,Southwestern Athletic Conf.,Alabama State University,D-I,Alabama St.
+8,SEC,Southeastern Conference,University of Alabama,D-I,Alabama
+9,AAC,American Athletic Conference,University of Alabama at Birmingham,D-I,UAB
+14,AE,America East Conference,University at Albany,D-I,UAlbany
+17,SWAC,Southwestern Athletic Conf.,Alcorn State University,D-I,Alcorn
+23,PL,Patriot League,American University,D-I,American
+27,SBC,Sun Belt Conference,Appalachian State University,D-I,App State
+28,Big 12,Big 12 Conference,Arizona State University,D-I,Arizona St.
+29,Big 12,Big 12 Conference,University of Arizona,D-I,Arizona
+30,SBC,Sun Belt Conference,Arkansas State University,D-I,Arkansas St.
+31,SEC,Southeastern Conference,"University of Arkansas, Fayetteville",D-I,Arkansas
+32,OVC,Ohio Valley Conference,University of Arkansas at Little Rock,D-I,Little Rock
+37,SEC,Southeastern Conference,Auburn University,D-I,Auburn
+43,ASUN,Atlantic Sun Conference,Austin Peay State University,D-I,Austin Peay
+47,MAC,Mid-American Conference,Ball State University,D-I,Ball St.
+48,BSC,Big South Conference,Charleston Southern University,D-I,Charleston So.
+51,Big 12,Big 12 Conference,Baylor University,D-I,Baylor
+52,ASUN,Atlantic Sun Conference,Bellarmine University,D-I,Bellarmine
+61,SWAC,Southwestern Athletic Conf.,Bethune-Cookman University,D-I,Bethune-Cookman
+62,AE,America East Conference,Binghamton University,D-I,Binghamton
+66,MW,Mountain West Conference,Boise State University,D-I,Boise St.
+67,ACC,Atlantic Coast Conference,Boston College,D-I,Boston College
+70,,,,,Bowie St.
+71,MAC,Mid-American Conference,Bowling Green State University,D-I,Bowling Green
+72,MVC,Missouri Valley Conference,Bradley University,D-I,Bradley
+77,Big 12,Big 12 Conference,Brigham Young University,D-I,BYU
+80,Ivy,The Ivy League,Brown University,D-I,Brown
+81,AE,America East Conference,Bryant University,D-I,Bryant
+83,PL,Patriot League,Bucknell University,D-I,Bucknell
+86,MAC,Mid-American Conference,"University at Buffalo, the State University of New York",D-I,Buffalo
+87,BE,Big East Conference,Butler University,D-I,Butler
+90,BWC,Big West Conference,California Polytechnic State University,D-I,Cal Poly
+94,BWC,Big West Conference,"California State University, Bakersfield",D-I,CSU Bakersfield
+96,MW,Mountain West Conference,"California State University, Fresno",D-I,Fresno St.
+97,BWC,Big West Conference,"California State University, Fullerton",D-I,Cal St. Fullerton
+99,BWC,Big West Conference,Long Beach State University,D-I,Long Beach St.
+101,BWC,Big West Conference,"California State University, Northridge",D-I,CSUN
+102,BSC,Big Sky Conference,"California State University, Sacramento",D-I,Sacramento St.
+104,BWC,Big West Conference,"University of California, Santa Barbara",D-I,UC Santa Barbara
+107,ACC,Atlantic Coast Conference,"University of California, Berkeley",D-I,California
+108,BWC,Big West Conference,"University of California, Davis",D-I,UC Davis
+109,BWC,Big West Conference,"University of California, Irvine",D-I,UC Irvine
+110,Big Ten,Big Ten Conference,"University of California, Los Angeles",D-I,UCLA
+111,BWC,Big West Conference,"University of California, Riverside",D-I,UC Riverside
+112,BWC,Big West Conference,"University of California, San Diego",D-I,UC San Diego
+115,CAA,Coastal Athletic Association,Campbell University,D-I,Campbell
+116,MAAC,Metro Atlantic Athletic Conference,Canisius University,D-I,Canisius
+127,NEC,Northeast Conference,Central Connecticut State University,D-I,Central Conn. St.
+128,Big 12,Big 12 Conference,University of Central Florida,D-I,UCF
+129,MAC,Mid-American Conference,Central Michigan University,D-I,Central Mich.
+136,NEC,Northeast Conference,Chicago State University,D-I,Chicago St.
+140,Big 12,Big 12 Conference,University of Cincinnati,D-I,Cincinnati
+141,SoCon,Southern Conference,The Citadel,D-I,The Citadel
+147,ACC,Atlantic Coast Conference,Clemson University,D-I,Clemson
+148,HL,Horizon League,Cleveland State University,D-I,Cleveland St.
+149,SBC,Sun Belt Conference,Coastal Carolina University,D-I,Coastal Carolina
+153,PL,Patriot League,Colgate University,D-I,Colgate
+156,MW,Mountain West Conference,Colorado State University,D-I,Colorado St.
+157,Big 12,Big 12 Conference,"University of Colorado, Boulder",D-I,Colorado
+158,Ivy,The Ivy League,Columbia University-Barnard College,D-I,Columbia
+164,BE,Big East Conference,University of Connecticut,D-I,UConn
+165,MEAC,Mid-Eastern Athletic Conf.,Coppin State University,D-I,Coppin St.
+167,Ivy,The Ivy League,Cornell University,D-I,Cornell
+169,BE,Big East Conference,Creighton University,D-I,Creighton
+172,Ivy,The Ivy League,Dartmouth College,D-I,Dartmouth
+173,A-10,Atlantic 10 Conference,Davidson College,D-I,Davidson
+175,A-10,Atlantic 10 Conference,University of Dayton,D-I,Dayton
+176,BE,Big East Conference,DePaul University,D-I,DePaul
+178,MEAC,Mid-Eastern Athletic Conf.,Delaware State University,D-I,Delaware St.
+180,CAA,Coastal Athletic Association,University of Delaware,D-I,Delaware
+183,Summit,The Summit League,University of Denver,D-I,Denver
+189,MVC,Missouri Valley Conference,Drake University,D-I,Drake
+193,ACC,Atlantic Coast Conference,Duke University,D-I,Duke
+194,A-10,Atlantic 10 Conference,Duquesne University,D-I,Duquesne
+196,AAC,American Athletic Conference,East Carolina University,D-I,East Carolina
+198,SoCon,Southern Conference,East Tennessee State University,D-I,ETSU
+199,SLC,Southland Conference,Texas A&M University-Commerce,D-I,Tex. A&M-Commerce
+201,OVC,Ohio Valley Conference,Eastern Illinois University,D-I,Eastern Ill.
+202,ASUN,Atlantic Sun Conference,Eastern Kentucky University,D-I,Eastern Ky.
+204,MAC,Mid-American Conference,Eastern Michigan University,D-I,Eastern Mich.
+207,BSC,Big Sky Conference,Eastern Washington University,D-I,Eastern Wash.
+219,MVC,Missouri Valley Conference,University of Evansville,D-I,Evansville
+220,MAAC,Metro Atlantic Athletic Conference,Fairfield University,D-I,Fairfield
+222,NEC,Northeast Conference,"Fairleigh Dickinson University, Metropolitan Campus",D-I,FDU
+228,SWAC,Southwestern Athletic Conf.,Florida A&M University,D-I,Florida A&M
+229,AAC,American Athletic Conference,Florida Atlantic University,D-I,Fla. Atlantic
+231,C-USA,Conference USA,Florida International University,D-I,FIU
+234,ACC,Atlantic Coast Conference,Florida State University,D-I,Florida St.
+235,SEC,Southeastern Conference,University of Florida,D-I,Florida
+236,A-10,Atlantic 10 Conference,Fordham University,D-I,Fordham
+244,SoCon,Southern Conference,Furman University,D-I,Furman
+248,A-10,Atlantic 10 Conference,George Mason University,D-I,George Mason
+249,A-10,Atlantic 10 Conference,George Washington University,D-I,George Washington
+251,BE,Big East Conference,Georgetown University,D-I,Georgetown
+253,SBC,Sun Belt Conference,Georgia Southern University,D-I,Ga. Southern
+254,SBC,Sun Belt Conference,Georgia State University,D-I,Georgia St.
+255,ACC,Atlantic Coast Conference,Georgia Institute of Technology,D-I,Georgia Tech
+257,SEC,Southeastern Conference,University of Georgia,D-I,Georgia
+260,WCC,West Coast Conference,Gonzaga University,D-I,Gonzaga
+261,SWAC,Southwestern Athletic Conf.,Grambling State University,D-I,Grambling
+270,CAA,Coastal Athletic Association,Hampton University,D-I,Hampton
+275,Ivy,The Ivy League,Harvard University,D-I,Harvard
+277,BWC,Big West Conference,"University of Hawaii, Manoa",D-I,Hawaii
+283,CAA,Coastal Athletic Association,Hofstra University,D-I,Hofstra
+285,PL,Patriot League,College of the Holy Cross,D-I,Holy Cross
+287,SLC,Southland Conference,Houston Christian University,D-I,Houston Christian
+288,Big 12,Big 12 Conference,University of Houston,D-I,Houston
+290,MEAC,Mid-Eastern Athletic Conf.,Howard University,D-I,Howard
+294,BSC,Big Sky Conference,Idaho State University,D-I,Idaho St.
+295,BSC,Big Sky Conference,University of Idaho,D-I,Idaho
+299,MVC,Missouri Valley Conference,Illinois State University,D-I,Illinois St.
+301,Big Ten,Big Ten Conference,University of Illinois Urbana-Champaign,D-I,Illinois
+302,MVC,Missouri Valley Conference,University of Illinois Chicago,D-I,UIC
+305,MVC,Missouri Valley Conference,Indiana State University,D-I,Indiana St.
+306,Big Ten,Big Ten Conference,"Indiana University, Bloomington",D-I,Indiana
+308,HL,Horizon League,Purdue University Fort Wayne,D-I,Purdue Fort Wayne
+310,MAAC,Metro Atlantic Athletic Conference,Iona University,D-I,Iona
+311,Big 12,Big 12 Conference,Iowa State University,D-I,Iowa St.
+312,Big Ten,Big Ten Conference,University of Iowa,D-I,Iowa
+314,SWAC,Southwestern Athletic Conf.,Jackson State University,D-I,Jackson St.
+315,C-USA,Conference USA,Jacksonville State University,D-I,Jacksonville St.
+316,ASUN,Atlantic Sun Conference,Jacksonville University,D-I,Jacksonville
+317,SBC,Sun Belt Conference,James Madison University,D-I,James Madison
+327,Big 12,Big 12 Conference,Kansas State University,D-I,Kansas St.
+328,Big 12,Big 12 Conference,University of Kansas,D-I,Kansas
+331,MAC,Mid-American Conference,Kent State University,D-I,Kent St.
+334,SEC,Southeastern Conference,University of Kentucky,D-I,Kentucky
+342,PL,Patriot League,Lafayette College,D-I,Lafayette
+346,SLC,Southland Conference,Lamar University,D-I,Lamar University
+349,NEC,Northeast Conference,Le Moyne College,D-I,Le Moyne
+352,PL,Patriot League,Lehigh University,D-I,Lehigh
+355,C-USA,Conference USA,Liberty University,D-I,Liberty
+361,NEC,Northeast Conference,Long Island University,D-I,LIU
+365,SEC,Southeastern Conference,Louisiana State University,D-I,LSU
+366,C-USA,Conference USA,Louisiana Tech University,D-I,Louisiana Tech
+367,ACC,Atlantic Coast Conference,University of Louisville,D-I,Louisville
+369,PL,Patriot League,Loyola University Maryland,D-I,Loyola Maryland
+370,WCC,West Coast Conference,Loyola Marymount University,D-I,LMU (CA)
+371,A-10,Atlantic 10 Conference,Loyola University Chicago,D-I,Loyola Chicago
+381,MAAC,Metro Atlantic Athletic Conference,Manhattan University,D-I,Manhattan
+386,MAAC,Metro Atlantic Athletic Conference,Marist College,D-I,Marist
+387,BE,Big East Conference,Marquette University,D-I,Marquette
+388,SBC,Sun Belt Conference,Marshall University,D-I,Marshall
+391,AE,America East Conference,"University of Maryland, Baltimore County",D-I,UMBC
+392,Big Ten,Big Ten Conference,"University of Maryland, College Park",D-I,Maryland
+393,MEAC,Mid-Eastern Athletic Conf.,University of Maryland Eastern Shore,D-I,UMES
+402,SLC,Southland Conference,McNeese State University,D-I,McNeese
+404,AAC,American Athletic Conference,University of Memphis,D-I,Memphis
+406,SoCon,Southern Conference,Mercer University,D-I,Mercer
+408,NEC,Northeast Conference,Mercyhurst University,D-I,Mercyhurst
+410,MAAC,Metro Atlantic Athletic Conference,Merrimack College,D-I,Merrimack
+414,MAC,Mid-American Conference,Miami University (Ohio),D-I,Miami (OH)
+415,ACC,Atlantic Coast Conference,University of Miami (Florida),D-I,Miami (FL)
+416,Big Ten,Big Ten Conference,Michigan State University,D-I,Michigan St.
+418,Big Ten,Big Ten Conference,University of Michigan,D-I,Michigan
+419,C-USA,Conference USA,Middle Tennessee State University,D-I,Middle Tenn.
+428,Big Ten,Big Ten Conference,"University of Minnesota, Twin Cities",D-I,Minnesota
+430,SEC,Southeastern Conference,Mississippi State University,D-I,Mississippi St.
+432,SWAC,Southwestern Athletic Conf.,Mississippi Valley State University,D-I,Mississippi Val.
+433,SEC,Southeastern Conference,University of Mississippi,D-I,Ole Miss
+434,SEC,Southeastern Conference,"University of Missouri, Columbia",D-I,Missouri
+440,BSC,Big Sky Conference,Montana State University-Bozeman,D-I,Montana St.
+441,BSC,Big Sky Conference,University of Montana,D-I,Montana
+444,OVC,Ohio Valley Conference,Morehead State University,D-I,Morehead St.
+446,MEAC,Mid-Eastern Athletic Conf.,Morgan State University,D-I,Morgan St.
+454,MVC,Missouri Valley Conference,Murray State University,D-I,Murray St.
+456,BSC,Big South Conference,University of North Carolina Asheville,D-I,UNC Asheville
+457,ACC,Atlantic Coast Conference,"University of North Carolina, Chapel Hill",D-I,North Carolina
+458,AAC,American Athletic Conference,The University of North Carolina at Charlotte,D-I,Charlotte
+459,SoCon,Southern Conference,The University of North Carolina at Greensboro,D-I,UNC Greensboro
+460,CAA,Coastal Athletic Association,University of North Carolina Wilmington,D-I,UNCW
+463,Big Ten,Big Ten Conference,University of Nebraska-Lincoln,D-I,Nebraska
+464,Summit,The Summit League,University of Nebraska Omaha,D-I,Omaha
+465,MW,Mountain West Conference,"University of Nevada, Las Vegas",D-I,UNLV
+466,MW,Mountain West Conference,"University of Nevada, Reno",D-I,Nevada
+469,AE,America East Conference,University of New Hampshire,D-I,New Hampshire
+471,AE,America East Conference,New Jersey Institute of Technology,D-I,NJIT
+472,C-USA,Conference USA,New Mexico State University,D-I,New Mexico St.
+473,MW,Mountain West Conference,University of New Mexico,D-I,New Mexico
+474,SLC,Southland Conference,University of New Orleans,D-I,New Orleans
+482,MAAC,Metro Atlantic Athletic Conference,Niagara University,D-I,Niagara
+483,SLC,Southland Conference,Nicholls State University,D-I,Nicholls
+485,MEAC,Mid-Eastern Athletic Conf.,Norfolk State University,D-I,Norfolk St.
+487,ASUN,Atlantic Sun Conference,University of North Alabama,D-I,North Ala.
+488,CAA,Coastal Athletic Association,North Carolina A&T State University,D-I,N.C. A&T
+489,MEAC,Mid-Eastern Athletic Conf.,North Carolina Central University,D-I,N.C. Central
+490,ACC,Atlantic Coast Conference,North Carolina State University,D-I,NC State
+493,Summit,The Summit League,North Dakota State University,D-I,North Dakota St.
+494,Summit,The Summit League,University of North Dakota,D-I,North Dakota
+497,AAC,American Athletic Conference,University of North Texas,D-I,North Texas
+498,SBC,Sun Belt Conference,University of Louisiana Monroe,D-I,ULM
+500,CAA,Coastal Athletic Association,Northeastern University,D-I,Northeastern
+501,BSC,Big Sky Conference,Northern Arizona University,D-I,Northern Ariz.
+502,BSC,Big Sky Conference,University of Northern Colorado,D-I,Northern Colo.
+503,MAC,Mid-American Conference,Northern Illinois University,D-I,NIU
+504,MVC,Missouri Valley Conference,University of Northern Iowa,D-I,UNI
+505,HL,Horizon League,Northern Kentucky University,D-I,Northern Ky.
+508,SLC,Southland Conference,Northwestern State University,D-I,Northwestern St.
+509,Big Ten,Big Ten Conference,Northwestern University,D-I,Northwestern
+513,ACC,Atlantic Coast Conference,University of Notre Dame,D-I,Notre Dame
+514,HL,Horizon League,Oakland University,D-I,Oakland
+518,Big Ten,Big Ten Conference,The Ohio State University,D-I,Ohio St.
+519,MAC,Mid-American Conference,Ohio University,D-I,Ohio
+522,SEC,Southeastern Conference,University of Oklahoma,D-I,Oklahoma
+523,SBC,Sun Belt Conference,Old Dominion University,D-I,Old Dominion
+527,Summit,The Summit League,Oral Roberts University,D-I,Oral Roberts
+528,Pac-12,Pac-12 Conference,Oregon State University,D-I,Oregon St.
+529,Big Ten,Big Ten Conference,University of Oregon,D-I,Oregon
+534,WCC,West Coast Conference,University of the Pacific,D-I,Pacific
+536,SLC,Southland Conference,The University of Texas Rio Grande Valley,D-I,UTRGV
+539,Big Ten,Big Ten Conference,Pennsylvania State University,D-I,Penn St.
+540,Ivy,The Ivy League,University of Pennsylvania,D-I,Penn
+541,WCC,West Coast Conference,Pepperdine University,D-I,Pepperdine
+545,ACC,Atlantic Coast Conference,University of Pittsburgh,D-I,Pittsburgh
+550,BSC,Big Sky Conference,Portland State University,D-I,Portland St.
+551,WCC,West Coast Conference,University of Portland,D-I,Portland
+553,SWAC,Southwestern Athletic Conf.,Prairie View A&M University,D-I,Prairie View
+554,Ivy,The Ivy League,Princeton University,D-I,Princeton
+556,BE,Big East Conference,Providence College,D-I,Providence
+559,Big Ten,Big Ten Conference,Purdue University,D-I,Purdue
+562,MAAC,Metro Atlantic Athletic Conference,Quinnipiac University,D-I,Quinnipiac
+563,BSC,Big South Conference,Radford University,D-I,Radford
+572,A-10,Atlantic 10 Conference,University of Rhode Island,D-I,Rhode Island
+574,AAC,American Athletic Conference,Rice University,D-I,Rice
+576,MAAC,Metro Atlantic Athletic Conference,Rider University,D-I,Rider
+579,HL,Horizon League,Robert Morris University,D-I,Robert Morris
+587,Big Ten,Big Ten Conference,"Rutgers, The State University of New Jersey, New Brunswick",D-I,Rutgers
+590,MAAC,Metro Atlantic Athletic Conference,Sacred Heart University,D-I,Sacred Heart
+600,NEC,Northeast Conference,Saint Francis University ,D-I,Saint Francis
+603,BE,Big East Conference,St. John's University (New York),D-I,St. John's (NY)
+609,A-10,Atlantic 10 Conference,Saint Louis University,D-I,Saint Louis
+610,WCC,West Coast Conference,Saint Mary's College of California,D-I,Saint Mary's (CA)
+617,MAAC,Metro Atlantic Athletic Conference,Saint Peter's University,D-I,Saint Peter's
+620,Summit,The Summit League,University of St. Thomas (Minnesota),D-I,St. Thomas (MN)
+624,C-USA,Conference USA,Sam Houston State University,D-I,Sam Houston
+625,SoCon,Southern Conference,Samford University,D-I,Samford
+626,MW,Mountain West Conference,San Diego State University,D-I,San Diego St.
+627,WCC,West Coast Conference,University of San Diego,D-I,San Diego
+629,WCC,West Coast Conference,University of San Francisco,D-I,San Francisco
+630,MW,Mountain West Conference,San Jose State University,D-I,San Jose St.
+631,WCC,West Coast Conference,Santa Clara University,D-I,Santa Clara
+635,BE,Big East Conference,Seton Hall University,D-I,Seton Hall
+639,MAAC,Metro Atlantic Athletic Conference,Siena College,D-I,Siena
+646,SBC,Sun Belt Conference,University of South Alabama,D-I,South Alabama
+647,MEAC,Mid-Eastern Athletic Conf.,South Carolina State University,D-I,South Carolina St.
+648,SEC,Southeastern Conference,"University of South Carolina, Columbia",D-I,South Carolina
+649,Summit,The Summit League,South Dakota State University,D-I,South Dakota St.
+650,Summit,The Summit League,University of South Dakota,D-I,South Dakota
+651,AAC,American Athletic Conference,University of South Florida,D-I,South Fla.
+654,OVC,Ohio Valley Conference,Southeast Missouri State University,D-I,Southeast Mo. St.
+655,SLC,Southland Conference,Southeastern Louisiana University,D-I,Southeastern La.
+657,Big Ten,Big Ten Conference,University of Southern California,D-I,Southern California
+659,MVC,Missouri Valley Conference,Southern Illinois University at Carbondale,D-I,Southern Ill.
+660,OVC,Ohio Valley Conference,Southern Illinois University Edwardsville,D-I,SIUE
+661,OVC,Ohio Valley Conference,University of Southern Indiana,D-I,Southern Ind.
+663,ACC,Atlantic Coast Conference,Southern Methodist University,D-I,SMU
+664,SBC,Sun Belt Conference,The University of Southern Mississippi,D-I,Southern Miss.
+665,SWAC,Southwestern Athletic Conf.,"Southern University, Baton Rouge",D-I,Southern U.
+667,WAC,Western Athletic Conference,Southern Utah University,D-I,Southern Utah
+669,MVC,Missouri Valley Conference,Missouri State University,D-I,Missouri St.
+670,SBC,Sun Belt Conference,Texas State University,D-I,Texas St.
+671,SBC,Sun Belt Conference,University of Louisiana at Lafayette,D-I,Louisiana
+674,ACC,Atlantic Coast Conference,Stanford University,D-I,Stanford
+676,SLC,Southland Conference,Stephen F. Austin State University,D-I,SFA
+678,ASUN,Atlantic Sun Conference,Stetson University,D-I,Stetson
+682,NEC,Northeast Conference,Stonehill College,D-I,Stonehill
+683,CAA,Coastal Athletic Association,Stony Brook University,D-I,Stony Brook
+688,ACC,Atlantic Coast Conference,Syracuse University,D-I,Syracuse
+690,AAC,American Athletic Conference,Temple University,D-I,Temple
+691,OVC,Ohio Valley Conference,Tennessee State University,D-I,Tennessee St.
+692,OVC,Ohio Valley Conference,Tennessee Technological University,D-I,Tennessee Tech
+693,SoCon,Southern Conference,University of Tennessee at Chattanooga,D-I,Chattanooga
+694,SEC,Southeastern Conference,"University of Tennessee, Knoxville",D-I,Tennessee
+695,OVC,Ohio Valley Conference,University of Tennessee at Martin,D-I,UT Martin
+697,SEC,Southeastern Conference,"Texas A&M University, College Station",D-I,Texas A&M
+698,Big 12,Big 12 Conference,Texas Christian University,D-I,TCU
+699,SWAC,Southwestern Athletic Conf.,Texas Southern University,D-I,Texas Southern
+700,Big 12,Big 12 Conference,Texas Tech University,D-I,Texas Tech
+702,WAC,Western Athletic Conference,University of Texas at Arlington,D-I,UT Arlington
+703,SEC,Southeastern Conference,University of Texas at Austin,D-I,Texas
+704,C-USA,Conference USA,University of Texas at El Paso,D-I,UTEP
+706,AAC,American Athletic Conference,University of Texas at San Antonio,D-I,UTSA
+709,MAC,Mid-American Conference,University of Toledo,D-I,Toledo
+711,CAA,Coastal Athletic Association,Towson University,D-I,Towson
+716,SBC,Sun Belt Conference,Troy University,D-I,Troy
+718,AAC,American Athletic Conference,Tulane University,D-I,Tulane
+719,AAC,American Athletic Conference,The University of Tulsa,D-I,Tulsa
+721,MW,Mountain West Conference,U.S. Air Force Academy,D-I,Air Force
+725,PL,Patriot League,U.S. Military Academy,D-I,Army West Point
+726,PL,Patriot League,U.S. Naval Academy,D-I,Navy
+731,MW,Mountain West Conference,Utah State University,D-I,Utah St.
+732,Big 12,Big 12 Conference,University of Utah,D-I,Utah
+735,MVC,Missouri Valley Conference,Valparaiso University,D-I,Valparaiso
+739,BE,Big East Conference,Villanova University,D-I,Villanova
+740,A-10,Atlantic 10 Conference,Virginia Commonwealth University,D-I,VCU
+742,ACC,Atlantic Coast Conference,Virginia Polytechnic Institute and State University,D-I,Virginia Tech
+746,ACC,Atlantic Coast Conference,University of Virginia,D-I,Virginia
+749,ACC,Atlantic Coast Conference,Wake Forest University,D-I,Wake Forest
+754,Pac-12,Pac-12 Conference,Washington State University,D-I,Washington St.
+756,Big Ten,Big Ten Conference,University of Washington,D-I,Washington
+758,BSC,Big Sky Conference,Weber State University,D-I,Weber St.
+766,ASUN,Atlantic Sun Conference,University of West Georgia,D-I,West Ga.
+768,Big 12,Big 12 Conference,West Virginia University,D-I,West Virginia
+769,SoCon,Southern Conference,Western Carolina University,D-I,Western Caro.
+771,OVC,Ohio Valley Conference,Western Illinois University,D-I,Western Ill.
+772,C-USA,Conference USA,Western Kentucky University,D-I,Western Ky.
+774,MAC,Mid-American Conference,Western Michigan University,D-I,Western Mich.
+782,AAC,American Athletic Conference,Wichita State University,D-I,Wichita St.
+786,CAA,Coastal Athletic Association,William & Mary,D-I,William & Mary
+792,BSC,Big South Conference,Winthrop University,D-I,Winthrop
+794,HL,Horizon League,University of Wisconsin-Green Bay,D-I,Green Bay
+796,Big Ten,Big Ten Conference,University of Wisconsin-Madison,D-I,Wisconsin
+797,HL,Horizon League,University of Wisconsin-Milwaukee,D-I,Milwaukee
+810,HL,Horizon League,Wright State University,D-I,Wright St.
+811,MW,Mountain West Conference,University of Wyoming,D-I,Wyoming
+812,BE,Big East Conference,Xavier University,D-I,Xavier
+813,Ivy,The Ivy League,Yale University,D-I,Yale
+817,HL,Horizon League,Youngstown State University,D-I,Youngstown St.
+1004,ASUN,Atlantic Sun Conference,University of Central Arkansas,D-I,Central Ark.
+1014,CAA,Coastal Athletic Association,College of Charleston (South Carolina),D-I,Col. of Charleston
+1068,CAA,Coastal Athletic Association,Elon University,D-I,Elon
+1092,BSC,Big South Conference,Gardner-Webb University,D-I,Gardner-Webb
+1104,WAC,Western Athletic Conference,Grand Canyon University,D-I,Grand Canyon
+1157,C-USA,Conference USA,Kennesaw State University,D-I,Kennesaw St.
+1320,BSC,Big South Conference,Presbyterian College,D-I,Presbyterian
+1356,WAC,Western Athletic Conference,Seattle University,D-I,Seattle U
+1395,WAC,Western Athletic Conference,Tarleton State University,D-I,Tarleton St.
+2678,SWAC,Southwestern Athletic Conf.,"University of Arkansas, Pine Bluff",D-I,Ark.-Pine Bluff
+2699,HL,Horizon League,Indiana University Indianapolis,D-I,IU Indy
+2707,Summit,The Summit League,University of Missouri-Kansas City,D-I,Kansas City
+2711,ASUN,Atlantic Sun Conference,University of North Florida,D-I,North Florida
+2716,,,,,P.R.-Rio Piedras
+2743,SLC,Southland Conference,University of the Incarnate Word,D-I,UIW
+2915,SoCon,Southern Conference,Wofford College,D-I,Wofford
+10411,BSC,Big South Conference,University of South Carolina Upstate,D-I,USC Upstate
+11504,ASUN,Atlantic Sun Conference,Queens University of Charlotte,D-I,Queens (NC)
+14927,MVC,Missouri Valley Conference,Belmont University,D-I,Belmont
+19651,BSC,Big South Conference,High Point University,D-I,High Point
+26172,SLC,Southland Conference,Texas A&M University-Corpus Christi,D-I,A&M-Corpus Christi
+28600,ASUN,Atlantic Sun Conference,Lipscomb University,D-I,Lipscomb
+28755,ASUN,Atlantic Sun Conference,Florida Gulf Coast University,D-I,FGCU
+30024,WAC,Western Athletic Conference,Utah Valley University,D-I,Utah Valley
+30095,WAC,Western Athletic Conference,Utah Tech University,D-I,Utah Tech
+30135,WAC,Western Athletic Conference,California Baptist University,D-I,California Baptist
+30136,OVC,Ohio Valley Conference,Lindenwood University,D-I,Lindenwood
