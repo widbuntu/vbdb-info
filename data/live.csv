@@ -1,16 +1,16 @@
 date,match,result,scores,box_score_url
 2024/09/26,Northwestern (Big Ten) VS Maryland (Big Ten),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5361885/box_score
-2024/09/26,Iowa (Big Ten) VS Rutgers (Big Ten),[0-1],"(15-20, -, -, -, -)",https://stats.ncaa.org/contests/5365050/box_score
+2024/09/26,Iowa (Big Ten) VS Rutgers (Big Ten),[0-2],"(22-25, 13-15, -, -, -)",https://stats.ncaa.org/contests/5365050/box_score
 2024/09/26,Pacific (WCC) VS LMU (CA) (WCC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672983/box_score
 2024/09/26,UC San Diego (BWC) VS UC Riverside (BWC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672987/box_score
 2024/09/26,Utah Valley (WAC) VS California Baptist (WAC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672989/box_score
 2024/09/26,San Diego (WCC) VS Gonzaga (WCC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672991/box_score
 2024/09/26,Long Beach St. (BWC) VS UC Davis (BWC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672995/box_score
-2024/09/26,App State (SBC) VS James Madison (SBC),[1-0],"(20-18, -, -, -, -)",https://stats.ncaa.org/contests/5672996/box_score
+2024/09/26,App State (SBC) VS James Madison (SBC),[2-0],"(25-23, 9-8, -, -, -)",https://stats.ncaa.org/contests/5672996/box_score
 2024/09/26,Florida (SEC) VS Oklahoma (SEC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672997/box_score
 2024/09/26,Abilene Christian (WAC) VS Utah Tech (WAC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5672998/box_score
-2024/09/26,Chattanooga (SoCon) VS Wofford (SoCon),[1-0],"(25-23, -, -, -, -)",https://stats.ncaa.org/contests/5673000/box_score
-2024/09/26,UNC Greensboro (SoCon) VS ETSU (SoCon),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673001/box_score
+2024/09/26,Chattanooga (SoCon) VS Wofford (SoCon),[1-1],"(25-23, 20-23, -, -, -)",https://stats.ncaa.org/contests/5673000/box_score
+2024/09/26,UNC Greensboro (SoCon) VS ETSU (SoCon),[1-0],"(20-19, -, -, -, -)",https://stats.ncaa.org/contests/5673001/box_score
 2024/09/26,South Alabama (SBC) VS Troy (SBC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673002/box_score
 2024/09/26,Portland St. (BSC) VS Idaho (BSC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673004/box_score
 2024/09/26,Boise St. (MW) VS Fresno St. (MW),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673006/box_score
@@ -18,7 +18,7 @@ date,match,result,scores,box_score_url
 2024/09/26,Wyoming (MW) VS Nevada (MW),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673008/box_score
 2024/09/26,Houston Christian (SLC) VS Nicholls (SLC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673021/box_score
 2024/09/26,Austin Peay (ASUN) VS Eastern Ky. (ASUN),[0-1],"(17-23, -, -, -, -)",https://stats.ncaa.org/contests/5673023/box_score
-2024/09/26,Eastern Mich. (MAC) VS Kent St. (MAC),[0-2],"(15-25, 0-2, -, -, -)",https://stats.ncaa.org/contests/5673024/box_score
+2024/09/26,Eastern Mich. (MAC) VS Kent St. (MAC),[0-2],"(15-25, 21-22, -, -, -)",https://stats.ncaa.org/contests/5673024/box_score
 2024/09/26,South Dakota (Summit) VS Denver (Summit),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673025/box_score
 2024/09/26,UT Arlington (WAC) VS Grand Canyon (WAC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673028/box_score
 2024/09/26,Saint Mary's (CA) (WCC) VS Portland (WCC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673033/box_score
@@ -27,7 +27,7 @@ date,match,result,scores,box_score_url
 2024/09/26,Lamar University (SLC) VS Southeastern La. (SLC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673044/box_score
 2024/09/26,Tarleton St. (WAC) VS Southern Utah (WAC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673045/box_score
 2024/09/26,UNLV (MW) VS New Mexico (MW),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673046/box_score
-2024/09/26,Central Mich. (MAC) VS Miami (OH) (MAC),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673047/box_score
+2024/09/26,Central Mich. (MAC) VS Miami (OH) (MAC),[1-1],"(25-8, 2-1, -, -, -)",https://stats.ncaa.org/contests/5673047/box_score
 2024/09/26,Middle Tenn. (C-USA) VS Sam Houston (C-USA),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673048/box_score
 2024/09/26,South Dakota St. (Summit) VS Oral Roberts (Summit),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673054/box_score
 2024/09/26,Jacksonville (ASUN) VS North Florida (ASUN),[0-0],"(-, -, -, -, -)",https://stats.ncaa.org/contests/5673056/box_score
