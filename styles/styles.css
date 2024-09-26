@@ -41,5 +41,7 @@ body {
 
 .form-select {
   overflow-y: auto;
-  
+}
+#schTable th, #schTable td {
+  white-space: nowrap;
 }

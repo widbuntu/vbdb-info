@@ -48,6 +48,9 @@
             <div class="tab-pane fade show active" id="vbdb" role="tabpanel" aria-labelledby="vbdb-tab">
                 <h2 class="text-center">VBDB Content</h2>
                 <p class="text-center">Welcome to VBDB!</p>
+                <p class="text-center">A focus on D1 NCAA Womens Volleyball!</p>
+                <h2 class="text-center">Data Source</h2>
+                <p class="text-center">https://stats.ncaa.org</p>
             </div>
 
             <!-- Live tab -->
@@ -77,14 +80,14 @@
                 <!-- Dropdown for Searchs -->
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6 col-12 mb-3">
-                            <select class="form-select" name="conference-schedule-dropdown"
+                        <div class="col-auto mb-3">
+                            <select class="form-select form-select-lg" name="conference-schedule-dropdown"
                                 id="conference-schedule-dropdown">
                                 <option value="Conference">Conference</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-12 mb-3">
-                            <select class="form-select form-select" name="teams-schedule-dropdown"
+                        <div class="col-auto mb-3">
+                            <select class="form-select form-select-lg" name="teams-schedule-dropdown"
                                 id="teams-schedule-dropdown">
                                 <option selected>School</option>
                             </select>
@@ -93,14 +96,15 @@
                 </div>
 
                 <!-- Table -->
-                <div class="table-responsive">
-                    <table id="schTable" class="table table-dark table-hover table-striped">
+                <div class="table-responsive" style="overflow-x: auto;">
+                    <table id="schTable" class="table table-dark table-hover table-striped w-100">
                         <thead>
                             <tr>
                                 <th>Date</th>
                                 <th>Match</th>
                                 <th>Result</th>
                                 <th>Scores</th>
+                                <th>Box Score</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -108,7 +112,6 @@
                         </tbody>
                     </table>
                 </div>
-]
             </div>
 
             <!-- Teams tab -->
@@ -149,7 +152,7 @@
     </div>
 
     <!-- Scripts -->
-    
+
     <!-- Script to populate dropdowns -->
     <script>
         let teamData = []; // To store the team data
@@ -253,7 +256,7 @@
         // Fetch the data when the page loads
         fetchData();
     </script>
-    
+
     <!-- Script to populate table -->
     <script>
 
@@ -272,7 +275,8 @@
                     date: fields[0] || '',
                     match: fields[1] || '',
                     result: fields[2] || '',
-                    scores: fields[3] || ''
+                    scores: fields[3] || '',
+                    box_score_url: fields[4] || ''
                 };
             });
 
@@ -296,6 +300,7 @@
                 <td>${row.match.trim()}</td>
                 <td>${row.result.trim()}</td>
                 <td>${row.scores.trim()}</td>
+                <td>${row.box_score_url.trim()}</td>
             `;
                 tbody.appendChild(rowElement);
             });
@@ -353,7 +358,7 @@
         // Fetch and load the schedule data when the page loads
         document.addEventListener('DOMContentLoaded', fetchScheduleData);
     </script>
-    
+
     <!-- Script to run teams tab -->
     <script>
         let allTeamRows = [];
