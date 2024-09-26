@@ -194,7 +194,7 @@
             dataRows.forEach(row => {
                 const fields = splitLine(row); // Use splitLine to correctly parse each row
 
-                if (fields.length >= 6) { // Ensure we have all required columns
+                if (fields.length >= 7) { // Ensure we have all required columns
                     const conferenceName = fields[1]; // Full conference name (column index 2)
                     const teamShort = fields[5]; // team_short (column index 5)
 
@@ -408,64 +408,51 @@
 
     <!-- Script to run live tab -->
     <script>
-        // Get today's date in the required format (YYYY/MM/DD)
-        let date = new Date().toISOString().split('T')[0].replace(/-/g, '/');
 
-        // Fetch data for the given date
-        async function fetchGamesData(date) {
-            //const url = `https://proxy.cors.sh/https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
-            //const url = `https://corsproxy.io/?https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/${date}/scoreboard.json`;
-            const url =
-                `https://corsproxy.io/?https://data.ncaa.com/casablanca/scoreboard/volleyball-women/d1/2024/09/21/scoreboard.json`;
-            console.log("Fetching from URL:", url);
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json();
-                console.log("Data fetched successfully for date:", date);
-                return data.games || []; // Return games or an empty array if none exist
-            } catch (error) {
-                console.error("Error fetching data for date:", date, error);
-                return [];
-            }
+        async function fetchScheduleData() {
+            const response = await fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/test_sch.csv');
+            const csvText = await response.text();
+
+            // Ensure that the CSV is being split into rows correctly
+            const rows = csvText.split('\n').filter(row => row.trim() !== ''); // Exclude empty lines
+            const dataRows = rows.slice(1); // Data rows (ignoring the header)
+
+            // Check if the splitLine function correctly parses each row
+            scheduleData = dataRows.map(row => {
+                const fields = splitLine(row);
+                return {
+                    date: fields[0] || '',
+                    match: fields[1] || '',
+                    result: fields[2] || '',
+                    scores: fields[3] || '',
+                    box_score_url: fields[4] || ''
+                };
+            });
+
+            // Check if data has been parsed correctly by logging it
+            console.log('Schedule Data:', scheduleData);
+
+            // Initially populate the table with all data
+            populateScheduleTable(scheduleData);
         }
 
-        // Function to populate the table with data
-        function populateTable(games) {
-            const table = document.getElementById('liveTable');
-            const tbody = table.querySelector('tbody');
+        function populateScheduleTable(data) {
+            const tbody = document.querySelector('#schTable tbody');
+            tbody.innerHTML = ''; // Clear existing rows
 
-            // Clear any existing rows in the table body
-            tbody.innerHTML = '';
-
-            // Loop through each game and create a new row
-            games.forEach(game => {
-                const tr = document.createElement('tr');
-
-                // Create and append date, home team, away team, and result cells
-                const dateCell = document.createElement('td');
-                dateCell.textContent = game.startDate; // Use the appropriate date field from the data
-                tr.appendChild(dateCell);
-
-                const homeTeamCell = document.createElement('td');
-                homeTeamCell.textContent = game.home.team; // Use the appropriate home team field
-                tr.appendChild(homeTeamCell);
-
-                const awayTeamCell = document.createElement('td');
-                awayTeamCell.textContent = game.away.team; // Use the appropriate away team field
-                tr.appendChild(awayTeamCell);
-
-                const resultCell = document.createElement('td');
-                resultCell.textContent = game.status; // Use the appropriate result/status field
-                tr.appendChild(resultCell);
-
-                // Append the row to the tbody
-                tbody.appendChild(tr);
+            // Insert each row into the table
+            data.forEach(row => {
+                const rowElement = document.createElement('tr');
+                rowElement.innerHTML = `
+                <td>${row.date.trim()}</td>
+                <td>${row.match.trim()}</td>
+                <td>${row.result.trim()}</td>
+                <td>${row.scores.trim()}</td>
+                <td>${row.box_score_url.trim()}</td>
+            `;
+                tbody.appendChild(rowElement);
             });
         }
-
-        // Fetch the data and populate the table
-        fetchGamesData(date).then(games => populateTable(games));
     </script>
 
 </body>
