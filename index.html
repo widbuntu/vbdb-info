@@ -80,8 +80,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Match</th>
-                                <th>Result</th>
-                                <th>Scores</th>
+                                <th>Results</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -505,8 +504,7 @@
                 return {
                     date: fields[0] || '',
                     match: fields[1] || '',
-                    result: fields[2] || '',
-                    scores: fields[3] || '',
+                    results: fields[2] || '',
                 };
             });
 
@@ -528,8 +526,7 @@
                 rowElement.innerHTML = `
                     <td>${row.date.trim()}</td>
                     <td>${row.match.trim()}</td>
-                    <td>${row.result.trim()}</td>
-                    <td>${row.scores.trim()}</td>
+                    <td>${row.results.trim()}</td>
                 `;
                 tbody.appendChild(rowElement);
             });
