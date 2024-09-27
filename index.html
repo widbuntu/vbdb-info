@@ -82,7 +82,6 @@
                                 <th>Match</th>
                                 <th>Result</th>
                                 <th>Scores</th>
-                                <th>Box Score</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -508,7 +507,6 @@
                     match: fields[1] || '',
                     result: fields[2] || '',
                     scores: fields[3] || '',
-                    box_score_url: fields[4] || '',
                 };
             });
 
@@ -532,7 +530,6 @@
                     <td>${row.match.trim()}</td>
                     <td>${row.result.trim()}</td>
                     <td>${row.scores.trim()}</td>
-                    <td><a href="${row.box_score_url.trim()}" target="_blank">View</a></td>
                 `;
                 tbody.appendChild(rowElement);
             });
