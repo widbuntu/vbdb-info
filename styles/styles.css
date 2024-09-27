@@ -34,15 +34,20 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
-  white-space: nowrap;
 }
 .table td {
   padding: 6px;
-  white-space: nowrap;
   border: 1px solid #495057;
   font-size: 12px;
 }
 
 .form-select {
   overflow-y: auto;
+}
+.sort-asc::after {
+  content: '↾';
+}
+
+.sort-desc::after {
+  content: '⇂';
 }
