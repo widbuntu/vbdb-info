@@ -571,6 +571,7 @@
                         date: fields[0] || "",
                         match: fields[1] || "",
                         results: fields[2] || "",
+                        box_score_url: fields[3] || "",
                     };
                 });
                 // Log the parsed data for debugging
@@ -613,7 +614,7 @@
                 rowElement.innerHTML = `
             <td style="width:2%">${row.date}</td>
             <td style="width:40%">${row.match}</td>
-            <td>${row.results}</td>
+            <td style="width:25%">${row.results.trim()} <a href="${row.box_score_url.trim()}" target="_blank">View</a></td>
         `;
                 tbody.appendChild(rowElement);
             });
@@ -820,6 +821,27 @@
         window.onload = fetchRankingData;
     </script>
 
-</body>
+<!-- Script to prefill date -->
+<script>
+    // Function to format date as YYYY-MM-DD
+    function getFormattedDate(date, minusDays) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const day = String(date.getDate() - minusDays).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
 
+    // Set the default date to today's date
+    const today = new Date();
+    document.getElementById("startDate").value = getFormattedDate(today, 6);
+    document.getElementById("endDate").value = getFormattedDate(today, 1);
+
+    // Add an event listener to show the selected date in the span element
+    document.getElementById("startDate").addEventListener("change", function () {
+        const selectedDate = this.value;
+        document.getElementById("startDateSelected").textContent = `Selected date: ${selectedDate}`;
+    });
+</script>
+
+</body>
 </html>
