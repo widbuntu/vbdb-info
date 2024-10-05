@@ -671,8 +671,8 @@
                         RPI: fields[0] || "",
                         Team: fields[1] || "",
                         Conf: fields[2] || "",
-                        "W": fields[3] || "",
-                        "L": fields[4] || "",
+                        "W": parseInt(fields[3]) || 0,
+                        "L": parseInt(fields[4]) || 0,
                         RpiPct: parseFloat(fields[5]) || 0,
                         Top25: parseInt(fields[6]) || 0,
                         Top50: parseInt(fields[7]) || 0,
@@ -710,8 +710,9 @@
                     <td>${row.RPI}</td>
                     <td>${row.Team}</td>
                     <td>${row.Conf}</td>
+                    <td>${row.W}</td>
+                    <td>${row.L}</td>
                     <td>${row.RpiPct.toFixed(3)}</td>
-                    <td>${row["W-L"]}</td>
                     <td>${row.Top25}</td>
                     <td>${row.Top50}</td>
                     <td>${row.ConfRec}</td>
