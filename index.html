@@ -197,8 +197,9 @@
                                 <th>RPI</th>
                                 <th>Team</th>
                                 <th>Conf</th>
+                                <th>W</th>
+                                <th>L</th>
                                 <th>RpiPct</th>
-                                <th>W-L</th>
                                 <th>Top25</th>
                                 <th>Top50</th>
                                 <th>ConfRec</th>
@@ -670,24 +671,25 @@
                         RPI: fields[0] || "",
                         Team: fields[1] || "",
                         Conf: fields[2] || "",
-                        RpiPct: parseFloat(fields[3]) || 0,
-                        "W-L": fields[4] || "",
-                        Top25: parseInt(fields[5]) || 0,
-                        Top50: parseInt(fields[6]) || 0,
-                        ConfRec: fields[7] || "",
-                        NonConf: fields[8] || "",
-                        OppRcrd: fields[9] || "",
-                        SosPct: parseFloat(fields[10]) || 0,
-                        Rnk: parseInt(fields[11]) || 0,
-                        Home: fields[12] || "",
-                        Away: fields[13] || "",
-                        Neut: fields[14] || "",
-                        Tp100: parseInt(fields[15]) || 0,
-                        "100-2": parseInt(fields[16]) || 0,
-                        "200-": parseInt(fields[17]) || 0,
-                        SetsWon: parseInt(fields[18]) || 0,
-                        GdW: parseInt(fields[19]) || 0,
-                        BdL: parseInt(fields[20]) || 0,
+                        "W": fields[3] || "",
+                        "L": fields[4] || "",
+                        RpiPct: parseFloat(fields[5]) || 0,
+                        Top25: parseInt(fields[6]) || 0,
+                        Top50: parseInt(fields[7]) || 0,
+                        ConfRec: fields[8] || "",
+                        NonConf: fields[9] || "",
+                        OppRcrd: fields[10] || "",
+                        SosPct: parseFloat(fields[11]) || 0,
+                        Rnk: parseInt(fields[12]) || 0,
+                        Home: fields[13] || "",
+                        Away: fields[14] || "",
+                        Neut: fields[15] || "",
+                        Tp100: parseInt(fields[16]) || 0,
+                        "100-2": parseInt(fields[17]) || 0,
+                        "200-": parseInt(fields[18]) || 0,
+                        SetsWon: parseInt(fields[19]) || 0,
+                        GdW: parseInt(fields[20]) || 0,
+                        BdL: parseInt(fields[21]) || 0,
                     };
                 });
                 populateRankingTable(rankingsData);
