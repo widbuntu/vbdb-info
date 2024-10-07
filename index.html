@@ -600,7 +600,8 @@
 
     <!-- Script to run live tab -->
     <script>
-        let allData = []; // Declare allData globally once
+        let allLiveData = [];
+        let fetchInterval;
 
         function populateTable(data) {
             const tbody = document.querySelector("#liveTable tbody");
@@ -649,9 +650,9 @@
             let filteredData;
 
             if (selectedConference === '') {
-                filteredData = allData;  // No filtering
+                filteredData = allLiveData;  // No filtering
             } else {
-                filteredData = allData.filter(item => {
+                filteredData = allLiveData.filter(item => {
                     const matchConferenceRegex = /\(([^)]+)\)/g;
                     let matchConference;
                     let found = false;
@@ -671,27 +672,50 @@
         }
 
         function fetchDataAndPopulate() {
-            fetch('https://test-api-42b6a9daeff2.herokuapp.com/')
-                .then(response => response.json())
-                .then(data => {
-                    allData = data.data;  // Store all data globally
-                    populateTable(allData);
-                    populateDropdown(allData);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    const tableBody = document.querySelector('#liveTable tbody');
-                    tableBody.innerHTML = '<tr><td colspan="3">Error loading data. Please try again later.</td></tr>';
-                });
-        }
-
-        // Call the function to fetch data and populate the table when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchDataAndPopulate();
-
-            // Add event listener to the dropdown
-            document.getElementById('conference-live-dropdown').addEventListener('change', filterTable);
+    fetch('https://test-api-42b6a9daeff2.herokuapp.com/')
+        .then(response => response.json())
+        .then(data => {
+            allLiveData = data.data;  // Store all data globally
+            populateTable(allLiveData);
+            populateDropdown(allLiveData);
+            console.log('Data refreshed at', new Date().toLocaleTimeString());
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const tableBody = document.querySelector('#liveTable tbody');
+            tableBody.innerHTML = '<tr><td colspan="3">Error loading data. Please try again later.</td></tr>';
         });
+}
+
+function startPeriodicFetch() {
+    // Fetch immediately on start
+    fetchDataAndPopulate();
+    
+    // Then fetch every 45 seconds
+    fetchInterval = setInterval(fetchDataAndPopulate, 45000);
+}
+
+function stopPeriodicFetch() {
+    clearInterval(fetchInterval);
+}
+
+// Call the function to start periodic fetching when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    startPeriodicFetch();
+    
+    // Add event listener to the dropdown
+    document.getElementById('conference-live-dropdown').addEventListener('change', filterTable);
+});
+
+// Optional: Stop fetching when the page is hidden
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        stopPeriodicFetch();
+    } else {
+        startPeriodicFetch();
+    }
+});
+
 
     </script>
 
