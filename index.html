@@ -490,11 +490,10 @@
             const endDate = document.getElementById("endDate").value;
 
             const filteredData = scheduleData.filter((row) => {
-                const match = row.match.toLowerCase();
+                const match = row.match;
                 const selectedConferenceTrimmed = selectedConference
-                    .toLowerCase()
                     .trim();
-                const selectedTeamTrimmed = selectedTeam.toLowerCase().trim();
+                const selectedTeamTrimmed = selectedTeam.trim();
                 const conferenceMatch =
                     selectedConference === "Conference" ||
                     match.includes(selectedConferenceTrimmed);
