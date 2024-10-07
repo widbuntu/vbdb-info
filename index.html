@@ -76,6 +76,9 @@
                 <p class="text-center"><a style="color: white; text-decoration: underline" target="_blank"
                         href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/fig_stats.csv">Rankings</a>
                 </p>
+                <p class="text-center"><a style="color: white; text-decoration: underline" target="_blank"
+                        href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/players.csv">Players</a>
+                </p>
 
                 <hr>
                 <h2 class="text-center">Data Sources</h2>
@@ -267,6 +270,7 @@
                                 <th>Height</th>
                                 <th>Hometown</th>
                                 <th>High School</th>
+                                <th>Team</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -734,7 +738,7 @@
                 });
                 populateRankingTable(rankingsData);
                 populateDropdowns();
-                addSortListeners();
+                addRankingSortListeners();
                 addFilterListeners();
             } catch (error) {
                 console.error("Error fetching ranking data:", error);
@@ -794,12 +798,12 @@
 
         }
 
-        function addSortListeners() {
+        function addRankingSortListeners() {
             const headers = document.querySelectorAll("#rankingsTable th");
             headers.forEach((header, index) => {
                 header.addEventListener("click", () => {
                     const column = Object.keys(rankingsData[0])[index];
-                    sortTable(column);
+                    sortRankingTable(column);
                 });
             });
         }
@@ -814,7 +818,7 @@
             teamDropdown.addEventListener("change", filterTable);
         }
 
-        function filterTable() {
+        function filterRankingTable() {
             const selectedConference = document.getElementById(
                 "conference-ranking-dropdown"
             ).value;
@@ -832,7 +836,7 @@
             populateRankingTable(filteredData);
         }
 
-        function sortTable(column) {
+        function sortRankingTable(column) {
             if (currentSortColumn === column) {
                 isAscending = !isAscending;
             } else {
@@ -854,7 +858,7 @@
                 return 0;
             });
 
-            filterTable(); // Apply filters after sorting
+            filterRankingTable(); // Apply filters after sorting
 
             document.querySelectorAll("#rankingsTable th").forEach((th) => {
                 th.classList.remove("sort-asc", "sort-desc");
@@ -887,13 +891,15 @@
 
     <!-- Script to populate Players table -->
     <script>
+        let playersData = [];
+        let currentPlayersSortColumn = "";
+        let isPlayersAscending = true;
+
         async function fetchPlayersData() {
-            const response = await fetch(
-                "https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/players.csv"
-            );
+            const response = await fetch("https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/players.csv");
             const csvText = await response.text();
             const rows = csvText.split("\n").filter((row) => row.trim() !== "");
-            const dataRows = rows.slice(1);
+            const dataRows = rows.slice(1); // Skip the header row
             playersData = dataRows.map((row) => {
                 const fields = splitLine(row);
                 return {
@@ -904,60 +910,66 @@
                     Height: fields[4] || "",
                     Hometown: fields[5] || "",
                     'High School': fields[6] || "",
+                    conference_name: fields[8] || "",
+                    team_name: fields[10] || "",
                 };
             });
             console.log("Players Data:", playersData);
-            populateScheduleTable(playersData);
+            populatePlayersTable(playersData);
             populateDropdowns();
+            addPlayersSortListeners();
         }
 
-        function populateScheduleTable(data) {
+        function populatePlayersTable(data) {
             const tbody = document.querySelector("#playersTable tbody");
             tbody.innerHTML = "";
-            data.sort((a, b) => new Date(a.date) - new Date(b.date));
             data.forEach((row) => {
                 const rowElement = document.createElement("tr");
                 rowElement.innerHTML = `
-            <td style="width:2%">${row.No.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-        `;
+      <td style="width:2%">${row.No.trim()}</td>
+      <td style="width:2%">${row.Name.trim()}</td>
+      <td style="width:2%">${row.Class.trim()}</td>
+      <td style="width:2%">${row.Position.trim()}</td>
+      <td style="width:2%">${row.Height.trim()}</td>
+      <td style="width:2%">${row.Hometown.trim()}</td>
+      <td style="width:2%">${row['High School'].trim()}</td>
+      <td style="width:2%">${row.team_name.trim()}</td>
+    `;
                 tbody.appendChild(rowElement);
             });
         }
 
         function populateDropdowns() {
-            const conferenceDropdown = document.getElementById(
-                "conference-schedule-dropdown"
-            );
-            const teamDropdown = document.getElementById("teams-schedule-dropdown");
+            const conferenceDropdown = document.getElementById("conference-players-dropdown");
 
-            const conferences = [
-                ...new Set(
-                    scheduleData.map((item) =>
-                        item.match.split(" vs ")[0].split(" (")[0].trim()
-                    )
-                ),
-            ].sort();
-            const teams = [
-                ...new Set(
-                    scheduleData.flatMap((item) =>
-                        item.match.split(" vs ").map((team) => team.split(" (")[0].trim())
-                    )
-                ),
-            ].sort();
+            // Get unique conferences, filter out any empty values
+            const conferences = [...new Set(playersData.map((item) => item.conference_name).filter(Boolean))].sort();
 
+            // Populate conference dropdown
             conferences.forEach((conf) => {
                 const option = document.createElement("option");
                 option.value = conf;
                 option.textContent = conf;
                 conferenceDropdown.appendChild(option);
             });
+        }
 
+        function updateTeamsDropdown() {
+            const selectedConference = document.getElementById("conference-players-dropdown").value;
+            const teamDropdown = document.getElementById("teams-players-dropdown");
+
+            // Clear current team options
+            teamDropdown.innerHTML = '<option value="">All Teams</option>';
+
+            // Get teams based on selected conference, filter out any empty values
+            const teams = playersData
+                .filter((item) => (selectedConference ? item.conference_name === selectedConference : true)) // Show all teams if no conference is selected
+                .map((item) => item.team_name)
+                .filter(Boolean) // Exclude empty or undefined values
+                .filter((team, index, self) => self.indexOf(team) === index) // Ensure unique teams
+                .sort();
+
+            // Populate team dropdown
             teams.forEach((team) => {
                 const option = document.createElement("option");
                 option.value = team;
@@ -966,40 +978,17 @@
             });
         }
 
-        function filterTable() {
-            const selectedConference = document.getElementById(
-                "conference-schedule-dropdown"
-            ).value;
-            const selectedTeam = document.getElementById(
-                "teams-schedule-dropdown"
-            ).value;
-            const startDate = document.getElementById("startDate").value;
-            const endDate = document.getElementById("endDate").value;
+        function filterPlayersTable() {
+            const selectedConference = document.getElementById("conference-players-dropdown").value;
+            const selectedTeam = document.getElementById("teams-players-dropdown").value;
 
-            const filteredData = scheduleData.filter((row) => {
-                const match = row.match.toLowerCase();
-                const selectedConferenceTrimmed = selectedConference
-                    .toLowerCase()
-                    .trim();
-                const selectedTeamTrimmed = selectedTeam.toLowerCase().trim();
-                const conferenceMatch =
-                    selectedConference === "Conference" ||
-                    match.includes(selectedConferenceTrimmed);
-                const teamMatch =
-                    selectedTeam === "School" || match.includes(selectedTeamTrimmed);
-
-                // Convert row.date to a Date object
-                const rowDate = new Date(row.date);
-
-                // Check if the rowDate is within the selected range
-                const dateMatch =
-                    (!startDate || rowDate >= new Date(startDate)) &&
-                    (!endDate || rowDate <= new Date(endDate));
-
-                return conferenceMatch && teamMatch && dateMatch;
+            const filteredData = playersData.filter((row) => {
+                const conferenceMatch = !selectedConference || row.conference_name === selectedConference;
+                const teamMatch = !selectedTeam || row.team_name === selectedTeam;
+                return conferenceMatch && teamMatch;
             });
 
-            populateScheduleTable(filteredData);
+            populatePlayersTable(filteredData);
         }
 
         function splitLine(line) {
@@ -1020,20 +1009,61 @@
             return result;
         }
 
-        document
-            .getElementById("conference-schedule-dropdown")
-            .addEventListener("change", filterTable);
-        document
-            .getElementById("teams-schedule-dropdown")
-            .addEventListener("change", filterTable);
-        document
-            .getElementById("startDate")
-            .addEventListener("change", filterTable);
-        document
-            .getElementById("endDate")
-            .addEventListener("change", filterTable);
+        function addPlayersSortListeners() {
+            const headers = document.querySelectorAll("#playersTable th");
+            headers.forEach((header, index) => {
+                header.addEventListener("click", () => {
+                    const column = Object.keys(playersData[0])[index];
+                    sortPlayersTable(column);
+                });
+            });
+        }
 
-        document.addEventListener("DOMContentLoaded", fetchScheduleData);
+        function sortPlayersTable(column) {
+    if (currentPlayersSortColumn === column) {
+        isPlayersAscending = !isPlayersAscending;
+    } else {
+        isPlayersAscending = true;
+    }
+    currentPlayersSortColumn = column;
+
+    playersData.sort((a, b) => {
+        let aValue = a[column];
+        let bValue = b[column];
+
+        // If sorting by 'No', parse the values as integers, handling empty strings
+        if (column === "No") {
+            aValue = aValue ? parseInt(aValue) : 0;
+            bValue = bValue ? parseInt(bValue) : 0;
+        }
+
+        // Handle ascending and descending sorting
+        if (aValue < bValue) return isPlayersAscending ? -1 : 1;
+        if (aValue > bValue) return isPlayersAscending ? 1 : -1;
+        return 0;
+    });
+
+    // Re-filter the table after sorting, to respect current filters
+    filterPlayersTable();
+
+    // Update the UI to reflect the sort direction
+    document.querySelectorAll("#playersTable th").forEach((th) => {
+        th.classList.remove("sort-asc", "sort-desc");
+    });
+    const currentHeader = document.querySelector(
+        `#playersTable th:nth-child(${Object.keys(playersData[0]).indexOf(column) + 1})`
+    );
+    currentHeader.classList.add(isPlayersAscending ? "sort-asc" : "sort-desc");
+}
+
+        document.getElementById("conference-players-dropdown").addEventListener("change", function () {
+            updateTeamsDropdown(); // Update teams based on selected conference
+            filterPlayersTable(); // Filter the table after dropdown change
+        });
+
+        document.getElementById("teams-players-dropdown").addEventListener("change", filterPlayersTable);
+
+        document.addEventListener("DOMContentLoaded", fetchPlayersData);
     </script>
 
 </body>
