@@ -38,15 +38,15 @@
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="teams-tab" data-bs-toggle="tab" data-bs-target="#teams" type="button"
-                    role="tab" aria-controls="teams" aria-selected="false">
-                    Teams
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="rankings-tab" data-bs-toggle="tab" data-bs-target="#rankings" type="button"
                     role="tab" aria-controls="rankings" aria-selected="false">
                     Rankings
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="teams-tab" data-bs-toggle="tab" data-bs-target="#teams" type="button"
+                    role="tab" aria-controls="teams" aria-selected="false">
+                    Teams
                 </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -186,7 +186,7 @@
 
             <!-- Rankings tab -->
             <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab">
-                <h2 class="text-center">Rankings Content</h2>
+                <h2 class="text-center">Rankings</h2>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-auto mb-3">
@@ -911,7 +911,7 @@
                     Hometown: fields[5] || "",
                     'High School': fields[6] || "",
                     conference_name: fields[8] || "",
-                    team_name: fields[10] || "",
+                    team_name: fields[12] || "",
                 };
             });
             console.log("Players Data:", playersData);
