@@ -283,6 +283,7 @@
 
             <!-- End of content -->
         </div>
+
     </div>
 
     <!-- Scripts -->
@@ -673,49 +674,49 @@
         }
 
         function fetchDataAndPopulate() {
-    fetch('https://test-api-42b6a9daeff2.herokuapp.com/')
-        .then(response => response.json())
-        .then(data => {
-            allLiveData = data.data;  // Store all data globally
-            populateTable(allLiveData);
-            populateDropdown(allLiveData);
-            console.log('Data refreshed at', new Date().toLocaleTimeString());
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-            const tableBody = document.querySelector('#liveTable tbody');
-            tableBody.innerHTML = '<tr><td colspan="3">Error loading data. Please try again later.</td></tr>';
+            fetch('https://test-api-42b6a9daeff2.herokuapp.com/')
+                .then(response => response.json())
+                .then(data => {
+                    allLiveData = data.data;  // Store all data globally
+                    populateTable(allLiveData);
+                    populateDropdown(allLiveData);
+                    console.log('Data refreshed at', new Date().toLocaleTimeString());
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    const tableBody = document.querySelector('#liveTable tbody');
+                    tableBody.innerHTML = '<tr><td colspan="3">Error loading data. Please try again later.</td></tr>';
+                });
+        }
+
+        function startPeriodicFetch() {
+            // Fetch immediately on start
+            fetchDataAndPopulate();
+
+            // Then fetch every 45 seconds
+            fetchInterval = setInterval(fetchDataAndPopulate, 45000);
+        }
+
+        function stopPeriodicFetch() {
+            clearInterval(fetchInterval);
+        }
+
+        // Call the function to start periodic fetching when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            startPeriodicFetch();
+
+            // Add event listener to the dropdown
+            document.getElementById('conference-live-dropdown').addEventListener('change', filterTable);
         });
-}
 
-function startPeriodicFetch() {
-    // Fetch immediately on start
-    fetchDataAndPopulate();
-    
-    // Then fetch every 45 seconds
-    fetchInterval = setInterval(fetchDataAndPopulate, 45000);
-}
-
-function stopPeriodicFetch() {
-    clearInterval(fetchInterval);
-}
-
-// Call the function to start periodic fetching when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    startPeriodicFetch();
-    
-    // Add event listener to the dropdown
-    document.getElementById('conference-live-dropdown').addEventListener('change', filterTable);
-});
-
-// Optional: Stop fetching when the page is hidden
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        stopPeriodicFetch();
-    } else {
-        startPeriodicFetch();
-    }
-});
+        // Optional: Stop fetching when the page is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopPeriodicFetch();
+            } else {
+                startPeriodicFetch();
+            }
+        });
 
 
     </script>
@@ -762,9 +763,9 @@ document.addEventListener('visibilitychange', () => {
                     };
                 });
                 populateRankingTable(rankingsData);
-                populateDropdowns();
+                populateRankingDropdowns();
                 addRankingSortListeners();
-                addFilterListeners();
+                addRankingsFilterListeners();
             } catch (error) {
                 console.error("Error fetching ranking data:", error);
             }
@@ -803,7 +804,7 @@ document.addEventListener('visibilitychange', () => {
             });
         }
 
-        function populateDropdowns() {
+        function populateRankingDropdowns() {
             const conferenceDropdown = document.getElementById(
                 "conference-ranking-dropdown"
             );
@@ -833,28 +834,50 @@ document.addEventListener('visibilitychange', () => {
             });
         }
 
-        function addFilterListeners() {
-            const conferenceDropdown = document.getElementById(
-                "conference-ranking-dropdown"
-            );
+        function addRankingsFilterListeners() {
+            const conferenceDropdown = document.getElementById("conference-ranking-dropdown");
             const teamDropdown = document.getElementById("teams-ranking-dropdown");
 
-            conferenceDropdown.addEventListener("change", filterTable);
-            teamDropdown.addEventListener("change", filterTable);
+            // Enable team dropdown based on selected conference
+            conferenceDropdown.addEventListener("change", () => {
+                const selectedConference = conferenceDropdown.value;
+                populateTeamDropdown(selectedConference); // Populate teams based on selected conference
+                filterRankingTable(); // Filter table when conference changes
+            });
+
+            teamDropdown.addEventListener("change", filterRankingTable); // Call the filter function for teams
+        }
+
+        function populateTeamDropdown(selectedConference) {
+            const teamDropdown = document.getElementById("teams-ranking-dropdown");
+            teamDropdown.innerHTML = ""; // Clear existing options
+            teamDropdown.disabled = false; // Enable the dropdown
+
+            const teams = [...new Set(rankingsData
+                .filter(item => selectedConference === "" || item.Conf === selectedConference)
+                .map(item => item.Team))].sort();
+
+            const defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "All Teams";
+            teamDropdown.appendChild(defaultOption);
+
+            teams.forEach((team) => {
+                const option = document.createElement("option");
+                option.value = team;
+                option.textContent = team;
+                teamDropdown.appendChild(option);
+            });
         }
 
         function filterRankingTable() {
-            const selectedConference = document.getElementById(
-                "conference-ranking-dropdown"
-            ).value;
-            const selectedTeam = document.getElementById(
-                "teams-ranking-dropdown"
-            ).value;
+            const selectedRankingConference = document.getElementById("conference-ranking-dropdown").value;
+            const selectedRankingTeam = document.getElementById("teams-ranking-dropdown").value;
 
             const filteredData = rankingsData.filter((row) => {
                 return (
-                    (selectedConference === "" || row.Conf === selectedConference) &&
-                    (selectedTeam === "" || row.Team === selectedTeam)
+                    (selectedRankingConference === "" || row.Conf === selectedRankingConference) &&
+                    (selectedRankingTeam === "" || row.Team === selectedRankingTeam)
                 );
             });
 
@@ -1045,41 +1068,41 @@ document.addEventListener('visibilitychange', () => {
         }
 
         function sortPlayersTable(column) {
-    if (currentPlayersSortColumn === column) {
-        isPlayersAscending = !isPlayersAscending;
-    } else {
-        isPlayersAscending = true;
-    }
-    currentPlayersSortColumn = column;
+            if (currentPlayersSortColumn === column) {
+                isPlayersAscending = !isPlayersAscending;
+            } else {
+                isPlayersAscending = true;
+            }
+            currentPlayersSortColumn = column;
 
-    playersData.sort((a, b) => {
-        let aValue = a[column];
-        let bValue = b[column];
+            playersData.sort((a, b) => {
+                let aValue = a[column];
+                let bValue = b[column];
 
-        // If sorting by 'No', parse the values as integers, handling empty strings
-        if (column === "No") {
-            aValue = aValue ? parseInt(aValue) : 0;
-            bValue = bValue ? parseInt(bValue) : 0;
+                // If sorting by 'No', parse the values as integers, handling empty strings
+                if (column === "No") {
+                    aValue = aValue ? parseInt(aValue) : 0;
+                    bValue = bValue ? parseInt(bValue) : 0;
+                }
+
+                // Handle ascending and descending sorting
+                if (aValue < bValue) return isPlayersAscending ? -1 : 1;
+                if (aValue > bValue) return isPlayersAscending ? 1 : -1;
+                return 0;
+            });
+
+            // Re-filter the table after sorting, to respect current filters
+            filterPlayersTable();
+
+            // Update the UI to reflect the sort direction
+            document.querySelectorAll("#playersTable th").forEach((th) => {
+                th.classList.remove("sort-asc", "sort-desc");
+            });
+            const currentHeader = document.querySelector(
+                `#playersTable th:nth-child(${Object.keys(playersData[0]).indexOf(column) + 1})`
+            );
+            currentHeader.classList.add(isPlayersAscending ? "sort-asc" : "sort-desc");
         }
-
-        // Handle ascending and descending sorting
-        if (aValue < bValue) return isPlayersAscending ? -1 : 1;
-        if (aValue > bValue) return isPlayersAscending ? 1 : -1;
-        return 0;
-    });
-
-    // Re-filter the table after sorting, to respect current filters
-    filterPlayersTable();
-
-    // Update the UI to reflect the sort direction
-    document.querySelectorAll("#playersTable th").forEach((th) => {
-        th.classList.remove("sort-asc", "sort-desc");
-    });
-    const currentHeader = document.querySelector(
-        `#playersTable th:nth-child(${Object.keys(playersData[0]).indexOf(column) + 1})`
-    );
-    currentHeader.classList.add(isPlayersAscending ? "sort-asc" : "sort-desc");
-}
 
         document.getElementById("conference-players-dropdown").addEventListener("change", function () {
             updateTeamsDropdown(); // Update teams based on selected conference
@@ -1092,5 +1115,4 @@ document.addEventListener('visibilitychange', () => {
     </script>
 
 </body>
-
 </html>
