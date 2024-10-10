@@ -399,6 +399,7 @@
             const csvText = await response.text();
             const rows = csvText.split("\n").filter((row) => row.trim() !== "");
             const dataRows = rows.slice(1);
+
             scheduleData = dataRows.map((row) => {
                 const fields = splitLine(row);
                 return {
@@ -408,9 +409,10 @@
                     box_score_url: fields[3] || "",
                 };
             });
+
             console.log("Schedule Data:", scheduleData);
             populateScheduleTable(scheduleData);
-            populateDropdowns();
+            populateConferenceDropdown();
         }
 
         function populateScheduleTable(data) {
@@ -428,39 +430,51 @@
             });
         }
 
-        function populateDropdowns() {
-            const conferenceDropdown = document.getElementById(
-                "conference-schedule-dropdown"
-            );
-            const teamDropdown = document.getElementById("teams-schedule-dropdown");
+        function populateConferenceDropdown() {
+            const conferenceDropdown = document.getElementById("conference-schedule-dropdown");
 
-            const conferences = [
-                ...new Set(
-                    scheduleData.map((item) =>
-                        item.match.split(" vs ")[0].split(" (")[0].trim()
-                    )
-                ),
-            ].sort();
-            const teams = [
-                ...new Set(
-                    scheduleData.flatMap((item) =>
-                        item.match.split(" vs ").map((team) => team.split(" (")[0].trim())
-                    )
-                ),
-            ].sort();
+            // Extract conference names, remove empty strings, and sort them
+            const conferenceNames = [...new Set(teamData.map((team) => team.conferenceName.trim()))]
+                .filter(conference => conference) // Filter out empty or undefined values
+                .sort();
 
-            conferences.forEach((conf) => {
+            // Clear the conference dropdown
+            conferenceDropdown.innerHTML = '<option value="Conference">Conference</option>';
+
+            // Populate the conference dropdown with the extracted and filtered conference names
+            conferenceNames.forEach((conference) => {
                 const option = document.createElement("option");
-                option.value = conf;
-                option.textContent = conf;
+                option.value = conference;
+                option.textContent = conference;
                 conferenceDropdown.appendChild(option);
             });
+        }
 
-            teams.forEach((team) => {
+        function populateTeamsDropdown(conferenceName) {
+            const teamsDropdown = document.getElementById("teams-schedule-dropdown");
+            teamsDropdown.innerHTML = "<option selected>School</option>"; // Reset the dropdown
+
+            const uniqueTeams = new Set(); // Use a Set to store unique team_short values
+
+            // Filter team data based on selected conference, or show all teams if "Conference" is selected
+            teamData.forEach((team) => {
+                if (
+                    conferenceName === "Conference" ||
+                    team.conferenceName === conferenceName
+                ) {
+                    uniqueTeams.add(team.teamShort);
+                }
+            });
+
+            // Convert Set to Array and sort it alphabetically
+            const sortedTeams = Array.from(uniqueTeams).sort();
+
+            // Populate the teams dropdown with sorted values
+            sortedTeams.forEach((team) => {
                 const option = document.createElement("option");
                 option.value = team;
                 option.textContent = team;
-                teamDropdown.appendChild(option);
+                teamsDropdown.appendChild(option);
             });
         }
 
