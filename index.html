@@ -420,14 +420,40 @@
             tbody.innerHTML = "";
             data.sort((a, b) => new Date(a.date) - new Date(b.date));
             data.forEach((row) => {
+                const { winner, matchHTML } = formatMatch(row.match, row.results);
+
                 const rowElement = document.createElement("tr");
                 rowElement.innerHTML = `
-            <td style="width:2%">${row.date.trim()}</td>
-            <td style="width:15%">${row.match.trim()}</td>
-            <td style="width:25%">${row.results.trim()} <a href="${row.box_score_url.trim()}" target="_blank">View</a></td>
-        `;
+                    <td style="width:2%">${row.date.trim()}</td>
+                    <td style="width:15%">${matchHTML}</td>
+                    <td style="width:25%">${row.results.trim()} <a href="${row.box_score_url.trim()}" target="_blank">View</a></td>
+                `;
                 tbody.appendChild(rowElement);
             });
+        }
+
+        function formatMatch(match, results) {
+            const setWins = results.match(/\[(\d+)-(\d+)\]/); // Extract set wins like [3-0] or [2-3]
+            if (!setWins) return { winner: "", matchHTML: match }; // If results are not formatted as expected, return the match as is
+
+            const team1SetWins = parseInt(setWins[1]);
+            const team2SetWins = parseInt(setWins[2]);
+
+            const [team1, team2] = match.split(" vs "); // Split the teams
+
+            let winner, matchHTML;
+
+            if (team1SetWins > team2SetWins) {
+                // Team 1 is the winner
+                winner = team1.trim();
+                matchHTML = `<strong class="text-danger" style="--bs-text-opacity: .75;">${team1.trim()}</strong> vs ${team2.trim()}`;
+            } else {
+                // Team 2 is the winner
+                winner = team2.trim();
+                matchHTML = `${team1.trim()} vs <strong class="text-danger" style="--bs-text-opacity: .75;">${team2.trim()}</strong>`;
+            }
+
+            return { winner, matchHTML };
         }
 
         function populateConferenceDropdown() {
