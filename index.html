@@ -672,12 +672,22 @@
         }
 
         function fetchDataAndPopulate() {
+            // Capture the currently selected conference
+            const selectedConference = document.getElementById('conference-live-dropdown').value;
+
             fetch('https://test-api-42b6a9daeff2.herokuapp.com/')
                 .then(response => response.json())
                 .then(data => {
                     allLiveData = data.data;  // Store all data globally
+
+                    // Repopulate the table and dropdown
                     populateTable(allLiveData);
                     populateDropdown(allLiveData);
+
+                    // Reapply the filter
+                    document.getElementById('conference-live-dropdown').value = selectedConference;
+                    filterTable();  // Apply the filter to show the filtered data again
+
                     console.log('Data refreshed at', new Date().toLocaleTimeString());
                 })
                 .catch(error => {
