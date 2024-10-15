@@ -214,6 +214,7 @@
                                 <th>Conf</th>
                                 <th>W</th>
                                 <th>L</th>
+                                <th>ConfRec</th>
                                 <th>FigStats RPI</th>
                                 <th>NCAA Rank</th>
                             </tr>
@@ -773,11 +774,12 @@
                     const fields = row.split(",");
                     return {
                         Team: fields[0] || "",
-                        Conf: fields[3] || "",
+                        Conf: fields[4] || "",
                         "W": parseInt(fields[1]) || 0,
                         "L": parseInt(fields[2]) || 0,
-                        "FigStats RPI": parseInt(fields[4]) || 0,
-                        "NCAA Rank": parseInt(fields[5]) || 0,
+                        ConfRec: fields[3] || 0,
+                        "FigStats RPI": parseInt(fields[5]) || 0,
+                        "NCAA Rank": parseInt(fields[6]) || 0,
                     };
                 });
                 populateRankingTable(rankingsData);
@@ -799,6 +801,7 @@
                     <td>${row.Conf}</td>
                     <td>${row.W}</td>
                     <td>${row.L}</td>
+                    <td>${row.ConfRec}</td>
                     <td>${row["FigStats RPI"]}</td>
                     <td>${row["NCAA Rank"]}</td>
                 `;
