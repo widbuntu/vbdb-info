@@ -447,11 +447,11 @@
             if (team1SetWins > team2SetWins) {
                 // Team 1 is the winner
                 winner = team1.trim();
-                matchHTML = `<strong class="text-danger" style="--bs-text-opacity: .75;">${team1.trim()}</strong> vs ${team2.trim()}`;
+                matchHTML = `<strong class="text-info" style="--bs-text-opacity: .75;">${team1.trim()}</strong> vs ${team2.trim()}`;
             } else {
                 // Team 2 is the winner
                 winner = team2.trim();
-                matchHTML = `${team1.trim()} vs <strong class="text-danger" style="--bs-text-opacity: .75;">${team2.trim()}</strong>`;
+                matchHTML = `${team1.trim()} vs <strong class="text-info" style="--bs-text-opacity: .75;">${team2.trim()}</strong>`;
             }
 
             return { winner, matchHTML };
