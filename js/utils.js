@@ -122,7 +122,7 @@ export function tableData(url, id, urlIndex = false) {
         });
 }
 
-export function tableResultsData(url, id, urlIndex = false) {
+export function tableResultsData(url, id, urlIndex = 3) {
     return fetch(url)
         .then((response) => response.text())
         .then((csvData) => {
@@ -136,23 +136,23 @@ export function tableResultsData(url, id, urlIndex = false) {
                 const rowData = splitLine(row);
                 if (rowData && rowData.length) {
                     const tr = document.createElement("tr");
+                    // Only process columns except the last two
                     rowData.forEach((cell, index) => {
-                        const cellElement = document.createElement("td");
-                        cell = cell.trim().replace(/^"|"$/g, "");
+                        // Adjust the condition to skip the last two columns
+                        if (index < rowData.length - 2) {
+                            const cellElement = document.createElement("td");
+                            cell = cell.trim().replace(/^"|"$/g, "");
 
-                        // If the cell is the URL column, add http if necessary
-                        if (index === urlIndex) {
-                            cellElement.innerHTML = `<a href="${ensureProtocol(cell)}" target="_blank">${cell}</a>`;
-                        } else {
-                            // Format match results if it's the match column
-                            if (index === 1) {
-                                const { winner, matchHTML } = formatMatch(cell, rowData[2]); // Assuming rowData[2] has results
-                                cellElement.innerHTML = matchHTML;
-                            } else {
+                            if (index === 1) { // Match column
+                                const results = rowData[2];
+                                const boxScoreUrl = rowData[urlIndex];
+                                const { winner, matchHTML } = formatMatch(cell, results);
+                                cellElement.innerHTML = `${matchHTML} <a href="${boxScoreUrl}" target="_blank">View</a>`;
+                            } else if (index !== 2 && index !== urlIndex) {
                                 cellElement.textContent = cell;
                             }
+                            tr.appendChild(cellElement);
                         }
-                        tr.appendChild(cellElement);
                     });
                     tbody.appendChild(tr);
                     allTeamRows.push(tr);

@@ -17,9 +17,7 @@ export function loadResultsContent() {
         const tableId = 'resultsTable';
         const headers = [
             { columnName: 'Date' },
-            { columnName: 'Match' },
-            { columnName: 'Results' },
-            { columnName: 'Box Score URL' }
+            { columnName: 'Match' }
         ];
         const tableHtml = tableCreation(tableId, headers);
 
