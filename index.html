@@ -8,7 +8,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <script defer async data-host="widbuntu.github.io" src="https://liteanalytics.com/lite.js"></script>
+    <script defer async data-host="widbuntu.github.io" data-events="true" src="https://liteanalytics.com/lite.js"></script>
 </head>
 <body>
     <!-- Main Container -->
@@ -19,31 +19,22 @@
         <!-- Main Div for tabs content -->
         <div class="tab-content" id="myTabContent">
             <!-- VBDB tab -->
-            <div class="tab-pane fade show active" id="vbdb" role="tabpanel" aria-labelledby="vbdb-tab"></div>
+            <div class="tab-pane fade show active" id="vbdb" role="tabpanel" data-lta-event="vbdb-tab" data-lta-event-category="tab" aria-labelledby="vbdb-tab"></div>
             <!-- Live tab -->
-            <div class="tab-pane fade" id="live" role="tabpanel" aria-labelledby="live-tab"></div>
+            <div class="tab-pane fade" id="live" role="tabpanel" data-lta-event="live-tab" data-lta-event-category="tab" aria-labelledby="live-tab"></div>
             <!-- Results tab -->
-            <div class="tab-pane fade" id="results" role="tabpanel" aria-labelledby="results-tab"></div>
+            <div class="tab-pane fade" id="results" role="tabpanel" data-lta-event="results-tab" data-lta-event-category="tab" aria-labelledby="results-tab"></div>
             <!-- Rankings tab -->
-            <div class="tab-pane fade" id="rankings" role="tabpanel" aria-labelledby="rankings-tab"></div>
+            <div class="tab-pane fade" id="rankings" role="tabpanel" data-lta-event="rankings-tab" data-lta-event-category="tab" aria-labelledby="rankings-tab"></div>
             <!-- Teams tab -->
-            <div class="tab-pane fade" id="teams" role="tabpanel" aria-labelledby="teams-tab"></div>
+            <div class="tab-pane fade" id="teams" role="tabpanel" data-lta-event="teams-tab" data-lta-event-category="tab" aria-labelledby="teams-tab"></div>
             <!-- Players tab -->
-            <div class="tab-pane fade" id="players" role="tabpanel" aria-labelledby="players-tab"></div>
+            <div class="tab-pane fade" id="players" role="tabpanel" data-lta-event="players-tab" data-lta-event-category="tab" aria-labelledby="players-tab"></div>
         </div>
     </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Main script -->
     <script type="module" src="js/main.js"></script>
-    <!-- Analytics script -->
-    <script>
-        (function() {
-        var scr = document.createElement('script');
-        scr.setAttribute('src', 'https://liteanalytics.com/lite.js');
-        scr.setAttribute('data-host', 'widbuntu.github.io');
-        document.body.appendChild(scr);
-        })();
-        </script>
 </body>
 </html>
