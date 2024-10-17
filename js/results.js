@@ -17,7 +17,8 @@ export function loadResultsContent() {
         const tableId = 'resultsTable';
         const headers = [
             { columnName: 'Date' },
-            { columnName: 'Match' }
+            { columnName: 'Match' },
+            { columnName: 'Results' }
         ];
         const tableHtml = tableCreation(tableId, headers);
 

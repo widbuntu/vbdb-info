@@ -9,14 +9,16 @@ export function loadPlayersContent() {
     const dropdowns = [
         { id: 'conference-players', label: 'Select a Conference' },
         { id: 'team-players', label: 'Select a Team' },
-        { id: 'position-players', label: 'Select a Position' }
+        { id: 'class-players', label: 'Select a Class' },
+        { id: 'position-players', label: 'Select a Position' },
+        { id: 'hometown-players', label: 'Select a Hometown' },
     ];
-   
+
     const playersContent = document.getElementById('players');
     if (playersContent) {
         // Create dropdowns
         const dropdownsHtml = dropdownSelections("Players 2024", dropdowns);
-       
+
         // Create table
         const tableId = 'playersTable';
         const headers = [
@@ -31,7 +33,7 @@ export function loadPlayersContent() {
             { columnName: 'Team' },
         ];
         const tableHtml = tableCreation(tableId, headers);
-       
+
         // Combine dropdowns and table
         playersContent.innerHTML = `
             ${dropdownsHtml}
@@ -46,8 +48,10 @@ export function loadPlayersContent() {
             .then(rows => {
                 allPlayerRows = rows;
                 setupConferenceFilter('conference-players', allPlayerRows, 7, updateTeamDropdown);
-                setupTeamFilter('team-players', allPlayerRows, 8);
-                setupPositionFilter('position-players', allPlayerRows, 3);
+                setupTeamFilter('team-players', allPlayerRows);
+                setupFilter('position-players', allPlayerRows, 3);
+                setupFilter('class-players', allPlayerRows, 2);
+                setupHometownFilter('hometown-players', allPlayerRows, 5);
                 setupHeaderSorting();
                 sortTable();
                 setupCombinedFiltering();
@@ -135,9 +139,11 @@ function parseHeight(height) {
 function setupCombinedFiltering() {
     const conferenceDropdown = document.getElementById('conference-players-dropdown');
     const teamDropdown = document.getElementById('team-players-dropdown');
+    const classDropdown = document.getElementById('class-players-dropdown');
     const positionDropdown = document.getElementById('position-players-dropdown');
+    const hometownDropdown = document.getElementById('hometown-players-dropdown');
 
-    [conferenceDropdown, teamDropdown, positionDropdown].forEach(dropdown => {
+    [conferenceDropdown, teamDropdown, classDropdown, positionDropdown, hometownDropdown].forEach(dropdown => {
         dropdown.addEventListener('change', applyFilters);
     });
 }
@@ -145,14 +151,18 @@ function setupCombinedFiltering() {
 function applyFilters() {
     const selectedConference = document.getElementById('conference-players-dropdown').value;
     const selectedTeam = document.getElementById('team-players-dropdown').value;
+    const selectedClass = document.getElementById('class-players-dropdown').value;
     const selectedPosition = document.getElementById('position-players-dropdown').value;
+    const selectedHometown = document.getElementById('hometown-players-dropdown').value;
 
     allPlayerRows.forEach(row => {
         const conferenceMatch = selectedConference === '' || row.cells[7].textContent === selectedConference;
         const teamMatch = selectedTeam === '' || row.cells[8].textContent === selectedTeam;
+        const classMatch = selectedClass === '' || row.cells[2].textContent === selectedClass;
         const positionMatch = selectedPosition === '' || row.cells[3].textContent === selectedPosition;
+        const hometownMatch = selectedHometown === '' || row.cells[5].textContent.includes(selectedHometown);
 
-        if (conferenceMatch && teamMatch && positionMatch) {
+        if (conferenceMatch && teamMatch && positionMatch && classMatch && hometownMatch) {
             row.style.display = '';
         } else {
             row.style.display = 'none';
@@ -169,7 +179,7 @@ function updateTeamDropdown() {
     teamDropdown.innerHTML = '<option value="">All Teams</option>';
 
     // Filter teams based on selected conference
-    const filteredTeams = allTeams.filter(team => 
+    const filteredTeams = allTeams.filter(team =>
         selectedConference === '' || team.conference === selectedConference
     );
 
@@ -185,15 +195,15 @@ function updateTeamDropdown() {
     applyFilters();
 }
 
-function setupTeamFilter(id, allTeamRows, index) {
+function setupTeamFilter(id, allTeamRows) {
     const teamDropdown = document.getElementById(`${id}-dropdown`);
 
     if (teamDropdown) {
         // Populate team dropdown with unique values
         const uniqueTeams = new Map();
         allTeamRows.forEach(row => {
-            const teamName = row.cells[index].textContent.trim();
-            const conference = row.cells[index - 1].textContent.trim();
+            const teamName = row.cells[8].textContent.trim();
+            const conference = row.cells[7].textContent.trim();
             if (teamName !== '') {
                 uniqueTeams.set(teamName, { name: teamName, conference: conference });
             }
@@ -211,25 +221,55 @@ function setupTeamFilter(id, allTeamRows, index) {
     }
 }
 
-function setupPositionFilter(id, allPlayerRows, index) {
-    const positionDropdown = document.getElementById(`${id}-dropdown`);
+function setupFilter(id, allRows, columnIndex) {
+    const dropdown = document.getElementById(`${id}-dropdown`);
 
-    if (positionDropdown) {
-        // Populate position dropdown with unique values
-        const uniquePositions = new Set();
-        allPlayerRows.forEach(row => {
-            const position = row.cells[index].textContent.trim();
-            if (position !== '') {
-                uniquePositions.add(position);
+    if (dropdown) {
+        // Create a Set to store unique values from the specified column
+        const uniqueValues = new Set();
+        
+        allRows.forEach(row => {
+            const value = row.cells[columnIndex].textContent.trim();
+            if (value !== '') {
+                uniqueValues.add(value); // Only add unique values
             }
         });
 
-        // Sort and add unique positions to the dropdown
-        Array.from(uniquePositions).sort().forEach(position => {
+        // Convert the set to an array and sort the values alphabetically
+        const sortedValues = Array.from(uniqueValues).sort((a, b) => a.localeCompare(b));
+
+        // Populate the dropdown with unique sorted values
+        sortedValues.forEach(value => {
             const option = document.createElement('option');
-            option.value = position;
-            option.textContent = position;
-            positionDropdown.appendChild(option);
+            option.value = value;
+            option.textContent = value;
+            dropdown.appendChild(option);
+        });
+    }
+}
+
+
+function setupHometownFilter(id, allRows, columnIndex) {
+    const dropdown = document.getElementById(`${id}-dropdown`);
+    if (dropdown) {
+        // Create a Set to store unique values from the specified column
+        const uniqueValues = new Set();
+       
+        allRows.forEach(row => {
+            const cellContent = row.cells[columnIndex].textContent.trim();
+            const value = cellContent.split(",")[1]; // Get the second part of the split
+            if (value && value.trim() !== '') {
+                uniqueValues.add(value.trim()); // Only add unique, non-empty values
+            }
+        });
+        // Convert the set to an array and sort the values alphabetically
+        const sortedValues = Array.from(uniqueValues).sort((a, b) => a.localeCompare(b));
+        // Populate the dropdown with unique sorted values
+        sortedValues.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = value;
+            dropdown.appendChild(option);
         });
     }
 }

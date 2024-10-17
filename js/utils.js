@@ -136,28 +136,32 @@ export function tableResultsData(url, id, urlIndex = 3) {
                 const rowData = splitLine(row);
                 if (rowData && rowData.length) {
                     const tr = document.createElement("tr");
-                    // Only process columns except the last two
-                    rowData.forEach((cell, index) => {
-                        // Adjust the condition to skip the last two columns
-                        if (index < rowData.length - 2) {
-                            const cellElement = document.createElement("td");
-                            cell = cell.trim().replace(/^"|"$/g, "");
-
-                            if (index === 1) { // Match column
-                                const results = rowData[2];
-                                const boxScoreUrl = rowData[urlIndex];
-                                const { winner, matchHTML } = formatMatch(cell, results);
-                                cellElement.innerHTML = `${matchHTML} <a href="${boxScoreUrl}" target="_blank">View</a>`;
-                            } else if (index !== 2 && index !== urlIndex) {
-                                cellElement.textContent = cell;
-                            }
-                            tr.appendChild(cellElement);
-                        }
-                    });
+            
+                    // Create a cell for the date (index 0)
+                    const dateCell = document.createElement("td");
+                    dateCell.textContent = rowData[0].trim();
+                    tr.appendChild(dateCell);
+            
+                    // Create a cell for the match (index 1)
+                    const matchCell = document.createElement("td");
+                    matchCell.style.width = "35%";
+                    const results = rowData[2].trim(); // Results from the CSV
+                    const boxScoreUrl = rowData[urlIndex].trim(); // Box score URL
+                    const { matchHTML } = formatMatch(rowData[1].trim(), results);
+                    matchCell.innerHTML = matchHTML; // Set match HTML
+                    tr.appendChild(matchCell);
+            
+                    // Create a cell for the results (index 2)
+                    const viewCell = document.createElement("td");
+                    viewCell.innerHTML = `${results} <a href="${boxScoreUrl}" target="_blank">View</a>`;
+                    tr.appendChild(viewCell);
+            
+                    // Append the row to the tbody
                     tbody.appendChild(tr);
                     allTeamRows.push(tr);
                 }
             });
+            
             return allTeamRows;
         });
 }
