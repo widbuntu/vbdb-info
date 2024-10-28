@@ -10,17 +10,21 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 6,Alabama A&M University,916,Southwestern Athletic Conf.,www.aamu.edu,www.aamusports.com,AL,D-I,2024-25,Alabama A&M,SWAC
 10,University of Alabama in Huntsville,858,Gulf South Conference,uah.edu,uahchargers.com,AL,D-II,2024-25,Alabama Huntsville,Gulf South
 7,Alabama State University,916,Southwestern Athletic Conf.,www.alasu.edu,www.bamastatesports.com,AL,D-I,2024-25,Alabama St.,SWAC
+9,University of Alabama at Birmingham,823,American Athletic Conference,www.uab.edu,www.uabsports.com,AL,D-I,2024-25,UAB,AAC
 11,University of Alaska Anchorage,30012,Great Northwest Athletic Conference,www.uaa.alaska.edu,www.goseawolves.com,AK,D-II,2024-25,Alas. Anchorage,Great Northwest
 12,University of Alaska Fairbanks,30012,Great Northwest Athletic Conference,www.uaf.edu,www.AlaskaNanooks.com,AK,D-II,2024-25,Alas. Fairbanks,Great Northwest
 14,University at Albany,845,America East Conference,www.albany.edu,www.ualbanysports.com,NY,D-I,2024-25,UAlbany,America East
 13,Albany State University (Georgia),913,Southern Intercol. Ath. Conf.,www.asurams.edu,www.asugoldenrams.com,GA,D-II,2024-25,Albany St. (GA),SIAC
 2798,Albertus Magnus College,23257,Great Northeast Athletic Conference,www.albertus.edu,www.albertusfalcons.com,CT,D-III,2024-25,Albertus Magnus,Great Northeast
 15,Albion College,873,Michigan Intercol. Ath. Assn.,www.albion.edu,www.gobrits.com,MI,D-III,2024-25,Albion,Michigan Intercol. Ath. Assn.
+16,Albright College,877,Middle Atlantic Conferences,www.albright.edu,www.albrightathletics.com,PA,D-III,2024-25,Albright,MACs
 17,Alcorn State University,916,Southwestern Athletic Conf.,www.alcorn.edu,www.alcornsports.com,MS,D-I,2024-25,Alcorn,SWAC
+30170,Alfred State College,30022,Allegheny Mountain Collegiate Conference,www.alfredstate.edu,www.alfredstateathletics.com,NY,D-III,2024-25,Alfred St.,AMCC
 18,Alfred University,863,Empire 8,www.alfred.edu,www.gosaxons.com,NY,D-III,2024-25,Alfred,Empire 8
 19,Allegheny College,907,Presidents' Athletic Conference,www.allegheny.edu,www.alleghenygators.com,PA,D-III,2024-25,Allegheny,PAC
 30240,Allen University,913,Southern Intercol. Ath. Conf.,allenuniversity.edu,auyellowjackets.com,SC,D-II,2024-25,Allen,SIAC
 21,Alma College,873,Michigan Intercol. Ath. Assn.,www.alma.edu,www.almascots.com,MI,D-III,2024-25,Alma,Michigan Intercol. Ath. Assn.
+938,Alvernia University,877,Middle Atlantic Conferences,www.alvernia.edu,athletics.alvernia.edu,PA,D-III,2024-25,Alvernia,MACs
 28746,Alverno College,30097,Northern Athletics Collegiate Conference,www.alverno.edu,athletics.alverno.edu/,WI,D-III,2024-25,Alverno,NACC
 22,American International College,899,Northeast-10 Conference,aic.edu,aicyellowjackets.com,MA,D-II,2024-25,American Int'l,NE10
 23,American University,838,Patriot League,american.edu,www.aueagles.com,DC,D-I,2024-25,American,Patriot
@@ -30,6 +34,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 25,Angelo State University,868,Lone Star Conference,www.angelo.edu,www.angelosports.com,TX,D-II,2024-25,Angelo St.,Lone Star
 26,Anna Maria College,23257,Great Northeast Athletic Conference,www.annamaria.edu,goamcats.com/landing/index,MA,D-III,2024-25,Anna Maria,Great Northeast
 27,Appalachian State University,818,Sun Belt Conference,www.appstate.edu,appstatesports.com,NC,D-I,2024-25,App State,Sun Belt
+966,Arcadia University,877,Middle Atlantic Conferences,www.arcadia.edu,www.arcadiaknights.com/,PA,D-III,2024-25,Arcadia,MACs
 29,University of Arizona,25354,Big 12 Conference,www.arizona.edu,www.arizonawildcats.com,AZ,D-I,2024-25,Arizona,Big 12
 28,Arizona State University,25354,Big 12 Conference,asu.edu,thesundevils.com,AZ,D-I,2024-25,Arizona St.,Big 12
 30,Arkansas State University,818,Sun Belt Conference,www.astate.edu,www.astateredwolves.com,AR,D-I,2024-25,Arkansas St.,Sun Belt
@@ -39,6 +44,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 32,University of Arkansas at Little Rock,902,Ohio Valley Conference,www.ualr.edu,//lrtrojans.com,AR,D-I,2024-25,Little Rock,OVC
 8411,"University of Arkansas, Monticello",30144,Great American Conference,www.uamont.edu,www.uamsports.com,AR,D-II,2024-25,Ark.-Monticello,GAC
 2678,"University of Arkansas, Pine Bluff",916,Southwestern Athletic Conf.,www.uapb.edu,uapblionsroar.com/,AR,D-I,2024-25,Ark.-Pine Bluff,SWAC
+30243,Asbury University,0,Independent,www.asbury.edu,www.asburyeagles.com,KY,D-III,2024-25,Asbury,Independent
 35,Ashland University,30182,Great Midwest Athletic Conference,www.ashland.edu,www.goashlandeagles.com,OH,D-II,2024-25,Ashland,G-MAC
 36,Assumption University,899,Northeast-10 Conference,www.assumption.edu,www.assumptiongreyhounds.com,MA,D-II,2024-25,Assumption,NE10
 37,Auburn University,911,Southeastern Conference,www.auburn.edu,www.auburntigers.com,AL,D-I,2024-25,Auburn,SEC
@@ -81,6 +87,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 28593,Birmingham-Southern College,30169,Southern Athletic Association,www.bsc.edu,www.bscsports.net,AL,D-III,2024-25,,SAA
 30134,Black Hills State University,13128,Rocky Mountain Athletic Conference,www.bhsu.edu,bhsuathletics.com/,SD,D-II,2024-25,Black Hills St.,RMAC
 64,Blackburn College,12974,St. Louis Intercollegiate Athletic Conference,www.blackburn.edu,blackburnbeavers.com,IL,D-III,2024-25,Blackburn,SLIAC
+984,Bloomfield College,28752,Central Atlantic Collegiate Conference,www.bloomfield.edu,www.bcbearsathletics.com,NJ,D-II,2024-25,Bloomfield,CACC
 65,Bloomsburg University of Pennsylvania,906,Pennsylvania State Athletic Conference,www.bloomu.edu,www.buhuskies.com,PA,D-II,2024-25,Bloomsburg,PSAC
 985,Bluefield State University,832,Central Intercollegiate Athletic Association,bluefieldstate.edu,gobstate.com,WV,D-II,2024-25,Bluefield St.,CIAA
 987,Bluffton University,9174,Heartland Collegiate Athletic Conference,www.bluffton.edu,www.blufftonbeavers.com,OH,D-III,2024-25,Bluffton,HCAC
@@ -93,6 +100,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 72,Bradley University,884,Missouri Valley Conference,www.bradley.edu,www.bradleybraves.com,IL,D-I,2024-25,Bradley,MVC
 73,Brandeis University,1471,University Athletic Association,www.brandeis.edu,www.brandeisjudges.com,MA,D-III,2024-25,Brandeis,UAA
 30094,Brevard College,842,USA South Athletic Conference,www.brevard.edu,www.bctornados.com,NC,D-III,2024-25,Brevard,USA South
+74,University of Bridgeport,28752,Central Atlantic Collegiate Conference,www.bridgeport.edu,www.ubknights.com,CT,D-II,2024-25,Bridgeport,CACC
 75,Bridgewater College (Virginia),903,Old Dominion Athletic Conf.,www.bridgewater.edu,www.bridgewatereagles.com,VA,D-III,2024-25,Bridgewater (VA),ODAC
 76,Bridgewater State University,870,Massachusetts State Collegiate Athletic Conference,www.bridgew.edu,www.bsubears.com,MA,D-III,2024-25,Bridgewater St.,MASCAC
 77,Brigham Young University,25354,Big 12 Conference,www.byu.edu,byucougars.com,UT,D-I,2024-25,BYU,Big 12
@@ -109,6 +117,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 87,Butler University,30184,Big East Conference,www.butler.edu,www.butlersports.com,IN,D-I,2024-25,Butler,Big East
 1305,Cairn University,30071,United East Conference,www.cairn.edu,www.cairnhighlanders.com,PA,D-III,2024-25,Cairn,United East
 91,"California State Polytechnic University, Pomona",828,California Collegiate Athletic Association,www.cpp.edu,www.broncoathletics.com,CA,D-II,2024-25,Cal Poly Pomona,CCAA
+995,Caldwell University,28752,Central Atlantic Collegiate Conference,www.caldwell.edu/,www.caldwellathletics.com,NJ,D-II,2024-25,Caldwell,CACC
 30135,California Baptist University,923,Western Athletic Conference,www.calbaptist.edu,www.cbulancers.com,CA,D-I,2024-25,California Baptist,WAC
 105,California Lutheran University,910,Southern California Intercollegiate Athletic Conf.,www.callutheran.edu,www.clusports.com,CA,D-III,2024-25,Cal Lutheran,SCIAC
 90,California Polytechnic State University,904,Big West Conference,calpoly.edu,gopoly.com,CA,D-I,2024-25,Cal Poly,Big West
@@ -171,6 +180,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 1013,University of Charleston (West Virginia),30183,Mountain East Conference,www.ucwv.edu,www.ucgoldeneagles.com,WV,D-II,2024-25,Charleston (WV),MEC
 48,Charleston Southern University,826,Big South Conference,https://www.charlestonsouthern.edu/,csusports.com/,SC,D-I,2024-25,Charleston So.,Big South
 10972,Chatham University,907,Presidents' Athletic Conference,www.chatham.edu,www.gochathamcougars.com,PA,D-III,2024-25,Chatham,PAC
+21323,Chestnut Hill College,28752,Central Atlantic Collegiate Conference,www.chc.edu,www.griffinathletics.com,PA,D-II,2024-25,Chestnut Hill,CACC
 137,University of Chicago,1471,University Athletic Association,www.uchicago.edu,athletics.uchicago.edu/landing/index,IL,D-III,2024-25,UChicago,UAA
 136,Chicago State University,846,Northeast Conference,www.csu.edu,www.gocsucougars.com,IL,D-I,2024-25,Chicago St.,NEC
 8875,Chowan University,4423,Conference Carolinas,www.chowan.edu,www.gocuhawks.com,NC,D-II,2024-25,Chowan,Conference Carolinas
@@ -235,17 +245,20 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 30219,Dean College,23257,Great Northeast Athletic Conference,https://www.dean.edu/,www.deanbulldogs.com/landing/index,MA,D-III,2024-25,Dean,Great Northeast
 180,University of Delaware,837,Coastal Athletic Association,www.udel.edu,www.bluehens.com,DE,D-I,2024-25,Delaware,CAA
 178,Delaware State University,876,Mid-Eastern Athletic Conf.,www.desu.edu,www.dsuhornets.com/,DE,D-I,2024-25,Delaware St.,MEAC
+179,Delaware Valley University,877,Middle Atlantic Conferences,www.delval.edu,www.delval.edu/athletics,PA,D-III,2024-25,Delaware Valley,MACs
 30225,State University of New York at Delhi,30026,North Atlantic Conference,www.delhi.edu/,delhibroncos.com/landing/index,NY,D-III,2024-25,SUNY Delhi,North Atlantic
 181,Delta State University,858,Gulf South Conference,www.deltastate.edu,www.gostatesmen.com,MS,D-II,2024-25,Delta St.,Gulf South
 182,Denison University,897,North Coast Athletic Conference,www.denison.edu,www.denisonbigred.com,OH,D-III,2024-25,Denison,NCAC
 183,University of Denver,819,The Summit League,www.du.edu,denverpioneers.com,CO,D-I,2024-25,Denver,Summit League
 176,DePaul University,30184,Big East Conference,www.depaul.edu,www.depaulbluedemons.com,IL,D-I,2024-25,DePaul,Big East
 177,DePauw University,897,North Coast Athletic Conference,www.depauw.edu,depauwtigers.com/landing/index,IN,D-III,2024-25,DePauw,NCAC
+20,DeSales University,877,Middle Atlantic Conferences,www.desales.edu,athletics.desales.edu,PA,D-III,2024-25,DeSales,MACs
 184,University of Detroit Mercy,881,Horizon League,www.udmercy.edu,www.detroittitans.com,MI,D-I,2024-25,Detroit Mercy,Horizon
 185,Dickinson College,9683,Centennial Conference,www.dickinson.edu,www.dickinsonathletics.com,PA,D-III,2024-25,Dickinson,Centennial
 186,University of the District of Columbia,11265,East Coast Conference,www.udc.edu,www.udcfirebirds.com,DC,D-II,2024-25,Dist. Columbia,ECC
 30118,Dominican University of California,19591,Pacific West Conference,www.dominican.edu,www.dominicanathletics.com,CA,D-II,2024-25,Dominican (CA),PacWest
 1332,Dominican University (Illinois),30097,Northern Athletics Collegiate Conference,www.dom.edu,www.dustars.com,IL,D-III,2024-25,Dominican (IL),NACC
+8956,Dominican University New York,28752,Central Atlantic Collegiate Conference,www.duny.edu,www.chargerathletics.com,NY,D-II,2024-25,Dominican (NY),CACC
 189,Drake University,884,Missouri Valley Conference,https://www.drake.edu/,godrakebulldogs.com/,IA,D-I,2024-25,Drake,MVC
 190,Drew University,30101,Landmark Conference,www.drew.edu,www.drewrangers.com,NJ,D-III,2024-25,Drew,Landmark
 191,Drexel University,837,Coastal Athletic Association,www.drexel.edu,www.drexeldragons.com,PA,D-I,2024-25,Drexel,CAA
@@ -254,6 +267,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 193,Duke University,821,Atlantic Coast Conference,www.duke.edu,www.goduke.com,NC,D-I,2024-25,Duke,ACC
 194,Duquesne University,820,Atlantic 10 Conference,www.duq.edu,www.GoDuquesne.com,PA,D-I,2024-25,Duquesne,Atlantic 10
 195,Earlham College,9174,Heartland Collegiate Athletic Conference,www.earlham.edu,www.goearlham.com,IN,D-III,2024-25,Earlham,HCAC
+196,East Carolina University,823,American Athletic Conference,www.ecu.edu,www.ecupirates.com,NC,D-I,2024-25,East Carolina,AAC
 8965,East Central University,30144,Great American Conference,www.ecok.edu,ecutigers.com,OK,D-II,2024-25,East Central,GAC
 197,East Stroudsburg University of Pennsylvania,906,Pennsylvania State Athletic Conference,www.esu.edu,esuwarriors.com,PA,D-II,2024-25,East Stroudsburg,PSAC
 198,East Tennessee State University,912,Southern Conference,www.etsu.edu,www.etsubucs.com,TN,D-I,2024-25,ETSU,SoCon
@@ -265,6 +279,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 204,Eastern Michigan University,875,Mid-American Conference,www.emich.edu,www.emueagles.com,MI,D-I,2024-25,Eastern Mich.,MAC
 1064,Eastern Nazarene College,30026,North Atlantic Conference,www.enc.edu,www.enc.edu/athletics,MA,D-III,2024-25,Eastern Nazarene,North Atlantic
 206,Eastern New Mexico University,868,Lone Star Conference,www.enmu.edu,www.goeasternathletics.com,NM,D-II,2024-25,Eastern N.M.,Lone Star
+8968,Eastern University,877,Middle Atlantic Conferences,www.eastern.edu,www.goeasterneagles.com,PA,D-III,2024-25,Eastern,MACs
 207,Eastern Washington University,825,Big Sky Conference,www.ewu.edu/,goeags.com,WA,D-I,2024-25,Eastern Wash.,Big Sky
 208,Eckerd College,919,Sunshine State Conference,www.eckerd.edu/,www.eckerdtritons.com,FL,D-II,2024-25,Eckerd,Sunshine State
 1066,Edgewood College,30097,Northern Athletics Collegiate Conference,www.edgewood.edu,www.EdgewoodCollegeEagles.com,WI,D-III,2024-25,Edgewood,NACC
@@ -288,10 +303,12 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 218,Eureka College,12974,St. Louis Intercollegiate Athletic Conference,www.eureka.edu,www.eurekareddevils.com,IL,D-III,2024-25,Eureka,SLIAC
 219,University of Evansville,884,Missouri Valley Conference,www.evansville.edu,www.gopurpleaces.com,IN,D-I,2024-25,Evansville,MVC
 220,Fairfield University,871,Metro Atlantic Athletic Conference,fairfield.edu,fairfieldstags.com,CT,D-I,2024-25,Fairfield,MAAC
+221,"Fairleigh Dickinson University, Florham",877,Middle Atlantic Conferences,www.fdu.edu,www.fdudevils.com,NJ,D-III,2024-25,FDU-Florham,MACs
 222,"Fairleigh Dickinson University, Metropolitan Campus",846,Northeast Conference,www.fdu.edu,www.fduknights.com,NJ,D-I,2024-25,FDU,NEC
 1076,Fairmont State University,30183,Mountain East Conference,www.fairmontstate.edu,www.fightingfalcons.com,WV,D-II,2024-25,Fairmont St.,MEC
 27892,Farmingdale State College,13054,Skyline Conference,www.farmingdale.edu,www.farmingdalesports.com,NY,D-III,2024-25,Farmingdale St.,Skyline
 223,Fayetteville State University,832,Central Intercollegiate Athletic Association,www.uncfsu.edu,fsubroncos.com,NC,D-II,2024-25,Fayetteville St.,CIAA
+23157,Felician University,28752,Central Atlantic Collegiate Conference,www.felician.edu,www.felicianathletics.com,NJ,D-II,2024-25,Felician,CACC
 224,Ferris State University,854,Great Lakes Intercollegiate Athletic Conference,www.ferris.edu,www.ferrisstatebulldogs.com,MI,D-II,2024-25,Ferris St.,GLIAC
 225,Ferrum College,903,Old Dominion Athletic Conf.,www.ferrum.edu,www.ferrumpanthers.com,VA,D-III,2024-25,Ferrum,ODAC
 1079,University of Findlay,30182,Great Midwest Athletic Conference,www.findlay.edu,findlayoilers.com,OH,D-II,2024-25,Findlay,G-MAC
@@ -299,6 +316,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 30092,Flagler College,12923,Peach Belt Conference,www.flagler.edu,www.flaglerathletics.com/,FL,D-II,2024-25,Flagler,Peach Belt
 235,University of Florida,911,Southeastern Conference,www.ufl.edu,www.floridagators.com,FL,D-I,2024-25,Florida,SEC
 228,Florida A&M University,916,Southwestern Athletic Conf.,www.famu.edu,www.famuathletics.com/,FL,D-I,2024-25,Florida A&M,SWAC
+229,Florida Atlantic University,823,American Athletic Conference,www.fau.edu,www.fausports.com,FL,D-I,2024-25,Fla. Atlantic,AAC
 28755,Florida Gulf Coast University,920,Atlantic Sun Conference,https://www.fgcu.edu/,fgcuathletics.com/,FL,D-I,2024-25,FGCU,ASUN
 230,Florida Institute of Technology,919,Sunshine State Conference,www.fit.edu/,floridatechsports.com/,FL,D-II,2024-25,Florida Tech,Sunshine State
 231,Florida International University,24312,Conference USA,www.fiu.edu,www.fiusports.com,FL,D-I,2024-25,FIU,CUSA
@@ -334,8 +352,10 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 253,Georgia Southern University,818,Sun Belt Conference,georgiasouthern.edu,gseagles.com,GA,D-I,2024-25,Ga. Southern,Sun Belt
 1097,Georgia Southwestern State University,12923,Peach Belt Conference,www.gsw.edu,www.gswcanes.com,GA,D-II,2024-25,Ga. Southwestern,Peach Belt
 254,Georgia State University,818,Sun Belt Conference,gsu.edu,georgiastatesports.com,GA,D-I,2024-25,Georgia St.,Sun Belt
+9004,Georgian Court University,28752,Central Atlantic Collegiate Conference,www.georgian.edu,www.gculions.com,NJ,D-II,2024-25,Georgian Court,CACC
 258,Gettysburg College,9683,Centennial Conference,www.gettysburg.edu,www.gettysburgsports.com,PA,D-III,2024-25,Gettysburg,Centennial
 1098,Glenville State University,30183,Mountain East Conference,www.glenville.edu,www.gscpioneers.com,WV,D-II,2024-25,Glenville St.,MEC
+8366,Goldey-Beacom College,28752,Central Atlantic Collegiate Conference,www.gbc.edu,www.gbcathletics.com,DE,D-II,2024-25,Goldey-Beacom,CACC
 260,Gonzaga University,922,West Coast Conference,www.gonzaga.edu,www.gozags.com,WA,D-I,2024-25,Gonzaga,WCC
 1099,Gordon College,839,Conference of New England,www.gordon.edu,athletics.gordon.edu/index.aspx,MA,D-III,2024-25,Gordon,CNE
 1467,Goucher College,30101,Landmark Conference,www.goucher.edu,athletics.goucher.edu/landing/index,MD,D-III,2024-25,Goucher,Landmark
@@ -367,12 +387,15 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 1123,Henderson State University,30144,Great American Conference,hsu.edu,hsusports.com,AR,D-II,2024-25,Henderson St.,GAC
 1124,Hendrix College,30169,Southern Athletic Association,www.hendrix.edu,www.hendrixwarriors.com,AR,D-III,2024-25,Hendrix,SAA
 19651,High Point University,826,Big South Conference,www.highpoint.edu,www.highpointpanthers.com,NC,D-I,2024-25,High Point,Big South
+8398,Hilbert College,30022,Allegheny Mountain Collegiate Conference,www.hilbert.edu,www.hilberthawks.com,NY,D-III,2024-25,Hilbert,AMCC
 280,Hillsdale College,30182,Great Midwest Athletic Conference,www.hillsdale.edu,www.hillsdalechargers.com,MI,D-II,2024-25,Hillsdale,G-MAC
 281,Hiram College,897,North Coast Athletic Conference,www.hiram.edu,www.hiramterriers.com,OH,D-III,2024-25,Hiram,NCAC
 282,Hobart and William Smith Colleges,24197,Liberty League,www.hws.edu,www.hwsathletics.com,NY,D-III,2024-25,Hobart,Liberty League
 283,Hofstra University,837,Coastal Athletic Association,www.hofstra.edu,www.gohofstra.com,NY,D-I,2024-25,Hofstra,CAA
 284,Hollins University,903,Old Dominion Athletic Conf.,www.hollins.edu,www.hollinssports.com,VA,D-III,2024-25,Hollins,ODAC
 285,College of the Holy Cross,838,Patriot League,www.holycross.edu,goholycross.com/,MA,D-I,2024-25,Holy Cross,Patriot
+1126,Holy Family University,28752,Central Atlantic Collegiate Conference,www.holyfamily.edu,athletics.holyfamily.edu,PA,D-II,2024-25,Holy Family,CACC
+8404,Hood College,877,Middle Atlantic Conferences,www.hood.edu,www.hoodathletics.com,MD,D-III,2024-25,Hood,MACs
 286,Hope College,873,Michigan Intercol. Ath. Assn.,www.hope.edu,athletics.hope.edu,MI,D-III,2024-25,Hope,Michigan Intercol. Ath. Assn.
 30160,Houghton University,863,Empire 8,www.houghton.edu,athletics.houghton.edu,NY,D-III,2024-25,Houghton,Empire 8
 288,University of Houston,25354,Big 12 Conference,www.uh.edu,www.uhcougars.com,TX,D-I,2024-25,Houston,Big 12
@@ -426,8 +449,10 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 1159,Keuka College,863,Empire 8,www.keuka.edu/,www.keukaathletics.com,NY,D-III,2024-25,Keuka,Empire 8
 30047,Keystone College,30071,United East Conference,www.keystone.edu,www.gokcgiants.com,PA,D-III,2024-25,Keystone,United East
 30051,King University,4423,Conference Carolinas,www.king.edu/,www.kingtornado.com/,TN,D-II,2024-25,King (TN),Conference Carolinas
+336,King's College (Pennsylvania),877,Middle Atlantic Conferences,www.kings.edu/,www.kings.edu/athletics,PA,D-III,2024-25,King's (PA),MACs
 337,Knox College,23119,Midwest Conference,www.knox.edu,prairiefire.knox.edu,IL,D-III,2024-25,Knox,MWC
 339,Kutztown University of Pennsylvania,906,Pennsylvania State Athletic Conference,www.kutztown.edu,www.kubears.com,PA,D-II,2024-25,Kutztown,PSAC
+1163,La Roche University,30022,Allegheny Mountain Collegiate Conference,www.laroche.edu,larochesports.com,PA,D-III,2024-25,La Roche,AMCC
 340,La Salle University,820,Atlantic 10 Conference,www.lasalle.edu/,www.goexplorers.com/,PA,D-I,2024-25,La Salle,Atlantic 10
 341,University of La Verne,910,Southern California Intercollegiate Athletic Conf.,www.laverne.edu,www.leopardathletics.com,CA,D-III,2024-25,La Verne,SCIAC
 342,Lafayette College,838,Patriot League,www.lafayette.edu,www.goleopards.com,PA,D-I,2024-25,Lafayette,Patriot
@@ -443,6 +468,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 8486,Lasell University,23257,Great Northeast Athletic Conference,www.lasell.edu,laserpride.lasell.edu,MA,D-III,2024-25,Lasell,Great Northeast
 348,Lawrence University,23119,Midwest Conference,www.lawrence.edu/,vikings.lawrence.edu/index.aspx,WI,D-III,2024-25,Lawrence,MWC
 349,Le Moyne College,846,Northeast Conference,www.lemoyne.edu/,www.lemoynedolphins.com,NY,D-II,2024-25,Le Moyne,NEC
+351,Lebanon Valley College,877,Middle Atlantic Conferences,www.lvc.edu,www.godutchmen.com,PA,D-III,2024-25,Lebanon Valley,MACs
 30013,Lee University,858,Gulf South Conference,www.leeuniversity.edu/,www.leeuflames.com,TN,D-II,2024-25,Lee,Gulf South
 13302,Lees-McRae College,4423,Conference Carolinas,www.lmc.edu,lmcbobcats.com,NC,D-II,2024-25,Lees-McRae,Conference Carolinas
 352,Lehigh University,838,Patriot League,www.lehigh.edu,www.lehighsports.com,PA,D-I,2024-25,Lehigh,Patriot
@@ -490,6 +516,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 381,Manhattan University,871,Metro Atlantic Athletic Conference,www.manhattan.edu,www.gojaspers.com,NY,D-I,2024-25,Manhattan,MAAC
 382,Manhattanville University,13054,Skyline Conference,www.mville.edu,www.govaliants.com,NY,D-III,2024-25,Manhattanville,Skyline
 384,Mansfield University of Pennsylvania,906,Pennsylvania State Athletic Conference,www.mansfield.edu,www.gomounties.com,PA,D-II,2024-25,Mansfield,PSAC
+1194,Maranatha Baptist University,0,Independent,www.mbu.edu/,mbusabercats.com,WI,D-III,2024-25,Maranatha Baptist,Independent
 1196,Marian University (Wisconsin),30097,Northern Athletics Collegiate Conference,www.marianuniversity.edu,www.sabreathletics.com,WI,D-III,2024-25,Marian (WI),NACC
 385,Marietta College,901,Ohio Athletic Conference,www.marietta.edu/,pioneers.marietta.edu/,OH,D-III,2024-25,Marietta,OAC
 386,Marist College,871,Metro Atlantic Athletic Conference,marist.edu,goredfoxes.com,NY,D-I,2024-25,Marist,MAAC
@@ -521,11 +548,13 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 8530,McMurry University,835,Southern Collegiate Athletic Conference,www.mcm.edu,www.mcmurrysports.com,TX,D-III,2024-25,McMurry,SCAC
 402,McNeese State University,914,Southland Conference,www.mcneese.edu/,www.mcneesesports.com,LA,D-I,2024-25,McNeese,Southland
 403,Medgar Evers College,834,City University of New York Athletic Conference,www.mec.cuny.edu,www.mecathletics.com,NY,D-III,2024-25,Medgar Evers,CUNYAC
+404,University of Memphis,823,American Athletic Conference,www.memphis.edu,www.gotigersgo.com,TN,D-I,2024-25,Memphis,AAC
 406,Mercer University,912,Southern Conference,www2.mercer.edu/default.htm,www.mercerbears.com,GA,D-I,2024-25,Mercer,SoCon
 407,Mercy University,11265,East Coast Conference,www.mercy.edu,www.mercyathletics.com,NY,D-II,2024-25,Mercy,ECC
 408,Mercyhurst University,846,Northeast Conference,mercyhurst.edu,www.hurstathletics.com,PA,D-II,2024-25,Mercyhurst,NEC
 409,Meredith College,842,USA South Athletic Conference,www.meredith.edu,www.goavengingangels.com,NC,D-III,2024-25,Meredith,USA South
 410,Merrimack College,871,Metro Atlantic Athletic Conference,www.merrimack.edu,www.merrimackathletics.com,MA,D-I,2024-25,Merrimack,MAAC
+411,Messiah University,877,Middle Atlantic Conferences,www.messiah.edu,www.gomessiah.com,PA,D-III,2024-25,Messiah,MACs
 412,Methodist University,842,USA South Athletic Conference,www.methodist.edu,www.mumonarchs.com,NC,D-III,2024-25,Methodist,USA South
 413,Metropolitan State University of Denver,13128,Rocky Mountain Athletic Conference,www.msudenver.edu,www.RoadrunnersAthletics.com,CO,D-II,2024-25,MSU Denver,RMAC
 415,University of Miami (Florida),821,Atlantic Coast Conference,www.miami.edu,miamihurricanes.com/,FL,D-I,2024-25,Miami (FL),ACC
@@ -548,6 +577,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 428,"University of Minnesota, Twin Cities",827,Big Ten Conference,www.umn.edu,www.gophersports.com,MN,D-I,2024-25,Minnesota,Big Ten
 1226,"University of Minnesota, Morris",30115,Upper Midwest Athletic Conference,www.morris.umn.edu,www.morriscougars.com,MN,D-III,2024-25,Minn.-Morris,UMAC
 30125,Minot State University,12853,Northern Sun Intercollegiate Conference,www.minotstateu.edu,www.msubeavers.com,ND,D-II,2024-25,Minot St.,NSIC
+16142,Misericordia University,877,Middle Atlantic Conferences,www.misericordia.edu/,www.misericordia.edu/athletics,PA,D-III,2024-25,Misericordia,MACs
 433,University of Mississippi,911,Southeastern Conference,www.olemiss.edu,www.olemisssports.com,MS,D-I,2024-25,Ole Miss,SEC
 429,Mississippi College,858,Gulf South Conference,www.mc.edu,www.gochoctaws.com,MS,D-II,2024-25,Mississippi Col.,Gulf South
 430,Mississippi State University,911,Southeastern Conference,www.msstate.edu,www.hailstate.com,MS,D-I,2024-25,Mississippi St.,SEC
@@ -574,6 +604,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 445,Morehouse College,913,Southern Intercol. Ath. Conf.,www.morehouse.edu,www.morehouseathletics.com,GA,D-II,2024-25,Morehouse,SIAC
 446,Morgan State University,876,Mid-Eastern Athletic Conf.,www.morgan.edu,www.morganstatebears.com,MD,D-I,2024-25,Morgan St.,MEAC
 30067,State University of New York at Morrisville,917,State University of New York Athletic Conference,www.morrisville.edu,morrisvillemustangs.com/,NY,D-III,2024-25,SUNY Morrisville,SUNYAC
+30036,Mount Aloysius College,30022,Allegheny Mountain Collegiate Conference,www.mtaloy.edu,www.mountieathletics.com,PA,D-III,2024-25,Mount Aloysius,AMCC
 449,Mount Holyoke College,890,New England Women's and Men's Athletic Conference,www.mtholyoke.edu/,www.mtholyoke.edu/athletics,MA,D-III,2024-25,Mount Holyoke,NEWMAC
 30033,Mount Mary University,15810,Coast-To-Coast Athletic Conference,www.mtmary.edu/,mtmaryathletics.com,WI,D-III,2024-25,Mount Mary,C2C
 1245,University of Mount Olive,4423,Conference Carolinas,www.umo.edu,www.umotrojans.com,NC,D-II,2024-25,Mount Olive,Conference Carolinas
@@ -620,6 +651,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 491,North Carolina Wesleyan University,842,USA South Athletic Conference,https://ncwu.edu/,https://ncwsports.com/,NC,D-III,2024-25,N.C. Wesleyan,USA South
 460,University of North Carolina Wilmington,837,Coastal Athletic Association,www.uncw.edu,www.uncwsports.com,NC,D-I,2024-25,UNCW,CAA
 457,"University of North Carolina, Chapel Hill",821,Atlantic Coast Conference,www.unc.edu,www.goheels.com,NC,D-I,2024-25,North Carolina,ACC
+458,The University of North Carolina at Charlotte,823,American Athletic Conference,www.charlotte.edu,www.charlotte49ers.com,NC,D-I,2024-25,Charlotte,AAC
 459,The University of North Carolina at Greensboro,912,Southern Conference,www.uncg.edu,www.uncgspartans.com,NC,D-I,2024-25,UNC Greensboro,SoCon
 537,University of North Carolina at Pembroke,4423,Conference Carolinas,www.uncp.edu,www.uncpbraves.com,NC,D-II,2024-25,UNC Pembroke,Conference Carolinas
 492,North Central College,836,College Conference of Illinois & Wisconsin,noctrl.edu/,northcentralcardinals.com,IL,D-III,2024-25,North Central (IL),CCIW
@@ -630,6 +662,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 30052,University of North Georgia,12923,Peach Belt Conference,www.ung.edu/,www.ungathletics.com,GA,D-II,2024-25,North Georgia,Peach Belt
 9223,North Greenville University,4423,Conference Carolinas,www.ngu.edu/,www.nguathletics.com,SC,D-II,2024-25,North Greenville,Conference Carolinas
 496,North Park University,836,College Conference of Illinois & Wisconsin,www.northpark.edu/,www.northpark.edu/athletics/,IL,D-III,2024-25,North Park,CCIW
+497,University of North Texas,823,American Athletic Conference,www.unt.edu,www.meangreensports.com,TX,D-I,2024-25,North Texas,AAC
 12810,Northeastern State University,883,Mid-America Intercollegiate Athletics Association,www.nsuok.edu,www.goriverhawksgo.com,OK,D-II,2024-25,Northeastern St.,Mid-America Intercollegiate
 500,Northeastern University,837,Coastal Athletic Association,www.northeastern.edu,www.nuhuskies.com,MA,D-I,2024-25,Northeastern,CAA
 501,Northern Arizona University,825,Big Sky Conference,www.nau.edu,www.nauathletics.com,AZ,D-I,2024-25,Northern Ariz.,Big Sky
@@ -668,6 +701,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 526,State University of New York at Oneonta,917,State University of New York Athletic Conference,www.oneonta.edu,www.oneontaathletics.com,NY,D-III,2024-25,SUNY Oneonta,SUNYAC
 527,Oral Roberts University,819,The Summit League,www.oru.edu,www.oruathletics.com,OK,D-I,2024-25,Oral Roberts,Summit League
 529,University of Oregon,827,Big Ten Conference,www.uoregon.edu,www.goducks.com,OR,D-I,2024-25,Oregon,Big Ten
+528,Oregon State University,905,Pac-12 Conference,oregonstate.edu/,osubeavers.com/,OR,D-I,2024-25,Oregon St.,Pac-12
 530,State University of New York at Oswego,917,State University of New York Athletic Conference,www.oswego.edu/index,oswegolakers.com,NY,D-III,2024-25,Oswego St.,SUNYAC
 531,Otterbein University,901,Ohio Athletic Conference,www.otterbein.edu/,www.otterbeincardinals.com,OH,D-III,2024-25,Otterbein,OAC
 1289,Ouachita Baptist University,30144,Great American Conference,www.obu.edu,www.obutigers.com,AR,D-II,2024-25,Ouachita Baptist,GAC
@@ -678,6 +712,8 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 2751,Pacific University (Oregon),25300,Northwest Conference,www.pacificu.edu/,www.goboxers.com,OR,D-III,2024-25,Pacific (OR),NWC
 30045,Palm Beach Atlantic University,919,Sunshine State Conference,www.pba.edu,www.pbasailfish.com,FL,D-II,2024-25,Palm Beach Atl.,Sunshine State
 30190,Pennsylvania College of Technology,30071,United East Conference,www.pct.edu,athletics.pct.edu,PA,D-III,2024-25,Penn College,United East
+25719,"Penn State University, Altoona",30022,Allegheny Mountain Collegiate Conference,www.altoona.psu.edu,www.psaltoonalions.com,PA,D-III,2024-25,Penn St.-Altoona,AMCC
+538,"Pennsylvania State Univ. Erie, the Behrend College",30022,Allegheny Mountain Collegiate Conference,pserie.psu.edu,PSBLions.com,PA,D-III,2024-25,Penn St.-Behrend,AMCC
 30081,Penn State Harrisburg,30071,United East Conference,www.hbg.psu.edu,athletics.hbg.psu.edu/landing/index,PA,D-III,2024-25,Penn St. Harrisburg,United East
 30044,Penn State Berks College,30071,United East Conference,www.berks.psu.edu,www.psuberksathletics.com,PA,D-III,2024-25,Penn St.-Berks,United East
 540,University of Pennsylvania,865,The Ivy League,www.upenn.edu/,www.pennathletics.com,PA,D-I,2024-25,Penn,Ivy League
@@ -688,6 +724,8 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 21830,Piedmont University,30251,Collegiate Conference of the South,www.piedmont.edu/,www.piedmontlions.com,GA,D-III,2024-25,Piedmont,CCS
 1314,Pittsburg State University,883,Mid-America Intercollegiate Athletics Association,www.pittstate.edu,www.pittstategorillas.com,KS,D-II,2024-25,Pittsburg St.,Mid-America Intercollegiate
 545,University of Pittsburgh,821,Atlantic Coast Conference,www.pitt.edu,www.pittsburghpanthers.com,PA,D-I,2024-25,Pittsburgh,ACC
+1315,"University of Pittsburgh, Bradford",30022,Allegheny Mountain Collegiate Conference,www.upb.pitt.edu/,athletics.pittbradford.org/landing/index,PA,D-III,2024-25,Pitt.-Bradford,AMCC
+11839,"University of Pittsburgh, Greensburg",30022,Allegheny Mountain Collegiate Conference,www.greensburg.pitt.edu/,pittgreensburgathletics.com/,PA,D-III,2024-25,Pitt.-Greensburg,AMCC
 546,"University of Pittsburgh, Johnstown",906,Pennsylvania State Athletic Conference,www.upj.pitt.edu,pittjohnstownathletics.com/,PA,D-II,2024-25,Pitt.-Johnstown,PSAC
 547,Plattsburgh State University of New York,917,State University of New York Athletic Conference,www.plattsburgh.edu/,www.gocardinalsports.com/,NY,D-III,2024-25,Plattsburgh St.,SUNYAC
 548,Plymouth State University,867,Little East Conference,www.plymouth.edu/,athletics.plymouth.edu/,NH,D-III,2024-25,Plymouth St.,Little East
@@ -696,6 +734,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 549,Pomona-Pitzer Colleges,910,Southern California Intercollegiate Athletic Conf.,www.pomona.edu; www.pitzer.edu,www.sagehens.com,CA,D-III,2024-25,Pomona-Pitzer,SCIAC
 551,University of Portland,922,West Coast Conference,www.up.edu,www.portlandpilots.com,OR,D-I,2024-25,Portland,WCC
 550,Portland State University,825,Big Sky Conference,pdx.edu,goviks.com,OR,D-I,2024-25,Portland St.,Big Sky
+1318,Post University,28752,Central Atlantic Collegiate Conference,www.post.edu,www.posteagles.com,CT,D-II,2024-25,Post,CACC
 552,State University of New York at Potsdam,917,State University of New York Athletic Conference,www.potsdam.edu/,www.potsdambears.com,NY,D-III,2024-25,SUNY Potsdam,SUNYAC
 553,Prairie View A&M University,916,Southwestern Athletic Conf.,www.pvamu.edu,www.pvpanthers.com,TX,D-I,2024-25,Prairie View,SWAC
 2715,Pratt Institute,30233,Atlantic East Conference,www.pratt.edu,www.goprattgo.com,NY,D-III,2024-25,Pratt,Atlantic East
@@ -703,6 +742,9 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 554,Princeton University,865,The Ivy League,www.princeton.edu,www.goprincetontigers.com,NJ,D-I,2024-25,Princeton,Ivy League
 555,Principia College,12974,St. Louis Intercollegiate Athletic Conference,www.principiacollege.edu,www.principiaathletics.com,IL,D-III,2024-25,Principia,SLIAC
 556,Providence College,30184,Big East Conference,www.providence.edu/,www.friars.com,RI,D-I,2024-25,Providence,Big East
+2682,"University of Puerto Rico, Bayamon",0,Independent,www.uprb.edu,www.uprb.edu,PR,D-II,2024-25,P.R.-Bayamon,Independent
+24361,"University of Puerto Rico, Mayaguez",0,Independent,www.uprm.edu,www.uprm.edu/actividadesatleticas,PR,D-II,2024-25,P.R.-Mayaguez,Independent
+2716,"University of Puerto Rico, Rio Piedras",0,Independent,www.uprrp.edu,https://estudiantes.uprrp.edu/desarollo-estudiantil/departamento-atletico/,PR,D-II,2024-25,P.R.-Rio Piedras,Independent
 557,University of Puget Sound,25300,Northwest Conference,www.pugetsound.edu,www.loggerathletics.com,WA,D-III,2024-25,Puget Sound,NWC
 30029,"Purchase College, State University of New York",13054,Skyline Conference,www.purchase.edu,www.purchasecollegeathletics.com,NY,D-III,2024-25,Purchase,Skyline
 308,Purdue University Fort Wayne,881,Horizon League,www.pfw.edu/,www.gomastodons.com/,IN,D-I,2024-25,Purdue Fort Wayne,Horizon
@@ -723,6 +765,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 572,University of Rhode Island,820,Atlantic 10 Conference,www.uri.edu,www.gorhody.com,RI,D-I,2024-25,Rhode Island,Atlantic 10
 571,Rhode Island College,867,Little East Conference,www.ric.edu,www.goanchormen.com,RI,D-III,2024-25,Rhode Island Col.,Little East
 573,Rhodes College,30169,Southern Athletic Association,www.rhodes.edu/,www.rhodeslynx.com,TN,D-III,2024-25,Rhodes,SAA
+574,Rice University,823,American Athletic Conference,www.rice.edu,www.riceowls.com,TX,D-I,2024-25,Rice,AAC
 575,University of Richmond,820,Atlantic 10 Conference,www.richmond.edu,richmondspiders.com/,VA,D-I,2024-25,Richmond,Atlantic 10
 576,Rider University,871,Metro Atlantic Athletic Conference,www.rider.edu,www.gobroncs.com,NJ,D-I,2024-25,Rider,MAAC
 577,Ripon College,23119,Midwest Conference,www.ripon.edu,riponredhawks.com/,WI,D-III,2024-25,Ripon,MWC
@@ -753,6 +796,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 605,Saint Joseph's College (Maine),23257,Great Northeast Athletic Conference,www.sjcme.edu,www.gomonks.com,ME,D-III,2024-25,St. Joseph's (ME),Great Northeast
 30041,Salem College (North Carolina),842,USA South Athletic Conference,www.salem.edu/,www.salem.edu/athletics,NC,D-III,2024-25,Salem (NC),USA South
 621,Salem State University,870,Massachusetts State Collegiate Athletic Conference,www.salemstate.edu,www.salemstatevikings.com,MA,D-III,2024-25,Salem St.,MASCAC
+19117,Salem University (West Virginia),0,Independent,www.salemu.edu/,www.salemtigers.com,WV,D-II,2024-25,Salem (WV),Independent
 622,Salisbury University,15810,Coast-To-Coast Athletic Conference,www.salisbury.edu/,www.suseagulls.com,MD,D-III,2024-25,Salisbury,C2C
 623,Salve Regina University,890,New England Women's and Men's Athletic Conference,www.salve.edu,www.salveathletics.com,RI,D-III,2024-25,Salve Regina,NEWMAC
 624,Sam Houston State University,24312,Conference USA,www.shsu.edu,www.gobearkats.com,TX,D-I,2024-25,Sam Houston,CUSA
@@ -794,6 +838,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 650,University of South Dakota,819,The Summit League,www.usd.edu,www.goyotes.com,SD,D-I,2024-25,South Dakota,Summit League
 30139,South Dakota School of Mines & Technology,13128,Rocky Mountain Athletic Conference,sdmines.sdsmt.edu/sdsmt,gorockers.com,SD,D-II,2024-25,South Dakota Mines,RMAC
 649,South Dakota State University,819,The Summit League,www.sdstate.edu,www.gojacks.com,SD,D-I,2024-25,South Dakota St.,Summit League
+651,University of South Florida,823,American Athletic Conference,www.usf.edu/,www.gousfbulls.com/,FL,D-I,2024-25,South Fla.,AAC
 654,Southeast Missouri State University,902,Ohio Valley Conference,www.semo.edu,www.semoredhawks.com,MO,D-I,2024-25,Southeast Mo. St.,OVC
 655,Southeastern Louisiana University,914,Southland Conference,www.southeastern.edu,www.lionsports.net,LA,D-I,2024-25,Southeastern La.,Southland
 1371,Southeastern Oklahoma State University,30144,Great American Conference,www.se.edu,www.gosoutheastern.com,OK,D-II,2024-25,Southeastern Okla.,GAC
@@ -855,6 +900,8 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 675,College of Staten Island,11265,East Coast Conference,www.csi.cuny.edu,www.csidolphins.com,NY,D-II,2024-25,Staten Island,ECC
 676,Stephen F. Austin State University,914,Southland Conference,www.sfasu.edu/,SFAjacks.com,TX,D-I,2024-25,SFA,Southland
 678,Stetson University,920,Atlantic Sun Conference,www.stetson.edu/,www.gohatters.com,FL,D-I,2024-25,Stetson,ASUN
+679,Stevens Institute of Technology,877,Middle Atlantic Conferences,www.stevens.edu,www.stevensducks.com,NJ,D-III,2024-25,Stevens,MACs
+21852,Stevenson University,877,Middle Atlantic Conferences,www.stevenson.edu,www.gomustangsports.com,MD,D-III,2024-25,Stevenson,MACs
 681,Stockton University,891,New Jersey Athletic Conference,www.stockton.edu,www.stocktonathletics.com,NJ,D-III,2024-25,Stockton,NJAC
 682,Stonehill College,846,Northeast Conference,www.stonehill.edu,www.stonehillskyhawks.com,MA,D-II,2024-25,Stonehill,NEC
 683,Stony Brook University,837,Coastal Athletic Association,stonybrook.edu,stonybrookathletics.com,NY,D-I,2024-25,Stony Brook,CAA
@@ -867,6 +914,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 688,Syracuse University,821,Atlantic Coast Conference,syracuse.edu,cuse.com,NY,D-I,2024-25,Syracuse,ACC
 689,University of Tampa,919,Sunshine State Conference,www.ut.edu,https://www.tampaspartans.com/landing/index,FL,D-II,2024-25,Tampa,Sunshine State
 1395,Tarleton State University,923,Western Athletic Conference,www.tarleton.edu/,tarletonsports.com,TX,D-I,2024-25,Tarleton St.,WAC
+690,Temple University,823,American Athletic Conference,www.temple.edu,www.owlsports.com,PA,D-I,2024-25,Temple,AAC
 691,Tennessee State University,902,Ohio Valley Conference,www.tnstate.edu/,www.tsutigers.com,TN,D-I,2024-25,Tennessee St.,OVC
 692,Tennessee Technological University,902,Ohio Valley Conference,www.tntech.edu/,www.TTUsports.com/,TN,D-I,2024-25,Tennessee Tech,OVC
 693,University of Tennessee at Chattanooga,912,Southern Conference,www.utc.edu,www.gomocs.com,TN,D-I,2024-25,Chattanooga,SoCon
@@ -889,9 +937,11 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 703,University of Texas at Austin,911,Southeastern Conference,www.utexas.edu,www.TexasSports.com,TX,D-I,2024-25,Texas,SEC
 23121,University of Texas at Dallas,868,Lone Star Conference,www.utdallas.edu/,utdcomets.com,TX,D-III,2024-25,Texas-Dallas,Lone Star
 704,University of Texas at El Paso,24312,Conference USA,www.utep.edu,www.utepminers.com,TX,D-I,2024-25,UTEP,CUSA
+706,University of Texas at San Antonio,823,American Athletic Conference,www.utsa.edu,www.goutsa.com,TX,D-I,2024-25,UTSA,AAC
 30028,The University of Texas at Tyler,868,Lone Star Conference,www.uttyler.edu,www.uttylerpatriots.com,TX,D-II,2024-25,UT Tyler,Lone Star
 707,Thiel College,907,Presidents' Athletic Conference,www.thiel.edu,www.thielathletics.com,PA,D-III,2024-25,Thiel,PAC
 2758,Thomas College,30026,North Atlantic Conference,www.thomas.edu/,www.thomasathletics.com,ME,D-III,2024-25,Thomas (ME),North Atlantic
+543,Thomas Jefferson University,28752,Central Atlantic Collegiate Conference,www.jefferson.edu,www.jeffersonrams.com,PA,D-II,2024-25,Jefferson,CACC
 1403,Tiffin University,30182,Great Midwest Athletic Conference,tiffin.edu,www.gotiffindragons.com,OH,D-II,2024-25,Tiffin,G-MAC
 709,University of Toledo,875,Mid-American Conference,www.utoledo.edu,www.utrockets.com,OH,D-I,2024-25,Toledo,MAC
 711,Towson University,837,Coastal Athletic Association,www.towson.edu,www.towsontigers.com,MD,D-I,2024-25,Towson,CAA
@@ -900,9 +950,12 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 30037,Trine University,873,Michigan Intercol. Ath. Assn.,www.trine.edu,www.trinethunder.com,IN,D-III,2024-25,Trine,Michigan Intercol. Ath. Assn.
 713,Trinity College (Connecticut),12817,New England Small College Athletic Conference,www.trincoll.edu,www.bantamsports.com,CT,D-III,2024-25,Trinity (CT),NESCAC
 715,Trinity University (Texas),835,Southern Collegiate Athletic Conference,www.trinity.edu,www.trinitytigers.com,TX,D-III,2024-25,Trinity (TX),SCAC
+23413,Trinity Washington University,0,Independent,https://discover.trinitydc.edu,https://discover.trinitydc.edu/athletics/,DC,D-III,2024-25,Trinity Washington,Independent
 716,Troy University,818,Sun Belt Conference,troy.edu,troytrojans.com,AL,D-I,2024-25,Troy,Sun Belt
 499,Truman State University,855,Great Lakes Valley Conference,www.truman.edu/,www.trumanbulldogs.com,MO,D-II,2024-25,Truman St.,GLVC
 717,Tufts University,12817,New England Small College Athletic Conference,www.tufts.edu/,www.gotuftsjumbos.com/landing/index,MA,D-III,2024-25,Tufts,NESCAC
+718,Tulane University,823,American Athletic Conference,www.tulane.edu,www.tulanegreenwave.com,LA,D-I,2024-25,Tulane,AAC
+719,The University of Tulsa,823,American Athletic Conference,www.utulsa.edu,www.tulsahurricane.com,OK,D-I,2024-25,Tulsa,AAC
 12830,Tusculum University,12850,South Atlantic Conference,www.tusculum.edu,www.tusculumpioneers.com,TN,D-II,2024-25,Tusculum,SAC
 720,Tuskegee University,913,Southern Intercol. Ath. Conf.,www.tuskegee.edu,www.goldentigersports.com/,AL,D-II,2024-25,Tuskegee,SIAC
 721,U.S. Air Force Academy,5486,Mountain West Conference,usafa.edu,www.goairforcefalcons.com/,CO,D-I,2024-25,Air Force,Mountain West
@@ -950,6 +1003,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 752,Washington and Lee University,903,Old Dominion Athletic Conf.,www.wlu.edu,generalssports.com,VA,D-III,2024-25,Wash. & Lee,ODAC
 751,Washington and Jefferson College,907,Presidents' Athletic Conference,www.washjeff.edu,www.gopresidents.com,PA,D-III,2024-25,Wash. & Jeff.,PAC
 753,Washington College (Maryland),9683,Centennial Conference,www.washcoll.edu/,www.WashingtonCollegeSports.com,MD,D-III,2024-25,Washington Col.,Centennial
+754,Washington State University,905,Pac-12 Conference,www.wsu.edu,www.wsucougars.com,WA,D-I,2024-25,Washington St.,Pac-12
 755,Washington University in St. Louis,1471,University Athletic Association,www.wustl.edu/,washubears.com,MO,D-III,2024-25,WashU,UAA
 757,Wayne State University (Michigan),854,Great Lakes Intercollegiate Athletic Conference,www.wayne.edu,www.wsuathletics.com,MI,D-II,2024-25,Wayne St. (MI),GLIAC
 1433,Wayne State College (Nebraska),12853,Northern Sun Intercollegiate Conference,www.wsc.edu/,www.wscwildcats.com/,NE,D-II,2024-25,Wayne St. (NE),NSIC
@@ -990,6 +1044,8 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 780,Whitman College,25300,Northwest Conference,www.whitman.edu,https://www.whitman.edu/athletics,WA,D-III,2024-25,Whitman,NWC
 781,Whittier College,910,Southern California Intercollegiate Athletic Conf.,www.whittier.edu,www.wcpoets.com,CA,D-III,2024-25,Whittier,SCIAC
 1454,Whitworth University,25300,Northwest Conference,www.whitworth.edu/,www.whitworthpirates.com,WA,D-III,2024-25,Whitworth,NWC
+782,Wichita State University,823,American Athletic Conference,www.wichita.edu,www.goshockers.com,KS,D-I,2024-25,Wichita St.,AAC
+783,Widener University,877,Middle Atlantic Conferences,www.widener.edu/,www.widenerpride.com,PA,D-III,2024-25,Widener,MACs
 784,Wilkes University,30101,Landmark Conference,www.wilkes.edu,www.gowilkesu.com,PA,D-III,2024-25,Wilkes,Landmark
 785,Willamette University,25300,Northwest Conference,www.willamette.edu/,willamette.prestosports.com/landing/index,OR,D-III,2024-25,Willamette,NWC
 786,William & Mary,837,Coastal Athletic Association,www.wm.edu,www.tribeathletics.com,VA,D-I,2024-25,William & Mary,CAA
@@ -997,6 +1053,7 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 787,William Paterson University of New Jersey,891,New Jersey Athletic Conference,www.wpunj.edu,www.wpupioneers.com,NJ,D-III,2024-25,Wm. Paterson,NJAC
 17094,William Peace University,842,USA South Athletic Conference,www.peace.edu/,www.gopeacepacers.com,NC,D-III,2024-25,William Peace,USA South
 789,Williams College,12817,New England Small College Athletic Conference,www.williams.edu/,ephsports.williams.edu/,MA,D-III,2024-25,Williams,NESCAC
+1460,Wilmington University (Delaware),28752,Central Atlantic Collegiate Conference,www.wilmu.edu/index.aspx,athletics.wilmu.edu/landing/index,DE,D-II,2024-25,Wilmington (DE),CACC
 1461,Wilmington College (Ohio),901,Ohio Athletic Conference,www.wilmington.edu/,www.wilmington.edu/athletics,OH,D-III,2024-25,Wilmington (OH),OAC
 12973,Wilson College,30071,United East Conference,www.wilson.edu,www.wilsonphoenix.com,PA,D-III,2024-25,Wilson,United East
 1462,Wingate University,12850,South Atlantic Conference,wingate.edu,wingatebulldogs.com,NC,D-II,2024-25,Wingate,SAC
@@ -1027,6 +1084,20 @@ team_id,team_name,conference_id,conference_name,school_url,school_athletic_url,s
 812,Xavier University,30184,Big East Conference,www.xavier.edu,www.goxavier.com,OH,D-I,2024-25,Xavier,Big East
 813,Yale University,865,The Ivy League,www.yale.edu,www.yalebulldogs.com,CT,D-I,2024-25,Yale,Ivy League
 814,Yeshiva University,13054,Skyline Conference,www.yu.edu/,www.yumacs.com,NY,D-III,2024-25,Yeshiva,Skyline
+815,York College (Pennsylvania),877,Middle Atlantic Conferences,www.ycp.edu,www.ycpspartans.com,PA,D-III,2024-25,York (PA),MACs
 2730,York College (New York),834,City University of New York Athletic Conference,www.york.cuny.edu,www.yorkathletics.com,NY,D-III,2024-25,York (NY),CUNYAC
 30154,Young Harris College,4423,Conference Carolinas,www.yhc.edu,www.yhcathletics.com,GA,D-II,2024-25,Young Harris,Conference Carolinas
 817,Youngstown State University,881,Horizon League,www.ysu.edu,www.ysusports.com,OH,D-I,2024-25,Youngstown St.,Horizon
+30266,"University of California, Merced (UCM)",828,California Collegiate Athletic Association,http://www.ucmerced.edu,http://www.ucmercedbobcats.com,CA,D-II,2024-25,UC Merced,CCAA
+30253,Carlow University,30022,Allegheny Mountain Collegiate Conference,http://www.carlow.edu/,http://athletics.carlow.edu/,PA,D-III,2024-25,Carlow,AMCC
+30267,University of Jamestown (UJ),12853,Northern Sun Intercollegiate Conference,http://uj.edu,http://jimmiepride.com,ND,D-II,2024-25,Jamestown,NSIC
+30262,Jessup University  (JU),19591,Pacific West Conference,http://jessup.edu,http://jessupathletics.com,CA,D-II,2024-25,Jessup,PacWest
+22989,Lyon College,12974,St. Louis Intercollegiate Athletic Conference,http://www.lyon.edu/,http://www.lyon.edu/sports/lyon_sports.html,,Unknown,2024-25,Lyon,SLIAC
+405,Menlo College (MC),19591,Pacific West Conference,http://www.menlo.edu/,http://menloathletics.com/,CA,D-II,2024-25,Menlo,PacWest
+30189,Penn State Brandywine (PSUB),0,Independent,http://https://www.brandywine.psu.edu/,http://https://www.psubrandywineathletics.com/landing/index,PA,D-III,2024-25,Penn St. Brandywine,Independent
+30268,Point Park University (PPU),30183,Mountain East Conference,http://pointpark.edu,http://pointparksports.com,PA,D-II,2024-25,Point Park,MEC
+30264,Regent University (RU),,NCCAA,http://www.regent.edu,http://www.regent.edu/athletics/,VA,D-III,2024-25,Regent,NCCAA
+2807,Roosevelt University (RU),854,Great Lakes Intercollegiate Athletic Conference,http://www.roosevelt.edu,http://www.rooseveltlakers.com,IL,D-II,2024-25,Roosevelt,GLIAC
+1402,Thomas More University,30182,Great Midwest Athletic Conference,http://www.thomasmore.edu,http://www.thomasmoresaints.com,KY,D-II,2024-25,Thomas More,G-MAC
+30259,University of South Carolina Beaufort,12923,Peach Belt Conference,http://uscb.edu,http://uscbathletics.com,SC,D-II,2024-25,USC Beaufort,Peach Belt
+30263,Vanguard University  (VU),19591,Pacific West Conference,http://www.vanguard.edu,http://www.vanguardlions.com,CA,D-II,2024-25,Vanguard,PacWest
