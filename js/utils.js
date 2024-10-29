@@ -87,6 +87,8 @@ export function splitLine(line) {
     return result;
 }
 
+let indexedRows = {};
+
 export function tableData(url, id, urlIndex = false) {
     return fetch(url)
         .then((response) => response.text())
@@ -96,19 +98,16 @@ export function tableData(url, id, urlIndex = false) {
             const tbody = table.querySelector("tbody");
             const allTeamRows = [];
 
-            // Process the rest of the rows as data
             rows.slice(1).forEach((row) => {
                 const rowData = splitLine(row);
-                if (rowData && rowData.length) {
+                const selectedColumns = [rowData[1], rowData[10], rowData[4], rowData[3], rowData[7]];
+                if (selectedColumns && selectedColumns.length) {
                     const tr = document.createElement("tr");
-                    rowData.forEach((cell, index) => {
+                    selectedColumns.forEach((cell, index) => {
                         const cellElement = document.createElement("td");
                         cell = cell.trim().replace(/^"|"$/g, "");
-                        // If the cell is the URL column, add http if necessary
                         if (index === urlIndex) {
-                            cellElement.innerHTML = `<a href="${ensureProtocol(
-                                cell
-                            )}" target="_blank">${cell}</a>`;
+                            cellElement.innerHTML = `<a href="${ensureProtocol(cell)}" target="_blank">${cell}</a>`;
                         } else {
                             cellElement.textContent = cell;
                         }
@@ -116,8 +115,17 @@ export function tableData(url, id, urlIndex = false) {
                     });
                     tbody.appendChild(tr);
                     allTeamRows.push(tr);
+
+                    // Index rows by division and conference
+                    const division = rowData[4].trim();
+                    const conference = rowData[1].trim();
+
+                    if (!indexedRows[division]) indexedRows[division] = {};
+                    if (!indexedRows[division][conference]) indexedRows[division][conference] = [];
+                    indexedRows[division][conference].push(tr);
                 }
             });
+
             return allTeamRows;
         });
 }
@@ -198,47 +206,91 @@ export function ensureProtocol(url) {
     return url;
 }
 
-export function setupConferenceFilter(id, allTeamRows, index, callback) {
-    const conferenceDropdown = document.getElementById(`${id}-dropdown`);
+export function setupDivisionFilter(id, allTeamRows, index, callback) {
+    const divisionDropdown = document.getElementById(`${id}-dropdown`);
 
-    if (conferenceDropdown) {
-        // Populate conference dropdown
-        const conferences = new Set();
-        allTeamRows.forEach(row => {
-            const conferenceValue = row.cells[index].textContent.trim();
-            if (conferenceValue !== '') {
-                conferences.add(conferenceValue);
-            }
-        });
+    if (divisionDropdown) {
+        // Add hard-coded divisions: D-I, D-II, D-III
+        const divisions = ["D-I", "D-II", "D-III"];
 
-        const sortedConferences = Array.from(conferences).sort();
-
-        // Clear existing options
-        conferenceDropdown.innerHTML = '<option value="">All Conferences</option>';
-
-        sortedConferences.forEach(conference => {
+        // Clear existing options and add new ones
+        divisionDropdown.innerHTML = '<option value="">All Divisions</option>';
+        divisions.forEach(division => {
             const option = document.createElement('option');
-            option.value = conference;
-            option.textContent = conference;
-            conferenceDropdown.appendChild(option);
+            option.value = division;
+            option.textContent = division;
+            divisionDropdown.appendChild(option);
         });
 
-        // Add event listener for filtering
-        conferenceDropdown.addEventListener('change', function () {
-            const selectedConference = this.value;
+        // Add event listener to update the conference dropdown based on the selected division
+        divisionDropdown.addEventListener('change', function () {
+            const selectedDivision = this.value;
             allTeamRows.forEach(row => {
-                if (selectedConference === '' || row.cells[index].textContent.trim() === selectedConference) {
+                if (selectedDivision === '' || row.cells[index].textContent.trim() === selectedDivision) {
                     row.style.display = '';
                 } else {
                     row.style.display = 'none';
                 }
             });
 
-            // Call the callback function if provided
+            // Call the callback function if provided to update the conference filter
             if (typeof callback === 'function') {
                 callback();
             }
         });
+    }
+}
+
+export function setupConferenceFilter(id, allTeamRows, index, callback) {
+    const conferenceDropdown = document.getElementById(`${id}-dropdown`);
+    const divisionDropdown = document.getElementById('division-teams-dropdown');
+
+    if (conferenceDropdown) {
+        conferenceDropdown.addEventListener('change', function () {
+            const selectedConference = this.value;
+            allTeamRows.forEach(row => {
+                const rowDivision = row.cells[4].textContent.trim();
+                const selectedDivision = divisionDropdown.value;
+
+                // Show/hide row based on both conference and division selections
+                if (
+                    (selectedConference === '' || row.cells[index].textContent.trim() === selectedConference) &&
+                    (selectedDivision === '' || rowDivision === selectedDivision)
+                ) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Populate conference dropdown based on the selected division
+        const populateConferences = () => {
+            const selectedDivision = divisionDropdown.value;
+            const conferences = new Set();
+
+            allTeamRows.forEach(row => {
+                const rowDivision = row.cells[4].textContent.trim();
+                const conferenceValue = row.cells[index].textContent.trim();
+
+                if ((selectedDivision === '' || rowDivision === selectedDivision) && conferenceValue !== '') {
+                    conferences.add(conferenceValue);
+                }
+            });
+
+            // Clear existing options and add new filtered options
+            conferenceDropdown.innerHTML = '<option value="">All Conferences</option>';
+            Array.from(conferences).sort().forEach(conference => {
+                const option = document.createElement('option');
+                option.value = conference;
+                option.textContent = conference;
+                conferenceDropdown.appendChild(option);
+            });
+        };
+
+        // Populate conferences initially and whenever the division changes
+        populateConferences();
+        divisionDropdown.addEventListener('change', populateConferences);
     }
 }
 
@@ -258,7 +310,7 @@ export async function setupConferenceFilterResults(id, allTeamRows, matchIndex, 
             'C-USA', 'CAA', 'HL', 'Ivy', 'MAAC', 'MAC', 'MEAC', 'MVC', 'MW', 'NEC', 'OVC',
             'PL', 'Pac-12', 'SBC', 'SEC', 'SLC', 'SWAC', 'SoCon', 'Summit', 'WAC', 'WCC'
         ];
-        conferenceDropdown.innerHTML = '<option value="">Select a Conference</option>';
+        conferenceDropdown.innerHTML = '<option value="">All Conferences</option>';
         conferences.sort().forEach(conf => {
             const option = document.createElement('option');
             option.value = conf;
@@ -290,7 +342,7 @@ export function setupTeamFilterResults(id, allTeamRows, matchIndex) {
 
 function updateTeamDropdown(teamDropdown, selectedConference) {
     // Clear the team dropdown
-    teamDropdown.innerHTML = '<option value="">Select a Team</option>';
+    teamDropdown.innerHTML = '<option value="">All Teams</option>';
 
     // Filter teams by selected conference
     const filteredTeams = teamsData.filter(team => team.conference_short === selectedConference);

@@ -5,7 +5,7 @@ let fetchInterval;
 
 export function loadLiveScores() {
     const dropdowns = [
-        { id: 'conference-live', label: 'Select a Conference' }
+        { id: 'conference-live', label: 'All Conferences' }
     ];
 
     const liveContent = document.getElementById('live');

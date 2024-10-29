@@ -6,7 +6,7 @@ let currentSortDirection = 'asc';
 
 export function loadRankingsContent() {
     const dropdowns = [
-        { id: 'conference-rankings', label: 'Select a Conference' }
+        { id: 'conference-rankings', label: 'All Conferences' }
     ];
    
     const rankingsContent = document.getElementById('rankings');

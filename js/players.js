@@ -7,11 +7,11 @@ let currentSortDirection = 'asc';
 
 export function loadPlayersContent() {
     const dropdowns = [
-        { id: 'conference-players', label: 'Select a Conference' },
-        { id: 'team-players', label: 'Select a Team' },
-        { id: 'class-players', label: 'Select a Class' },
-        { id: 'position-players', label: 'Select a Position' },
-        { id: 'hometown-players', label: 'Select a Hometown' },
+        { id: 'conference-players', label: 'All Conferences' },
+        { id: 'team-players', label: 'All Teams' },
+        { id: 'class-players', label: "All Class's" },
+        { id: 'position-players', label: 'All Positions' },
+        { id: 'hometown-players', label: 'All Hometowns' },
     ];
 
     const playersContent = document.getElementById('players');
