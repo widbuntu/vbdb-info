@@ -4,13 +4,15 @@ function createVBDBItem() {
     return `
         <h2 class="text-center">VBDB Content</h2>
         <p class="text-center">Welcome to VBDB!</p>
-        <p class="text-center">Scores and Rankings updates for NCAA Division I Women's Volleyball! Results and Rankings updated daily.</p>
-        <p class="text-center">Live updated every 45 seconds while open.</p>
+        <p class="text-center">Scores updates for NCAA Division I, II & III Women's Volleyball! Rankings (DI). Results and Rankings updated daily.</p>
+        <p class="text-center">Live is DI & updated every 45 seconds while open.</p>
         <hr>
         <h2 class="text-center">Data Downloads</h2>
-            ${urlLink('Results', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/test_sch.csv')}
+            ${urlLink('DI Results', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24.csv')}
+            ${urlLink('DII Results', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d2_24.csv')}
+            ${urlLink('DIII Results', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d3_24.csv')}
             ${urlLink('Rankings', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/fig_stats.csv')}
-            ${urlLink('Teams', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/teams.csv')}
+            ${urlLink('Teams', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/teams2.csv')}
             ${urlLink('Players', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/players.csv')}
         <hr>
         <h2 class="text-center">Data Sources</h2>
