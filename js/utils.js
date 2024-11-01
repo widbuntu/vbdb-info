@@ -276,6 +276,8 @@ export function setupConferenceFilter(id, allTeamRows, index, callback) {
                 if ((selectedDivision === '' || rowDivision === selectedDivision) && conferenceValue !== '') {
                     conferences.add(conferenceValue);
                 }
+                else { conferences.add(conferenceValue);
+                }
             });
 
             // Clear existing options and add new filtered options
