@@ -3,7 +3,7 @@ export function loadResultsContent() {
 <h2 class="text-center">Results 2024</h2>
             <ul class="nav nav-tabs" id="nav-items" role="tablist" style="display: flex; border-bottom: 1px solid #ccc;">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="done-tab" data-bs-toggle="tab" data-bs-target="#done" type="button" role="tab" aria-controls="done" aria-selected="false">D1</button>
+                    <button class="nav-link active" id="done-tab" data-bs-toggle="tab" data-bs-target="#done" type="button" role="tab" aria-controls="done" aria-selected="true">D1</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="dtwo-tab" data-bs-toggle="tab" data-bs-target="#dtwo" type="button" role="tab" aria-controls="dtwo" aria-selected="false">D2</button>
@@ -147,7 +147,6 @@ export function loadResultsContent() {
             </div>
     `;
 }
-
 
 function splitLine(line) {
     // Utility function to split CSV lines, handling quotes
