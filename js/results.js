@@ -256,6 +256,7 @@ function populateTeams(division, teamsArray) {
 
 export async function initResults() {
 
+
     const divisionOneTeams = [
         { team_short: "A&M-Corpus Christi", conference_short: "SLC", division: "D-I" },
         { team_short: "Abilene Christian", conference_short: "WAC", division: "D-I" },
@@ -484,6 +485,7 @@ export async function initResults() {
         { team_short: "Portland", conference_short: "WCC", division: "D-I" },
         { team_short: "Portland St.", conference_short: "BSC", division: "D-I" },
         { team_short: "Prairie View", conference_short: "SWAC", division: "D-I" },
+        { team_short: "St. Thomas (MN)", conference_short: "Summit League", division: "D-I" },
         { team_short: "Presbyterian", conference_short: "BSC", division: "D-I" },
         { team_short: "Princeton", conference_short: "Ivy", division: "D-I" },
         { team_short: "Providence", conference_short: "BE", division: "D-I" },
@@ -612,8 +614,10 @@ export async function initResults() {
         { team_short: "Wyoming", conference_short: "MW", division: "D-I" },
         { team_short: "Xavier", conference_short: "BE", division: "D-I" },
         { team_short: "Yale", conference_short: "Ivy", division: "D-I" },
-        { team_short: "Youngstown St.", conference_short: "HL", division: "D-I" }
-    ];
+        { team_short: "Youngstown St.", conference_short: "HL", division: "D-I" },
+        { team_short: "Queens (NC)", conference_short: "ASUN", division: "D-I" },
+        { team_short: "West Ga.", conference_short: "ASUN", division: "D-I" }
+    ]
 
     const divisionTwoTeams = [
         { team_short: "Academy of Art", conference_short: "PacWest", division: "D-II" },
@@ -826,7 +830,6 @@ export async function initResults() {
         { team_short: "Point Park", conference_short: "MEC", division: "D-II" },
         { team_short: "Post", conference_short: "CACC", division: "D-II" },
         { team_short: "Purdue Northwest", conference_short: "GLIAC", division: "D-II" },
-        { team_short: "Queens (NC)", conference_short: "ASUN", division: "D-II" },
         { team_short: "Queens (NY)", conference_short: "ECC", division: "D-II" },
         { team_short: "Quincy", conference_short: "GLVC", division: "D-II" },
         { team_short: "Regis (CO)", conference_short: "RMAC", division: "D-II" },
@@ -908,7 +911,6 @@ export async function initResults() {
         { team_short: "West Ala.", conference_short: "Gulf South", division: "D-II" },
         { team_short: "West Chester", conference_short: "PSAC", division: "D-II" },
         { team_short: "West Florida", conference_short: "Gulf South", division: "D-II" },
-        { team_short: "West Ga.", conference_short: "ASUN", division: "D-II" },
         { team_short: "West Liberty", conference_short: "MEC", division: "D-II" },
         { team_short: "West Tex. A&M", conference_short: "Lone Star", division: "D-II" },
         { team_short: "West Va. Wesleyan", conference_short: "MEC", division: "D-II" },
@@ -927,7 +929,7 @@ export async function initResults() {
         { team_short: "Winston-Salem", conference_short: "CIAA", division: "D-II" },
         { team_short: "Wis.-Parkside", conference_short: "GLIAC", division: "D-II" },
         { team_short: "Young Harris", conference_short: "Conference Carolinas", division: "D-II" },
-    ];
+    ]
 
     const divisionThreeTeams = [
         { team_short: "Adrian", conference_short: "Michigan Intercol. Ath. Assn.", division: "D-III" },
@@ -1268,7 +1270,6 @@ export async function initResults() {
         { team_short: "St. Norbert", conference_short: "NACC", division: "D-III" },
         { team_short: "St. Olaf", conference_short: "MIAC", division: "D-III" },
         { team_short: "St. Scholastica", conference_short: "MIAC", division: "D-III" },
-        { team_short: "St. Thomas (MN)", conference_short: "Summit League", division: "D-III" },
         { team_short: "St. Thomas (TX)", conference_short: "SCAC", division: "D-III" },
         { team_short: "Stevens", conference_short: "MACs", division: "D-III" },
         { team_short: "Stevenson", conference_short: "MACs", division: "D-III" },
@@ -1363,7 +1364,7 @@ export async function initResults() {
         { team_short: "Yeshiva", conference_short: "Skyline", division: "D-III" },
         { team_short: "York (NY)", conference_short: "CUNYAC", division: "D-III" },
         { team_short: "York (PA)", conference_short: "MACs", division: "D-III" },
-    ];
+    ]
 
         const csvDivisionOneUrl = 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24.csv';
         const csvDivisionTwoUrl = 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d2_24.csv';

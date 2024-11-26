@@ -6,6 +6,23 @@ export function urlLink(label, url) {
     `;
 }
 
+export function dropdownPlayersSelections(label, dropdowns, resultsTab = false) {
+    return `
+        <h2 class="text-center">${label}</h2>
+        <div class="container-fluid">
+            <div class="row">
+                ${dropdowns.map(dropdown => `
+                    <div class="col-auto mb-3">
+                        <select class="form-select form-select-sm" name="${dropdown.id}-dropdown" id="${dropdown.id}-dropdown">
+                            <option value="">${dropdown.label}</option>
+                        </select>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
 export function dropdownSelections(label, dropdowns, resultsTab = false) {
     if (resultsTab != true) {
         return `
@@ -174,6 +191,53 @@ export function tableResultsData(url, id, urlIndex = 3) {
         });
 }
 
+const indexedPlayerRows = {};
+export function tablePlayerData(url, id, urlIndex = false) {
+    return fetch(url)
+        .then((response) => response.text())
+        .then((csvData) => {
+            const rows = csvData.split("\n").filter((row) => row.trim() !== "");
+            const table = document.getElementById(id);
+            const tbody = table.querySelector("tbody");
+            const allTeamRows = [];
+
+            rows.slice(1).forEach((row) => {
+                const rowData = splitLine(row);
+                const tr = document.createElement("tr");
+                
+                // Map CSV columns to table columns
+                const columnMap = [
+                    0,  // No (Number)
+                    1,  // Name
+                    2,  // Class
+                    3,  // Position
+                    4,  // Height
+                    5,  // Hometown
+                    6,  // High School
+                    17,  // conference_short
+                    8   // team_short
+                ];
+
+                columnMap.forEach((csvIndex) => {
+                    const cellElement = document.createElement("td");
+                    let cellValue = rowData[csvIndex] ? rowData[csvIndex].trim().replace(/^"|"$/g, "") : "";
+                    
+                    // Special handling for hometown to remove quotes
+                    if (csvIndex === 5) {
+                        cellValue = cellValue.replace(/"/g, '');
+                    }
+                    
+                    cellElement.textContent = cellValue;
+                    tr.appendChild(cellElement);
+                });
+                
+                tbody.appendChild(tr);
+                allTeamRows.push(tr);
+            });
+            return allTeamRows;
+        });
+}
+
 // Function to format match results
 function formatMatch(match, results) {
     const setWins = results.match(/\[(\d+)-(\d+)\]/); // Extract set wins like [3-0] or [2-3]
@@ -239,6 +303,60 @@ export function setupDivisionFilter(id, allTeamRows, index, callback) {
             }
         });
     }
+}
+
+export function setupPlayerConferenceFilter(id, allTeamRows, index, callback) {
+    const conferenceDropdown = document.getElementById(`${id}-dropdown`);
+    if (!conferenceDropdown) return;
+
+    // Populate conferences initially
+    const populateConferences = () => {
+        const conferences = new Set();
+        
+        // Collect all unique conferences from the rows
+        allTeamRows.forEach(row => {
+            const conferenceValue = row.cells[17].textContent.trim(); // conference_short is at index 7
+            if (conferenceValue !== '') {
+                conferences.add(conferenceValue);
+            }
+        });
+
+        // Clear existing options and add new filtered options
+        conferenceDropdown.innerHTML = '<option value="">All Conferences</option>';
+        
+        // Sort and add conference options
+        Array.from(conferences)
+            .sort()
+            .forEach(conference => {
+                const option = document.createElement('option');
+                option.value = conference;
+                option.textContent = conference;
+                conferenceDropdown.appendChild(option);
+            });
+    };
+
+    // Add change event listener
+    conferenceDropdown.addEventListener('change', function() {
+        const selectedConference = this.value;
+        
+        // Filter rows based on selected conference
+        allTeamRows.forEach(row => {
+            const rowConference = row.cells[17].textContent.trim();
+            if (selectedConference === '' || rowConference === selectedConference) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        // Call the callback function (updateTeamDropdown) if provided
+        if (typeof callback === 'function') {
+            callback();
+        }
+    });
+
+    // Initial population of conferences
+    populateConferences();
 }
 
 export function setupConferenceFilter(id, allTeamRows, index, callback) {

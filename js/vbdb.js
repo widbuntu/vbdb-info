@@ -13,7 +13,7 @@ function createVBDBItem() {
             ${urlLink('DIII Results', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d3_24.csv')}
             ${urlLink('Rankings', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/fig_stats.csv')}
             ${urlLink('Teams', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/teams2.csv')}
-            ${urlLink('Players', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/players.csv')}
+            ${urlLink('DI-DII Players', 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/players.csv')}
         <hr>
         <h2 class="text-center">Data Sources</h2>
             ${urlLink('NCAA Stats', 'https://stats.ncaa.org')}
