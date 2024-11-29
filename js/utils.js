@@ -359,46 +359,26 @@ export function setupPlayerConferenceFilter(id, allTeamRows, index, callback) {
     populateConferences();
 }
 
-export function setupConferenceFilter(id, allTeamRows, index, callback) {
+export function setupConferenceFilter(id, allTeamRows, index) {
     const conferenceDropdown = document.getElementById(`${id}-dropdown`);
     const divisionDropdown = document.getElementById('division-teams-dropdown');
 
     if (conferenceDropdown) {
-        conferenceDropdown.addEventListener('change', function () {
-            const selectedConference = this.value;
-            allTeamRows.forEach(row => {
-                const rowDivision = row.cells[4].textContent.trim();
-                const selectedDivision = divisionDropdown.value;
-
-                // Show/hide row based on both conference and division selections
-                if (
-                    (selectedConference === '' || row.cells[index].textContent.trim() === selectedConference) &&
-                    (selectedDivision === '' || rowDivision === selectedDivision)
-                ) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        });
-
-        // Populate conference dropdown based on the selected division
         const populateConferences = () => {
             const selectedDivision = divisionDropdown.value;
             const conferences = new Set();
 
+            // Collect unique conferences for the selected division
             allTeamRows.forEach(row => {
                 const rowDivision = row.cells[4].textContent.trim();
                 const conferenceValue = row.cells[index].textContent.trim();
 
-                if ((selectedDivision === '' || rowDivision === selectedDivision) && conferenceValue !== '') {
+                if (selectedDivision === '' || rowDivision === selectedDivision) {
                     conferences.add(conferenceValue);
-                }
-                else { conferences.add(conferenceValue);
                 }
             });
 
-            // Clear existing options and add new filtered options
+            // Clear and update conference dropdown
             conferenceDropdown.innerHTML = '<option value="">All Conferences</option>';
             Array.from(conferences).sort().forEach(conference => {
                 const option = document.createElement('option');
@@ -411,6 +391,26 @@ export function setupConferenceFilter(id, allTeamRows, index, callback) {
         // Populate conferences initially and whenever the division changes
         populateConferences();
         divisionDropdown.addEventListener('change', populateConferences);
+
+        // Filter table rows based on selected conference
+        conferenceDropdown.addEventListener('change', function () {
+            const selectedConference = this.value;
+            const selectedDivision = divisionDropdown.value;
+
+            allTeamRows.forEach(row => {
+                const rowConference = row.cells[index].textContent.trim();
+                const rowDivision = row.cells[4].textContent.trim();
+
+                if (
+                    (selectedConference === '' || rowConference === selectedConference) &&
+                    (selectedDivision === '' || rowDivision === selectedDivision)
+                ) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
     }
 }
 

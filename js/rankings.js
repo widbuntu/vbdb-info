@@ -56,7 +56,8 @@ export function loadRankingsContent() {
             { columnName: 'ConfRec' },
             { columnName: 'Conf' },
             { columnName: 'FigStats RPI' },
-            { columnName: 'NCAA Rank' }
+            { columnName: 'NCAA Rank' },
+            { columnName: 'Evollve Rank' }
         ];
         
         rankingsContent.innerHTML = `
@@ -86,7 +87,8 @@ export function loadRankingsContent() {
                             cols[3],  // ConfRec
                             cols[4],  // Conf
                             cols[5],  // FigStats RPI
-                            cols[6]   // NCAA Rank
+                            cols[6],  // NCAA Rank
+                            cols[7]   // Evollve Rank
                         ];
 
                         rowData.forEach(cell => {
