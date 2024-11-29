@@ -1,7 +1,10 @@
 body {
-  background-color: #212529;
+  background: linear-gradient(135deg, #212529, #343a40);
   color: #f8f9fa;
-  font-family: 'Hack Nerd Font', sans-serif;
+  font-family: 'Inter', 'Ubuntu', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 .nav-tabs .nav-link {
   color: #f8f9fa;
@@ -17,7 +20,7 @@ body {
   border: 1px solid #495057;
   border-top: none;
   padding: 20px;
-}
+} 
 .table-responsive {
   max-height: 500px;
   overflow-y: auto;
@@ -40,6 +43,13 @@ body {
   padding: 6px;
   border: 1px solid #495057;
   font-size: 12px;
+}
+.table tr:nth-child(even) {
+  background-color: #2a2e32;
+}
+
+.table tr:hover {
+  background-color: #495057;
 }
 
 .form-select {

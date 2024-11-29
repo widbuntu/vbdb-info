@@ -41,17 +41,17 @@ export function loadPlayersContent() {
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table id="d1-playersTable" class="table table-dark table-hover table-striped">
+                    <table id="d1-playersTable" class="plyers-table table table-dark table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Number</th>
-                                <th>Class</th>
-                                <th>Position</th>
-                                <th>Height</th>
-                                <th>Hometown</th>
-                                <th>High School</th>
-                                <th>Team</th>
+            <th style="cursor: pointer;">Name</th>
+            <th style="cursor: pointer;">Number</th>
+            <th style="cursor: pointer;">Class</th>
+            <th style="cursor: pointer;">Position</th>
+            <th style="cursor: pointer;">Height</th>
+            <th style="cursor: pointer;">Hometown</th>
+            <th style="cursor: pointer;">High School</th>
+            <th style="cursor: pointer;">Team</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -118,14 +118,14 @@ export function loadPlayersContent() {
                     <table id="d3-playersTable" class="table table-dark table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Number</th>
-                                <th>Class</th>
-                                <th>Position</th>
-                                <th>Height</th>
-                                <th>Hometown</th>
-                                <th>High School</th>
-                                <th>Team</th>
+                                <th style="cursor: pointer;">Name</th>
+                                <th style="cursor: pointer;">Number</th>
+                                <th style="cursor: pointer;">Class</th>
+                                <th style="cursor: pointer;">Position</th>
+                                <th style="cursor: pointer;">Height</th>
+                                <th style="cursor: pointer;">Hometown</th>
+                                <th style="cursor: pointer;">High School</th>
+                                <th style="cursor: pointer;">Team</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -134,6 +134,35 @@ export function loadPlayersContent() {
             </div>
         </div>
     </div>
+
+<style>
+.plyers-table th {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+.table th:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table th::after {
+    content: '⇕';
+    position: absolute;
+    right: 5px;
+    opacity: 0.3;
+}
+
+.table th.asc::after {
+    content: '↑';
+    opacity: 1;
+}
+
+.table th.desc::after {
+    content: '↓';
+    opacity: 1;
+}
+</style>
     `;
 }
 
@@ -1413,6 +1442,7 @@ function updateTable(division, data) {
 }
 
 // Initialize data for a specific division
+// Modify your initializeDivisionData function to include sorting setup
 async function initializeDivisionData(division) {
     try {
         const response = await fetch(csvUrls[division]);
@@ -1420,6 +1450,7 @@ async function initializeDivisionData(division) {
         playersData[division] = parseCSV(csvText);
         initializeFilters(division);
         updateTable(division, playersData[division]);
+        setupSortingForDivision(division); // Add this line
     } catch (error) {
         console.error(`Error fetching ${division} data:`, error);
     }
@@ -1428,7 +1459,9 @@ async function initializeDivisionData(division) {
 // Initialize all divisions
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the first division (D1) by default
-    initializeDivisionData('d1');
+    initializeDivisionData('d1').then(() => {
+        setupSortingForDivision('d1');
+    });
 
     // Set up tab change listeners for division-specific tables
     const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
@@ -1459,3 +1492,101 @@ export function initPlayers() {
         });
     });
 }
+
+function setupSortingForDivision(division) {
+    const tableId = `${division}-playersTable`;
+    const table = document.getElementById(tableId);
+    const headers = table.querySelectorAll('th');
+    
+    // Store sort state for this table
+    table.sortState = {
+        column: -1,
+        direction: 'asc'
+    };
+
+    headers.forEach((header, index) => {
+        header.addEventListener('click', () => {
+            sortTable(division, index);
+        });
+    });
+}
+
+function sortTable(division, columnIndex) {
+    const tableId = `${division}-playersTable`;
+    const table = document.getElementById(tableId);
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    if (columnIndex === table.sortState.column) {
+        table.sortState.direction = table.sortState.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+        table.sortState.direction = 'asc';
+        table.sortState.column = columnIndex;
+    }
+
+    const typeMap = {
+        0: 'text',    // Name
+        1: 'number',  // Number
+        2: 'text',    // Class
+        3: 'text',    // Position
+        4: 'height',  // Height
+        5: 'text',    // Hometown
+        6: 'text',    // High School
+        7: 'text'     // Team
+    };
+
+    rows.sort((a, b) => {
+        const aValue = a.cells[columnIndex].textContent.trim();
+        const bValue = b.cells[columnIndex].textContent.trim();
+        const type = typeMap[columnIndex];
+        
+        let result;
+        switch(type) {
+            case 'number':
+                result = compareNumbers(aValue, bValue);
+                break;
+            case 'height':
+                result = compareHeight(aValue, bValue);
+                break;
+            default:
+                result = aValue.localeCompare(bValue);
+        }
+        
+        return table.sortState.direction === 'asc' ? result : -result;
+    });
+
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(row));
+    updateSortIndicators(table, columnIndex);
+}
+
+
+// Comparison helper functions
+function compareNumbers(a, b) {
+    return (parseInt(a) || 0) - (parseInt(b) || 0);
+}
+function compareHeight(a, b) {
+    const convertToInches = (height) => {
+        const parts = height.split("-");
+        if (parts.length !== 2) return 0;
+        return (parseInt(parts[0]) * 12) + parseInt(parts[1]);
+    };
+    
+    return convertToInches(a) - convertToInches(b);
+}
+function compareText(a, b, direction) {
+    return direction === 'asc' ? 
+        a.localeCompare(b) : 
+        b.localeCompare(a);
+}
+
+function updateSortIndicators(table, columnIndex) {
+    const headers = table.querySelectorAll('th');
+    headers.forEach((header, index) => {
+        header.classList.remove('asc', 'desc');
+        if (index === columnIndex) {
+            header.classList.add(table.sortState.direction);
+        }
+    });
+}
+
