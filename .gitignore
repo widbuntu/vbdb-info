@@ -3,7 +3,7 @@
 /data
 test.html
 test2.html
-.csv
+*.csv
 .players.csv
 oldIndex.html
-.js
+*.js
