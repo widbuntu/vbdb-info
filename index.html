@@ -1,41 +1,2359 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VBDB</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome (Optional for styling) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <script defer async data-host="widbuntu.github.io" data-events="true" src="https://liteanalytics.com/lite.js"></script>
-</head>
-<body>
-    <!-- Main Container -->
-    <div class="container mt-5">
-        <!-- Nav Bar -->
-        <ul class="nav nav-tabs" id="nav-items" role="tablist">
-        </ul>
-        <!-- Main Div for tabs content -->
-        <div class="tab-content" id="myTabContent">
-            <!-- VBDB tab -->
-            <div class="tab-pane fade show active" id="vbdb" role="tabpanel" data-lta-event="vbdb-tab" data-lta-event-category="tab" aria-labelledby="vbdb-tab"></div>
-            <!-- Live tab -->
-            <div class="tab-pane fade" id="live" role="tabpanel" data-lta-event="live-tab" data-lta-event-category="tab" aria-labelledby="live-tab"></div>
-            <!-- Results tab -->
-            <div class="tab-pane fade" id="results" role="tabpanel" data-lta-event="results-tab" data-lta-event-category="tab" aria-labelledby="results-tab"></div>
-            <!-- Rankings tab -->
-            <div class="tab-pane fade" id="rankings" role="tabpanel" data-lta-event="rankings-tab" data-lta-event-category="tab" aria-labelledby="rankings-tab"></div>
-            <!-- Teams tab -->
-            <div class="tab-pane fade" id="teams" role="tabpanel" data-lta-event="teams-tab" data-lta-event-category="tab" aria-labelledby="teams-tab"></div>
-            <!-- Players tab -->
-            <div class="tab-pane fade" id="players" role="tabpanel" data-lta-event="players-tab" data-lta-event-category="tab" aria-labelledby="players-tab"></div>
-        </div>
-    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+
+    <!-- Export Libraries for Buttons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Main script -->
-    <script type="module" src="js/main.js"></script>
+
+    
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container">
+                <!-- Add a nav-item for the logo -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="homeTab">
+                            <img src="" alt="VBDB" width="30" height="24">
+                        </a>
+                    </li>
+                </ul>
+                <!-- Navbar Toggler Button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navbar Links (collapsed on mobile) -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="downloadTab">Downloads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="liveTab">Live</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="resultsTab">Results</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="rankingsTab">Rankings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="teamsTab">Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="playersTab">Players</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- VBDB -->
+    <div class="container mt-2">
+        <div id="homeContent" class="tab-content">
+            <h2 class="text-center">VBDB</h2>
+            <div class="welcome-section text-center">
+                <p>A place for simple, fast volleyball results, rankings, and teams!</p>
+                <p>Live Scores and Rankings for DI.</p>
+                <p>Results and Rankings updated daily. Enjoy!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Downloads -->
+    <div id="downloadContent" class="container tab-content mt-4">
+        <h3 class="text-center">Downloads</h3>
+
+        <!-- Downloads table -->
+        <div class="table-section" style="overflow-x: auto">
+            <table id="downloadTable" class="table table-dark table-hover table-striped"
+                style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap;">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Results</td>
+                        <td>DI Match Results</td>
+                        <td><a style="color: #dcdcdc;" target="_blank"
+                                href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24.csv">Download</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Results</td>
+                        <td>DII Match Results</td>
+                        <td><a style="color: #dcdcdc;" target="_blank"
+                                href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d2_24.csv">Download</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Results</td>
+                        <td>DIII Match Results</td>
+                        <td><a style="color: #dcdcdc;" target="_blank"
+                                href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d3_24.csv">Download</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rankings</td>
+                        <td>DI Rankings</td>
+                        <td><a style="color: #dcdcdc;" target="_blank"
+                                href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/fig_stats.csv">Download</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Teams</td>
+                        <td>DI-III Teams</td>
+                        <td><a style="color: #dcdcdc;" target="_blank"
+                                href="https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/teams2.csv">Download</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Live -->
+    <div id="liveContent" class="container tab-content mt-4">
+        <h3 class="text-center">Live</h3>
+
+        <!-- Live Data Table -->
+        <div class="table-section" style="overflow-x: auto">
+            <table id="liveTable" class="table table-dark table-hover table-striped"
+                style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap;">
+                <thead>
+                    <tr>
+                        <th>Match</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="white-space: nowrap;"></td>
+                        <td style="white-space: nowrap;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsContent" class="container tab-content mt-4">
+        <h3 class="text-center">Results</h3>
+
+        <!-- Results Tab Content -->
+        <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
+            <div class="dropdown-container">
+
+                <div class="row">
+                    <!-- Division Dropdown -->
+                    <div class="col-12 col-md-4">
+                        <select id="divisionDropdown" class="form-select">
+                            <option value="">Select Division</option>
+                            <option value="D-I">D-I</option>
+                            <option value="D-II">D-II</option>
+                            <option value="D-III">D-III</option>
+                        </select>
+                    </div>
+                    <!-- Conference Dropdown -->
+                    <div class="col-12 col-md-4">
+                        <select id="conferenceDropdown" class="form-select">
+                            <option value="">Select Conference</option>
+                        </select>
+                    </div>
+                    <!-- Team Dropdown -->
+                    <div class="col-12 col-md-4">
+                        <select id="teamDropdown" class="form-select">
+                            <option value="">Select Team</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DataTable of Results -->
+                <div class="table-section my-2">
+                    <div class="table-responsive" style="overflow-x: auto">
+                        <table id="resultsTable" class="table table-dark table-hover table-striped"
+                            style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Date</th>
+                                    <th style="width: 2%;">Div</th>
+                                    <th style="white-space: nowrap;">Match</th>
+                                    <th style="width: 40%;">Results</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td style="white-space: nowrap;"></td>
+                                <td style="white-space: nowrap;"></td>
+                                <td style="white-space: nowrap;"></td>
+                                <td style="white-space: nowrap;"></td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rankings -->
+    <div id="rankingsContent" class="container tab-content mt-4">
+        <h3 class="text-center">Rankings</h3>
+        <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
+            <div class="dropdown-container">
+
+                <div class="row">
+                    <!-- Conference Dropdown -->
+                    <div class="col-12">
+                        <select id="conferenceRankingsDropdown" class="form-select">
+                            <option value="">Select Conference</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Rankings Datatable -->
+                <div class="table-section my-2">
+                    <div class="table-responsive" style="overflow-x: auto">
+                        <table id="rankingsTable" class="table table-dark table-hover table-striped"
+                            style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap;">
+                            <thead>
+                                <tr>
+                                    <th>Conf</th>
+                                    <th>Team</th>
+                                    <th style="text-align: center;">W</th>
+                                    <th style="text-align: center;">L</th>
+                                    <th style="text-align: center;">ConfRec</th>
+                                    <th style="text-align: center;">FigStats RPI</th>
+                                    <th style="text-align: center;">NCAA Rank</th>
+                                    <th style="text-align: center;">Evollve Rank</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teams -->
+    <div id="teamsContent" class="container tab-content mt-4">
+        <h3 class="text-center">Teams</h3>
+
+        <!-- Teams Tab Content -->
+        <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
+            <div class="dropdown-container">
+
+                <div class="row">
+                    <!-- Division Dropdown -->
+                    <div class="col-12 col-md-6">
+                        <select id="teamsDivisionDropdown" class="form-select">
+                            <option value="">Select Division</option>
+                            <option value="D-I">D-I</option>
+                            <option value="D-II">D-II</option>
+                            <option value="D-III">D-III</option>
+                        </select>
+                    </div>
+                    <!-- Conference Dropdown -->
+                    <div class="col-12 col-md-6">
+                        <select id="teamsConferenceDropdown" class="form-select">
+                            <option value="">Select Conference</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- DataTable of Teams -->
+                <div class="table-section my-2">
+                    <div class="table-responsive" style="overflow-x: auto">
+                        <table id="teamsTable" class="table table-dark table-hover table-striped"
+                            style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap;">
+                            <thead>
+                                <tr>
+                                    <th>Team</th>
+                                    <th>Conference</th>
+                                    <th>Div</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td style="white-space: nowrap;"></td>
+                                <td style="white-space: nowrap;"></td>
+                                <td style="white-space: nowrap;"></td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Players -->
+    <div id="playersContent" class="container tab-content mt-4">
+        <h3 class="text-center">Players</h3>
+
+        <!-- Teams Tab Content -->
+        <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
+            <div class="dropdown-container">
+
+                <div class="row">
+                    <!-- Division Dropdown -->
+                    <div class="col-12 col-md">
+                        <select id="playersDivisionDropdown" class="form-select">
+                            <option value="">Select Division</option>
+                            <option value="D-I">D-I</option>
+                            <option value="D-II">D-II</option>
+                            <option value="D-III">D-III</option>
+                        </select>
+                    </div>
+                    <!-- Conference Dropdown -->
+                    <div class="col-12 col-md">
+                        <select id="playersConferenceDropdown" class="form-select">
+                            <option value="">Select Conference</option>
+                        </select>
+                    </div>
+                    <!-- Team Dropdown -->
+                    <div class="col-12 col-md">
+                        <select id="playersTeamDropdown" class="form-select">
+                            <option value="">Select Conference</option>
+                        </select>
+                    </div>
+                    <!-- Class Dropdown -->
+                    <div class="col-12 col-md">
+                        <select id="classDropdown" class="form-select">
+                            <option value="">Select Class</option>
+                        </select>
+                    </div>
+                    <!-- Position Dropdown -->
+                    <div class="col-12 col-md">
+                        <select id="positionDropdown" class="form-select">
+                            <option value="">Select Position</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- DataTable of Players -->
+                <div class="table-section my-2">
+                    <div class="table-responsive" style="overflow-x: auto">
+                        <table id="playersTable" class="table table-dark table-hover table-striped"
+                            style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap; font-size: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Cls</th>
+                                    <th>Pos</th>
+                                    <th>Ht</th>
+                                    <th>Town</th>
+                                    <th>H.S.</th>
+                                    <th>Conf</th>
+                                    <th>Team</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Styles -->
+    <style>
+
+        .dt-input {
+            color: #495057 !important;
+            background-color: white !important;
+            font-size: 14px;
+        }
+
+        .welcome-section {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
+        .table-section {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
+        body {
+            background: #212529;
+            color: #f8f9fa;
+            font-family: 'Inter', 'Ubuntu', sans-serif;
+        }
+
+        .nav-tabs .nav-link {
+            color: #f8f9fa;
+            border: 1px solid transparent;
+        }
+
+        @media (max-width: 768px) {
+            .form-select {
+        padding: 0.375rem;
+        font-size: 0.9rem;
+    }
+            .welcome-section {
+                font-size: 0.9rem;
+                /* Adjust font size for smaller screens */
+                padding: 0.5rem;
+                /* Reduce padding for compact spacing */
+            }
+
+            .container {
+                padding: 0 1rem;
+                /* Add padding to prevent content from touching edges */
+            }
+        }
+
+        /* Add some basic styling for better mobile experience */
+        .form-select {
+            width: 100%;
+            padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            height: 38px;
+        }
+
+        /* Add some spacing between stacked dropdowns on mobile */
+        @media (max-width: 770.98px) {
+            .row>div {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .dataTables_filter {
+            float: left !important;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+            }
+
+            th,
+            td {
+                white-space: nowrap;
+                /* Prevent wrapping */
+            }
+        }
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Reduce font size for very small devices */
+    }
+    .table-section,
+    .welcome-section {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+}
+    </style>
+
+    <!-- Imports -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+    <!-- Download Table -->
+    <script>
+        $(document).ready(function () {
+            $('#downloadTable').DataTable({
+                responsive: true,
+                paging: false,
+                searching: true,
+                ordering: true,
+                info: false,
+            });
+        });
+    </script>
+
+    <!-- Tab Scripts -->
+    <script>
+        // Function to hide all tab content
+        function hideAllTabs() {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.style.display = 'none';
+            });
+        }
+
+        // Function to show the content of the selected tab
+        function showTabContent(tabId) {
+            hideAllTabs(); // Hide all content first
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        // Event listeners for tab clicks
+        document.getElementById('homeTab').addEventListener('click', function () {
+            showTabContent('homeContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        // Event listeners for tab clicks
+        document.getElementById('downloadTab').addEventListener('click', function () {
+            showTabContent('downloadContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        document.getElementById('liveTab').addEventListener('click', function () {
+            showTabContent('liveContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        document.getElementById('resultsTab').addEventListener('click', function () {
+            showTabContent('resultsContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        document.getElementById('rankingsTab').addEventListener('click', function () {
+            showTabContent('rankingsContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        document.getElementById('teamsTab').addEventListener('click', function () {
+            showTabContent('teamsContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        document.getElementById('playersTab').addEventListener('click', function () {
+            showTabContent('playersContent');
+            closeNavbar(); // Close the navbar after selection
+        });
+
+        // Optionally, you can show a default tab (e.g., Downloads) on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            showTabContent('homeContent');
+        });
+
+        // Function to close the navbar (collapse)
+        function closeNavbar() {
+            const navbarCollapse = new bootstrap.Collapse(document.getElementById('navbarNav'), {
+                toggle: false
+            });
+            navbarCollapse.hide(); // Close the navbar
+        }
+    </script>
+
+    <!-- Dropdown mapping for inputs -->
+    <script>
+        const resultsMapping = [
+            { "team_short": "Abilene Christian", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Academy of Art", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Adams St.", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Adelphi", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Adrian", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Agnes Scott", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Akron", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Alabama", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Alabama A&M", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Alabama Huntsville", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Alabama St.", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "UAB", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Alas. Anchorage", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Alas. Fairbanks", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "UAlbany", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "Albany St. (GA)", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Albertus Magnus", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Albion", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Albright", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Alcorn", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Alfred St.", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Alfred", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Allegheny", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Allen", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Alma", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Alvernia", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Alverno", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "American Int'l", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "American", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Amherst", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Anderson (IN)", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Anderson (SC)", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Angelo St.", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Anna Maria", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "App State", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Arcadia", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Arizona", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Arizona St.", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Arkansas St.", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Arkansas Tech", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Arkansas", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Ark.-Fort Smith", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Little Rock", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Ark.-Monticello", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Ark.-Pine Bluff", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Asbury", "conference_short": "Independent", "division": "D-III" },
+            { "team_short": "Ashland", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Assumption", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Auburn", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "AUM", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Augsburg", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Augusta", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "Augustana (IL)", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "Augustana (SD)", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Aurora", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Austin", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Austin Peay", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Averett", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Azusa Pacific", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Babson", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Baldwin Wallace", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Ball St.", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Bard", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Barry", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Barton", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Baruch", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Bates", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Baylor", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Belhaven", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Bellarmine", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Belmont Abbey", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Belmont", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Beloit", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Bemidji St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Benedict", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Benedictine (IL)", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Bentley", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Berea", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Berry", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "Bethany (WV)", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Bethany Lutheran", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Bethel (MN)", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Bethune-Cookman", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Binghamton", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "Biola", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Black Hills St.", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Blackburn", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Bloomfield", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Bloomsburg", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Bluefield St.", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Bluffton", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Boise St.", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Boston College", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Bowdoin", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Bowie St.", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Bowling Green", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Bradley", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Brandeis", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Brevard", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Bridgeport", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Bridgewater (VA)", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Bridgewater St.", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "BYU", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "SUNY Brockport", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Brooklyn", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Brown", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Bryant", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "Bryn Athyn", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Bryn Mawr", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Bucknell", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Buena Vista", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Buffalo St.", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Buffalo", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Butler", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Cairn", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Cal Poly Pomona", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Caldwell", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "California Baptist", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Cal Lutheran", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Cal Poly", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "Cal St. Monterey Bay", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "CSU Bakersfield", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "Chico St.", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Cal St. Dom. Hills", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Cal St. East Bay", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Fresno St.", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Cal St. Fullerton", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "CSUN", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "Sacramento St.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "CSUSB", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Stanislaus St.", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Cal State LA", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Cal Poly Humboldt", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Cal St. San Marcos", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "California (PA)", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "California", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "UC Davis", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "UC Irvine", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "UCLA", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "UC Riverside", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "UC San Diego", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "UC Santa Barbara", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "UC Santa Cruz", "conference_short": "C2C", "division": "D-III" },
+            { "team_short": "Caltech", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Calvin", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Cameron", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Campbell", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Canisius", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "SUNY Canton", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Capital", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Carleton", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Carnegie Mellon", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Carroll (WI)", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "Carson-Newman", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Carthage", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "CWRU", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Catawba", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Catholic", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Cedar Crest", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Cedarville", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Centenary (LA)", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Centenary (NJ)", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "Central Ark.", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Central (IA)", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Central Conn. St.", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "UCF", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Central Mich.", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Central Mo.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Central Okla.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Central St. (OH)", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Central Wash.", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Centre", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "Chadron St.", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Chaminade", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Chapman", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Col. of Charleston", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Charleston (WV)", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Charleston So.", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "Chatham", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Chestnut Hill", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "UChicago", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Chicago St.", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Chowan", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Christian Brothers", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Chris. Newport", "conference_short": "C2C", "division": "D-III" },
+            { "team_short": "Cincinnati", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "The Citadel", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "CCNY", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Claflin", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Claremont-M-S", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Clarion", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Clark Atlanta", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Clark (MA)", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Clarkson", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Clemson", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Cleveland St.", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Coastal Carolina", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "SUNY Cobleskill", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Coe", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Coker", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Colby", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Colby-Sawyer", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Colgate", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Colorado", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Colo. Christian", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Colorado Col.", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Colorado Mesa", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Colo. Sch. of Mines", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "CSU Pueblo", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Colorado St.", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "UC-Colo. Springs", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Columbia", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Concord", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Concordia-M'head", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Concordia Chicago", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "CUI", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Concordia (TX)", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Concordia Wisconsin", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Concordia-St. Paul", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "UConn", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Connecticut Col.", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Converse", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Coppin St.", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "Cornell College", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Cornell", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Cortland", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Covenant", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Creighton", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Crown (MN)", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Curry", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "D'Youville", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Daemen", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Dallas", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "DBU", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Dartmouth", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Davenport", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Davidson", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Davis & Elkins", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Dayton", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Dean", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Delaware", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Delaware St.", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "Delaware Valley", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "SUNY Delhi", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Delta St.", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Denison", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Denver", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "DePaul", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "DePauw", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "DeSales", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Detroit Mercy", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Dickinson", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Dist. Columbia", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Dominican (CA)", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Dominican (IL)", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Dominican (NY)", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Drake", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Drew", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Drexel", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Drury", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Dubuque", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Duke", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Duquesne", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Earlham", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "East Carolina", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "East Central", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "East Stroudsburg", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "ETSU", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "East Tex. Baptist", "conference_short": "ASC", "division": "D-III" },
+            { "team_short": "Eastern Conn. St.", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "Eastern Ill.", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Eastern Ky.", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "East. Mennonite", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Eastern Mich.", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Eastern Nazarene", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Eastern N.M.", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Eastern", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Eastern Wash.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Eckerd", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Edgewood", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Edinboro", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Edward Waters", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Elizabeth City St.", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Elizabethtown", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Elmhurst", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "Elmira", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Elms", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Elon", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Embry-Riddle (FL)", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Emerson", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Emmanuel (GA)", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Emmanuel  (MA)", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Emory & Henry", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Emory", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Emporia St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Endicott", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Erskine", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Eureka", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Evansville", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Fairfield", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "FDU-Florham", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "FDU", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Fairmont St.", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Farmingdale St.", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Fayetteville St.", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Felician", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Ferris St.", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Ferrum", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Findlay", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Fitchburg St.", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "Flagler", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "Florida", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Florida A&M", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Fla. Atlantic", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "FGCU", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Florida Tech", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "FIU", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Fla. Southern", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Florida St.", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Fontbonne", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Fordham", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Fort Hays St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Fort Lewis", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Fort Valley St.", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Framingham St.", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "Francis Marion", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Franciscan", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Franklin & Marshall", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Franklin", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Franklin Pierce", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Fredonia", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Fresno Pacific", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Frostburg St.", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Furman", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "Gallaudet", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Gannon", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Gardner-Webb", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "SUNY Geneseo", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Geneva", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "George Fox", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "George Mason", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "George Washington", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Georgetown", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Georgia", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Georgia College", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "Georgia Tech", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Ga. Southern", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Ga. Southwestern", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "Georgia St.", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Georgian Court", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Gettysburg", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Glenville St.", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Goldey-Beacom", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Gonzaga", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "Gordon", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Goucher", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Grambling", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Grand Canyon", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Grand Valley St.", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Greensboro", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Greenville", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Grinnell", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Grove City", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Guilford", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Gustavus Adolphus", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Gwynedd Mercy", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "Hamilton", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Hamline", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Hampden-Sydney", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Hampton", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Hanover", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Hardin-Simmons", "conference_short": "ASC", "division": "D-III" },
+            { "team_short": "Harding", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Hartford", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Hartwick", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Harvard", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Haverford", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Hawaii", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "Hawaii Hilo", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Hawaii Pacific", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Heidelberg", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Henderson St.", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Hendrix", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "High Point", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "Hilbert", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Hillsdale", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Hiram", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Hobart", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Hofstra", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Hollins", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Holy Cross", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Holy Family", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Hood", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Hope", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Houghton", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Houston", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Houston Christian", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Howard Payne", "conference_short": "ASC", "division": "D-III" },
+            { "team_short": "Howard", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "Hunter", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Huntingdon", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Husson", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Idaho", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Idaho St.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Illinois Col.", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "IIT", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Illinois St.", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Ill. Wesleyan", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "UIC", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Ill. Springfield", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Illinois", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Immaculata", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "UIW", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "IU Indy", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Indiana St.", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Indiana (PA)", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Indiana", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "UIndy", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Iona", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Iowa", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Iowa St.", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Ithaca", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Jackson St.", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Jacksonville St.", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Jacksonville", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "James Madison", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "John Carroll", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "John Jay", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Johns Hopkins", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "JWU (Providence)", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Johnson C. Smith", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Juniata", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Kalamazoo", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Kansas", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Kansas St.", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Kean", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Keene St.", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "Kennesaw St.", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Kent St.", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Kentucky", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Kentucky St.", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Ky. Wesleyan", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Kenyon", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Keuka", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Keystone", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "King (TN)", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "King's (PA)", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Knox", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Kutztown", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "La Roche", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "La Salle", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "La Verne", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Lafayette", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "LaGrange", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Lake Erie", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Lake Forest", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Lake Superior St.", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Lakeland", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Lamar University", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Lancaster Bible", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Lander", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "Lane", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Lasell", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Lawrence", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Le Moyne", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Lebanon Valley", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Lee", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Lees-McRae", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Lehigh", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Lehman", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "LeMoyne-Owen", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Lenoir-Rhyne", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Lesley", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "LeTourneau", "conference_short": "ASC", "division": "D-III" },
+            { "team_short": "Lewis & Clark", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Lewis", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Liberty", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Limestone", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Lincoln Memorial", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Lincoln (MO)", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Lincoln (PA)", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Lindenwood", "conference_short": "OVC", "division": "D-II" },
+            { "team_short": "Linfield", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Lipscomb", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Livingstone", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Lock Haven", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Long Beach St.", "conference_short": "Big West", "division": "D-I" },
+            { "team_short": "LIU", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Longwood", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "Loras", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "LSU", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Louisiana Tech", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Louisiana", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "ULM", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Louisville", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "LMU (CA)", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "Loyola Chicago", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Loyola Maryland", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Lubbock Christian", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Luther", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Lycoming", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Lynchburg", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Lynn", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Macalester", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Maine Maritime", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Maine", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "Me.-Farmington", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Me.-Presque Isle", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Malone", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Manchester", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Manhattan", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Manhattanville", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Mansfield", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Maranatha Baptist", "conference_short": "Independent", "division": "D-III" },
+            { "team_short": "Marian (WI)", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Marietta", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Marist", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "SUNY Maritime", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Marquette", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Mars Hill", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Marshall", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Martin Luther", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Mary", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Mary Baldwin", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Mary Hardin-Baylor", "conference_short": "ASC", "division": "D-III" },
+            { "team_short": "Mary Washington", "conference_short": "C2C", "division": "D-III" },
+            { "team_short": "UMES", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "UMBC", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "Maryland", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Marymount (VA)", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "Maryville (TN)", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Maryville (MO)", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Marywood", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "MCLA", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "MIT", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Mass. Maritime", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "Massachusetts", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "UMass Boston", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "UMass Dartmouth", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "UMass Lowell", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "McDaniel", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "McKendree", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "McMurry", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "McNeese", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Medgar Evers", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Memphis", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Mercer", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "Mercy", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Mercyhurst", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Meredith", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Merrimack", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Messiah", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Methodist", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "MSU Denver", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Miami (FL)", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Miami (OH)", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Michigan", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Michigan St.", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Michigan Tech", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Middle Tenn.", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Middlebury", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Midwestern St.", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Miles", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Millersville", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Millikin", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "Millsaps", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "MSOE", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Minnesota St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "MSU Moorhead", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Minn.-Crookston", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Minn. Duluth", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Minnesota", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Minn.-Morris", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Minot St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Misericordia", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Ole Miss", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Mississippi Col.", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Mississippi St.", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "MUW", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Mississippi Val.", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Missouri S&T", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Mo. Southern St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Missouri St.", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Missouri Western", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Missouri", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Kansas City", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "Mo.-St. Louis", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Mitchell", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Molloy", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Monmouth (IL)", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Monmouth", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Montana", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Mont. St. Billings", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Montana St.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Montclair St.", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Montevallo", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Moravian", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Morehead St.", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Morehouse", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Morgan St.", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "SUNY Morrisville", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Mount Aloysius", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Mount Holyoke", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Mount Mary", "conference_short": "C2C", "division": "D-III" },
+            { "team_short": "Mount Olive", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Mt. St. Joseph", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "UMSV", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Mt. St. Mary (NY)", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Mount St. Mary's", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Mount Union", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Muhlenberg", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Murray St.", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Muskingum", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Nazareth", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Omaha", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "Neb. Wesleyan", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Neb.-Kearney", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Nebraska", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Neumann", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "UNLV", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Nevada", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "U New England", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "New England Col.", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "New Hampshire", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "New Haven", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "New Jersey City", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "NJIT", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "TCNJ", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "New Mexico", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "N.M. Highlands", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "New Mexico St.", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "New Orleans", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "SUNY New Paltz", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "NYU", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Newberry", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Newman", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Niagara", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Nicholls", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Nichols", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Norfolk St.", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "North Ala.", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "UNC Asheville", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "N.C. A&T", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "N.C. Central", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "NC State", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "N.C. Wesleyan", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "UNCW", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "North Carolina", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Charlotte", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "UNC Greensboro", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "UNC Pembroke", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "North Central (IL)", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "North Central (MN)", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "North Dakota", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "North Dakota St.", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "North Florida", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "North Georgia", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "North Greenville", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "North Park", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "North Texas", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Northeastern St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Northeastern", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Northern Ariz.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Northern Colo.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "NIU", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "UNI", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Northern Ky.", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Northern Mich.", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Northern St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Northland", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Northwest Mo. St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Northwest Nazarene", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Northwestern Okla.", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Northwestern St.", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Northwestern", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Northwestern-St. Paul", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Northwood", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Norwich", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Notre Dame", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Notre Dame (MD)", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Nova Southeastern", "conference_short": "Sunshine  State", "division": "D-II" },
+            { "team_short": "Oakland", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Oberlin", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Occidental", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Oglethorpe", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "Ohio Dominican", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Ohio Northern", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Ohio St.", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Ohio", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Ohio Wesleyan", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Oklahoma", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Okla. Baptist", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Okla. Christian", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Oklahoma St.", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Old Dominion", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "SUNY Oneonta", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Oral Roberts", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "Oregon", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Oregon St.", "conference_short": "Pac-12", "division": "D-I" },
+            { "team_short": "Oswego St.", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Otterbein", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Ouachita Baptist", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Ozarks (AR)", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Pace", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Pacific", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "Pacific Lutheran", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Pacific (OR)", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Palm Beach Atl.", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Penn College", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Penn St.-Altoona", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Penn St.-Behrend", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Penn St. Harrisburg", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Penn St.-Berks", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Penn", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Penn St.-Abington", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Penn St.", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Pepperdine", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "Pfeiffer", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Piedmont", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "Pittsburg St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Pittsburgh", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Pitt.-Bradford", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Pitt.-Greensburg", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Pitt.-Johnstown", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Plattsburgh St.", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Plymouth St.", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "Point Loma", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "SUNY Poly", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Pomona-Pitzer", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Portland", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "Portland St.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Post", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "SUNY Potsdam", "conference_short": "SUNYAC", "division": "D-III" },
+            { "team_short": "Prairie View", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Pratt", "conference_short": "Atlantic East", "division": "D-III" },
+            { "team_short": "Presbyterian", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "Princeton", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Principia", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Providence", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "P.R.-Bayamon", "conference_short": "Independent", "division": "D-II" },
+            { "team_short": "P.R.-Mayaguez", "conference_short": "Independent", "division": "D-II" },
+            { "team_short": "P.R.-Rio Piedras", "conference_short": "Independent", "division": "D-II" },
+            { "team_short": "Puget Sound", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Purchase", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Purdue Fort Wayne", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Purdue", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Purdue Northwest", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Queens (NY)", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Queens (NC)", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Quincy", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Quinnipiac", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Radford", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "Ramapo", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Randolph", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Randolph-Macon", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Redlands", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Regis (MA)", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Regis (CO)", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Rensselaer", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Rhode Island", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Rhode Island Col.", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "Rhodes", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "Rice", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Richmond", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Rider", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Ripon", "conference_short": "MWC", "division": "D-III" },
+            { "team_short": "Rivier", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Roanoke", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Robert Morris", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Roberts Wesleyan", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "Rochester (NY)", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "RIT", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Rockford", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Rockhurst", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Roger Williams", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Rogers St.", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Rollins", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Rose-Hulman", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Rosemont", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Rowan", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Russell  Sage", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Rutgers-Camden", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Rutgers-Newark", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Rutgers", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Sacred Heart", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Saginaw Valley", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Saint Benedict", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Saint Elizabeth", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Saint Francis", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Saint Joseph (CT)", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "St. Joseph's (ME)", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Salem (NC)", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Salem St.", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "Salem (WV)", "conference_short": "Independent", "division": "D-II" },
+            { "team_short": "Salisbury", "conference_short": "C2C", "division": "D-III" },
+            { "team_short": "Salve Regina", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Sam Houston", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Samford", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "San Diego", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "San Diego St.", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "San Francisco", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "San Fran. St.", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "San Jose St.", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Santa Clara", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "Sarah Lawrence", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Savannah St.", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Schreiner", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Scranton", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Seattle Pacific", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Seattle U", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Seton Hall", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Seton Hill", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Sewanee", "conference_short": "SAA", "division": "D-III" },
+            { "team_short": "Shaw", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Shenandoah", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Shepherd", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Shippensburg", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Shorter", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Siena", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Simmons", "conference_short": "Great Northeast", "division": "D-III" },
+            { "team_short": "Simon Fraser", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Simpson", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Sioux Falls", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Skidmore", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Slippery Rock", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "Smith", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Sonoma St.", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "South Alabama", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "South Carolina", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "USC Aiken", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "South Carolina St.", "conference_short": "MEAC", "division": "D-I" },
+            { "team_short": "USC Upstate", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "South Dakota", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "South Dakota Mines", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "South Dakota St.", "conference_short": "Summit League", "division": "D-I" },
+            { "team_short": "South Fla.", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Southeast Mo. St.", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Southeastern La.", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Southeastern Okla.", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Southern Ark.", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Southern California", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Southern Conn. St.", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Southern Ill.", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "SIUE", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Southern Ind.", "conference_short": "OVC", "division": "D-II" },
+            { "team_short": "Southern Me.", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "SMU", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Southern Miss.", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Southern Nazarene", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Southern N.H.", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Southern U.", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Southern Utah", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Southern Va.", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Southern Wesleyan", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Southwest Baptist", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Southwest Minn. St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Southwestern Okla.", "conference_short": "GAC", "division": "D-II" },
+            { "team_short": "Southwestern (TX)", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Spalding", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Spring Hill", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Springfield", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "St. Anselm", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "Saint Augustine's", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "St. Bonaventure", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "St. Catherine", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "St. Cloud St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "St. Edward's", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "St. John Fisher", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "St. John's (NY)", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Saint John's (MN)", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "St. Joseph's (Brkln)", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Saint Joseph's", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "St. Joseph's (L.I.)", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "St. Lawrence", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Saint  Leo", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Saint Louis", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "Saint Martin's", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Saint Mary's (MN)", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "St. Mary's (TX)", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Saint Mary's (CA)", "conference_short": "WCC", "division": "D-I" },
+            { "team_short": "St. Mary's (IN)", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "St. Mary's (MD)", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Saint Michael's", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "St. Norbert", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "St. Olaf", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "Saint Peter's", "conference_short": "MAAC", "division": "D-I" },
+            { "team_short": "Saint Rose", "conference_short": "NE10", "division": "D-II" },
+            { "team_short": "St. Scholastica", "conference_short": "MIAC", "division": "D-III" },
+            { "team_short": "St. Thomas (TX)", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "St. Thomas Aquinas", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "St. Thomas (MN)", "conference_short": "Summit League", "division": "D-III" },
+            { "team_short": "Saint Vincent", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Stanford", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Staten Island", "conference_short": "ECC", "division": "D-II" },
+            { "team_short": "SFA", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Stetson", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "Stevens", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Stevenson", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Stockton", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "Stonehill", "conference_short": "NEC", "division": "D-I" },
+            { "team_short": "Stony Brook", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Suffolk", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Sul Ross St.", "conference_short": "Lone Star", "division": "D-III" },
+            { "team_short": "Old Westbury", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Susquehanna", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Swarthmore", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Sweet Briar", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Syracuse", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Tampa", "conference_short": "Sunshine State", "division": "D-II" },
+            { "team_short": "Tarleton St.", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Temple", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Tennessee St.", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Tennessee Tech", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Chattanooga", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "Tennessee", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "UT Martin", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Texas A&M", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Tex. A&M Int'l", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Tex. A&M-Commerce", "conference_short": "Southland", "division": "D-II" },
+            { "team_short": "A&M-Corpus Christi", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Tex. A&M-Kingsville", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "UT Arlington", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "TCU", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Texas Lutheran", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Tex. Permian Basin", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "UTRGV", "conference_short": "Southland", "division": "D-I" },
+            { "team_short": "Texas Southern", "conference_short": "SWAC", "division": "D-I" },
+            { "team_short": "Texas St.", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Texas Tech", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Texas Woman's", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Texas", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Texas-Dallas", "conference_short": "Lone Star", "division": "D-III" },
+            { "team_short": "UTEP", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "UTSA", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "UT Tyler", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Thiel", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Thomas (ME)", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Jefferson", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Tiffin", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Toledo", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Towson", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "Transylvania", "conference_short": "HCAC", "division": "D-III" },
+            { "team_short": "Trevecca Nazarene", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Trine", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Trinity (CT)", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Trinity (TX)", "conference_short": "SCAC", "division": "D-III" },
+            { "team_short": "Trinity Washington", "conference_short": "Independent", "division": "D-III" },
+            { "team_short": "Troy", "conference_short": "Sun Belt", "division": "D-I" },
+            { "team_short": "Truman St.", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Tufts", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Tulane", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Tulsa", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Tusculum", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Tuskegee", "conference_short": "SIAC", "division": "D-II" },
+            { "team_short": "Air Force", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Coast Guard", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Merchant Marine", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "Army West Point", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Navy", "conference_short": "Patriot", "division": "D-I" },
+            { "team_short": "Union (NY)", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Union (TN)", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Olivet", "conference_short": "Michigan Intercol. Ath. Assn.", "division": "D-III" },
+            { "team_short": "Upper Iowa", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Ursinus", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Ursuline", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Utah", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "Utah St.", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Utah Tech", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Utah Valley", "conference_short": "WAC", "division": "D-I" },
+            { "team_short": "Utica", "conference_short": "Empire 8", "division": "D-III" },
+            { "team_short": "Valdosta St.", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "Valley Forge", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Valparaiso", "conference_short": "MVC", "division": "D-I" },
+            { "team_short": "Vanderbilt", "conference_short": "SEC", "division": "D-I" },
+            { "team_short": "Vassar", "conference_short": "Liberty League", "division": "D-III" },
+            { "team_short": "Vermont", "conference_short": "America East", "division": "D-I" },
+            { "team_short": "VTSU Castleton", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "VTSU Lyndon", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "VTSU-Johnson", "conference_short": "North Atlantic", "division": "D-III" },
+            { "team_short": "Villanova", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Virginia", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "UVA Wise", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "VCU", "conference_short": "Atlantic 10", "division": "D-I" },
+            { "team_short": "VMI", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "Virginia Tech", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Virginia St.", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Virginia Union", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Va. Wesleyan", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Wabash", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Wake Forest", "conference_short": "ACC", "division": "D-I" },
+            { "team_short": "Walsh", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "Warren Wilson", "conference_short": "C2C", "division": "D-III" },
+            { "team_short": "Wartburg", "conference_short": "American Rivers", "division": "D-III" },
+            { "team_short": "Washburn", "conference_short": "Mid-America Intercollegiate", "division": "D-II" },
+            { "team_short": "Washington", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Wash. & Lee", "conference_short": "ODAC", "division": "D-III" },
+            { "team_short": "Wash. & Jeff.", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Washington Col.", "conference_short": "Centennial", "division": "D-III" },
+            { "team_short": "Washington St.", "conference_short": "Pac-12", "division": "D-I" },
+            { "team_short": "WashU", "conference_short": "UAA", "division": "D-III" },
+            { "team_short": "Wayne St. (MI)", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Wayne St. (NE)", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Waynesburg", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Weber St.", "conference_short": "Big Sky", "division": "D-I" },
+            { "team_short": "Webster", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Wellesley", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Wentworth", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Wesleyan (CT)", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Wesleyan (GA)", "conference_short": "CCS", "division": "D-III" },
+            { "team_short": "West Ala.", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "West Chester", "conference_short": "PSAC", "division": "D-II" },
+            { "team_short": "West Florida", "conference_short": "Gulf South", "division": "D-II" },
+            { "team_short": "West Ga.", "conference_short": "ASUN", "division": "D-I" },
+            { "team_short": "West Liberty", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "West Tex. A&M", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "West Virginia St.", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "West Virginia", "conference_short": "Big 12", "division": "D-I" },
+            { "team_short": "West Va. Wesleyan", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Western Caro.", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "Western Colo.", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "WestConn", "conference_short": "Little East", "division": "D-III" },
+            { "team_short": "Western Ill.", "conference_short": "OVC", "division": "D-I" },
+            { "team_short": "Western Ky.", "conference_short": "CUSA", "division": "D-I" },
+            { "team_short": "Western Mich.", "conference_short": "MAC", "division": "D-I" },
+            { "team_short": "Western New Eng.", "conference_short": "CNE", "division": "D-III" },
+            { "team_short": "Western N.M.", "conference_short": "Lone Star", "division": "D-II" },
+            { "team_short": "Western Ore.", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Western Wash.", "conference_short": "Great Northwest", "division": "D-II" },
+            { "team_short": "Westfield St.", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "Westminster (MO)", "conference_short": "SLIAC", "division": "D-III" },
+            { "team_short": "Westminster (PA)", "conference_short": "PAC", "division": "D-III" },
+            { "team_short": "Westminster (UT)", "conference_short": "RMAC", "division": "D-II" },
+            { "team_short": "Westmont", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Wheaton (IL)", "conference_short": "CCIW", "division": "D-III" },
+            { "team_short": "Wheaton (MA)", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Wheeling", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Whitman", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Whittier", "conference_short": "SCIAC", "division": "D-III" },
+            { "team_short": "Whitworth", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "Wichita St.", "conference_short": "AAC", "division": "D-I" },
+            { "team_short": "Widener", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "Wilkes", "conference_short": "Landmark", "division": "D-III" },
+            { "team_short": "Willamette", "conference_short": "NWC", "division": "D-III" },
+            { "team_short": "William & Mary", "conference_short": "CAA", "division": "D-I" },
+            { "team_short": "William Jewell", "conference_short": "GLVC", "division": "D-II" },
+            { "team_short": "Wm. Paterson", "conference_short": "NJAC", "division": "D-III" },
+            { "team_short": "William Peace", "conference_short": "USA South", "division": "D-III" },
+            { "team_short": "Williams", "conference_short": "NESCAC", "division": "D-III" },
+            { "team_short": "Wilmington (DE)", "conference_short": "CACC", "division": "D-II" },
+            { "team_short": "Wilmington (OH)", "conference_short": "OAC", "division": "D-III" },
+            { "team_short": "Wilson", "conference_short": "United East", "division": "D-III" },
+            { "team_short": "Wingate", "conference_short": "SAC", "division": "D-II" },
+            { "team_short": "Winona St.", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Winston-Salem", "conference_short": "CIAA", "division": "D-II" },
+            { "team_short": "Winthrop", "conference_short": "Big South", "division": "D-I" },
+            { "team_short": "Wis. Lutheran", "conference_short": "NACC", "division": "D-III" },
+            { "team_short": "Wis.-Eau Claire", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Green Bay", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Wis.-La Crosse", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Wisconsin", "conference_short": "Big Ten", "division": "D-I" },
+            { "team_short": "Milwaukee", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Wis.-Oshkosh", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Wis.-Parkside", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Wis.-Platteville", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "UW-River Falls", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Wis.-Stevens Point", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Wis.-Stout", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Wis.-Superior", "conference_short": "UMAC", "division": "D-III" },
+            { "team_short": "Wis.-Whitewater", "conference_short": "WIAC", "division": "D-III" },
+            { "team_short": "Wittenberg", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "Wofford", "conference_short": "SoCon", "division": "D-I" },
+            { "team_short": "Wooster", "conference_short": "NCAC", "division": "D-III" },
+            { "team_short": "WPI", "conference_short": "NEWMAC", "division": "D-III" },
+            { "team_short": "Worcester St.", "conference_short": "MASCAC", "division": "D-III" },
+            { "team_short": "Wright St.", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "Wyoming", "conference_short": "Mountain West", "division": "D-I" },
+            { "team_short": "Xavier", "conference_short": "Big East", "division": "D-I" },
+            { "team_short": "Yale", "conference_short": "Ivy League", "division": "D-I" },
+            { "team_short": "Yeshiva", "conference_short": "Skyline", "division": "D-III" },
+            { "team_short": "York (PA)", "conference_short": "MACs", "division": "D-III" },
+            { "team_short": "York (NY)", "conference_short": "CUNYAC", "division": "D-III" },
+            { "team_short": "Young Harris", "conference_short": "Conference Carolinas", "division": "D-II" },
+            { "team_short": "Youngstown St.", "conference_short": "Horizon", "division": "D-I" },
+            { "team_short": "UC Merced", "conference_short": "CCAA", "division": "D-II" },
+            { "team_short": "Carlow", "conference_short": "AMCC", "division": "D-III" },
+            { "team_short": "Jamestown", "conference_short": "NSIC", "division": "D-II" },
+            { "team_short": "Jessup", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Lyon", "conference_short": "SLIAC", "division": "Unknown" },
+            { "team_short": "Menlo", "conference_short": "PacWest", "division": "D-II" },
+            { "team_short": "Penn St. Brandywine", "conference_short": "Independent", "division": "D-III" },
+            { "team_short": "Point Park", "conference_short": "MEC", "division": "D-II" },
+            { "team_short": "Regent", "conference_short": "NCCAA", "division": "D-III" },
+            { "team_short": "Roosevelt", "conference_short": "GLIAC", "division": "D-II" },
+            { "team_short": "Thomas More", "conference_short": "G-MAC", "division": "D-II" },
+            { "team_short": "USC Beaufort", "conference_short": "Peach Belt", "division": "D-II" },
+            { "team_short": "Vanguard", "conference_short": "PacWest", "division": "D-II" },
+        ]
+
+        // Get dropdown elements
+        const divisionSelect = document.getElementById('divisionDropdown');
+        const conferenceSelect = document.getElementById('conferenceDropdown');
+        const teamSelect = document.getElementById('teamDropdown');
+
+        // Function to populate select elements
+        function populateSelect(selectElement, items, valueKey, textKey) {
+            // Keep the first "Select" option
+            selectElement.innerHTML = `<option value="">${selectElement.options[0].text}</option>`;
+
+            // Sort items alphabetically
+            const sortedItems = [...items].sort((a, b) => {
+                const aValue = a[textKey];
+                const bValue = b[textKey];
+                return aValue.localeCompare(bValue);
+            });
+
+            // Add new options
+            sortedItems.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item[valueKey];
+                option.textContent = item[textKey];
+                selectElement.appendChild(option);
+            });
+        }
+
+        // Division change handler
+        divisionSelect.addEventListener('change', () => {
+            const selectedDivision = divisionSelect.value;
+
+            // Reset dependent dropdowns
+            conferenceSelect.innerHTML = '<option value="">Select Conference</option>';
+            teamSelect.innerHTML = '<option value="">Select Team</option>';
+
+            if (selectedDivision) {
+                // Filter and populate conferences
+                const conferences = Array.from(new Set(
+                    resultsMapping
+                        .filter(item => item.division === selectedDivision)
+                        .map(item => item.conference_short)
+                )).map(conf => ({ conference_short: conf }));
+
+                populateSelect(conferenceSelect, conferences, 'conference_short', 'conference_short');
+            }
+        });
+
+        // Conference change handler
+        conferenceSelect.addEventListener('change', () => {
+            const selectedDivision = divisionSelect.value;
+            const selectedConference = conferenceSelect.value;
+
+            // Reset team dropdown
+            teamSelect.innerHTML = '<option value="">Select Team</option>';
+
+            if (selectedDivision && selectedConference) {
+                // Filter and populate teams
+                const teams = resultsMapping.filter(item =>
+                    item.division === selectedDivision &&
+                    item.conference_short === selectedConference
+                );
+
+                populateSelect(teamSelect, teams, 'team_short', 'team_short');
+            }
+        });
+
+    </script>
+
+    <!-- Split lines -->
+    <script>
+        // Function to split lines of csv
+        function splitLine(line) {
+            // Utility function to split CSV lines, handling quotes
+            const result = [];
+            let currentField = "";
+            let inQuotes = false;
+            for (let char of line) {
+                if (char === '"') inQuotes = !inQuotes;
+                else if (char === "," && !inQuotes) {
+                    result.push(currentField.trim());
+                    currentField = "";
+                } else currentField += char;
+            }
+            result.push(currentField.trim());
+            return result;
+        }
+    </script>
+
+    <!-- Live Data Populate -->
+    <script>
+        let fetchInterval; // Store interval reference globally
+
+        function fetchLiveData() {
+            fetch('https://test-api-42b6a9daeff2.herokuapp.com/')
+                .then(response => response.json())
+                .then(data => {
+                    const allLiveData = data.data;
+
+                    // Determine how to populate the table based on response structure
+                    if (allLiveData[0]?.match && allLiveData[0]?.results) {
+                        populateTableWithMatch(allLiveData);
+                    } else if (allLiveData[0]?.team && allLiveData[0]?.date) {
+                        populateTableWithTeam(allLiveData);
+                    } else {
+                        throw new Error("Unexpected data structure");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    const tableBody = document.querySelector('#liveTable tbody');
+                    tableBody.innerHTML = '<tr><td colspan="2">Error loading data. Please try again later.</td></tr>';
+                });
+        }
+
+        function populateTableWithMatch(data) {
+            const tbody = document.querySelector("#liveTable tbody");
+            tbody.innerHTML = "";
+
+            data.forEach((row) => {
+                const rowElement = document.createElement("tr");
+                rowElement.innerHTML = `
+                    <td>${row.match.trim()}</td>
+                    <td><a href="${row.box_score_url}" style="color: #dcdcdc;" target="_blank">${row.results}</a></td>
+                `;
+                tbody.appendChild(rowElement);
+            });
+
+            initializeDataTable();
+        }
+
+        function populateTableWithTeam(data) {
+            const tbody = document.querySelector("#liveTable tbody");
+            tbody.innerHTML = "";
+
+            data.forEach((row) => {
+                const rowElement = document.createElement("tr");
+                rowElement.innerHTML = `
+                    <td>${row.team.trim()}</td>
+                    <td>
+                        Date: ${row.date.trim()}<br>
+                        Sets: ${row.set_1}, ${row.set_2}, ${row.set_3}, ${row.set_4}<br>
+                        <a href="${row.box_score_url.trim()}" target="_blank">View Box Score</a>
+                    </td>
+                `;
+                tbody.appendChild(rowElement);
+            });
+
+            initializeDataTable();
+        }
+
+        function initializeDataTable() {
+            if ($.fn.DataTable.isDataTable('#liveTable')) {
+                $('#liveTable').DataTable().destroy(); // Destroy existing DataTable
+            }
+            responsive: true,
+                $('#liveTable').DataTable({
+                    responsive: true,
+                    order: [[0, 'desc']],
+                    pageLength: 10,
+                    searching: true,
+                    ordering: true,
+                    info: false,
+                });
+        }
+
+        function startPeriodicFetch() {
+            fetchLiveData(); // Initial fetch
+            fetchInterval = setInterval(fetchLiveData, 45000); // Fetch every 45 seconds
+        }
+
+        function stopPeriodicFetch() {
+            clearInterval(fetchInterval);
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopPeriodicFetch();
+            } else {
+                startPeriodicFetch();
+            }
+        });
+
+        // Start the periodic fetch when the page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            startPeriodicFetch();
+        });
+    </script>
+
+    <!-- Dropdowns -->
+    <script>
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function (event) {
+                const dropdownButton = document.getElementById('divisionDropdown');
+                dropdownButton.textContent = this.textContent; // Update the button label
+                dropdownButton.setAttribute('data-value', this.getAttribute('data-value')); // Optional: Set a value attribute
+            });
+        });
+    </script>
+
+    <!-- Results Table -->
+    <script>
+        const csvUrls = [
+            'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24.csv',
+            'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d2_24.csv',
+            'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d3_24.csv',
+        ];
+
+        // Data fetching and initialization
+        async function fetchCsvData(url) {
+            const response = await fetch(url);
+            const csvText = await response.text();
+
+            // Split CSV into rows, skipping the header and empty lines
+            const rows = csvText.split('\n').slice(1).filter(row => row.trim());
+
+            // Map rows into objects with destructuring
+            const data = rows.map(row => {
+                const [date, match, results, box_score_url, div] = splitLine(row);
+                return { date, match, results, box_score_url, div };
+            });
+
+            return data;
+        }
+
+        async function fetchAllData() {
+            const allData = await Promise.all(csvUrls.map(fetchCsvData)); // Fetch all CSVs concurrently
+            return allData.flat(); // Merge arrays into one
+        }
+
+
+        // Filter handlers
+        function filterData(data, division, conference, team) {
+            return data.filter(row => {
+                const divisionMatch = !division || row.div === division;
+                const conferenceMatch = !conference || row.match.includes(conference);
+                const teamMatch = !team || row.match.includes(team);
+                return divisionMatch && conferenceMatch && teamMatch;
+            });
+        }
+
+        // Table rendering
+        function renderTable(data) {
+            if ($.fn.DataTable.isDataTable('#resultsTable')) {
+                $('#resultsTable').DataTable().destroy();
+            }
+
+            $('#resultsTable').DataTable({
+                data: data,
+                columns: [
+                    { data: 'date', title: 'Date' },
+                    { data: 'div', title: 'Division' },
+                    { data: 'match', title: 'Match' },
+                    {
+                        data: 'results',
+                        title: 'Results',
+                        render: function (data, type, row) {
+                            return `<a href="${row.box_score_url}" target="_blank" style="color: #dcdcdc;">${data}</a>`;
+                        }
+                    }
+                ],
+                layout: {
+                    topStart: ['pageLength', 'buttons'],
+                    topEnd: 'search',
+                    bottomStart: 'info',
+                    bottomEnd: 'paging'
+                },
+                buttons: ['copy', 'csv', 'excel'],
+                responsive: true,
+                order: [[0, 'desc']],
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const data = await fetchAllData();
+            let filteredData = data;
+
+            const divisionSelect = document.getElementById('divisionDropdown');
+            const conferenceSelect = document.getElementById('conferenceDropdown');
+            const teamSelect = document.getElementById('teamDropdown');
+
+            function updateDropdowns() {
+                // Get selected values
+                const selectedDivision = divisionSelect.value;
+                const selectedConference = conferenceSelect.value;
+
+                // Filter mapping data
+                let filteredMapping = resultsMapping;
+                if (selectedDivision) {
+                    filteredMapping = filteredMapping.filter(item => item.division === selectedDivision);
+                }
+                if (selectedConference) {
+                    filteredMapping = filteredMapping.filter(item => item.conference_short === selectedConference);
+                }
+
+                // Update conference dropdown
+                if (!selectedConference) {
+                    const conferences = [...new Set(filteredMapping.map(item => item.conference_short))].sort();
+                    conferenceSelect.innerHTML = '<option value="">Select Conference</option>';
+                    conferences.forEach(conf => {
+                        const option = document.createElement('option');
+                        option.value = conf;
+                        option.textContent = conf;
+                        conferenceSelect.appendChild(option);
+                    });
+                }
+
+                // Update team dropdown
+                const teams = [...new Set(filteredMapping.map(item => item.team_short))].sort();
+                teamSelect.innerHTML = '<option value="">Select Team</option>';
+                teams.forEach(team => {
+                    const option = document.createElement('option');
+                    option.value = team;
+                    option.textContent = team;
+                    teamSelect.appendChild(option);
+                });
+
+                // Update table
+                filteredData = filterData(data, selectedDivision, selectedConference, teamSelect.value);
+                renderTable(filteredData);
+            }
+
+            // Event listeners
+            divisionSelect.addEventListener('change', updateDropdowns);
+            conferenceSelect.addEventListener('change', updateDropdowns);
+            teamSelect.addEventListener('change', () => {
+                filteredData = filterData(data, divisionSelect.value, conferenceSelect.value, teamSelect.value);
+                renderTable(filteredData);
+            });
+
+            // Set default division and trigger updates
+            divisionSelect.value = "D-I"; // Set initial value
+            updateDropdowns(); // Apply filtering based on the initial value
+
+            // Initial render
+            renderTable(filteredData);
+        });
+
+    </script>
+
+    <!-- Rankings Table -->
+    <script>
+
+        function parseRankingsCSV(csv) {
+            const lines = csv.trim().split('\n');
+            const headers = lines[0].split(',');
+            return lines.slice(1).map(line => {
+                const values = splitLine(line);
+                return headers.reduce((obj, header, index) => {
+                    obj[header] = values[index];
+                    return obj;
+                }, {});
+            });
+        }
+
+        // Function to initialize the table and dropdown
+        function initializeTableAndDropdown(data) {
+            // Initialize DataTable
+            const table = $('#rankingsTable').DataTable({
+                columnDefs: [
+                    { targets: [2, 3, 4, 5, 6, 7], className: 'text-center' },
+                    { targets: [2, 3, 4, 5, 6, 7], className: 'text-center' } // Center specific columns
+                ],
+                data: data,
+                columns: [
+                    { data: 'Conf' },
+                    { data: 'Team' },
+                    { data: 'W' },
+                    { data: 'L' },
+                    { data: 'ConfRec' },
+                    { data: 'FigStats RPI' },
+                    { data: 'NCAA Rank' },
+                    { data: 'Evollve Rank' }
+                ],
+                order: [[6, 'asc']],
+                pageLength: 10
+            });
+
+            // Populate conference dropdown
+            const conferences = [...new Set(data.map(item => item.Conf))].sort();
+            const dropdown = document.getElementById('conferenceRankingsDropdown');  // Changed from conferenceDropdown to conferenceRankingsDropdown
+
+            // Clear existing options except the first one
+            dropdown.innerHTML = '<option value="">Select Conference</option>';
+            conferences.forEach(conf => {
+                const option = document.createElement('option');
+                option.value = conf;
+                option.textContent = conf;
+                dropdown.appendChild(option);
+            });
+
+            // Add conference filter functionality
+            $('#conferenceRankingsDropdown').on('change', function () {  // Changed to match the correct ID
+                const selectedConference = this.value;
+                table
+                    .column(0) // Conference column index
+                    .search(selectedConference)
+                    .draw();
+            });
+        }
+
+        // Fetch and process the CSV data
+        async function fetchData() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/fig_stats.csv');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const csvText = await response.text();
+                const data = parseRankingsCSV(csvText);
+                initializeTableAndDropdown(data);
+            } catch (error) {
+                console.error('Error fetching or processing data:', error);
+                document.getElementById('rankingsTable').innerHTML = 'Error loading data. Please try again later.';
+            }
+        }
+
+        // Call fetchData when the page loads
+        document.addEventListener('DOMContentLoaded', fetchData);
+
+    </script>
+
+    <!-- Teams Table -->
+    <script>
+        function parseTeamsCSV(csvText) {
+            const rows = csvText.split('\n').slice(1).filter(row => row.trim());
+            return rows.map(row => {
+                const [
+                    team_id,
+                    team_name,
+                    conference_id,
+                    conference_name,
+                    school_url,
+                    school_athletic_url,
+                    state,
+                    division,
+                    year,
+                    team_short,
+                    conference_short
+                ] = splitLine(row);
+
+                return {
+                    Team: `<a href="https://${school_url}" style="color: #dcdcdc;" target="_blank">${team_name}</a> `,
+                    Conference: `${conference_name} (${conference_short})`,
+                    Div: division
+                };
+            });
+        }
+        // Populate dropdowns
+        function populateTeamsDropdowns(data) {
+            const divisions = [...new Set(data.map(row => row.Div))].sort();
+            const divisionDropdown = document.getElementById('teamsDivisionDropdown');
+            const conferenceDropdown = document.getElementById('teamsConferenceDropdown');
+
+
+            // Filter conferences dynamically based on selected division
+            divisionDropdown.addEventListener('change', () => {
+                const selectedDivision = divisionDropdown.value;
+
+                // Filter conferences based on division
+                const filteredConferences = [...new Set(
+                    data.filter(row => !selectedDivision || row.Div === selectedDivision).map(row => row.Conference)
+                )].sort();
+
+                // Clear and repopulate the conference dropdown
+                conferenceDropdown.innerHTML = '<option value="">Select Conference</option>';
+                filteredConferences.forEach(conference => {
+                    const option = document.createElement('option');
+                    option.value = conference;
+                    option.textContent = conference;
+                    conferenceDropdown.appendChild(option);
+                });
+            });
+        }
+
+        // Apply filters to DataTable
+        function applyTeamsFilters(data) {
+            const divisionDropdown = document.getElementById('teamsDivisionDropdown');
+            const conferenceDropdown = document.getElementById('teamsConferenceDropdown');
+
+            function filterData() {
+                const selectedDivision = divisionDropdown.value;
+                const selectedConference = conferenceDropdown.value;
+
+                const filteredData = data.filter(row => {
+                    const divisionMatch = !selectedDivision || row.Div === selectedDivision;
+                    const conferenceMatch = !selectedConference || row.Conference === selectedConference;
+                    return divisionMatch && conferenceMatch;
+                });
+
+                // Update DataTable with filtered data
+                const table = $('#teamsTable').DataTable();
+                table.clear().rows.add(filteredData).draw();
+            }
+
+            // Listen for changes in dropdowns
+            divisionDropdown.addEventListener('change', filterData);
+            conferenceDropdown.addEventListener('change', filterData);
+        }
+
+        // Initialize DataTable
+        function initializeTeamsTable(data) {
+            $('#teamsTable').DataTable({
+                data: data,
+                columns: [
+                    { data: 'Team' },
+                    { data: 'Conference' },
+                    { data: 'Div' }
+                ],
+                order: [[0, 'asc']],
+                pageLength: 10
+            });
+        }
+
+        // Fetch and process CSV data
+        async function fetchTeamsData() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/teams2.csv');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const csvText = await response.text();
+                const data = parseTeamsCSV(csvText);
+
+                // Initialize dropdowns, table, and filters
+                populateTeamsDropdowns(data);
+                initializeTeamsTable(data);
+                applyTeamsFilters(data);
+            } catch (error) {
+                console.error('Error fetching or processing data:', error);
+                document.getElementById('teamsTable').innerHTML = 'Error loading data. Please try again later.';
+            }
+        }
+
+        // Execute on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', fetchTeamsData);
+    </script>
+
+    <!-- Players Table -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const divisionDropdown = document.getElementById("playersDivisionDropdown");
+            const conferenceDropdown = document.getElementById("playersConferenceDropdown");
+            const teamDropdown = document.getElementById("playersTeamDropdown");
+            const classDropdown = document.getElementById("classDropdown");
+            const positionDropdown = document.getElementById("positionDropdown");
+
+            let data = []; // Global variable to hold parsed CSV data
+            let dataTable; // DataTable instance
+
+            // Fetch and parse CSV
+            async function fetchCSV() {
+                try {
+                    const response = await fetch(
+                        "https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24_players.csv"
+                    );
+                    const csvText = await response.text();
+                    data = Papa.parse(csvText, { header: true }).data.filter(row => row.Name); // Ensure rows have valid data
+                    console.log("Fetched data:", data); // Debug
+                    populateDropdowns(); // Populate dropdowns initially
+                    populateTable(data); // Populate table with all data
+                } catch (error) {
+                    console.error("Error fetching CSV:", error);
+                }
+            }
+
+            // Populate a dropdown with unique options
+            function populateDropdown(dropdown, options, placeholder) {
+                dropdown.innerHTML = `<option value="">${placeholder}</option>`;
+                options.forEach((option) => {
+                    const opt = document.createElement("option");
+                    opt.value = option;
+                    opt.textContent = option;
+                    dropdown.appendChild(opt);
+                });
+            }
+
+            function updateTeamDropdown() {
+                const selectedConference = conferenceDropdown.value;
+                const filteredTeams = Array.from(new Set(
+                    data.filter(row => !selectedConference || row.conference_name === selectedConference)
+                        .map(row => row.team_name)
+                ));
+                populateDropdown(teamDropdown, filteredTeams, "Select Team");
+            }
+            [divisionDropdown, teamDropdown, classDropdown, positionDropdown].forEach(dropdown =>
+                dropdown.addEventListener("change", updateTableAndDropdowns)
+            );
+
+            // Populate dropdowns
+            function populateDropdowns() {
+                const divisions = Array.from(new Set(data.map(row => row.division)));
+                const conferences = Array.from(new Set(data.map(row => row.conference_name)));
+                const teams = Array.from(new Set(data.map(row => row.team_name)));
+                const classes = Array.from(new Set(data.map(row => row.Class)));
+                const positions = Array.from(new Set(data.map(row => row.Position)));
+
+                populateDropdown(divisionDropdown, divisions, "Select Division");
+                populateDropdown(conferenceDropdown, conferences, "Select Conference");
+                populateDropdown(teamDropdown, teams, "Select Team");
+                populateDropdown(classDropdown, classes, "Select Class");
+                populateDropdown(positionDropdown, positions, "Select Position");
+            }
+
+            // Populate the table
+            function populateTable(filteredData) {
+                const tableData = filteredData.map(row => [
+                    `${row.Name || ""} (${row.Number || ""})`,
+                    row.Class || "",
+                    row.Position || "",
+                    row.Height || "",
+                    row.Hometown || "",
+                    row["High School"] || "",
+                    row.conference_name || "",
+                    row.team_name || ""
+                ]);
+
+                if (dataTable) {
+                    dataTable.clear().rows.add(tableData).draw(); // Update existing DataTable
+                } else {
+                    dataTable = $('#playersTable').DataTable({
+                        data: tableData,
+                        columns: [
+                            { title: "Name" },
+                            { title: "Cls" },
+                            { title: "Pos" },
+                            { title: "Ht" },
+                            { title: "Town" },
+                            { title: "H.S." },
+                            { title: "Conf" },
+                            { title: "Team" },
+                        ]
+                    });
+                }
+            }
+
+            // Filter data based on dropdown values
+            function filterData() {
+                const division = divisionDropdown.value;
+                const conference = conferenceDropdown.value;
+                const team = teamDropdown.value;
+                const playerClass = classDropdown.value;
+                const position = positionDropdown.value;
+
+                return data.filter(row =>
+                    (!division || row.division === division) &&
+                    (!conference || row.conference_name === conference) &&
+                    (!team || row.team_name === team) &&
+                    (!playerClass || row.Class === playerClass) &&
+                    (!position || row.Position === position)
+                );
+            }
+
+            // Update table and dropdowns on filter change
+            function updateTableAndDropdowns() {
+                const filteredData = filterData();
+                populateTable(filteredData);
+            }
+
+            // Add event listeners to dropdowns
+            [divisionDropdown, conferenceDropdown, teamDropdown, classDropdown, positionDropdown].forEach(dropdown =>
+                dropdown.addEventListener("change", updateTableAndDropdowns)
+            );
+
+            // Fetch and initialize
+            fetchCSV();
+        });
+    </script>
+
 </body>
+
 </html>
