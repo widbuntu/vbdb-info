@@ -267,74 +267,73 @@
 
     <!-- Players -->
     <div id="playersContent" class="tab-content mt-4">
-        <h3 class="text-center">Players</h3>
+        <h3 class="text-center">Results</h3>
 
-        <!-- Teams Tab Content -->
+        <!-- Results Tab Content -->
         <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
             <div class="dropdown-container">
 
-                <div class="row">
+                <div class="row justify-content-center">
                     <!-- Division Dropdown -->
-                    <div class="col-12 col-md">
-                        <select id="playersDivisionDropdown" class="form-select">
+                    <div class="col-5 col-md-2">
+                        <select id="playersDivision" class="form-select">
                             <option value="">Select Division</option>
                         </select>
                     </div>
                     <!-- Conference Dropdown -->
-                    <div class="col-12 col-md">
-                        <select id="playersConferenceDropdown" class="form-select">
+                    <div class="col-5 col-md-2">
+                        <select id="playersConference" class="form-select">
                             <option value="">Select Conference</option>
                         </select>
                     </div>
                     <!-- Team Dropdown -->
-                    <div class="col-12 col-md">
-                        <select id="playersTeamDropdown" class="form-select">
-                            <option value="">Select Conference</option>
+                    <div class="col-5 col-md-2">
+                        <select id="playersTeam" class="form-select">
+                            <option value="">Select Team</option>
                         </select>
                     </div>
-                    <!-- Class Dropdown -->
-                    <div class="col-12 col-md">
-                        <select id="playersClassDropdown" class="form-select">
+                    <!-- Team Dropdown -->
+                    <div class="col-5 col-md-2">
+                        <select id="playersClass" class="form-select">
                             <option value="">Select Class</option>
                         </select>
                     </div>
-                    <!-- Position Dropdown -->
-                    <div class="col-12 col-md">
-                        <select id="playersPositionDropdown" class="form-select">
+                    <!-- Team Dropdown -->
+                    <div class="col-5 col-md-2">
+                        <select id="playersPosition" class="form-select">
                             <option value="">Select Position</option>
                         </select>
                     </div>
-
                 </div>
+            </div>
 
 
-                <!-- DataTable of Players -->
-                <div class="table-section my-2">
-                    <div class="table-responsive" style="overflow-x: auto">
-                        <table id="playersTable" class="table table-dark table-hover table-striped"
-                            style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap; font-size: 12px;">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Cls</th>
-                                    <th>Pos</th>
-                                    <th>Ht</th>
-                                    <th>Town</th>
-                                    <th>H.S.</th>
-                                    <th>Conf</th>
-                                    <th>Team</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+            <!-- DataTable of Players -->
+            <div class="table-section my-2">
+                <div class="table-responsive" style="overflow-x: auto">
+                    <table id="playersTable" class="table table-dark table-hover table-striped"
+                        style="width: 100%; table-layout: auto; overflow-x: auto; white-space: nowrap; font-size: 12px;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>#</th>
+                                <th>Cls</th>
+                                <th>Pos</th>
+                                <th>Ht</th>
+                                <th>Town</th>
+                                <th>H.S.</th>
+                                <th>Conf</th>
+                                <th>Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- Styles -->
     <style>
@@ -394,11 +393,14 @@
             margin: 0 auto;
             max-width: 90%;
         }
+
         .table {
-    width: 100%;
-    table-layout: auto;
-    white-space: nowrap; /* Prevent text wrapping for better readability */
-}
+            width: 100%;
+            table-layout: auto;
+            white-space: nowrap;
+            /* Prevent text wrapping for better readability */
+        }
+
         .table-section {
             background-color: #333;
             color: white;
@@ -554,6 +556,7 @@
 
     <!-- Dropdown mapping for inputs -->
     <script>
+
         const resultsMapping = [
             { "team_short": "Abilene Christian", "conference_short": "WAC", "division": "D-I" },
             { "team_short": "Academy of Art", "conference_short": "PacWest", "division": "D-II" },
@@ -1861,28 +1864,28 @@
 
         // Data fetching and initialization
         async function fetchCsvData(url) {
-    const response = await fetch(url);
-    const csvText = await response.text();
+            const response = await fetch(url);
+            const csvText = await response.text();
 
-    // Split CSV into rows, skipping the header and empty lines
-    const rows = csvText.split('\n').slice(1).filter(row => row.trim());
+            // Split CSV into rows, skipping the header and empty lines
+            const rows = csvText.split('\n').slice(1).filter(row => row.trim());
 
-    // Map rows into objects with destructuring
-    const data = rows.map(row => {
-        const [date, match, results, box_score_url, div] = splitLine(row);
+            // Map rows into objects with destructuring
+            const data = rows.map(row => {
+                const [date, match, results, box_score_url, div] = splitLine(row);
 
-        // Limit the date to the first 5 characters
-        return { 
-            date: date.slice(0, 5), 
-            match, 
-            results, 
-            box_score_url, 
-            div 
-        };
-    });
+                // Limit the date to the first 5 characters
+                return {
+                    date: date.slice(0, 5),
+                    match,
+                    results,
+                    box_score_url,
+                    div
+                };
+            });
 
-    return data;
-}
+            return data;
+        }
 
         async function fetchAllData() {
             const allData = await Promise.all(csvUrls.map(fetchCsvData)); // Fetch all CSVs concurrently
@@ -2208,140 +2211,168 @@
     <!-- Players Table -->
     <script>
 
-// Function to populate dropdown options dynamically
+        const csvRosterUrls = {
+            'd1': 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24_players.csv',
+            'd2': 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d2_24_players.csv',
+            'd3': 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d3_24_players.csv'
+        };
+        const positions = ['OH', 'L/DS', 'S', 'MB', 'RS', 'L', 'DS', 'MH', 'OPP'].sort();
+        const classes = ['Fr.', 'So.', 'Jr.', 'Sr.'];
+        const divisions = ['D-I', 'D-II', 'D-III'];
 
-function populateDropdown(dropdownId, options) {
-    const dropdown = document.getElementById(dropdownId);
-    dropdown.innerHTML = '<option value="">Select</option>'; // Reset options
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option;
-        dropdown.appendChild(optionElement);
-    });
-}
+        let rosterData = [];
+        let dataTable;
 
-document.getElementById('playersDivisionDropdown').addEventListener('change', (event) => {
-    const selectedDivision = event.target.value;
-    const filteredConferences = resultsMapping
-        .filter(item => item.division === selectedDivision)
-        .map(item => item.conference_short);
-    
-    populateDropdown('playersConferenceDropdown', [...new Set(filteredConferences)]); // Remove duplicates
-});
+        function initializeRosterDataTable() {
+            dataTable = $('#playersTable').DataTable({
+                order: [[0, 'asc']],
+                columns: [
+                    { data: 'Name' },
+                    { data: 'Number', defaultContent: '' },
+                    { data: 'Class', defaultContent: '' },  // Handle missing class data
+                    { data: 'Position', defaultContent: '' },  // Handle missing position data
+                    { data: 'Height', defaultContent: '' },
+                    { data: 'Hometown', defaultContent: '' },
+                    { data: 'High School', defaultContent: '' },  // Match CSV header
+                    { data: 'conference_short', defaultContent: '' },
+                    { data: 'team_short', defaultContent: '' },
+                ],
+                autoWidth: false, // Prevent automatic column sizing
+                columnDefs: [
+                    { targets: [1, 2, 3, 4, 5, 6, 7, 8], className: 'text-start', width: '5%' },
+                ],
+                layout: {
+                    topStart: ['pageLength', 'buttons'],
+                    topEnd: 'search',
+                    bottomStart: 'info',
+                    bottomEnd: 'paging'
+                },
+                buttons: ['csv', 'excel'],
+                order: [
+                    [7, 'asc'],
+                    [8, 'asc'],
+                    [1, 'asc']
+                ],
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+            });
+        }
 
-document.getElementById('playersConferenceDropdown').addEventListener('change', (event) => {
-    const selectedConference = event.target.value;
-    const filteredTeams = resultsMapping
-        .filter(item => item.conference_short === selectedConference)
-        .map(item => item.team_short);
-    
-    populateDropdown('playersTeamDropdown', [...new Set(filteredTeams)]); // Remove duplicates
-});
-
-// Example for filtering classes and positions - you can populate similarly based on the data you have
-document.getElementById('playersClassDropdown').addEventListener('change', (event) => {
-    // Update logic for class
-});
-
-document.getElementById('playersPositionDropdown').addEventListener('change', (event) => {
-    // Update logic for position
-});
+        async function fetchCSVData(division) {
+            const response = await fetch(csvRosterUrls[division]);
+            const csv = await response.text();
+            const lines = csv.split('\n');
+            const headers = lines[0].split(',').map(header => header.trim());
+            return lines.slice(1).map(line => {
+                const values = splitLine(line);
+                const player = {};
+                headers.forEach((header, index) => {
+                    player[header] = values[index];
+                });
+                return player;
+            });
+        }
 
 
-// Populate the Division dropdown initially
-populateDropdown('playersDivisionDropdown', ['D-I', 'D-II', 'D-III']);
+        async function initialize() {
+            // Populate division dropdown
+            updateSelect('playersDivision', divisions);
 
-const csvRosterUrls = {
-    'd1': 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d1_24_players.csv',
-    'd2': 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d2_24_players.csv',
-    'd3': 'https://raw.githubusercontent.com/widbuntu/vbdb-info/refs/heads/main/data/ncaaw_d3_24_players.csv'
-};
+            // Initialize DataTable
+            initializeRosterDataTable();
 
-// Function to fetch and parse CSV data
-async function fetchCSV(url) {
-    const response = await fetch(url);
-    const text = await response.text();
-    return parseCSV(text);
-}
+            // Load all CSV data
+            rosterData = [];
+            for (const division in csvRosterUrls) {
+                const divisionData = await fetchCSVData(division);
+                rosterData = rosterData.concat(divisionData.filter(player => player.Name && player.Name.trim() !== ''));
+            }
 
-function parseCSV(text) {
-    const lines = text.split('\n').map(line => splitLine(line));
-    const headers = lines[0]; // First row is headers
-    const data = lines.slice(1); // Remaining rows are data
+            // Populate dropdowns for conference, team, class, and position
+            updateSelect('playersConference', getUniqueConferences());
+            updateSelect('playersTeam', getUniqueTeams());
+            updateSelect('playersClass', classes);
+            updateSelect('playersPosition', positions);
 
-    // Convert rows into objects
-    return data.map(row => {
-        const obj = {};
-        row.forEach((value, index) => {
-            obj[headers[index]] = value;
-        });
-        return obj;
-    });
-}
+            // Set up event listeners for filtering and dropdown updates
+            document.getElementById('playersDivision').addEventListener('change', updateDropdowns);
+            document.getElementById('playersConference').addEventListener('change', updateDropdowns);
+            document.getElementById('playersTeam').addEventListener('change', updateDropdowns);
+            document.getElementById('playersClass').addEventListener('change', filterTable);
+            document.getElementById('playersPosition').addEventListener('change', filterTable);
 
-// Function to combine all CSV data
-function populateDropdown(dropdownId, options, defaultOption = "Select") {
-    const dropdown = document.getElementById(dropdownId);
-    dropdown.innerHTML = `<option value="">${defaultOption}</option>`; // Reset options
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option;
-        dropdown.appendChild(optionElement);
-    });
-}
+            // Initial filter
+            filterTable();
+        }
 
-// Function to update dynamic dropdowns
-async function loadAndPopulateData() {
-    const d1Data = await fetchCSV(csvRosterUrls.d1);
-    const d2Data = await fetchCSV(csvRosterUrls.d2);
-    const d3Data = await fetchCSV(csvRosterUrls.d3);
+        function updateDropdowns() {
+            const division = document.getElementById('playersDivision').value;
+            const conference = document.getElementById('playersConference').value;
 
-    // Combine all data
-    const allPlayers = [...d1Data, ...d2Data, ...d3Data];
+            // Get unique conferences based on the selected division
+            const conferences = getUniqueConferences(division);
+            updateSelect('playersConference', conferences);
 
-    // Populate Division Dropdown
-    const divisions = [...new Set(allPlayers.map(player => player.division))]; // Remove duplicates
-    populateDropdown('playersDivisionDropdown', divisions);
+            // Get unique teams based on the selected division and conference
+            const teams = getUniqueTeams(division, conference);
+            updateSelect('playersTeam', teams);
 
-    // Listen for Division change to filter Conferences
-    document.getElementById('playersDivisionDropdown').addEventListener('change', (event) => {
-        const selectedDivision = event.target.value;
-        const filteredConferences = [...new Set(allPlayers.filter(player => player.division === selectedDivision).map(player => player.conference_short))];
-        populateDropdown('playersConferenceDropdown', filteredConferences);
-    });
+            // Filter and update the table based on the new selections
+            filterTable();
+        }
 
-    // Listen for Conference change to filter Teams
-    document.getElementById('playersConferenceDropdown').addEventListener('change', (event) => {
-        const selectedConference = event.target.value;
-        const filteredTeams = [...new Set(allPlayers.filter(player => player.conference_short === selectedConference).map(player => player.team_short))];
-        populateDropdown('playersTeamDropdown', filteredTeams);
-    });}
+        function getUniqueTeams(division = '', conference = '') {
+            return [...new Set(rosterData
+                .filter(item =>
+                    (!division || item.division === division) &&
+                    (!conference || item.conference_short === conference))
+                .map(item => item.team_short))].filter(Boolean).sort();
+        }
 
-// Function to update the players table with the filtered players
-function updatePlayersTable(filteredPlayers) {
-    const tableBody = document.getElementById('playersTable').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Clear previous table rows
+        function getUniqueConferences(division = '') {
+            return [...new Set(rosterData
+                .filter(item => !division || item.division === division)
+                .map(item => item.conference_short))].filter(Boolean).sort();
+        }
 
-    filteredPlayers.forEach(player => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${player.Name}</td>
-            <td>${player.Class}</td>
-            <td>${player.Position}</td>
-            <td>${player.Height}</td>
-            <td>${player.Hometown}</td>
-            <td>${player['HighSchool']}</td>
-            <td>${player.conference_short}</td>
-            <td>${player.team_short}</td>
-        `;
-        tableBody.appendChild(row);
-    });
-}
+        function updateSelect(id, options) {
+            const select = document.getElementById(id);
+            const currentValue = select.value;
+            select.innerHTML = '<option value="">Select ' + id.replace('players', '') + '</option>';
+            options.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                select.appendChild(optionElement);
+            });
+            if (options.includes(currentValue)) {
+                select.value = currentValue;
+            }
+        }
+
+        function filterTable() {
+            const division = document.getElementById('playersDivision').value;
+            const conference = document.getElementById('playersConference').value;
+            const team = document.getElementById('playersTeam').value;
+            const playerClass = document.getElementById('playersClass').value;
+            const position = document.getElementById('playersPosition').value;
+
+            // Filter the data based on selected values
+            const filteredData = rosterData.filter(player => {
+                return (!division || player.division === division) &&
+                    (!conference || player.conference_short === conference) &&
+                    (!team || player.team_short === team) &&
+                    (!playerClass || player.Class === playerClass) &&
+                    (!position || player.Position === position);
+            });
+
+            // Clear existing data in the DataTable and add filtered data
+            dataTable.clear().rows.add(filteredData).draw();
+        }
+
+        $(document).ready(initialize);
 
     </script>
-
 </body>
 
 </html>
