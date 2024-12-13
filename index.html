@@ -220,13 +220,13 @@
     <div id="teamsContent" class="tab-content mt-4">
         <h3 class="text-center">Teams</h3>
 
-        <!-- Teams Tab Content -->
+        <!-- Results Tab Content -->
         <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
             <div class="dropdown-container">
 
-                <div class="row">
+                <div class="row justify-content-center">
                     <!-- Division Dropdown -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-4 col-md-3">
                         <select id="teamsDivisionDropdown" class="form-select">
                             <option value="">Select Division</option>
                             <option value="D-I">D-I</option>
@@ -235,7 +235,7 @@
                         </select>
                     </div>
                     <!-- Conference Dropdown -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-4 col-md-3">
                         <select id="teamsConferenceDropdown" class="form-select">
                             <option value="">Select Conference</option>
                         </select>
@@ -267,7 +267,7 @@
 
     <!-- Players -->
     <div id="playersContent" class="tab-content mt-4">
-        <h3 class="text-center">Results</h3>
+        <h3 class="text-center">Players</h3>
 
         <!-- Results Tab Content -->
         <div class="tab-pane fade show active" id="done" role="tabpanel" aria-labelledby="done-tab">
@@ -2067,7 +2067,7 @@
             $('#conferenceRankingsDropdown').on('change', function () {  // Changed to match the correct ID
                 const selectedConference = this.value;
                 table
-                    .column(0) // Conference column index
+                    .column(7) // Conference column index
                     .search(selectedConference)
                     .draw();
             });
