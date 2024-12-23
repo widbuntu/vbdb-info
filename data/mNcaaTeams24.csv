@@ -1,0 +1,199 @@
+team_id,team_name,conference_name,school_url,school_athletic_url,state,division,year,team_short,conference_short
+4,Adrian College,Midwest Collegiate Volleyball League,www.adrian.edu,www.adrianbulldogs.com,MI,D-III,2024-25,Adrian,MCVL
+22,American International College,East Coast Conference,aic.edu,aicyellowjackets.com,MA,D-I,2024-25,American Int'l,ECC
+966,Arcadia University,Middle Atlantic Conferences,www.arcadia.edu,www.arcadiaknights.com/,PA,D-III,2024-25,Arcadia,Middle Atlantic
+40,Augustana College (Illinois),College Conference of Illinois & Wisconsin,www.augustana.edu,www.athletics.augustana.edu/,IL,D-III,2024-25,Augustana (IL),CCIW
+42,Aurora University,Northern Athletics Collegiate Conference,www.aurora.edu,athletics.aurora.edu,IL,D-III,2024-25,Aurora,NACC
+44,Averett University,Old Dominion Athletic Conf.,www.averett.edu,www.averettcougars.com,VA,D-III,2024-25,Averett,ODAC
+46,Baldwin Wallace University,Midwest Collegiate Volleyball League,www.bw.edu,www.bwyellowjackets.com/landing/index,OH,D-III,2024-25,Baldwin Wallace,MCVL
+47,Ball State University,Midwestern Intercollegiate Volleyball Association,www.bsu.edu,www.ballstatesports.com,IN,D-I,2024-25,Ball St.,MIVA
+962,Bard College,New England Volleyball Conference,www.bard.edu,www.bardathletics.com,NY,D-III,2024-25,Bard,NEVC
+49,Barry University,DI Independent,www.barry.edu,Www.GoBarryBucs.com,FL,D-I,2024-25,Barry,DI Independent
+15646,Barton College,Conference Carolinas,www.barton.edu,www.bartonbulldogs.com,NC,D-I,2024-25,Barton,Conference Carolinas
+58,Baruch College,City University of New York Athletic Conference,www.baruch.cuny.edu,www.baruchathletics.com,NY,D-III,2024-25,Baruch,CUNYAC
+2683,Belmont Abbey College,Conference Carolinas,www.bac.edu,www.abbeyathletics.com,NC,D-I,2024-25,Belmont Abbey,Conference Carolinas
+55,Benedict College,Southern Intercol. Ath. Conf.,www.benedict.edu,benedicttigers.com,SC,D-I,2024-25,Benedict,SIAC
+296,Benedictine University (Illinois),Northern Athletics Collegiate Conference,www.ben.edu,www.benueagles.com,IL,D-III,2024-25,Benedictine (IL),NACC
+59,Bethany College (West Virginia),Presidents' Athletic Conference,www.bethanywv.edu,bethanybison.com,WV,D-III,2024-25,Bethany (WV),PAC
+77,Brigham Young University,Mountain Pacific Sports Federation,www.byu.edu,byucougars.com,UT,D-I,2024-25,BYU,MPSF
+79,Brooklyn College,City University of New York Athletic Conference,www.brooklyn.cuny.edu,brooklyncollegeathletics.com,NY,D-III,2024-25,Brooklyn,CUNYAC
+30188,Bryn Athyn College,United East Conference,www.brynathyn.edu,www.brynathynathletics.com,PA,D-I,2024-25,Bryn Athyn,United East
+85,"Buffalo State, State University of New York",Allegheny Mountain Collegiate Conference,www.buffalostate.edu,www.buffalostateathletics.com,NY,D-I,2024-25,Buffalo St.,AMCC
+1305,Cairn University,United East Conference,www.cairn.edu,www.cairnhighlanders.com,PA,D-I,2024-25,Cairn,United East
+105,California Lutheran University,DIII Independent,www.callutheran.edu,www.clusports.com,CA,D-III,2024-25,Cal Lutheran,DIII Independent
+101,"California State University, Northridge",Big West Conference,www.csun.edu,www.GoMatadors.com,CA,D-III,2024-25,CSUN,Big West
+109,"University of California, Irvine",Big West Conference,www.uci.edu,https://ucirvinesports.com/,CA,D-III,2024-25,UC Irvine,Big West
+110,"University of California, Los Angeles",Mountain Pacific Sports Federation,www.ucla.edu,www.uclabruins.com,CA,D-I,2024-25,UCLA,MPSF
+112,"University of California, San Diego",Big West Conference,www.ucsd.edu,www.ucsdtritons.com,CA,D-III,2024-25,UC San Diego,Big West
+104,"University of California, Santa Barbara",Big West Conference,www.ucsb.edu,ucsbgauchos.com,CA,D-III,2024-25,UC Santa Barbara,Big West
+113,"University of California, Santa Cruz",DIII Independent,www.ucsc.edu/,www.goslugs.com/,CA,D-III,2024-25,UC Santa Cruz,DIII Independent
+114,Calvin University,Midwest Collegiate Volleyball League,www.calvin.edu,calvinknights.com,MI,D-III,2024-25,Calvin,MCVL
+121,Carthage College,College Conference of Illinois & Wisconsin,www.carthage.edu,athletics.carthage.edu,WI,D-III,2024-25,Carthage,CCIW
+1001,Catawba College,DI Independent,www.catawba.edu,www.catawbaathletics.com,NC,D-I,2024-25,Catawba,DI Independent
+30049,Central State University,Southern Intercol. Ath. Conf.,www.centralstate.edu,www.maraudersports.com,OH,D-I,2024-25,Central St. (OH),SIAC
+1013,University of Charleston (West Virginia),Eastern Intercollegiate Volleyball Association,www.ucwv.edu,www.ucgoldeneagles.com,WV,D-III,2024-25,Charleston (WV),EIVA
+10972,Chatham University,Presidents' Athletic Conference,www.chatham.edu,www.gochathamcougars.com,PA,D-III,2024-25,Chatham,PAC
+480,The City College of New York,City University of New York Athletic Conference,www.ccny.cuny.edu,www.ccnyathletics.com,NY,D-III,2024-25,CCNY,CUNYAC
+160,Concordia University Chicago,Northern Athletics Collegiate Conference,www.cuchicago.edu,www.CUCougars.com,IL,D-III,2024-25,Concordia Chicago,NACC
+30199,Concordia University Irvine,Mountain Pacific Sports Federation,www.cui.edu,www.cuigoldeneagles.com,CA,D-I,2024-25,CUI,MPSF
+1036,Concordia University Wisconsin,Northern Athletics Collegiate Conference,www.cuw.edu,www.cuwfalcons.com,WI,D-III,2024-25,Concordia Wisconsin,NACC
+170,Curry College,DIII Independent,www.curry.edu,www.curryathletics.com,MA,D-III,2024-25,Curry,DIII Independent
+1059,D'Youville University,Northeast Conference,www.dyc.edu,athletics.dyc.edu,NY,D-III,2024-25,D'Youville,NEC
+30174,Daemen University,Northeast Conference,www.daemen.edu,daemenwildcats.com/,NY,D-III,2024-25,Daemen,NEC
+30219,Dean College,Great Northeast Athletic Conference,https://www.dean.edu/,www.deanbulldogs.com/landing/index,MA,D-III,2024-25,Dean,Great Northeast
+1332,Dominican University (Illinois),Northern Athletics Collegiate Conference,www.dom.edu,www.dustars.com,IL,D-III,2024-25,Dominican (IL),NACC
+8956,Dominican University New York,East Coast Conference,www.duny.edu,www.chargerathletics.com,NY,D-I,2024-25,Dominican (NY),ECC
+190,Drew University,Continental Volleyball Conference,www.drew.edu,www.drewrangers.com,NJ,D-III,2024-25,Drew,CVC
+203,Eastern Mennonite University,Old Dominion Athletic Conf.,www.emu.edu,www.emuroyals.com,VA,D-III,2024-25,East. Mennonite,ODAC
+8968,Eastern University,Middle Atlantic Conferences,www.eastern.edu,www.goeasterneagles.com,PA,D-III,2024-25,Eastern,Middle Atlantic
+1066,Edgewood College,Northern Athletics Collegiate Conference,www.edgewood.edu,www.EdgewoodCollegeEagles.com,WI,D-III,2024-25,Edgewood,NACC
+30244,Edward Waters University,Southern Intercol. Ath. Conf.,www.ewu.edu,www.ewutigerpride.com,FL,D-I,2024-25,Edward Waters,SIAC
+211,Elizabethtown College,Continental Volleyball Conference,www.etown.edu,www.etownbluejays.com,PA,D-III,2024-25,Elizabethtown,CVC
+213,Elmira College,United Volleyball Conference,www.elmira.edu,athletics.elmira.edu,NY,D-III,2024-25,Elmira,UVC
+532,Elms College,Great Northeast Athletic Conference,www.elms.edu,ecblazers.com,MA,D-III,2024-25,Elms,Great Northeast
+214,Emerson College,Great Northeast Athletic Conference,www.emerson.edu,www.emersonlions.com,MA,D-III,2024-25,Emerson,Great Northeast
+30193,Emmanuel University (Georgia),Conference Carolinas,www.ec.edu,www.goeclions.com,GA,D-I,2024-25,Emmanuel (GA),Conference Carolinas
+215,Emmanuel College (Massachusetts),Great Northeast Athletic Conference,www.emmanuel.edu,www.goecsaints.com,MA,D-III,2024-25,Emmanuel (MA),Great Northeast
+8981,Endicott College,New England Volleyball Conference,www.endicott.edu,www.ecgulls.com,MA,D-III,2024-25,Endicott,NEVC
+1072,Erskine College,Conference Carolinas,www.erskine.edu,www.erskinesports.com,SC,D-I,2024-25,Erskine,Conference Carolinas
+222,"Fairleigh Dickinson University, Metropolitan Campus",Northeast Conference,www.fdu.edu,www.fduknights.com,NJ,D-III,2024-25,FDU,NEC
+237,Fort Valley State University,Southern Intercol. Ath. Conf.,www.fvsu.edu,fvsusports.com/index.aspx,GA,D-I,2024-25,Fort Valley St.,SIAC
+2694,Franklin College,DIII Independent,www.franklincollege.edu,franklingrizzlies.com/landing/index,IN,D-III,2024-25,Franklin,DIII Independent
+245,Gallaudet University,United East Conference,www.gallaudet.edu,www.gallaudetbison.com,DC,D-I,2024-25,Gallaudet,United East
+30084,Geneva College,Allegheny Mountain Collegiate Conference,www.geneva.edu,athletics.geneva.edu,PA,D-I,2024-25,Geneva,AMCC
+248,George Mason University,Eastern Intercollegiate Volleyball Association,www.gmu.edu,www.gomason.com,VA,D-III,2024-25,George Mason,EIVA
+1104,Grand Canyon University,Mountain Pacific Sports Federation,www.gcu.edu/,www.gculopes.com,AZ,D-I,2024-25,Grand Canyon,MPSF
+1111,Greenville University,DIII Independent,www.greenville.edu,www.greenville.edu/athletics,IL,D-III,2024-25,Greenville,DIII Independent
+265,Grove City College,Presidents' Athletic Conference,www.gcc.edu,athletics.gcc.edu,PA,D-III,2024-25,Grove City,PAC
+275,Harvard University,Eastern Intercollegiate Volleyball Association,harvard.edu,gocrimson.com,MA,D-III,2024-25,Harvard,EIVA
+277,"University of Hawaii, Manoa",Big West Conference,manoa.hawaii.edu,hawaiiathletics.com,HI,D-III,2024-25,Hawaii,Big West
+8398,Hilbert College,Allegheny Mountain Collegiate Conference,www.hilbert.edu,www.hilberthawks.com,NY,D-I,2024-25,Hilbert,AMCC
+281,Hiram College,Allegheny Mountain Collegiate Conference,www.hiram.edu,www.hiramterriers.com,OH,D-I,2024-25,Hiram,AMCC
+282,Hobart and William Smith Colleges,United Volleyball Conference,www.hws.edu,www.hwsathletics.com,NY,D-III,2024-25,Hobart,UVC
+8404,Hood College,Middle Atlantic Conferences,www.hood.edu,www.hoodathletics.com,MD,D-III,2024-25,Hood,Middle Atlantic
+30160,Houghton University,DIII Independent,www.houghton.edu,athletics.houghton.edu,NY,D-III,2024-25,Houghton,DIII Independent
+292,Hunter College,City University of New York Athletic Conference,www.hunter.cuny.edu/,www.hunter.cuny.edu/athletics,NY,D-III,2024-25,Hunter,CUNYAC
+30172,Illinois Institute of Technology,Northern Athletics Collegiate Conference,www.iit.edu,www.illinoistechathletics.com,IL,D-III,2024-25,IIT,NACC
+300,Illinois Wesleyan University,College Conference of Illinois & Wisconsin,www.iwu.edu/,www.iwusports.com,IL,D-III,2024-25,Ill. Wesleyan,CCIW
+303,Immaculata University,DIII Independent,www.immaculata.edu,www.gomightymacs.com,PA,D-III,2024-25,Immaculata,DIII Independent
+321,John Jay College of Criminal Justice,City University of New York Athletic Conference,www.jjay.cuny.edu/,www.johnjayathletics.com,NY,D-III,2024-25,John Jay,CUNYAC
+325,Juniata College,Continental Volleyball Conference,www.juniata.edu/,www.juniatasports.net,PA,D-III,2024-25,Juniata,CVC
+329,Kean University,Continental Volleyball Conference,www.kean.edu,www.keanathletics.com,NJ,D-III,2024-25,Kean,CVC
+332,Kentucky State University,Southern Intercol. Ath. Conf.,www.kysu.edu/,ksuthorobreds.com,KY,D-I,2024-25,Kentucky St.,SIAC
+30051,King University,Conference Carolinas,www.king.edu/,www.kingtornado.com/,TN,D-I,2024-25,King (TN),Conference Carolinas
+336,King's College (Pennsylvania),Middle Atlantic Conferences,www.kings.edu/,www.kings.edu/athletics,PA,D-III,2024-25,King's (PA),Middle Atlantic
+1164,Lakeland University,Northern Athletics Collegiate Conference,www.lakeland.edu/,lakelandmuskies.com/,WI,D-III,2024-25,Lakeland,NACC
+30085,Lancaster Bible College,United East Conference,www.lbc.edu,www.lbcchargers.com,PA,D-I,2024-25,Lancaster Bible,United East
+8486,Lasell University,Great Northeast Athletic Conference,www.lasell.edu,laserpride.lasell.edu,MA,D-III,2024-25,Lasell,Great Northeast
+13302,Lees-McRae College,Conference Carolinas,www.lmc.edu,lmcbobcats.com,NC,D-I,2024-25,Lees-McRae,Conference Carolinas
+279,Lehman College,City University of New York Athletic Conference,www.lehman.edu,www.lehmanathletics.com,NY,D-III,2024-25,Lehman,CUNYAC
+350,LeMoyne-Owen College,Southern Intercol. Ath. Conf.,www.loc.edu,athletics.loc.edu/,TN,D-I,2024-25,LeMoyne-Owen,SIAC
+354,Lewis University,Midwestern Intercollegiate Volleyball Association,www.lewisu.edu,www.lewisflyers.com,IL,D-I,2024-25,Lewis,MIVA
+1176,Lincoln Memorial University,DI Independent,www.lmunet.edu/,www.lmurailsplitters.com,TN,D-I,2024-25,Lincoln Memorial,DI Independent
+30136,Lindenwood University,Midwestern Intercollegiate Volleyball Association,www.lindenwood.edu,lindenwoodlions.com,MO,D-I,2024-25,Lindenwood,MIVA
+99,Long Beach State University,Big West Conference,www.csulb.edu,longbeachstate.com,CA,D-III,2024-25,Long Beach St.,Big West
+361,Long Island University,Northeast Conference,liu.edu,www.liuathletics.com,NY,D-III,2024-25,LIU,NEC
+364,Loras College,College Conference of Illinois & Wisconsin,www.loras.edu,www.duhawks.com,IA,D-III,2024-25,Loras,CCIW
+371,Loyola University Chicago,Midwestern Intercollegiate Volleyball Association,www.luc.edu,www.loyolaramblers.com,IL,D-I,2024-25,Loyola Chicago,MIVA
+374,University of Lynchburg,Old Dominion Athletic Conf.,www.lynchburg.edu/,www.lynchburgsports.com/landing/index,VA,D-III,2024-25,Lynchburg,ODAC
+382,Manhattanville University,Skyline Conference,www.mville.edu,www.govaliants.com,NY,D-III,2024-25,Manhattanville,Skyline
+1194,Maranatha Baptist University,DIII Independent,www.mbu.edu/,mbusabercats.com,WI,D-III,2024-25,Maranatha Baptist,DIII Independent
+1196,Marian University (Wisconsin),Northern Athletics Collegiate Conference,www.marianuniversity.edu,www.sabreathletics.com,WI,D-III,2024-25,Marian (WI),NACC
+394,Marymount University (Virginia),Continental Volleyball Conference,www.marymount.edu/,www.marymountsaints.com,VA,D-III,2024-25,Marymount (VA),CVC
+395,Maryville University of Saint Louis,DI Independent,www.maryville.edu,www.maryvillesaints.com,MO,D-I,2024-25,Maryville (MO),DI Independent
+398,Massachusetts Institute of Technology,United Volleyball Conference,web.mit.edu,www.mitathletics.com,MA,D-III,2024-25,MIT,UVC
+30138,McKendree University,Midwestern Intercollegiate Volleyball Association,www.mckendree.edu,www.mckbearcats.com,IL,D-I,2024-25,McKendree,MIVA
+403,Medgar Evers College,City University of New York Athletic Conference,www.mec.cuny.edu,www.mecathletics.com,NY,D-III,2024-25,Medgar Evers,CUNYAC
+410,Merrimack College,Northeast Conference,www.merrimack.edu,www.merrimackathletics.com,MA,D-I,2024-25,Merrimack,NEC
+411,Messiah University,Middle Atlantic Conferences,www.messiah.edu,www.gomessiah.com,PA,D-III,2024-25,Messiah,Middle Atlantic
+20220,Milwaukee School of Engineering,Northern Athletics Collegiate Conference,www.msoe.edu/,go-raiders.com,WI,D-III,2024-25,MSOE,NACC
+16142,Misericordia University,Middle Atlantic Conferences,www.misericordia.edu/,www.misericordia.edu/athletics,PA,D-III,2024-25,Misericordia,Middle Atlantic
+435,Missouri University of Science and Technology,DI Independent,www.mst.edu,www.minerathletics.com,MO,D-I,2024-25,Missouri S&T,DI Independent
+435,Missouri University of Science and Technology,DI Independent,www.mst.edu,www.minerathletics.com,MO,D-I,2024-25,Missouri S&T,DI Independent
+445,Morehouse College,Southern Intercol. Ath. Conf.,www.morehouse.edu,www.morehouseathletics.com,GA,D-I,2024-25,Morehouse,SIAC
+30036,Mount Aloysius College,Allegheny Mountain Collegiate Conference,www.mtaloy.edu,www.mountieathletics.com,PA,D-I,2024-25,Mount Aloysius,AMCC
+1245,University of Mount Olive,Conference Carolinas,www.umo.edu,www.umotrojans.com,NC,D-I,2024-25,Mount Olive,Conference Carolinas
+8567,Mount St. Joseph University,Midwest Collegiate Volleyball League,www.msj.edu/,www.msjlions.com,OH,D-III,2024-25,Mt. St. Joseph,MCVL
+451,University of Mount Saint Vincent,Skyline Conference,www.mountsaintvincent.edu,cmsvathletics.com/,NY,D-III,2024-25,UMSV,Skyline
+452,University of Mount Union,Midwest Collegiate Volleyball League,www.mountunion.edu,athletics.mountunion.edu,OH,D-III,2024-25,Mount Union,MCVL
+461,Nazareth University,United Volleyball Conference,www.naz.edu,www.nazathletics.com,NY,D-III,2024-25,Nazareth,UVC
+1254,Neumann University,United East Conference,www.neumann.edu,www.neumannathletics.com,PA,D-I,2024-25,Neumann,United East
+319,New Jersey City University,Skyline Conference,www.njcu.edu,www.njcugothicknights.com,NJ,D-III,2024-25,New Jersey City,Skyline
+471,New Jersey Institute of Technology,Eastern Intercollegiate Volleyball Association,www.njit.edu,www.njithighlanders.com,NJ,D-III,2024-25,NJIT,EIVA
+475,State University of New York at New Paltz,United Volleyball Conference,www.newpaltz.edu/,www.nphawks.com,NY,D-III,2024-25,SUNY New Paltz,UVC
+479,New York University,United Volleyball Conference,www.nyu.edu,www.gonyuathletics.com,NY,D-III,2024-25,NYU,UVC
+484,Nichols College,New England Volleyball Conference,www.nichols.edu,www.nicholsathletics.com,MA,D-III,2024-25,Nichols,NEVC
+492,North Central College,College Conference of Illinois & Wisconsin,noctrl.edu/,northcentralcardinals.com,IL,D-III,2024-25,North Central (IL),CCIW
+9223,North Greenville University,Conference Carolinas,www.ngu.edu/,www.nguathletics.com,SC,D-I,2024-25,North Greenville,Conference Carolinas
+496,North Park University,College Conference of Illinois & Wisconsin,www.northpark.edu/,www.northpark.edu/athletics/,IL,D-III,2024-25,North Park,CCIW
+518,The Ohio State University,Midwestern Intercollegiate Volleyball Association,https://www.osu.edu/,ohiostatebuckeyes.com/,OH,D-I,2024-25,Ohio St.,MIVA
+25719,"Penn State University, Altoona",Allegheny Mountain Collegiate Conference,www.altoona.psu.edu,www.psaltoonalions.com,PA,D-I,2024-25,Penn St.-Altoona,AMCC
+538,"Pennsylvania State Univ. Erie, the Behrend College",Allegheny Mountain Collegiate Conference,pserie.psu.edu,PSBLions.com,PA,D-I,2024-25,Penn St.-Behrend,AMCC
+539,Pennsylvania State University,Eastern Intercollegiate Volleyball Association,www.psu.edu,goPSUsports.com,PA,D-III,2024-25,Penn St.,EIVA
+541,Pepperdine University,Mountain Pacific Sports Federation,www.pepperdine.edu/,www.pepperdinewaves.com,CA,D-I,2024-25,Pepperdine,MPSF
+9500,State University of New York Polytechnic Institute,New England Volleyball Conference,www.sunypoly.edu,wildcats.sunypoly.edu/landing/index,NY,D-III,2024-25,SUNY Poly,NEVC
+552,State University of New York at Potsdam,New England Volleyball Conference,www.potsdam.edu/,www.potsdambears.com,NY,D-III,2024-25,SUNY Potsdam,NEVC
+2715,Pratt Institute,United East Conference,www.pratt.edu,www.goprattgo.com,NY,D-I,2024-25,Pratt,United East
+554,Princeton University,Eastern Intercollegiate Volleyball Association,www.princeton.edu,www.goprincetontigers.com,NJ,D-III,2024-25,Princeton,EIVA
+2682,"University of Puerto Rico, Bayamon",DI Independent,www.uprb.edu,www.uprb.edu,PR,D-I,2024-25,P.R.-Bayamon,DI Independent
+24361,"University of Puerto Rico, Mayaguez",DI Independent,www.uprm.edu,www.uprm.edu/actividadesatleticas,PR,D-I,2024-25,P.R.-Mayaguez,DI Independent
+2716,"University of Puerto Rico, Rio Piedras",DI Independent,www.uprrp.edu,https://estudiantes.uprrp.edu/desarollo-estudiantil/departamento-atletico/,PR,D-I,2024-25,P.R.-Rio Piedras,DI Independent
+30029,"Purchase College, State University of New York",Skyline Conference,www.purchase.edu,www.purchasecollegeathletics.com,NY,D-III,2024-25,Purchase,Skyline
+308,Purdue University Fort Wayne,Midwestern Intercollegiate Volleyball Association,www.pfw.edu/,www.gomastodons.com/,IN,D-I,2024-25,Purdue Fort Wayne,MIVA
+11504,Queens University of Charlotte,Midwestern Intercollegiate Volleyball Association,www.queens.edu,www.queensathletics.com,NC,D-I,2024-25,Queens (NC),MIVA
+561,Quincy University,Midwestern Intercollegiate Volleyball Association,quincy.edu,quhawks.com,IL,D-I,2024-25,Quincy,MIVA
+564,Ramapo College,Skyline Conference,www.ramapo.edu,www.ramapoathletics.com,NJ,D-III,2024-25,Ramapo,Skyline
+566,Randolph College,Old Dominion Athletic Conf.,www.randolphcollege.edu,www.randolphwildcats.com,VA,D-III,2024-25,Randolph,ODAC
+565,Randolph-Macon College,Old Dominion Athletic Conf.,www.rmc.edu,www.rmcathletics.com,VA,D-III,2024-25,Randolph-Macon,ODAC
+569,Regis College (Massachusetts),Great Northeast Athletic Conference,www.regiscollege.edu/,www.goregispride.com,MA,D-III,2024-25,Regis (MA),Great Northeast
+18422,Rivier University,Great Northeast Athletic Conference,www.rivier.edu,www.rivierathletics.com,NH,D-III,2024-25,Rivier,Great Northeast
+578,Roanoke College,Old Dominion Athletic Conf.,www.roanoke.edu/,maroons.roanoke.edu/,VA,D-III,2024-25,Roanoke,ODAC
+30150,Roberts Wesleyan University,East Coast Conference,www.roberts.edu,www.robertsredhawks.com,NY,D-I,2024-25,Roberts Wesleyan,ECC
+582,Rockford University,Northern Athletics Collegiate Conference,www.rockford.edu,www.rockfordregents.com,IL,D-III,2024-25,Rockford,NACC
+1328,Rockhurst University,DII Independent,www.rockhurst.edu/,www.rockhursthawks.com/,MO,D-II,2024-25,Rockhurst,DII Independent
+11036,Russell Sage College,New England Volleyball Conference,www.sage.edu/,www.sagegators.com,NY,D-III,2024-25,Russell Sage,NEVC
+589,"Rutgers, The State Univ. of New Jersey, Newark",Continental Volleyball Conference,www.newark.rutgers.edu,www.rutgersnewarkathletics.com,NJ,D-III,2024-25,Rutgers-Newark,CVC
+590,Sacred Heart University,Eastern Intercollegiate Volleyball Association,www.sacredheart.edu,sacredheartpioneers.com,CT,D-III,2024-25,Sacred Heart,EIVA
+9684,Saint Elizabeth University,United East Conference,www.steu.edu,seueagles.com,NJ,D-I,2024-25,Saint Elizabeth,United East
+600,Saint Francis University ,Northeast Conference,www.francis.edu,www.sfuathletics.com,PA,D-III,2024-25,Saint Francis,NEC
+30163,Sarah Lawrence College,Skyline Conference,www.sarahlawrence.edu,www.gogryphons.com,NY,D-III,2024-25,Sarah Lawrence,Skyline
+641,Simpson College,DIII Independent,www.simpson.edu/,simpsonathletics.com,IA,D-III,2024-25,Simpson,DIII Independent
+657,University of Southern California,Mountain Pacific Sports Federation,usc.edu,usctrojans.com,CA,D-I,2024-25,Southern California,MPSF
+30164,Southern Virginia University,Continental Volleyball Conference,www.svu.edu,knightathletics.com,VA,D-III,2024-25,Southern Va.,CVC
+673,Springfield College,DIII Independent,www.springfieldcollege.edu/,springfield.edu/directory/athletics,MA,D-III,2024-25,Springfield,DIII Independent
+601,St. John Fisher University,United Volleyball Conference,www.sjf.edu,www.sjfathletics.com,NY,D-III,2024-25,St. John Fisher,UVC
+30072,St. Joseph's University NY (Brooklyn),Skyline Conference,www.sjny.edu/,sjbkathletics.com/landing/index,NY,D-III,2024-25,St. Joseph's (Brkln),Skyline
+1340,"St. Joseph's University, New York L.I.",Skyline Conference,www.sjny.edu,www.sjliathletics.com,NY,D-III,2024-25,St. Joseph's (L.I.),Skyline
+614,St. Norbert College,Northern Athletics Collegiate Conference,www.snc.edu,athletics.snc.edu,WI,D-III,2024-25,St. Norbert,NACC
+1348,St. Thomas Aquinas College,East Coast Conference,https://www.stac.edu/,https://www.stacathletics.com/landing/index,NY,D-I,2024-25,St. Thomas Aquinas,ECC
+30064,Saint Vincent College,Presidents' Athletic Conference,www.stvincent.edu,www.athletics.stvincent.edu,PA,D-III,2024-25,Saint Vincent,PAC
+674,Stanford University,Mountain Pacific Sports Federation,www.stanford.edu,gostanford.com/,CA,D-I,2024-25,Stanford,MPSF
+679,Stevens Institute of Technology,Middle Atlantic Conferences,www.stevens.edu,www.stevensducks.com,NJ,D-III,2024-25,Stevens,Middle Atlantic
+21852,Stevenson University,Middle Atlantic Conferences,www.stevenson.edu,www.gomustangsports.com,MD,D-III,2024-25,Stevenson,Middle Atlantic
+524,State University of New York at Old Westbury,Skyline Conference,www.oldwestbury.edu,www.oldwestburypanthers.com,NY,D-III,2024-25,Old Westbury,Skyline
+707,Thiel College,Presidents' Athletic Conference,www.thiel.edu,www.thielathletics.com,PA,D-III,2024-25,Thiel,PAC
+30037,Trine University,Midwest Collegiate Volleyball League,www.trine.edu,www.trinethunder.com,IN,D-III,2024-25,Trine,MCVL
+12830,Tusculum University,DI Independent,www.tusculum.edu,www.tusculumpioneers.com,TN,D-I,2024-25,Tusculum,DI Independent
+525,The University of Olivet ,Midwest Collegiate Volleyball League,www.uolivet.edu,www.olivetcomets.com,MI,D-III,2024-25,Olivet,MCVL
+30166,University of Valley Forge,United East Conference,valleyforge.edu,uvfpatriots.com,PA,D-I,2024-25,Valley Forge,United East
+737,Vassar College,United Volleyball Conference,www.vassar.edu,www.vassarathletics.com/,NY,D-III,2024-25,Vassar,UVC
+324,Vermont State University-Johnson,New England Volleyball Conference,https://vermontstate.edu/,nvubadgers.com/landing/index,VT,D-III,2024-25,VTSU-Johnson,NEVC
+745,Virginia Wesleyan University,Old Dominion Athletic Conf.,vwu.edu,vwuathletics.com,VA,D-III,2024-25,Va. Wesleyan,ODAC
+747,Wabash College,Midwest Collegiate Volleyball League,www.wabash.edu,sports.wabash.edu,IN,D-III,2024-25,Wabash,MCVL
+30236,Warren Wilson College,DIII Independent,www.warren-wilson.edu/,warrenwilsonowls.com/landing/index,NC,D-III,2024-25,Warren Wilson,DIII Independent
+762,Wentworth Institute of Technology,Great Northeast Athletic Conference,www.wit.edu,www.wentworthathletics.com,MA,D-III,2024-25,Wentworth,Great Northeast
+1450,Westminster College (Missouri),DIII Independent,www.wcmo.edu/,www.wcbluejays.com/landing/index,MO,D-III,2024-25,Westminster (MO),DIII Independent
+783,Widener University,Middle Atlantic Conferences,www.widener.edu/,www.widenerpride.com,PA,D-III,2024-25,Widener,Middle Atlantic
+784,Wilkes University,Continental Volleyball Conference,www.wilkes.edu,www.gowilkesu.com,PA,D-III,2024-25,Wilkes,CVC
+12973,Wilson College,United East Conference,www.wilson.edu,www.wilsonphoenix.com,PA,D-I,2024-25,Wilson,United East
+8911,Wisconsin Lutheran College,Northern Athletics Collegiate Conference,www.wlc.edu,www.wlcsports.com/landing/index,WI,D-III,2024-25,Wis. Lutheran,NACC
+802,University of Wisconsin-Stevens Point,DIII Independent,www.uwsp.edu/,athletics.uwsp.edu,WI,D-III,2024-25,Wis.-Stevens Point,DIII Independent
+806,Wittenberg University,Midwest Collegiate Volleyball League,www.wittenberg.edu,www.wittenbergtigers.com,OH,D-III,2024-25,Wittenberg,MCVL
+814,Yeshiva University,Skyline Conference,www.yu.edu/,www.yumacs.com,NY,D-III,2024-25,Yeshiva,Skyline
+2730,York College (New York),City University of New York Athletic Conference,www.york.cuny.edu,www.yorkathletics.com,NY,D-III,2024-25,York (NY),CUNYAC
+30266,"University of California, Merced",Mountain Pacific Sports Federation,http://www.ucmerced.edu,http://www.ucmercedbobcats.com,CA,D-I,2024-25,UC Merced,MPSF
+30253,Carlow University,Allegheny Mountain Collegiate Conference,http://www.carlow.edu/,http://athletics.carlow.edu/,PA,D-I,2024-25,Carlow,AMCC
+405,Menlo College,Mountain Pacific Sports Federation,http://www.menlo.edu/,http://menloathletics.com/,CA,D-I,2024-25,Menlo,MPSF
+2807,Roosevelt University,DI Independent,http://www.roosevelt.edu,http://www.rooseveltlakers.com,IL,D-I,2024-25,Roosevelt,DI Independent
+1402,Thomas More University,DI Independent,http://www.thomasmore.edu,http://www.thomasmoresaints.com,KY,D-I,2024-25,Thomas More,DI Independent
+30263,Vanguard University ,Mountain Pacific Sports Federation,http://www.vanguard.edu,http://www.vanguardlions.com,CA,D-I,2024-25,Vanguard,MPSF
