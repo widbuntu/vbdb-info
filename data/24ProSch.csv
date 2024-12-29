@@ -1,0 +1,155 @@
+date,location,home_team_id,away_team_id,home_team_name,away_team_name,league
+2025-01-10,Addition Financial Arena,6,8,Orlando Valkyries,San Diego Mojo,pvf
+2025-01-11,CHI Health Center,5,2,Omaha Supernovas,Atlanta Vibe,pvf
+2025-01-11,Lee's Family Forum,9,4,Vegas Thrill,Grand Rapids Rise,pvf
+2025-01-12,Fishers Event Center,11,6,Indy Ignite,Orlando Valkyries,pvf
+2025-01-12,Nationwide Arena,3,8,Columbus Fury,San Diego Mojo,pvf
+2025-01-12,Van Andel Arena,4,5,Grand Rapids Rise,Omaha Supernovas,pvf
+2025-01-13,Lee's Family Forum,9,2,Vegas Thrill,Atlanta Vibe,pvf
+2025-01-17,Fishers Event Center,11,4,Indy Ignite,Grand Rapids Rise,pvf
+2025-01-17,Gas South Arena,2,3,Atlanta Vibe,Columbus Fury,pvf
+2025-01-17,Viejas Arena,8,6,San Diego Mojo,Orlando Valkyries,pvf
+2025-01-18,Lee's Family Forum,9,5,Vegas Thrill,Omaha Supernovas,pvf
+2025-01-19,Nationwide Arena,3,11,Columbus Fury,Indy Ignite,pvf
+2025-01-19,CHI Health Center,5,8,Omaha Supernovas,San Diego Mojo,pvf
+2025-01-19,Gas South Arena,2,4,Atlanta Vibe,Grand Rapids Rise,pvf
+2025-01-20,Lee's Family Forum,9,6,Vegas Thrill,Orlando Valkyries,pvf
+2025-01-24,Gas South Arena,2,9,Atlanta Vibe,Vegas Thrill,pvf
+2025-01-25,Nationwide Arena,3,5,Columbus Fury,Omaha Supernovas,pvf
+2025-01-25,Viejas Arena,8,11,San Diego Mojo,Indy Ignite,pvf
+2025-01-26,Nationwide Arena,3,4,Columbus Fury,Grand Rapids Rise,pvf
+2025-01-26,Addition Financial Arena,6,9,Orlando Valkyries,Vegas Thrill,pvf
+2025-01-31,Van Andel Arena,4,6,Grand Rapids Rise,Orlando Valkyries,pvf
+2025-01-31,Viejas Arena,8,2,San Diego Mojo,Atlanta Vibe,pvf
+2025-02-01,CHI Health Center,5,3,Omaha Supernovas,Columbus Fury,pvf
+2025-02-01,Lee's Family Forum,9,11,Vegas Thrill,Indy Ignite,pvf
+2025-02-02,Addition Financial Arena,6,5,Orlando Valkyries,Omaha Supernovas,pvf
+2025-02-02,Van Andel Arena,4,8,Grand Rapids Rise,San Diego Mojo,pvf
+2025-02-02,Fishers Event Center,11,3,Indy Ignite,Columbus Fury,pvf
+2025-02-03,Lee's Family Forum,9,2,Vegas Thrill,Atlanta Vibe,pvf
+2025-02-07,Gas South Arena,2,6,Atlanta Vibe,Orlando Valkyries,pvf
+2025-02-07,Fishers Event Center,11,5,Indy Ignite,Omaha Supernovas,pvf
+2025-02-08,Nationwide Arena,3,4,Columbus Fury,Grand Rapids Rise,pvf
+2025-02-08,Viejas Arena,8,9,San Diego Mojo,Vegas Thrill,pvf
+2025-02-09,Gas South Arena,2,5,Atlanta Vibe,Omaha Supernovas,pvf
+2025-02-09,Addition Financial Arena,6,11,Orlando Valkyries,Indy Ignite,pvf
+2025-02-13,Nationwide Arena,3,6,Columbus Fury,Orlando Valkyries,pvf
+2025-02-14,Van Andel Arena,4,2,Grand Rapids Rise,Atlanta Vibe,pvf
+2025-02-14,Fishers Event Center,11,8,Indy Ignite,San Diego Mojo,pvf
+2025-02-16,Addition Financial Arena,6,4,Orlando Valkyries,Grand Rapids Rise,pvf
+2025-02-16,CHI Health Center,5,8,Omaha Supernovas,San Diego Mojo,pvf
+2025-02-16,Gas South Arena,2,11,Atlanta Vibe,Indy Ignite,pvf
+2025-02-17,Nationwide Arena,3,9,Columbus Fury,Vegas Thrill,pvf
+2025-02-21,Van Andel Arena,4,3,Grand Rapids Rise,Columbus Fury,pvf
+2025-02-21,Addition Financial Arena,6,9,Orlando Valkyries,Vegas Thrill,pvf
+2025-02-21,Fishers Event Center,11,2,Indy Ignite,Atlanta Vibe,pvf
+2025-02-21,Viejas Arena,8,5,San Diego Mojo,Omaha Supernovas,pvf
+2025-02-23,Nationwide Arena,3,2,Columbus Fury,Atlanta Vibe,pvf
+2025-02-28,Fishers Event Center,11,9,Indy Ignite,Vegas Thrill,pvf
+2025-02-28,CHI Health Center,5,6,Omaha Supernovas,Orlando Valkyries,pvf
+2025-02-28,Viejas Arena,8,4,San Diego Mojo,Grand Rapids Rise,pvf
+2025-03-02,Addition Financial Arena,6,2,Orlando Valkyries,Atlanta Vibe,pvf
+2025-03-02,Viejas Arena,8,3,San Diego Mojo,Columbus Fury,pvf
+2025-03-02,CHI Health Center,5,11,Omaha Supernovas,Indy Ignite,pvf
+2025-03-02,Lee's Family Forum,9,4,Vegas Thrill,Grand Rapids Rise,pvf
+2025-03-06,Nationwide Arena,3,5,Columbus Fury,Omaha Supernovas,pvf
+2025-03-06,Van Andel Arena,4,8,Grand Rapids Rise,San Diego Mojo,pvf
+2025-03-06,Lee's Family Forum,9,11,Vegas Thrill,Indy Ignite,pvf
+2025-03-08,Gas South Arena,2,9,Atlanta Vibe,Vegas Thrill,pvf
+2025-03-09,Gas South Arena,2,11,Atlanta Vibe,Indy Ignite,pvf
+2025-03-09,Addition Financial Arena,6,3,Orlando Valkyries,Columbus Fury,pvf
+2025-03-09,Viejas Arena,8,4,San Diego Mojo,Grand Rapids Rise,pvf
+2025-03-13,Van Andel Arena,4,2,Grand Rapids Rise,Atlanta Vibe,pvf
+2025-03-13,Addition Financial Arena,6,8,Orlando Valkyries,San Diego Mojo,pvf
+2025-03-13,Fishers Event Center,11,5,Indy Ignite,Omaha Supernovas,pvf
+2025-03-14,Nationwide Arena,3,9,Columbus Fury,Vegas Thrill,pvf
+2025-03-15,Van Andel Arena,4,11,Grand Rapids Rise,Indy Ignite,pvf
+2025-03-15,Gas South Arena,2,8,Atlanta Vibe,San Diego Mojo,pvf
+2025-03-15,Addition Financial Arena,6,5,Orlando Valkyries,Omaha Supernovas,pvf
+2025-03-20,Viejas Arena,8,6,San Diego Mojo,Orlando Valkyries,pvf
+2025-03-20,Fishers Event Center,11,3,Indy Ignite,Columbus Fury,pvf
+2025-03-20,Van Andel Arena,4,9,Grand Rapids Rise,Vegas Thrill,pvf
+2025-03-21,Gas South Arena,2,6,Atlanta Vibe,Orlando Valkyries,pvf
+2025-03-22,CHI Health Center,5,11,Omaha Supernovas,Indy Ignite,pvf
+2025-03-23,Nationwide Arena,3,2,Columbus Fury,Atlanta Vibe,pvf
+2025-03-28,Georgia State CC,2,8,Atlanta Vibe,San Diego Mojo,pvf
+2025-03-28,Van Andel Arena,4,3,Grand Rapids Rise,Columbus Fury,pvf
+2025-03-29,CHI Health Center,5,9,Omaha Supernovas,Vegas Thrill,pvf
+2025-03-30,Georgia State CC,2,3,Atlanta Vibe,Columbus Fury,pvf
+2025-03-30,Addition Financial Arena,6,11,Orlando Valkyries,Indy Ignite,pvf
+2025-03-30,CHI Health Center,5,4,Omaha Supernovas,Grand Rapids Rise,pvf
+2025-03-31,Lee's Family Forum,9,8,Vegas Thrill,San Diego Mojo,pvf
+2025-04-05,Nationwide Arena,3,11,Columbus Fury,Indy Ignite,pvf
+2025-04-05,CHI Health Center,5,6,Omaha Supernovas,Orlando Valkyries,pvf
+2025-04-05,Van Andel Arena,4,9,Grand Rapids Rise,Vegas Thrill,pvf
+2025-04-09,Viejas Arena,8,2,San Diego Mojo,Atlanta Vibe,pvf
+2025-04-10,Addition Financial Arena,6,4,Orlando Valkyries,Grand Rapids Rise,pvf
+2025-04-11,Lee's Family Forum,9,5,Vegas Thrill,Omaha Supernovas,pvf
+2025-04-12,Addition Financial Arena,6,2,Orlando Valkyries,Atlanta Vibe,pvf
+2025-04-12,Fishers Event Center,11,4,Indy Ignite,Grand Rapids Rise,pvf
+2025-04-13,Viejas Arena,8,5,San Diego Mojo,Omaha Supernovas,pvf
+2025-04-13,Lee's Family Forum,9,3,Vegas Thrill,Columbus Fury,pvf
+2025-04-16,Nationwide Arena,3,8,Columbus Fury,San Diego Mojo,pvf
+2025-04-17,Fishers Event Center,11,9,Indy Ignite,Vegas Thrill,pvf
+2025-04-18,CHI Health Center,5,4,Omaha Supernovas,Grand Rapids Rise,pvf
+2025-04-18,Nationwide Arena,3,6,Columbus Fury,Orlando Valkyries,pvf
+2025-04-19,Van Andel Arena,4,11,Grand Rapids Rise,Indy Ignite,pvf
+2025-04-19,CHI Health Center,5,2,Omaha Supernovas,Atlanta Vibe,pvf
+2025-04-20,Viejas Arena,8,9,San Diego Mojo,Vegas Thrill,pvf
+2025-04-25,CHI Health Center,5,3,Omaha Supernovas,Columbus Fury,pvf
+2025-04-25,Fishers Event Center,11,6,Indy Ignite,Orlando Valkyries,pvf
+2025-04-26,Lee's Family Forum,9,8,Vegas Thrill,San Diego Mojo,pvf
+2025-04-27,Gas South Arena,2,4,Atlanta Vibe,Grand Rapids Rise,pvf
+2025-04-27,Fishers Event Center,11,8,Indy Ignite,San Diego Mojo,pvf
+2025-04-27,CHI Health Center,5,9,Omaha Supernovas,Vegas Thrill,pvf
+2025-04-27,Addition Financial Arena,6,3,Orlando Valkyries,Columbus Fury,pvf
+2025-04-30,Van Andel Arena,4,6,Grand Rapids Rise,Orlando Valkyries,pvf
+2025-05-01,Fishers Event Center,11,2,Indy Ignite,Atlanta Vibe,pvf
+2025-05-02,Viejas Arena,8,3,San Diego Mojo,Columbus Fury,pvf
+2025-05-02,Van Andel Arena,4,5,Grand Rapids Rise,Omaha Supernovas,pvf
+2025-05-03,Lee's Family Forum,9,6,Vegas Thrill,Orlando Valkyries,pvf
+2025-05-04,Viejas Arena,8,11,San Diego Mojo,Indy Ignite,pvf
+2025-05-04,Gas South Arena,2,5,Atlanta Vibe,Omaha Supernovas,pvf
+2025-05-05,Lee's Family Forum,9,3,Vegas Thrill,Columbus Fury,pvf
+2025-01-08,Atlanta,lovb-atlanta-volleyball,lovb-salt-lake-volleyball,Atlanta,Salt Lake,lovb
+2025-01-09,Houston,lovb-houston-volleyball,lovb-austin-volleyball,Houston,Austin,lovb
+2025-01-10,Houston,lovb-austin-volleyball,lovb-madison-volleyball,Austin,Madison,lovb
+2025-01-15,Austin,lovb-austin-volleyball,lovb-atlanta-volleyball,Austin,Atlanta,lovb
+2025-01-17,Madison,lovb-madison-volleyball,lovb-salt-lake-volleyball,Madison,Salt Lake,lovb
+2025-01-18,Madison,lovb-salt-lake-volleyball,lovb-houston-volleyball,Salt Lake,Houston,lovb
+2025-01-22,Salt Lake,lovb-salt-lake-volleyball,lovb-houston-volleyball,Salt Lake,Houston,lovb
+2025-01-24,Omaha,lovb-omaha-volleyball,lovb-madison-volleyball,Omaha,Madison,lovb
+2025-01-25,Omaha,lovb-madison-volleyball,lovb-atlanta-volleyball,Madison,Atlanta,lovb
+2025-01-29,Madison,lovb-madison-volleyball,lovb-houston-volleyball,Madison,Houston,lovb
+2025-01-31,Atlanta,lovb-atlanta-volleyball,lovb-salt-lake-volleyball,Atlanta,Salt Lake,lovb
+2025-02-01,Atlanta,lovb-salt-lake-volleyball,lovb-austin-volleyball,Salt Lake,Austin,lovb
+2025-02-05,Austin,lovb-austin-volleyball,lovb-houston-volleyball,Austin,Houston,lovb
+2025-02-07,Salt Lake,lovb-salt-lake-volleyball,lovb-atlanta-volleyball,Salt Lake,Atlanta,lovb
+2025-02-08,Salt Lake,lovb-atlanta-volleyball,lovb-madison-volleyball,Atlanta,Madison,lovb
+2025-02-14,Kansas City,,,LOVB,LOVB,lovb
+2025-02-15,Kansas City,,,LOVB,LOVB,lovb
+2025-02-16,Kansas City,,,LOVB,LOVB,lovb
+2025-02-19,Austin,lovb-austin-volleyball,lovb-houston-volleyball,Austin,Houston,lovb
+2025-02-20,Austin,lovb-houston-volleyball,lovb-omaha-volleyball,Houston,Omaha,lovb
+2025-02-21,Atlanta,lovb-atlanta-volleyball,lovb-madison-volleyball,Atlanta,Madison,lovb
+2025-02-27,Houston,lovb-houston-volleyball,lovb-salt-lake-volleyball,Houston,Salt Lake,lovb
+2025-02-28,Madison,lovb-madison-volleyball,lovb-omaha-volleyball,Madison,Omaha,lovb
+2025-03-01,Madison,lovb-omaha-volleyball,lovb-atlanta-volleyball,Omaha,Atlanta,lovb
+2025-03-06,Omaha,lovb-omaha-volleyball,lovb-salt-lake-volleyball,Omaha,Salt Lake,lovb
+2025-03-07,Atlanta,lovb-atlanta-volleyball,lovb-houston-volleyball,Atlanta,Houston,lovb
+2025-03-08,Atlanta,lovb-houston-volleyball,lovb-madison-volleyball,Houston,Madison,lovb
+2025-03-13,Madison,lovb-madison-volleyball,lovb-omaha-volleyball,Madison,Omaha,lovb
+2025-03-14,Houston,lovb-houston-volleyball,lovb-atlanta-volleyball,Houston,Atlanta,lovb
+2025-03-15,Houston,lovb-atlanta-volleyball,lovb-salt-lake-volleyball,Atlanta,Salt Lake,lovb
+2025-03-20,Salt Lake,lovb-salt-lake-volleyball,lovb-madison-volleyball,Salt Lake,Madison,lovb
+2025-03-21,Omaha,lovb-omaha-volleyball,lovb-austin-volleyball,Omaha,Austin,lovb
+2025-03-22,Omaha,lovb-austin-volleyball,lovb-atlanta-volleyball,Austin,Atlanta,lovb
+2025-03-27,Houston,lovb-houston-volleyball,lovb-atlanta-volleyball,Houston,Atlanta,lovb
+2025-03-28,Austin,lovb-austin-volleyball,lovb-omaha-volleyball,Austin,Omaha,lovb
+2025-03-29,Austin,lovb-omaha-volleyball,lovb-salt-lake-volleyball,Omaha,Salt Lake,lovb
+2025-04-03,Omaha,lovb-omaha-volleyball,lovb-atlanta-volleyball,Omaha,Atlanta,lovb
+2025-04-04,Salt Lake,lovb-salt-lake-volleyball,lovb-madison-volleyball,Salt Lake,Madison,lovb
+2025-04-05,Salt Lake,lovb-madison-volleyball,lovb-houston-volleyball,Madison,Houston,lovb
+2025-04-10,Louisville,,,LOVB,LOVB,lovb
+2025-04-11,Louisville,,,LOVB,LOVB,lovb
+2025-04-13,Louisville,,,LOVB,LOVB,lovb
